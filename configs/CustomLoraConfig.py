@@ -1,10 +1,9 @@
-from peft import LoraConfig, TaskType
+from peft import LoraConfig
 
 lora_config = LoraConfig(
-    r=16,
+    init_lora_weights="gaussian"
+    r=32,
+    lora_alpha=64,
     target_modules=["q_proj", "v_proj"],
-    task_type=TaskType.CAUSAL_LM,
-    lora_alpha=32,
-    lora_dropout=0.05
+    lora_dropout=0.05,
 )
-
