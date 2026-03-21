@@ -1,5 +1,3 @@
-# this does not work yet
-
 from datasets import load_dataset, DatasetDict
 from pathlib import Path
 
