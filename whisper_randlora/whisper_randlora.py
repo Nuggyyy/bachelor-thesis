@@ -15,7 +15,7 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-processor = WhisperProcessor.from_pretrained(MODEL_NAME)
+processor = WhisperProcessor.from_pretrained(MODEL_NAME, language="breton", task="transcribe")
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_NAME)
 model.config.use_cache = False
 model.generation_config.language = "breton"
