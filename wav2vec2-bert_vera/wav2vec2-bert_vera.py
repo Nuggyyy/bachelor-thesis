@@ -1,5 +1,5 @@
 from peft import VeraConfig, get_peft_model, PeftModel
-from transformers import Wav2Vec2BertModel, WhisperProcessor
+from transformers import Wav2Vec2BertModel, Wav2Vec2BertProcessor, SeamlessM4TFeatureExtractor, WhisperTokenizer
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments
 import torch
 from datasets import load_dataset, DatasetDict
@@ -16,7 +16,9 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-processor = WhisperProcessor.from_pretrained(PROCESSOR_NAME)
+feature_extractor = SeamlessM4TFeatureExtractor.from_pretrained(MODEL_NAME)
+tokenizer = WhisperTokenizer.from_pretrained(PROCESSOR_NAME)
+processor = Wav2Vec2BertProcessor(feature_extractor=feature_extractor, tokenizer=tokenizer)
 model = Wav2Vec2BertModel.from_pretrained(MODEL_NAME)
 model.config.use_cache = False
 
