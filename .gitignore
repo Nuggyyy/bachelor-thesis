@@ -208,3 +208,4 @@ __marimo__/
 
 data/*
 whisper_*/exp/test/*
+wav2vec2-bert_*/exp/test/*
