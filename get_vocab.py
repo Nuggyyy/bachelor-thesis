@@ -2,7 +2,7 @@ from datasets import load_dataset
 import re
 import json
 
-ds = load_dataset("google/fleurs", "is_is", trust_remote_code=True)
+ds = load_dataset("google/fleurs", "ga_ie", trust_remote_code=True)
 
 chars_to_remove_regex = r"[\[\],.?!\-;:\"“%‘”�'»«0-9/²–(\u200b)]"
 
