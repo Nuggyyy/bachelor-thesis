@@ -81,8 +81,8 @@ model = Wav2Vec2BertForCTC.from_pretrained(
 model.config.use_cache = False
 
 vera_config = VeraConfig(
-    r=32,
-    target_modules=["linear_q", "linear_v"],
+    r=64,
+    target_modules=["linear_q", "linear_v", "linear_k", "linear_out"],
     vera_dropout=0.05,
     modules_to_save=["lm_head"],
 )
@@ -97,7 +97,8 @@ training_args = TrainingArguments(
     per_device_train_batch_size=4,       # reduced from 16
     gradient_accumulation_steps=4,       # effective batch size stays 16
     learning_rate=1e-2,
-    num_train_epochs=3,
+    warmup_steps=200,
+    num_train_epochs=5,
     eval_strategy="epoch",
     save_strategy="epoch",
     per_device_eval_batch_size=4,
