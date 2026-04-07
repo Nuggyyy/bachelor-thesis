@@ -1,0 +1,11 @@
+model:
+  name: "whisper"
+  endpoint: "openai/whisper-tiny"
+
+dataset:
+  name: "google/fleurs"
+  language: "ga_ie"
+
+training:
+  output_dir: "/exp/test"
+  peft: "lora"
