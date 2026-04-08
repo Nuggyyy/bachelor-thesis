@@ -1,11 +1,12 @@
-from peft import LoraConfig, get_peft_model, PeftModel
-from transformers import Qwen3ASRForConditionalGeneration, WhisperFeatureExtractor, Qwen3ASRProcessor, Qwen2Tokenizer
+from peft import LoraConfig, get_peft_model, PeftModel, TaskType
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments
+from qwen_asr.core.transformers_backend import Qwen3ASRForConditionalGeneration, Qwen3ASRProcessor
 import torch
 from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 import evaluate
+import numpy as np
 
 # our env variables
 MODEL_NAME = "Qwen/Qwen3-ASR-1.7B"
@@ -15,9 +16,7 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-feature_extractor = WhisperFeatureExtractor.from_pretrained("openai/whisper-tiny")
-tokenizer = Qwen2Tokenizer.from_pretrained("meta-qwen2/Qwen2-2-7b-hf")
-processor = Qwen3ASRProcessor(feature_extractor=feature_extractor, tokenizer=tokenizerl)
+processor = Qwen3ASRProcessor.from_pretrained(MODEL_NAME)
 model = Qwen3ASRForConditionalGeneration.from_pretrained(MODEL_NAME)
 
 # load and process dataset
@@ -32,6 +31,8 @@ def prepare_dataset(example):
         text=example["transcription"],
     )
     example["input_length"] = len(audio["array"]) / audio["sampling_rate"]
+    example["input_ids"] = example["input_ids"][0]
+    example["input_features"] = example["input_features"][0]
     return example
 ds = ds.map(prepare_dataset, remove_columns=ds.column_names["train"], num_proc=1)
 def is_audio_in_length_range(length):
@@ -46,18 +47,18 @@ class DataCollatorSpeechSeq2SeqWithPadding:
         self, features: List[Dict[str, Union[List[int], torch.Tensor]]]
     ) -> Dict[str, torch.Tensor]:
         input_features = [
-            {"input_features": feature["input_features"][0]} for feature in features
+            {"input_features": np.array(feature["input_features"]).T} for feature in features
         ]
-        batch = self.processor.feature_extractor.pad(input_features, return_tensors="pt")
 
-        label_features = [{"input_ids": feature["labels"]} for feature in features]
-        labels_batch = self.processor.tokenizer.pad(label_features, return_tensors="pt")
+        batch = self.processor.feature_extractor.pad(input_features, padding=True, return_tensors="pt")
+
+        label_features = [{"input_ids": feature["input_ids"]} for feature in features]
+        labels_batch = self.processor.tokenizer.pad(label_features, padding=True, return_tensors="pt")
 
         labels = labels_batch["input_ids"].masked_fill(
             labels_batch.attention_mask.ne(1), -100
         )
-
-        if (labels[:, 0] == self.processor.tokenizer.bos_token_id).all().cpu().item():
+        if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().cpu().item():
             labels = labels[:, 1:]
 
         batch["labels"] = labels
@@ -96,6 +97,7 @@ lora_config = LoraConfig(
     lora_alpha=32,
     target_modules=["q_proj", "v_proj"],
     lora_dropout=0.05,
+    task_type= TaskType.SEQ_2_SEQ_LM,
 )
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
