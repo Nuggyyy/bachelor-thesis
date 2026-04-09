@@ -1,4 +1,4 @@
-from peft import LoraConfig, get_peft_model, PeftModel, TaskType
+from peft import LoraConfig, get_peft_model, PeftModel
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments
 from qwen_asr.core.transformers_backend import Qwen3ASRForConditionalGeneration, Qwen3ASRProcessor
 import torch
@@ -33,7 +33,17 @@ def prepare_dataset(example):
     example["input_length"] = len(audio["array"]) / audio["sampling_rate"]
     example["input_ids"] = example["input_ids"][0]
     example["input_features"] = example["input_features"][0]
+    
+    # sanity check
+    vocab_size = len(processor.tokenizer)
+    ids = example["input_ids"]
+    bad = [id for id in ids if id < 0 or id >= vocab_size]
+    if bad:
+        print(f"BAD TOKEN IDs found: {bad}, vocab_size={vocab_size}")
+        print(f"Transcription: {example.get('transcription', '?')}")
+
     return example
+
 ds = ds.map(prepare_dataset, remove_columns=ds.column_names["train"], num_proc=1)
 def is_audio_in_length_range(length):
     return length < 30.0
@@ -61,8 +71,15 @@ class DataCollatorSpeechSeq2SeqWithPadding:
         if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().cpu().item():
             labels = labels[:, 1:]
 
-        batch["labels"] = labels
+        batch["input_ids"] = labels
 
+        if "attention_mask" in batch and "feature_attention_mask" not in batch:
+            batch["feature_attention_mask"] = batch.pop("attention_mask")
+        # Ensure correct dtype for feature_attention_mask
+        if "feature_attention_mask" in batch:
+            print(f"feature_attention_mask dtype: {batch['feature_attention_mask'].dtype}")
+            print(f"feature_attention_mask shape: {batch['feature_attention_mask'].shape}")
+            batch["feature_attention_mask"] = batch["feature_attention_mask"].long()
         return batch
 
 data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
@@ -90,17 +107,65 @@ def compute_metrics(pred):
 
     return {"wer_ortho": wer_ortho, "wer": wer}
 
+# received _forward_unimplemented() error and found this on a lora finetuning on hf
+def patch_outer_forward(model):
+    cls = model.__class__
+    if getattr(cls, "_forward_patched", False):
+        return
+
+    if not hasattr(model, "thinker") or not hasattr(model.thinker, "forward"):
+        raise RuntimeError(
+            "Không thể patch hàm forward vì thiếu module `.thinker.forward`. "
+            "Model của bạn chưa chuẩn."
+        )
+
+    def forward(
+        self,
+        input_ids=None,
+        attention_mask=None,
+        input_features=None,
+        feature_attention_mask=None,
+        labels=None,
+        **kwargs,
+    ):
+        return self.thinker.forward(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            input_features=input_features,
+            feature_attention_mask=feature_attention_mask,
+            labels=labels,
+            **kwargs,
+        )
+
+    cls.forward = forward
+    # Patch for PEFT LoRA compatibility
+    def get_input_embeddings(self):
+        return self.thinker.get_input_embeddings()
+    cls.get_input_embeddings = get_input_embeddings
+
+    def set_input_embeddings(self, value):
+        self.thinker.set_input_embeddings(value)
+    cls.set_input_embeddings = set_input_embeddings
+
+    cls._forward_patched = True
+patch_outer_forward(model)
+
+# 1. Resize embeddings to match the tokenizer
+#model.resize_token_embeddings(len(processor.tokenizer))
+# 2. Update the thinker's configuration to be sure (since you are patching)
+#model.thinker.config.vocab_size = len(processor.tokenizer)
+
 # setup lora configuration and instantiate model with it
 lora_config = LoraConfig(
-    init_lora_weights="pissa",
     r=32,
     lora_alpha=32,
-    target_modules=["q_proj", "v_proj"],
+    target_modules=["q_proj", "v_proj", "k_proj", "o_proj"],
     lora_dropout=0.05,
-    task_type= TaskType.SEQ_2_SEQ_LM,
 )
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
+model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
+model.base_model.model.thinker.config.vocab_size = len(processor.tokenizer)
 
 # define training hyperparameters and settings
 training_args = Seq2SeqTrainingArguments(
@@ -122,7 +187,7 @@ training_args = Seq2SeqTrainingArguments(
     fp16=True,
     fp16_full_eval=True,
     remove_unused_columns=False,
-    label_names=["labels"],
+    label_names=["input_ids"],
 )
 
 # setup trainer
