@@ -16,8 +16,9 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
+device = torch.device("cuda")
 processor = Qwen3ASRProcessor.from_pretrained(MODEL_NAME)
-model = Qwen3ASRForConditionalGeneration.from_pretrained(MODEL_NAME)
+model = Qwen3ASRForConditionalGeneration.from_pretrained(MODEL_NAME, device_map="cuda:0", dtype=torch.float16,)
 
 # load and process dataset
 ds = DatasetDict()
@@ -33,7 +34,7 @@ def prepare_dataset(example):
     example["input_length"] = len(audio["array"]) / audio["sampling_rate"]
     example["input_ids"] = example["input_ids"][0]
     example["input_features"] = example["input_features"][0]
-    
+
     # sanity check
     vocab_size = len(processor.tokenizer)
     ids = example["input_ids"]
@@ -68,18 +69,13 @@ class DataCollatorSpeechSeq2SeqWithPadding:
         labels = labels_batch["input_ids"].masked_fill(
             labels_batch.attention_mask.ne(1), -100
         )
-        if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().cpu().item():
+        if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().item():
             labels = labels[:, 1:]
 
         batch["input_ids"] = labels
 
         if "attention_mask" in batch and "feature_attention_mask" not in batch:
             batch["feature_attention_mask"] = batch.pop("attention_mask")
-        # Ensure correct dtype for feature_attention_mask
-        if "feature_attention_mask" in batch:
-            print(f"feature_attention_mask dtype: {batch['feature_attention_mask'].dtype}")
-            print(f"feature_attention_mask shape: {batch['feature_attention_mask'].shape}")
-            batch["feature_attention_mask"] = batch["feature_attention_mask"].long()
         return batch
 
 data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
@@ -164,8 +160,6 @@ lora_config = LoraConfig(
 )
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
-model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
-model.base_model.model.thinker.config.vocab_size = len(processor.tokenizer)
 
 # define training hyperparameters and settings
 training_args = Seq2SeqTrainingArguments(
@@ -200,6 +194,8 @@ trainer = Seq2SeqTrainer(
     compute_metrics=compute_metrics,
     processing_class=processor,
 )
+
+model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
 
 # train
 trainer.train()
