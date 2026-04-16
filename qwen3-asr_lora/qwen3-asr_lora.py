@@ -155,7 +155,7 @@ patch_outer_forward(model)
 lora_config = LoraConfig(
     r=32,
     lora_alpha=32,
-    target_modules=["q_proj", "v_proj", "k_proj", "o_proj"],
+    target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
     lora_dropout=0.05,
 )
 model = get_peft_model(model, lora_config)
