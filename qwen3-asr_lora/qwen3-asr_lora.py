@@ -22,6 +22,19 @@ asr_wrapper = Qwen3ASRModel.from_pretrained(MODEL_NAME, device_map="cuda:0", dty
 processor = asr_wrapper.processor
 model = asr_wrapper.model
 
+# Ensure tokenizer and model embeddings align before LoRA/PEFT is applied.
+# Resize the model token embeddings to match tokenizer vocab size and update config.
+try:
+    # Preferred path for Qwen ASR wrapper structure
+    model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
+    model.base_model.model.thinker.config.vocab_size = len(processor.tokenizer)
+except Exception:
+    try:
+        model.resize_token_embeddings(len(processor.tokenizer))
+        model.config.vocab_size = len(processor.tokenizer)
+    except Exception:
+        pass
+
 # load and process dataset
 ds = DatasetDict()
 ds["train"] = load_dataset(DATASET_NAME, "is_is", split="train+validation", trust_remote_code=True)
@@ -64,6 +77,9 @@ class DataCollatorSpeechSeq2SeqWithPadding:
         ]
 
         batch = self.processor.feature_extractor.pad(input_features, padding=True, return_tensors="pt")
+        # transpose to (batch, feature_dim, seq_len) because the model expects input_feature with shape [feature_dim, seq_len]
+        if "input_features" in batch:
+            batch["input_features"] = batch["input_features"].transpose(1, 2)
 
         label_features = [{"input_ids": feature["input_ids"]} for feature in features]
         labels_batch = self.processor.tokenizer.pad(label_features, padding=True, return_tensors="pt")
@@ -71,10 +87,32 @@ class DataCollatorSpeechSeq2SeqWithPadding:
         labels = labels_batch["input_ids"].masked_fill(
             labels_batch.attention_mask.ne(1), -100
         )
+        # If labels start with audio BOS token, remove it so labels align with decoder target format
         if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().item():
             labels = labels[:, 1:]
 
-        batch["input_ids"] = labels
+        # Prepare decoder input ids from labels (shift right) and replace -100 with pad token id
+        try:
+            pad_id = self.processor.tokenizer.pad_token_id
+            bos_id = self.processor.tokenizer.audio_bos_token_id
+        except Exception:
+            pad_id = self.processor.tokenizer.pad_token_id
+            bos_id = None
+
+        # decoder_input_ids: replace -100 with pad id for safe embedding lookup
+        decoder_input_ids = labels.clone()
+        decoder_input_ids = decoder_input_ids.masked_fill(decoder_input_ids == -100, pad_id)
+        # shift right and add BOS token if available
+        if bos_id is not None:
+            shifted = torch.full_like(decoder_input_ids, fill_value=pad_id)
+            shifted[:, 0] = bos_id
+            if decoder_input_ids.size(1) > 1:
+                shifted[:, 1:] = decoder_input_ids[:, :-1]
+            decoder_input_ids = shifted
+
+        # Set encoder audio inputs are already in batch under 'input_features'
+        batch["input_ids"] = decoder_input_ids
+        batch["labels"] = labels
 
         if "attention_mask" in batch and "feature_attention_mask" not in batch:
             batch["feature_attention_mask"] = batch.pop("attention_mask")
@@ -184,7 +222,7 @@ training_args = Seq2SeqTrainingArguments(
     fp16=True,
     fp16_full_eval=True,
     remove_unused_columns=False,
-    label_names=["input_ids"],
+    label_names=["labels"],
 )
 
 # setup trainer
@@ -198,7 +236,7 @@ trainer = Seq2SeqTrainer(
     processing_class=processor,
 )
 
-model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
+#model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
 
 # train
 trainer.train()
