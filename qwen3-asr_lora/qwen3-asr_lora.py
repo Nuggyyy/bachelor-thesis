@@ -1,6 +1,6 @@
 from peft import LoraConfig, get_peft_model, PeftModel
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments
-from qwen_asr.core.transformers_backend import Qwen3ASRForConditionalGeneration, Qwen3ASRProcessor
+from qwen_asr import Qwen3ASRModel
 import torch
 from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
@@ -17,8 +17,10 @@ assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
 device = torch.device("cuda")
-processor = Qwen3ASRProcessor.from_pretrained(MODEL_NAME)
-model = Qwen3ASRForConditionalGeneration.from_pretrained(MODEL_NAME, device_map="cuda:0", dtype=torch.float16,)
+#processor = Qwen3ASRProcessor.from_pretrained(MODEL_NAME)
+asr_wrapper = Qwen3ASRModel.from_pretrained(MODEL_NAME, device_map="cuda:0", dtype=torch.float16, attn_implementation="sdpa")
+processor = asr_wrapper.processor
+model = asr_wrapper.model
 
 # load and process dataset
 ds = DatasetDict()
@@ -157,6 +159,7 @@ lora_config = LoraConfig(
     lora_alpha=32,
     target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
     lora_dropout=0.05,
+    task_type="CAUSAL_LM"
 )
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()

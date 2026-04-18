@@ -2,7 +2,7 @@ from transformers import WhisperForConditionalGeneration, WhisperProcessor
 import torch
 from datasets import load_dataset
 from evaluate import load
-
+from jiwer import wer
 # our env variables
 MODEL_NAME = "openai/whisper-tiny"
 
@@ -31,5 +31,4 @@ def map_to_pred(batch):
 result = ds.map(map_to_pred)
 
 # word error rate loading and then calculation which is immediately printed to terminal. could adapt it into a dataset for later
-wer = load("wer")
-print(f"Word Error Rate: {round(wer.compute(references=result["reference"], predictions=result["prediction"]) * 100, 2)}%")
+print(f"Word Error Rate: {round(wer(result["reference"], result["prediction"]) * 100, 2)}%")
