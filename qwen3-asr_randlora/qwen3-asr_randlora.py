@@ -1,11 +1,11 @@
-from peft import LoraConfig, get_peft_model, PeftModel
+from peft import RandLoraConfig, get_peft_model, PeftModel
 from transformers import Trainer, Seq2SeqTrainingArguments, GenerationConfig
 from qwen_asr import Qwen3ASRModel
 import torch
 from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
-import evaluate
+from jiwer import wer
 import numpy as np
 
 # our env variables
@@ -17,6 +17,7 @@ assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
 device = torch.device("cuda")
+#processor = Qwen3ASRProcessor.from_pretrained(MODEL_NAME)
 asr_wrapper = Qwen3ASRModel.from_pretrained(MODEL_NAME, device_map="cuda:0", dtype=torch.float16, attn_implementation="sdpa")
 processor = asr_wrapper.processor
 model = asr_wrapper.model
@@ -66,57 +67,69 @@ ds["train"] = ds["train"].filter(is_audio_in_length_range, input_columns=["input
 
 # data collator
 @dataclass
-class DataCollatorForQwen3ASRFinetuning:
+class DataCollatorSpeechSeq2SeqWithPadding:
     processor: Any
-    sampling_rate: int = 16000
+    def __call__(
+        self, features: List[Dict[str, Union[List[int], torch.Tensor]]]
+    ) -> Dict[str, torch.Tensor]:
+        input_features = [
+            {"input_features": np.array(feature["input_features"]).T} for feature in features
+        ]
 
-    def __call__(self, features: List[Dict[str, Any]]) -> Dict[str, torch.Tensor]:
-        prefix_texts = [f["prefix_text"] for f in features]
-        targets = [f["target"] for f in features]
+        batch = self.processor.feature_extractor.pad(input_features, padding=True, return_tensors="pt")
+        # transpose to (batch, feature_dim, seq_len) because the model expects input_feature with shape [feature_dim, seq_len]
+        if "input_features" in batch:
+            batch["input_features"] = batch["input_features"].transpose(1, 2)
+            # ensure input_features dtype matches model parameter dtype to avoid conv type mismatch (float32 vs float16)
+            try:
+                model_dtype = next(model.parameters()).dtype
+                batch["input_features"] = batch["input_features"].to(dtype=model_dtype)
+            except Exception:
+                # fallback: cast to float16
+                batch["input_features"] = batch["input_features"].to(dtype=torch.float16)
 
-        eos = self.processor.tokenizer.eos_token or ""
-        full_texts = [pfx + tgt + eos for pfx, tgt in zip(prefix_texts, targets)]
+        label_features = [{"input_ids": feature["input_ids"]} for feature in features]
+        labels_batch = self.processor.tokenizer.pad(label_features, padding=True, return_tensors="pt")
 
-        # Convert audio features explicitly to np.ndarray as required by Qwen processor
-        # (they become nested lists downstream inside datasets.map if not properly handled)
-        audios = [np.array(f["audio_array"], dtype=np.float32) for f in features]
-
-        # Quá trình padding động (dynamic padding) tiêu chuẩn của Qwen
-        full_inputs = self.processor(
-            text=full_texts,
-            audio=audios,
-            return_tensors="pt",
-            padding=True,
-            truncation=True, 
-            max_length=256
+        labels = labels_batch["input_ids"].masked_fill(
+            labels_batch.attention_mask.ne(1), -100
         )
+        # If labels start with audio BOS token, remove it so labels align with decoder target format
+        if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().item():
+            labels = labels[:, 1:]
 
-        prefix_inputs = self.processor(
-            text=prefix_texts,
-            audio=audios,
-            return_tensors="pt",
-            padding=True,
-            truncation=True, 
-            max_length=256
-        )
+        # Prepare decoder input ids from labels (shift right) and replace -100 with pad token id
+        try:
+            pad_id = self.processor.tokenizer.pad_token_id
+            bos_id = self.processor.tokenizer.audio_bos_token_id
+        except Exception:
+            pad_id = self.processor.tokenizer.pad_token_id
+            bos_id = None
 
-        prefix_lens = prefix_inputs["attention_mask"].sum(dim=1).tolist()
-        labels = full_inputs["input_ids"].clone()
-        for i, pl in enumerate(prefix_lens):
-            labels[i, :pl] = -100
+        # decoder_input_ids: replace -100 with pad id for safe embedding lookup
+        decoder_input_ids = labels.clone()
+        decoder_input_ids = decoder_input_ids.masked_fill(decoder_input_ids == -100, pad_id)
+        # shift right and add BOS token if available
+        if bos_id is not None:
+            shifted = torch.full_like(decoder_input_ids, fill_value=pad_id)
+            shifted[:, 0] = bos_id
+            if decoder_input_ids.size(1) > 1:
+                shifted[:, 1:] = decoder_input_ids[:, :-1]
+            decoder_input_ids = shifted
 
-        pad_id = self.processor.tokenizer.pad_token_id
-        if pad_id is not None:
-            labels[labels == pad_id] = -100
+        # Set encoder audio inputs are already in batch under 'input_features'
+        batch["input_ids"] = decoder_input_ids
+        batch["labels"] = labels
 
-        full_inputs["labels"] = labels
-        return full_inputs
+        if "attention_mask" in batch and "feature_attention_mask" not in batch:
+            batch["feature_attention_mask"] = batch.pop("attention_mask")
+        return batch
 
-data_collator = DataCollatorForQwen3ASRFinetuning(processor=processor)# evaluation metric
+data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 
-metric = evaluate.load("wer")
+# evaluation metric
 def compute_metrics(pred):
-    pred_ids = pred.predictions
+    pred_ids = np.argmax(pred.predictions, axis=-1)
     label_ids = pred.label_ids
 
     label_ids[label_ids == -100] = processor.tokenizer.pad_token_id
@@ -124,17 +137,9 @@ def compute_metrics(pred):
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
     label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
 
-    wer_ortho = 100 * metric.compute(predictions=pred_str, references=label_str)
+    wer_ortho = 100 * wer(pred_str, label_str)
 
-    pred_str_norm = [processor.tokenizer.normalize(pred) for pred in pred_str]
-    label_str_norm = [processor.tokenizer.normalize(label) for label in label_str]
-
-    pred_str_norm = [pred_str_norm[i] for i in range(len(pred_str_norm)) if len(label_str_norm[i]) > 0]
-    label_str_norm = [label_str_norm[i] for i in range(len(label_str_norm)) if len(label_str_norm[i]) > 0]
-
-    wer = 100 * metric.compute(predictions=pred_str_norm, references=label_str_norm)
-
-    return {"wer_ortho": wer_ortho, "wer": wer}
+    return {"wer": wer_ortho}
 
 # received _forward_unimplemented() error and found this on a lora finetuning on hf
 def patch_outer_forward(model):
@@ -178,6 +183,7 @@ def patch_outer_forward(model):
 
     cls._forward_patched = True
 patch_outer_forward(model)
+
 model.generation_config = GenerationConfig.from_model_config(model.config)
 model.gradient_checkpointing_enable()
 # 1. Resize embeddings to match the tokenizer
@@ -186,16 +192,15 @@ model.gradient_checkpointing_enable()
 #model.thinker.config.vocab_size = len(processor.tokenizer)
 
 # setup lora configuration and instantiate model with it
-lora_config = LoraConfig(
+randlora_config = RandLoraConfig(
     r=32,
-    lora_alpha=32,
     target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
-    lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM"
 )
-model = get_peft_model(model, lora_config)
+model = get_peft_model(model, randlora_config)
 model.config.use_cache = False
+model.gradient_checkpointing_enable()
 model.enable_input_require_grads()
 model.print_trainable_parameters()
 
@@ -210,14 +215,27 @@ training_args = Seq2SeqTrainingArguments(
     eval_strategy="epoch",
     save_strategy="epoch",
     per_device_eval_batch_size=4,
-    predict_with_generate=False,
+    predict_with_generate=True,
+    generation_max_length=225,
     logging_first_step=True,
     logging_steps=10,
     report_to=["tensorboard"],
     fp16=True,
     fp16_full_eval=True,
     remove_unused_columns=False,
+    label_names=["labels"],
 )
+
+# setup trainer
+#trainer = Seq2SeqTrainer(
+#    args=training_args,
+#    model=model,
+#    train_dataset=ds["train"],
+#    eval_dataset=ds["test"],
+#    data_collator=data_collator,
+#    compute_metrics=compute_metrics,
+#    processing_class=processor,
+#)
 
 # setup trainer
 class CastFloatInputsTrainer(Trainer):
@@ -237,7 +255,7 @@ trainer = CastFloatInputsTrainer(
     train_dataset=ds["train"],
     eval_dataset=ds["test"],
     data_collator=data_collator,
-    tokenizer=processor.tokenizer,
+    processing_class=processor,
     compute_metrics=compute_metrics,
     #callbacks=[
     #    MakeEveryCheckpointInferableCallback(base_model_path=model_id),
@@ -245,7 +263,6 @@ trainer = CastFloatInputsTrainer(
     #    VRAMCleanupCallback()
     #],
 )
-
 #model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
 
 # train
