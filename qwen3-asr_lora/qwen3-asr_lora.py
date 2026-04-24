@@ -1,5 +1,7 @@
 from peft import LoraConfig, get_peft_model, PeftModel
-from transformers import Trainer, Seq2SeqTrainingArguments, GenerationConfig
+from transformers import Trainer, Seq2SeqTrainingArguments, GenerationConfig, TrainerCallback
+import time
+import gc
 from qwen_asr import Qwen3ASRModel
 import torch
 from datasets import load_dataset, DatasetDict
@@ -9,7 +11,7 @@ from jiwer import wer
 import numpy as np
 
 # our env variables
-MODEL_NAME = "Qwen/Qwen3-ASR-1.7B"
+MODEL_NAME = "Qwen/Qwen3-ASR-0.6B"
 OUTPUT_DIR = "./exp/test"
 DATASET_NAME = "google/fleurs"
 
@@ -18,7 +20,7 @@ assert torch.cuda.is_available(), "No GPU found!"
 # instantiate processor and model from env variable
 device = torch.device("cuda")
 #processor = Qwen3ASRProcessor.from_pretrained(MODEL_NAME)
-asr_wrapper = Qwen3ASRModel.from_pretrained(MODEL_NAME, device_map="cuda:0", dtype=torch.float16, attn_implementation="sdpa")
+asr_wrapper = Qwen3ASRModel.from_pretrained(MODEL_NAME, device_map="cuda:0", dtype=torch.float16, attn_implementation="flash_attention_2")
 processor = asr_wrapper.processor
 model = asr_wrapper.model
 
@@ -37,8 +39,8 @@ except Exception:
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "is_is", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "is_is", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -185,7 +187,6 @@ def patch_outer_forward(model):
 patch_outer_forward(model)
 
 model.generation_config = GenerationConfig.from_model_config(model.config)
-model.gradient_checkpointing_enable()
 # 1. Resize embeddings to match the tokenizer
 #model.resize_token_embeddings(len(processor.tokenizer))
 # 2. Update the thinker's configuration to be sure (since you are patching)
@@ -195,13 +196,12 @@ model.gradient_checkpointing_enable()
 lora_config = LoraConfig(
     r=32,
     lora_alpha=32,
-    target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
+    target_modules=["q_proj", "v_proj", "k_proj", "o_proj"],
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM"
 )
 model = get_peft_model(model, lora_config)
-model.config.use_cache = False
 model.gradient_checkpointing_enable()
 model.enable_input_require_grads()
 model.print_trainable_parameters()
@@ -209,16 +209,22 @@ model.print_trainable_parameters()
 # define training hyperparameters and settings
 training_args = Seq2SeqTrainingArguments(
     output_dir=OUTPUT_DIR,
+    #auto_find_batch_size=True,  # requires accelerate to be installed
     per_device_train_batch_size=4,
     gradient_accumulation_steps=4,
-    learning_rate=1e-2,
-    warmup_steps=200,
-    num_train_epochs=5,
+    learning_rate=5e-5,
+    warmup_ratio=0.05,
+    lr_scheduler_type="cosine",
+    max_grad_norm=1.0,
+    num_train_epochs=3,
+    gradient_checkpointing=True,
     eval_strategy="epoch",
     save_strategy="epoch",
-    per_device_eval_batch_size=4,
-    predict_with_generate=True,
-    generation_max_length=225,
+    #per_device_eval_batch_size=1,
+    #eval_accumulation_steps=16,
+    #batch_eval_metrics=True,
+    predict_with_generate=False,
+    generation_max_length=128,
     logging_first_step=True,
     logging_steps=10,
     report_to=["tensorboard"],
@@ -226,6 +232,9 @@ training_args = Seq2SeqTrainingArguments(
     fp16_full_eval=True,
     remove_unused_columns=False,
     label_names=["labels"],
+    optim="adamw_torch_fused",
+    dataloader_num_workers=0,
+    dataloader_pin_memory=False,
 )
 
 # setup trainer
@@ -238,6 +247,48 @@ training_args = Seq2SeqTrainingArguments(
 #    compute_metrics=compute_metrics,
 #    processing_class=processor,
 #)
+
+class VRAMCleanupCallback(TrainerCallback):
+    def on_step_end(self, args, state, control, **kwargs):
+        # Dọn dẹp cache của GPU sau mỗi 10 steps (bạn có thể tùy chỉnh)
+        if state.global_step % 10 == 0:
+            torch.cuda.empty_cache()
+            gc.collect()
+
+    def on_evaluate(self, args, state, control, **kwargs):
+        # Đặc biệt dọn dẹp VRAM ngay sau khi chạy Evaluation xong
+        torch.cuda.empty_cache()
+        gc.collect()
+
+class StepLoggingCallback(TrainerCallback):
+    def __init__(self):
+        self.start_time = None
+        self.last_step_time = None
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        # Ghi nhận thời điểm bắt đầu huấn luyện
+        self.start_time = time.time()
+        self.last_step_time = self.start_time
+
+    def on_step_end(self, args, state, control, **kwargs):
+        current_time = time.time()
+        
+        if (state.global_step % 5 == 0):
+            # Tính toán thời gian
+            elapsed_total = current_time - self.start_time
+            elapsed_step = current_time - self.last_step_time
+    
+            # Quy đổi ra phút và giây
+            total_mins = elapsed_total / 60
+            step_secs = elapsed_step
+    
+            # In log ra màn hình
+            print(f"➔ Step {state.global_step}/{args.max_steps} | "
+                  f"Tổng thời gian: {total_mins:.2f} phút | "
+                  f"Step vừa qua mất: {step_secs:.2f} giây", flush=True)
+    
+        # Cập nhật lại mốc thời gian cho step tiếp theo
+        self.last_step_time = current_time
 
 # setup trainer
 class CastFloatInputsTrainer(Trainer):
@@ -259,11 +310,11 @@ trainer = CastFloatInputsTrainer(
     data_collator=data_collator,
     processing_class=processor,
     compute_metrics=compute_metrics,
-    #callbacks=[
+    callbacks=[
     #    MakeEveryCheckpointInferableCallback(base_model_path=model_id),
-    #    StepLoggingCallback(),
-    #    VRAMCleanupCallback()
-    #],
+        StepLoggingCallback(),
+        VRAMCleanupCallback()
+    ],
 )
 #model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
 
