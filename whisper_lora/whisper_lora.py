@@ -6,26 +6,26 @@ from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 import evaluate
+from jiwer import wer
 
 # our env variables
-MODEL_NAME = "openai/whisper-tiny"
+MODEL_NAME = "openai/whisper-medium"
 OUTPUT_DIR = "./exp/test"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-processor = WhisperProcessor.from_pretrained(MODEL_NAME, language="breton", task="transcribe")
+processor = WhisperProcessor.from_pretrained(MODEL_NAME, task="transcribe")
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_NAME)
 model.config.use_cache = False
-model.generation_config.language = "breton"
 model.generation_config.task = "transcribe"
 model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "is_is", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "is_is", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -69,7 +69,7 @@ class DataCollatorSpeechSeq2SeqWithPadding:
 data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 
 # evaluation metric
-metric = evaluate.load("wer")
+# metric = evaluate.load("wer")
 def compute_metrics(pred):
     pred_ids = pred.predictions
     label_ids = pred.label_ids
@@ -79,7 +79,7 @@ def compute_metrics(pred):
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
     label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
 
-    wer_ortho = 100 * metric.compute(predictions=pred_str, references=label_str)
+    wer_ortho = 100 * wer(pred_str, label_str)
 
     pred_str_norm = [processor.tokenizer.normalize(pred) for pred in pred_str]
     label_str_norm = [processor.tokenizer.normalize(label) for label in label_str]
@@ -87,9 +87,9 @@ def compute_metrics(pred):
     pred_str_norm = [pred_str_norm[i] for i in range(len(pred_str_norm)) if len(label_str_norm[i]) > 0]
     label_str_norm = [label_str_norm[i] for i in range(len(label_str_norm)) if len(label_str_norm[i]) > 0]
 
-    wer = 100 * metric.compute(predictions=pred_str_norm, references=label_str_norm)
+    wer_norm = 100 * wer(pred_str_norm, label_str_norm)
 
-    return {"wer_ortho": wer_ortho, "wer": wer}
+    return {"wer_ortho": wer_ortho, "wer": wer_norm}
 
 # setup lora configuration and instantiate model with it
 lora_config = LoraConfig(

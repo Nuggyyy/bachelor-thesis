@@ -9,7 +9,9 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 from jiwer import wer
 import numpy as np
+import logging
 
+logging.basicConfig(level=logging.DEBUG)
 # our env variables
 MODEL_NAME = "Qwen/Qwen3-ASR-0.6B"
 OUTPUT_DIR = "./exp/test"
@@ -39,7 +41,8 @@ except Exception:
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
+# ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
 ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
@@ -130,6 +133,7 @@ class DataCollatorSpeechSeq2SeqWithPadding:
 data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 
 # evaluation metric
+@torch.no_grad()
 def compute_metrics(pred):
     pred_ids = np.argmax(pred.predictions, axis=-1)
     label_ids = pred.label_ids
@@ -218,6 +222,7 @@ training_args = Seq2SeqTrainingArguments(
     max_grad_norm=1.0,
     num_train_epochs=3,
     gradient_checkpointing=True,
+    eval_on_start=True,
     eval_strategy="epoch",
     save_strategy="epoch",
     #per_device_eval_batch_size=1,
@@ -315,6 +320,7 @@ trainer = CastFloatInputsTrainer(
         StepLoggingCallback(),
         VRAMCleanupCallback()
     ],
+    preprocess_logits_for_metrics=lambda logits, labels: torch.argmax(logits, dim=-1),
 )
 #model.base_model.model.thinker.resize_token_embeddings(len(processor.tokenizer))
 
