@@ -17,7 +17,7 @@ model = Qwen3ASRModel.from_pretrained(
 
 ds = load_dataset(
     DATASET_NAME,
-    "en_us",
+    "ga_ie",
     split="test",
     trust_remote_code=True,
 )

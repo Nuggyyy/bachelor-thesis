@@ -41,9 +41,8 @@ except Exception:
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
-# ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "sn_zw", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "sn_zw", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -103,27 +102,31 @@ class DataCollatorSpeechSeq2SeqWithPadding:
         if (labels[:, 0] == self.processor.tokenizer.audio_bos_token_id).all().item():
             labels = labels[:, 1:]
 
-        # Prepare decoder input ids from labels (shift right) and replace -100 with pad token id
-        try:
-            pad_id = self.processor.tokenizer.pad_token_id
-            bos_id = self.processor.tokenizer.audio_bos_token_id
-        except Exception:
-            pad_id = self.processor.tokenizer.pad_token_id
-            bos_id = None
+        ## Prepare decoder input ids from labels (shift right) and replace -100 with pad token id
+        #try:
+        #    pad_id = self.processor.tokenizer.pad_token_id
+        #    bos_id = self.processor.tokenizer.audio_bos_token_id
+        #except Exception:
+        #    pad_id = self.processor.tokenizer.pad_token_id
+        #    bos_id = None
 
-        # decoder_input_ids: replace -100 with pad id for safe embedding lookup
-        decoder_input_ids = labels.clone()
-        decoder_input_ids = decoder_input_ids.masked_fill(decoder_input_ids == -100, pad_id)
-        # shift right and add BOS token if available
-        if bos_id is not None:
-            shifted = torch.full_like(decoder_input_ids, fill_value=pad_id)
-            shifted[:, 0] = bos_id
-            if decoder_input_ids.size(1) > 1:
-                shifted[:, 1:] = decoder_input_ids[:, :-1]
-            decoder_input_ids = shifted
+        ## decoder_input_ids: replace -100 with pad id for safe embedding lookup
+        #decoder_input_ids = labels.clone()
+        #decoder_input_ids = decoder_input_ids.masked_fill(decoder_input_ids == -100, pad_id)
+        ## shift right and add BOS token if available
+        #if bos_id is not None:
+        #    shifted = torch.full_like(decoder_input_ids, fill_value=pad_id)
+        #    shifted[:, 0] = bos_id
+        #    if decoder_input_ids.size(1) > 1:
+        #        shifted[:, 1:] = decoder_input_ids[:, :-1]
+        #    decoder_input_ids = shifted
 
-        # Set encoder audio inputs are already in batch under 'input_features'
-        batch["input_ids"] = decoder_input_ids
+        ## Provide decoder input ids under a dedicated key to avoid confusing generation (decoder_input_ids)
+        #batch["input_ids"] = decoder_input_ids
+        input_ids = labels.clone()
+        input_ids[input_ids == -100] = processor.tokenizer.pad_token_id
+
+        batch["input_ids"] = input_ids
         batch["labels"] = labels
 
         if "attention_mask" in batch and "feature_attention_mask" not in batch:
@@ -135,15 +138,24 @@ data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 # evaluation metric
 @torch.no_grad()
 def compute_metrics(pred):
-    pred_ids = np.argmax(pred.predictions, axis=-1)
+    pred_ids = pred.predictions
     label_ids = pred.label_ids
+    pad_id = processor.tokenizer.pad_token_id
 
-    label_ids[label_ids == -100] = processor.tokenizer.pad_token_id
+    # pred_ids is a ragged list of lists — np.array() won't work on it
+    # Replace -100 inline per sequence
+    if isinstance(pred_ids, list):
+        pred_ids = [[pad_id if t == -100 else t for t in seq] for seq in pred_ids]
+    else:
+        pred_ids = np.where(pred_ids == -100, pad_id, pred_ids).tolist()
+ 
+    label_ids[label_ids == -100] = pad_id
+    label_ids = label_ids.tolist()
 
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
     label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
 
-    wer_ortho = 100 * wer(pred_str, label_str)
+    wer_ortho = 100 * wer(label_str, pred_str)
 
     return {"wer": wer_ortho}
 
@@ -168,6 +180,7 @@ def patch_outer_forward(model):
         labels=None,
         **kwargs,
     ):
+        # Map decoder_input_ids to the underlying thinker's expected input_ids
         return self.thinker.forward(
             input_ids=input_ids,
             attention_mask=attention_mask,
@@ -216,8 +229,8 @@ training_args = Seq2SeqTrainingArguments(
     #auto_find_batch_size=True,  # requires accelerate to be installed
     per_device_train_batch_size=4,
     gradient_accumulation_steps=4,
-    learning_rate=5e-5,
-    warmup_ratio=0.05,
+    learning_rate=1e-5,
+    warmup_ratio=0.1,
     lr_scheduler_type="cosine",
     max_grad_norm=1.0,
     num_train_epochs=3,
@@ -228,7 +241,7 @@ training_args = Seq2SeqTrainingArguments(
     #per_device_eval_batch_size=1,
     #eval_accumulation_steps=16,
     #batch_eval_metrics=True,
-    predict_with_generate=False,
+    predict_with_generate=True,
     generation_max_length=128,
     logging_first_step=True,
     logging_steps=10,
@@ -317,7 +330,7 @@ trainer = CastFloatInputsTrainer(
     compute_metrics=compute_metrics,
     callbacks=[
     #    MakeEveryCheckpointInferableCallback(base_model_path=model_id),
-        StepLoggingCallback(),
+        #StepLoggingCallback(),
         VRAMCleanupCallback()
     ],
     preprocess_logits_for_metrics=lambda logits, labels: torch.argmax(logits, dim=-1),
