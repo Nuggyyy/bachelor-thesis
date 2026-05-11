@@ -10,6 +10,8 @@ from typing import Any, Dict, List, Union
 from jiwer import wer
 import numpy as np
 import logging
+import re
+import random
 
 logging.basicConfig(level=logging.DEBUG)
 # our env variables
@@ -41,8 +43,8 @@ except Exception:
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "sn_zw", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "sn_zw", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "jv_id", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "jv_id", split="test", trust_remote_code=True)
 
 def build_prefix_messages(prompt: str, audio_array):
     return [
@@ -71,7 +73,7 @@ def prepare_dataset(example):
 
     #return example
     # Instruct the model to preserve punctuation and capitalization in transcriptions
-    prompt = "language Shona."
+    prompt = "language Javanese."
     dummy_audio = None
     prefix_msg = build_prefix_messages(prompt, dummy_audio)
     prefix_text = processor.apply_chat_template([prefix_msg], add_generation_prompt=True, tokenize=False)[0]
@@ -195,10 +197,14 @@ def compute_metrics(pred):
 
     # Decode
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
-    label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
+    pred_str = [re.sub(r"(?:system)?\n?(?:language )?(?:Javanese)?\.?\n?(?:user)?\n?\n?(?:assistant)?\n?", "", pred_str_sample) for pred_str_sample in pred_str]
 
+    label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
+    label_str = [re.sub(r"(?:system)?\n?(?:language )?(?:Javanese)?\.?\n?(?:user)?\n?\n?(?:assistant)?\n?", "", label_str_sample) for label_str_sample in label_str]
+
+    index = random.randint(0, len(pred_str) - 3)
     # Print a few examples for debugging (helps explain huge WERs)
-    for ref, hyp in list(zip(label_str, pred_str))[:3]:
+    for ref, hyp in list(zip(label_str, pred_str))[index:index + 3]:
         print("--- Eval sample ---")
         print("REF:", repr(ref))
         print("HYP:", repr(hyp))

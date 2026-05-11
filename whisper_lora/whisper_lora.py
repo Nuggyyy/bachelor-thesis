@@ -5,11 +5,10 @@ import torch
 from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
-import evaluate
 from jiwer import wer
 
 # our env variables
-MODEL_NAME = "openai/whisper-medium"
+MODEL_NAME = "openai/whisper-tiny"
 OUTPUT_DIR = "./exp/test"
 DATASET_NAME = "google/fleurs"
 
@@ -87,6 +86,13 @@ def compute_metrics(pred):
     pred_str_norm = [pred_str_norm[i] for i in range(len(pred_str_norm)) if len(label_str_norm[i]) > 0]
     label_str_norm = [label_str_norm[i] for i in range(len(label_str_norm)) if len(label_str_norm[i]) > 0]
 
+    # Print a few examples for debugging (helps explain huge WERs)
+    for ref, hyp in list(zip(label_str_norm, pred_str_norm))[:3]:
+        print("--- Eval sample ---")
+        print("REF:", repr(ref))
+        print("HYP:", repr(hyp))
+
+
     wer_norm = 100 * wer(pred_str_norm, label_str_norm)
 
     return {"wer_ortho": wer_ortho, "wer": wer_norm}
@@ -96,7 +102,7 @@ lora_config = LoraConfig(
     init_lora_weights="pissa",
     r=32,
     lora_alpha=32,
-    target_modules=["q_proj", "v_proj"],
+    target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
     lora_dropout=0.05,
 )
 model = get_peft_model(model, lora_config)

@@ -11,7 +11,7 @@ import torch, numpy as np
 from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
-import evaluate
+from jiwer import wer
 
 MODEL_NAME = "facebook/w2v-bert-2.0"
 PROCESSOR_NAME = "facebook/wav2vec2-base-960h"
@@ -21,7 +21,7 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 feature_extractor = SeamlessM4TFeatureExtractor.from_pretrained(MODEL_NAME)
-tokenizer = Wav2Vec2CTCTokenizer(r"C:\Users\Serafin\repositories\bachelor-thesis\wav2vec2-bert_vera\vocab.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
+tokenizer = Wav2Vec2CTCTokenizer("vocab.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
 processor = Wav2Vec2BertProcessor(feature_extractor=feature_extractor, tokenizer=tokenizer)
 
 ds = DatasetDict()
@@ -57,14 +57,18 @@ class DataCollatorCTCWithPadding:
 
 data_collator = DataCollatorCTCWithPadding(processor=processor)
 
-metric = evaluate.load("wer")
-
 def compute_metrics(pred):
     pred_ids = np.argmax(pred.predictions, axis=-1)  # greedy CTC decode
     pred.label_ids[pred.label_ids == -100] = processor.tokenizer.pad_token_id
     pred_str  = processor.batch_decode(pred_ids, skip_special_tokens=True)
     label_str = processor.batch_decode(pred.label_ids, skip_special_tokens=True)
-    return {"wer": 100 * metric.compute(predictions=pred_str, references=label_str)}
+    # Print a few examples for debugging (helps explain huge WERs)
+    for ref, hyp in list(zip(label_str, pred_str))[:3]:
+        print("--- Eval sample ---")
+        print("REF:", repr(ref))
+        print("HYP:", repr(hyp))
+
+    return {"wer": 100 * wer(label_str, pred_str)}
 
 model = Wav2Vec2BertForCTC.from_pretrained(
     MODEL_NAME,
