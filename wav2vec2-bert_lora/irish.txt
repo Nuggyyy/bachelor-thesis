@@ -1,0 +1,303 @@
+Some weights of Wav2Vec2BertForCTC were not initialized from the model checkpoint at facebook/w2v-bert-2.0 and are newly initialized: ['lm_head.bias', 'lm_head.weight', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.residual_conv.bias', 'wav2vec2_bert.adapter.layers.0.residual_conv.weight', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+trainable params: 6,613,050 || all params: 612,349,876 || trainable%: 1.0799
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 57, 'bos_token_id': 56}.
+  0%|                                                                                                                                                                  | 0/1188 [00:00<?, ?it/s--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:09<00:00,  3.94it/s]
+REF: 'sa tuaisceart tá an tsaiheil thart ar an réigiún agus sa deisceart agus san iarthar tá an aigéan atlantach'
+HYP: 'tşãtntntht½łphtavçtă¾tptnç~twtşht½ş~hç~şhphtpntăpt½ăşuwtú½hkç~ç~tçrpvw½tpçtpt½tğt½ş jă½t½ş½şmçhjwhputwçw~’½ç~hlht~hşpãt½hşphtnt'
+--- Eval sample ---
+REF: 'i measc na nábhar eile atá ar an gclár oibre in bali tá na foraoisí atá fágtha ar domhan a shábháil agus teicneolaíochtaí a chomhroint chun cabhrú le náisiúin i mbéal forbartha fás ar bhealaí a laghdaíon an truailiú'
+HYP: 'twtãtãtãtm¾ahwntúe½ştwçat~½~’½h~hnã½’½heçhãt~½şhş’pmçhahújç¾çht~şuh£½~$t’½~h~pthphbitmjãt½ptptăh~ptăçojaj̇hteaöáph~căuł&tpdhãth~hãtnt½heoeo½htãtãtãtãtçãç$~eçaptmç$çjş½ł~’ãphbç$tñãdh~heñă½~pşh~eçipöăç~$ăç~bç$~tăãtpşpşhte~jtmrt$nrwtãtãtşdht—°jbhnt½~½té~ç$wñuhş½çjã~hşh~½şn~htntăãth~nãntãtãtãtntntãtãtntn'
+--- Eval sample ---
+REF: 'is féidir go raibh míúsáid leanaí nó tráma tromchúiseach i gceist le leanaí fiáine sular thréigeadh iad nó sular éalaigh siad ón mbaile'
+HYP: 'şt$tç~uçéjtşhu~h h¾t½~eúumh~ehlehlhththeç~ ~tntúwtşh~hşw°tntşéşw’htehăç$pçtpãătnthç½ ~töháçw~ăçit½pşhjtç~t~ãth~é½hjtwtnxt~ut~’ăhwç½éç~tmptç~wjntşhş½şhşwt'
+{'eval_loss': inf, 'eval_wer': 100.0, 'eval_runtime': 76.484, 'eval_samples_per_second': 11.009, 'eval_steps_per_second': 2.759, 'epoch': 0}
+  0%|                                                                                                                                                                  | 0/1188 [01:16<?, ?it/s/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 7.7656, 'grad_norm': 13.230106353759766, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 8.1499, 'grad_norm': 12.633187294006348, 'learning_rate': 2.25e-06, 'epoch': 0.1}
+{'loss': 8.2359, 'grad_norm': 14.112138748168945, 'learning_rate': 4.75e-06, 'epoch': 0.2}
+{'loss': 8.1512, 'grad_norm': 14.913558959960938, 'learning_rate': 7.25e-06, 'epoch': 0.3}
+{'loss': 7.8978, 'grad_norm': 13.626766204833984, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.4}
+{'loss': 8.0238, 'grad_norm': 14.744254112243652, 'learning_rate': 1.225e-05, 'epoch': 0.51}
+{'loss': 7.6347, 'grad_norm': 14.036450386047363, 'learning_rate': 1.475e-05, 'epoch': 0.61}
+{'loss': 7.4663, 'grad_norm': 14.147233963012695, 'learning_rate': 1.725e-05, 'epoch': 0.71}
+{'loss': 7.1856, 'grad_norm': 14.618157386779785, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.81}
+{'loss': 6.8159, 'grad_norm': 13.335953712463379, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.91}
+  8%|████████████▊                                                                                                                                            | 99/1188 [06:02<54:16,  2.99s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:12<00:00,  4.63it/s]
+REF: 'seo an áit a ghabh coilínigh na breataine mar a náit féin agus mar sin má tá fianaise uait ar laethanta na críche nuair ba choilíneacht í seo áit mhaith le tosú'
+HYP: 'tdtharoitaç tçahahnthrhahthdhthăhçhãtntntnhth~hrwoitç çhtntnthra thtrhthta thoitahteteatnhrahaéçtrhtaheit~çahahntahaçhaetrt~½ththtntnçothra teaöontantnt'
+--- Eval sample ---
+REF: 'i measc na ngrúpaí a úsáidean an tseirbhís seo go minic tá loingeas lena náirítear báid phléisiúir chomh maith le turais a bhfuil riachtanais ciansonraí agus cianghutha acu'
+HYP: 't tnthntnhnhth h hth t~h thr on t tnt ha nrntnthchătn hthç htirpthtdphohohnthohtntphthr¾hé h ath hthton hth tntndh atwn hschnththethtntht'
+--- Eval sample ---
+REF: 'idir aosach firean amháin agus trí cin ghaolmhara a bhíon in ealta leon mar aon le suas le tríocha bainean agus coileáin'
+HYP: 'htetihnh ~çitaethohçohthtit t htatç ho th h hnoh oçthtehth eh h~şhtşhot ç het hteht çho hço~thtetceh ht'
+{'eval_loss': inf, 'eval_wer': 100.28362657436784, 'eval_runtime': 78.995, 'eval_samples_per_second': 10.659, 'eval_steps_per_second': 2.671, 'epoch': 1.0}
+  8%|████████████▊                                                                                                                                            | 99/1188 [07:21<54:16,  2.99s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 6.5219, 'grad_norm': 12.545073509216309, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.01}
+{'loss': 6.3849, 'grad_norm': 13.749982833862305, 'learning_rate': 2.725e-05, 'epoch': 1.11}
+{'loss': 5.9145, 'grad_norm': 13.966667175292969, 'learning_rate': 2.975e-05, 'epoch': 1.21}
+{'loss': 5.4348, 'grad_norm': 14.990903854370117, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.31}
+{'loss': 4.9964, 'grad_norm': 19.242164611816406, 'learning_rate': 3.475e-05, 'epoch': 1.41}
+{'loss': 4.3613, 'grad_norm': 15.865737915039062, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.52}
+{'loss': 3.7806, 'grad_norm': 8.275019645690918, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.62}
+{'loss': 3.3636, 'grad_norm': 2.064986228942871, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.72}
+{'loss': 3.185, 'grad_norm': 1.0436142683029175, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.82}
+{'loss': 3.0619, 'grad_norm': 1.0389642715454102, 'learning_rate': 4.7249999999999997e-05, 'epoch': 1.92}
+ 17%|█████████████████████████▎                                                                                                                              | 198/1188 [12:45<53:43,  3.26s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:14<00:00,  4.05it/s]
+REF: 'faoi rineadh athchóiriú ar thríocha faoin gcéad de machu pichu and leanadh leis an athchóiriú go dtí an lá atá iniu again'
+HYP: 'a'
+--- Eval sample ---
+REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágan gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
+HYP: ''
+--- Eval sample ---
+REF: 'bhí cáil air mar chroílár an tsómais ó ad amach go dtí thart ar ad'
+HYP: 'ra r'
+{'eval_loss': inf, 'eval_wer': 98.27901163349678, 'eval_runtime': 79.0496, 'eval_samples_per_second': 10.652, 'eval_steps_per_second': 2.669, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 198/1188 [14:04<53:43,  3.26s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.9996, 'grad_norm': 0.5973105430603027, 'learning_rate': 4.975e-05, 'epoch': 2.02}
+{'loss': 2.9775, 'grad_norm': 0.8028748631477356, 'learning_rate': 4.954453441295547e-05, 'epoch': 2.12}
+{'loss': 2.9355, 'grad_norm': 0.8952063918113708, 'learning_rate': 4.9038461538461536e-05, 'epoch': 2.22}
+{'loss': 2.9209, 'grad_norm': 0.9293026328086853, 'learning_rate': 4.8532388663967616e-05, 'epoch': 2.32}
+{'loss': 2.9124, 'grad_norm': 0.753284752368927, 'learning_rate': 4.802631578947368e-05, 'epoch': 2.42}
+{'loss': 2.888, 'grad_norm': 1.1632462739944458, 'learning_rate': 4.7520242914979756e-05, 'epoch': 2.53}
+{'loss': 2.8919, 'grad_norm': 0.837514340877533, 'learning_rate': 4.7014170040485836e-05, 'epoch': 2.63}
+{'loss': 2.871, 'grad_norm': 0.6647383570671082, 'learning_rate': 4.65080971659919e-05, 'epoch': 2.73}
+{'loss': 2.8516, 'grad_norm': 0.6113154292106628, 'learning_rate': 4.600202429149798e-05, 'epoch': 2.83}
+{'loss': 2.833, 'grad_norm': 0.7582236528396606, 'learning_rate': 4.549595141700405e-05, 'epoch': 2.93}
+ 25%|██████████████████████████████████████                                                                                                                  | 297/1188 [19:28<48:39,  3.28s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:15<00:00,  4.07it/s]
+REF: 'níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt dfhocail dhranacha bhéicthe'
+HYP: 'rar r ra isr'
+--- Eval sample ---
+REF: 'an tseachtain seo caite dfhógair meti gur chuir aple iad ar an eolas faoi eachtra róthéimh bhreise ar a ghlaoigh an comhlacht neamhthromchúiseach'
+HYP: 'as rní r r r rsrn'
+--- Eval sample ---
+REF: 'rine gobharnóir california arnold schwarzeneger bile a shíniú le bheith ina dhlí lena gcuirtear toirmeasc ar fhíschluichí foréigneacha a dhíol nó a ligean ar cíos do dhaoine atá faoi aois'
+HYP: 'irararsarlrsrsara'
+{'eval_loss': inf, 'eval_wer': 98.28862609364484, 'eval_runtime': 80.59, 'eval_samples_per_second': 10.448, 'eval_steps_per_second': 2.618, 'epoch': 3.0}
+ 25%|██████████████████████████████████████                                                                                                                  | 297/1188 [20:48<48:39,  3.28s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.8173, 'grad_norm': 0.6208906769752502, 'learning_rate': 4.498987854251012e-05, 'epoch': 3.03}
+{'loss': 2.8065, 'grad_norm': 0.8166975975036621, 'learning_rate': 4.4483805668016196e-05, 'epoch': 3.13}
+{'loss': 2.791, 'grad_norm': 0.6842449903488159, 'learning_rate': 4.397773279352227e-05, 'epoch': 3.23}
+{'loss': 2.7833, 'grad_norm': 1.322928786277771, 'learning_rate': 4.347165991902834e-05, 'epoch': 3.33}
+{'loss': 2.7681, 'grad_norm': 1.1260762214660645, 'learning_rate': 4.2965587044534416e-05, 'epoch': 3.43}
+{'loss': 2.7705, 'grad_norm': 0.8721524477005005, 'learning_rate': 4.245951417004049e-05, 'epoch': 3.54}
+{'loss': 2.7449, 'grad_norm': 0.9088293313980103, 'learning_rate': 4.1953441295546556e-05, 'epoch': 3.64}
+{'loss': 2.7532, 'grad_norm': 1.0473371744155884, 'learning_rate': 4.1447368421052636e-05, 'epoch': 3.74}
+{'loss': 2.7354, 'grad_norm': 0.7888295650482178, 'learning_rate': 4.09412955465587e-05, 'epoch': 3.84}
+{'loss': 2.7247, 'grad_norm': 1.541463017463684, 'learning_rate': 4.043522267206478e-05, 'epoch': 3.94}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 396/1188 [26:16<44:13,  3.35s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:15<00:00,  3.99it/s]
+REF: 'is tacaíocht deolaithe ina gcuid taighde an comhghaolú idir galareolaíocht inchine agus iompraíocht'
+HYP: 'araria nsasr'
+--- Eval sample ---
+REF: 'déanan plandaí a gcuid bia ón ngrian trí fhótaisintéis cuirean siad scáth ar fáil chomh maith'
+HYP: 'nean ir ir aiararearanma'
+--- Eval sample ---
+REF: 'le lin an troda ar son an neamhspleáchais a deagraigh gluaiseacht mau bhailigh slua go síochánta sa bhaile ach maraíodh an taoiseach mór tupua tamasese lealofi i mar thoradh air sin'
+HYP: 'arsnasrsairsrsasrasiariamsísraris rirarsn'
+{'eval_loss': inf, 'eval_wer': 99.48081915200461, 'eval_runtime': 81.0533, 'eval_samples_per_second': 10.388, 'eval_steps_per_second': 2.603, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 396/1188 [27:37<44:13,  3.35s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.7136, 'grad_norm': 0.8516125679016113, 'learning_rate': 3.9929149797570856e-05, 'epoch': 4.04}
+{'loss': 2.7168, 'grad_norm': 0.7802134156227112, 'learning_rate': 3.942307692307692e-05, 'epoch': 4.14}
+{'loss': 2.7127, 'grad_norm': 0.6715654730796814, 'learning_rate': 3.8917004048583e-05, 'epoch': 4.24}
+{'loss': 2.7043, 'grad_norm': 2.0003774166107178, 'learning_rate': 3.841093117408907e-05, 'epoch': 4.34}
+{'loss': 2.6798, 'grad_norm': 0.8412277102470398, 'learning_rate': 3.790485829959514e-05, 'epoch': 4.44}
+{'loss': 2.6721, 'grad_norm': 0.753237783908844, 'learning_rate': 3.7398785425101215e-05, 'epoch': 4.55}
+{'loss': 2.6797, 'grad_norm': 1.1975700855255127, 'learning_rate': 3.689271255060729e-05, 'epoch': 4.65}
+{'loss': 2.671, 'grad_norm': 0.7359492182731628, 'learning_rate': 3.638663967611336e-05, 'epoch': 4.75}
+{'loss': 2.6766, 'grad_norm': 0.6534014344215393, 'learning_rate': 3.5880566801619435e-05, 'epoch': 4.85}
+{'loss': 2.6682, 'grad_norm': 1.0928627252578735, 'learning_rate': 3.537449392712551e-05, 'epoch': 4.95}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 495/1188 [33:04<33:03,  2.86s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:17<00:00,  4.02it/s]
+REF: 'níos déanaí ghlac na grianghrafadóirí áit seanmhná de bhrí gur theastaigh uaithi an leithreas a úsáid leagadh mendoza le piléar'
+HYP: 'iricrnurararariíiaiúrani ai l ala'
+--- Eval sample ---
+REF: 'mura dtéan tú i dtír ach amháin ag úsáid turais ar bord loinge ní bheadh víosa ar leith ag teastáil uait ó'
+HYP: 'sénl raranasrsarisarar eai'
+--- Eval sample ---
+REF: 'tabhair aire nach ligfidh tú don éadach éirí róthe rud dfhéadfadh a bheith ina chúis le crapadh nó i gcásana níos measa loisceadh'
+HYP: 'raralirariariílíaiíranaú sareasansri'
+{'eval_loss': inf, 'eval_wer': 99.79809633689068, 'eval_runtime': 81.137, 'eval_samples_per_second': 10.378, 'eval_steps_per_second': 2.601, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 495/1188 [34:25<33:03,  2.86s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.6534, 'grad_norm': 0.6614357233047485, 'learning_rate': 3.4868421052631575e-05, 'epoch': 5.05}
+{'loss': 2.6432, 'grad_norm': 0.7555370330810547, 'learning_rate': 3.4362348178137655e-05, 'epoch': 5.15}
+{'loss': 2.6355, 'grad_norm': 0.9789209961891174, 'learning_rate': 3.385627530364373e-05, 'epoch': 5.25}
+{'loss': 2.6517, 'grad_norm': 1.6700901985168457, 'learning_rate': 3.33502024291498e-05, 'epoch': 5.35}
+{'loss': 2.6422, 'grad_norm': 0.6565887331962585, 'learning_rate': 3.2844129554655875e-05, 'epoch': 5.45}
+{'loss': 2.6459, 'grad_norm': 1.1849620342254639, 'learning_rate': 3.233805668016194e-05, 'epoch': 5.56}
+{'loss': 2.6203, 'grad_norm': 0.8187664151191711, 'learning_rate': 3.183198380566802e-05, 'epoch': 5.66}
+{'loss': 2.6027, 'grad_norm': 0.9980719685554504, 'learning_rate': 3.132591093117409e-05, 'epoch': 5.76}
+{'loss': 2.6169, 'grad_norm': 1.4218988418579102, 'learning_rate': 3.081983805668016e-05, 'epoch': 5.86}
+{'loss': 2.6098, 'grad_norm': 0.7875974178314209, 'learning_rate': 3.0313765182186238e-05, 'epoch': 5.96}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 594/1188 [39:53<31:53,  3.22s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:15<00:00,  4.08it/s]
+REF: 'tugan an fhionachtain léargas dúin ar éabhlóid na gcleití sna héin'
+HYP: 'nmnesarn larsnrns nasan'
+--- Eval sample ---
+REF: 'is minic a bhíon bigil na cásca ag eaglais níos traidisiúnta oíche shathairn le lin deireadh seachtaine na cásca leis an slua ag tosú ceiliúradh go minic ar bhuile an mheán oíche chun aiséirí íosa críost a cheiliúradh'
+HYP: 'smrarisrarliseanieasasáaranmriíaríshísar'
+--- Eval sample ---
+REF: 'le lin na tréimhse sin i stair na heorpa tosaíodh ar scrúdú a dhéanamh ar an eaglais chaitliceach tar éis dí éirí ansaibhir agus cumhachtach'
+HYP: 'arsesramsrsrasrsrnarsarsíarsarsra'
+{'eval_loss': inf, 'eval_wer': 99.846168637631, 'eval_runtime': 80.9204, 'eval_samples_per_second': 10.405, 'eval_steps_per_second': 2.608, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 594/1188 [41:14<31:53,  3.22s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.5995, 'grad_norm': 0.9039740562438965, 'learning_rate': 2.9807692307692308e-05, 'epoch': 6.06}
+{'loss': 2.5904, 'grad_norm': 0.9411176443099976, 'learning_rate': 2.9301619433198378e-05, 'epoch': 6.16}
+{'loss': 2.584, 'grad_norm': 1.3637170791625977, 'learning_rate': 2.8795546558704455e-05, 'epoch': 6.26}
+{'loss': 2.6021, 'grad_norm': 0.7220963835716248, 'learning_rate': 2.8289473684210528e-05, 'epoch': 6.36}
+{'loss': 2.5867, 'grad_norm': 1.062916874885559, 'learning_rate': 2.7783400809716605e-05, 'epoch': 6.46}
+{'loss': 2.586, 'grad_norm': 0.6473093628883362, 'learning_rate': 2.7277327935222675e-05, 'epoch': 6.57}
+{'loss': 2.5854, 'grad_norm': 0.85874342918396, 'learning_rate': 2.6771255060728745e-05, 'epoch': 6.67}
+{'loss': 2.5852, 'grad_norm': 0.8960893750190735, 'learning_rate': 2.626518218623482e-05, 'epoch': 6.77}
+{'loss': 2.573, 'grad_norm': 0.6648642420768738, 'learning_rate': 2.575910931174089e-05, 'epoch': 6.87}
+{'loss': 2.5705, 'grad_norm': 0.5367756485939026, 'learning_rate': 2.5253036437246965e-05, 'epoch': 6.97}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 693/1188 [46:41<26:51,  3.26s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:15<00:00,  4.09it/s]
+REF: 'tá an toileánra km ó thuaidh den leithinis is é oileán an rí seoirse ar a bhfuil an socrúchán vila las estrelas an toileán is mó'
+HYP: 'anarishrmrcrhanesrsrarascaransrsas'
+--- Eval sample ---
+REF: 'tabhair aire nach ligfidh tú don éadach éirí róthe rud dfhéadfadh a bheith ina chúis le crapadh nó i gcásana níos measa loisceadh'
+HYP: 'arai hrnrhíih rnslcrarasls'
+--- Eval sample ---
+REF: 'ó thuaidh agus gar go leor dó tá baile rómánsúil suimiúil sintra a tharaing aird ó eachtranaigh tar éis don tiarna byron a dhealramh a mholadh go spéir'
+HYP: 'ahsearcirsnsrarnararnarsnairaiearisea'
+{'eval_loss': inf, 'eval_wer': 99.8317469474089, 'eval_runtime': 81.0061, 'eval_samples_per_second': 10.394, 'eval_steps_per_second': 2.605, 'epoch': 7.0}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 693/1188 [48:02<26:51,  3.26s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.5516, 'grad_norm': 0.8708838820457458, 'learning_rate': 2.4746963562753038e-05, 'epoch': 7.07}
+{'loss': 2.558, 'grad_norm': 1.3955224752426147, 'learning_rate': 2.424089068825911e-05, 'epoch': 7.17}
+{'loss': 2.5586, 'grad_norm': 0.8188163638114929, 'learning_rate': 2.3734817813765184e-05, 'epoch': 7.27}
+{'loss': 2.5268, 'grad_norm': 0.5768524408340454, 'learning_rate': 2.3228744939271258e-05, 'epoch': 7.37}
+{'loss': 2.5604, 'grad_norm': 0.7042033672332764, 'learning_rate': 2.2722672064777328e-05, 'epoch': 7.47}
+{'loss': 2.5646, 'grad_norm': 0.695115864276886, 'learning_rate': 2.22165991902834e-05, 'epoch': 7.58}
+{'loss': 2.5487, 'grad_norm': 0.6141912937164307, 'learning_rate': 2.1710526315789474e-05, 'epoch': 7.68}
+{'loss': 2.5293, 'grad_norm': 0.6928709745407104, 'learning_rate': 2.1204453441295548e-05, 'epoch': 7.78}
+{'loss': 2.5352, 'grad_norm': 0.6943873167037964, 'learning_rate': 2.069838056680162e-05, 'epoch': 7.88}
+{'loss': 2.53, 'grad_norm': 0.5421974658966064, 'learning_rate': 2.0192307692307694e-05, 'epoch': 7.98}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 792/1188 [53:30<19:43,  2.99s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:17<00:00,  4.05it/s]
+REF: 'i gcaitheamh na hoíche rineadh idir agus cóip a dtugtar dunlap broadsides orthu anois'
+HYP: 'erb achrar scaársa sra s'
+--- Eval sample ---
+REF: 'i dtreo dheireadh na meánaoise dfhás a stíl féin i measc mhuintir iarthar na heorpa agus bhí sé seo ar chean de na forbairtí ba mhó ag an am ba é a dtaithí ar na crosáidí a thug ar dhaoine cnaipí a úsáid le héadaigh a cheangal'
+HYP: 'raranseshrnasrirm rshras ísashrnsfr snriachrsíraears ir í'
+--- Eval sample ---
+REF: 'tá sé níos tanaí faoin maria agus níos tibhe faoi na hardchríocha'
+HYP: 'shsanishrmara srarn ar ra'
+{'eval_loss': inf, 'eval_wer': 99.78848187674262, 'eval_runtime': 81.2595, 'eval_samples_per_second': 10.362, 'eval_steps_per_second': 2.597, 'epoch': 8.0}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 792/1188 [54:51<19:43,  2.99s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.5213, 'grad_norm': 1.0173842906951904, 'learning_rate': 1.9686234817813767e-05, 'epoch': 8.08}
+{'loss': 2.5188, 'grad_norm': 0.8249896764755249, 'learning_rate': 1.9180161943319837e-05, 'epoch': 8.18}
+{'loss': 2.5431, 'grad_norm': 0.8082518577575684, 'learning_rate': 1.867408906882591e-05, 'epoch': 8.28}
+{'loss': 2.5253, 'grad_norm': 0.7861992716789246, 'learning_rate': 1.8168016194331984e-05, 'epoch': 8.38}
+{'loss': 2.5147, 'grad_norm': 0.6298303008079529, 'learning_rate': 1.7661943319838057e-05, 'epoch': 8.48}
+{'loss': 2.5224, 'grad_norm': 1.1233487129211426, 'learning_rate': 1.715587044534413e-05, 'epoch': 8.59}
+{'loss': 2.5363, 'grad_norm': 1.4877865314483643, 'learning_rate': 1.6649797570850204e-05, 'epoch': 8.69}
+{'loss': 2.4895, 'grad_norm': 0.7477644085884094, 'learning_rate': 1.6143724696356277e-05, 'epoch': 8.79}
+{'loss': 2.5096, 'grad_norm': 0.5632696747779846, 'learning_rate': 1.5637651821862347e-05, 'epoch': 8.89}
+{'loss': 2.4903, 'grad_norm': 1.8028870820999146, 'learning_rate': 1.5131578947368422e-05, 'epoch': 8.99}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 891/1188 [1:00:22<16:23,  3.31s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:16<00:00,  4.01it/s]
+REF: 'thosaigh cúltúir agus treibheana na gcianaoiseana ar a gcoimeád le go mbeadh baine fionadh feoil agus craicne ar fáil go héasca dóibh'
+HYP: 's carasfranansemnara hnséúnrsranshasiasararcs a s'
+--- Eval sample ---
+REF: 'an mheánaois ard an tainm coitianta ar an tréimhse sin de stair na heorpa sna ú ú agus ú haoiseana ad nuair a tharla na himeachtaí i dtrácht'
+HYP: 'amasar astarasarseanushrshrsaúrshshsean íilacú síhshn lma ralercha he'
+--- Eval sample ---
+REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágan gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
+HYP: 'niscsalshararcrmosbrshúrbreicar eacs'
+{'eval_loss': inf, 'eval_wer': 99.72598788578021, 'eval_runtime': 81.2902, 'eval_samples_per_second': 10.358, 'eval_steps_per_second': 2.596, 'epoch': 9.0}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 891/1188 [1:01:43<16:23,  3.31s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.5237, 'grad_norm': 0.8591529726982117, 'learning_rate': 1.4625506072874495e-05, 'epoch': 9.09}
+{'loss': 2.4828, 'grad_norm': 0.8993223905563354, 'learning_rate': 1.4119433198380565e-05, 'epoch': 9.19}
+{'loss': 2.5051, 'grad_norm': 2.284900665283203, 'learning_rate': 1.361336032388664e-05, 'epoch': 9.29}
+{'loss': 2.5001, 'grad_norm': 0.9382166266441345, 'learning_rate': 1.3107287449392714e-05, 'epoch': 9.39}
+{'loss': 2.5065, 'grad_norm': 0.772426187992096, 'learning_rate': 1.2601214574898787e-05, 'epoch': 9.49}
+{'loss': 2.4917, 'grad_norm': 0.7406206727027893, 'learning_rate': 1.2095141700404859e-05, 'epoch': 9.6}
+{'loss': 2.5082, 'grad_norm': 0.7010164260864258, 'learning_rate': 1.1589068825910932e-05, 'epoch': 9.7}
+{'loss': 2.4837, 'grad_norm': 0.7093775272369385, 'learning_rate': 1.1082995951417005e-05, 'epoch': 9.8}
+{'loss': 2.483, 'grad_norm': 0.6807972192764282, 'learning_rate': 1.0576923076923077e-05, 'epoch': 9.9}
+{'loss': 2.488, 'grad_norm': 1.2380914688110352, 'learning_rate': 1.0070850202429152e-05, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 990/1188 [1:07:13<11:05,  3.36s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:17<00:00,  4.12it/s]
+REF: 'is féidir le húsáid chuí na mblagana cur ar chumas mac léin a scileana anailíseacha agus criticiúla a fheabhsú trí fhreagairt ghníomhach a thabhairt dábhair idirlín is féidir le mic léin a seasamh féin a léiriú i gcomhthéacs scríbhiní daoine eile chomh maith lena ndearcthaí féin ar ábhair áirithe a leagan amach oravec'
+HYP: 'sfhdúlsl schirlhnacrsmlshenanseagscrhúishfrsfrasararshradn sfriúiamseasts rnrniucascbneman nahnararleamrber s'
+--- Eval sample ---
+REF: 'tiús cm atá sa screamh ar an taobh is gaire dúin agus tiús km atá ar an taobh thal'
+HYP: 'sisartsha nalrateshr arahahar g sfris emnaeatr'
+--- Eval sample ---
+REF: 'le lin an troda ar son an neamhspleáchais a deagraigh gluaiseacht mau bhailigh slua go síochánta sa bhaile ach maraíodh an taoiseach mór tupua tamasese lealofi i mar thoradh air sin'
+HYP: 'dl dranslslananasarismlslhg san sacrigan secnr a nmrisimrs'
+{'eval_loss': inf, 'eval_wer': 99.67310835496586, 'eval_runtime': 81.4284, 'eval_samples_per_second': 10.34, 'eval_steps_per_second': 2.591, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 990/1188 [1:08:34<11:05,  3.36s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.4832, 'grad_norm': 0.8436731696128845, 'learning_rate': 9.564777327935223e-06, 'epoch': 10.1}
+{'loss': 2.4858, 'grad_norm': 0.6450490355491638, 'learning_rate': 9.058704453441295e-06, 'epoch': 10.2}
+{'loss': 2.4698, 'grad_norm': 0.575055718421936, 'learning_rate': 8.552631578947368e-06, 'epoch': 10.3}
+{'loss': 2.5031, 'grad_norm': 0.8516102433204651, 'learning_rate': 8.046558704453442e-06, 'epoch': 10.4}
+{'loss': 2.4846, 'grad_norm': 0.6840178966522217, 'learning_rate': 7.540485829959515e-06, 'epoch': 10.51}
+{'loss': 2.4938, 'grad_norm': 0.5532779097557068, 'learning_rate': 7.034412955465587e-06, 'epoch': 10.61}
+{'loss': 2.4922, 'grad_norm': 0.6097998023033142, 'learning_rate': 6.528340080971661e-06, 'epoch': 10.71}
+{'loss': 2.4942, 'grad_norm': 0.6506494283676147, 'learning_rate': 6.022267206477733e-06, 'epoch': 10.81}
+{'loss': 2.4684, 'grad_norm': 0.8530112504959106, 'learning_rate': 5.5161943319838056e-06, 'epoch': 10.91}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1089/1188 [1:13:58<05:14,  3.18s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:17<00:00,  4.03it/s]
+REF: 'ar an lúnasa rine na comhghuailithe ionradh ar dheisceart na fraince ionradh ar tugadh oibríocht dragúin air'
+HYP: 'inhrimsnm ds hearanaciserérnescrtsfradhrdhghreataea'
+--- Eval sample ---
+REF: 'níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt dfhocail dhranacha bhéicthe'
+HYP: 'ihrasrcslhrar rateiscslrschra baie'
+--- Eval sample ---
+REF: 'an tseachtain seo caite dfhógair meti gur chuir aple iad ar an eolas faoi eachtra róthéimh bhreise ar a ghlaoigh an comhlacht neamhthromchúiseach'
+HYP: 'a satstshgrnrscriderls erar tearabras rsarar líeichórsrercish'
+{'eval_loss': inf, 'eval_wer': 99.64426497452168, 'eval_runtime': 81.1196, 'eval_samples_per_second': 10.38, 'eval_steps_per_second': 2.601, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1089/1188 [1:15:19<05:14,  3.18s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.4817, 'grad_norm': 0.7647225856781006, 'learning_rate': 5.010121457489879e-06, 'epoch': 11.01}
+{'loss': 2.4656, 'grad_norm': 0.8105661869049072, 'learning_rate': 4.504048582995952e-06, 'epoch': 11.11}
+{'loss': 2.4799, 'grad_norm': 0.6449586153030396, 'learning_rate': 3.997975708502025e-06, 'epoch': 11.21}
+{'loss': 2.4792, 'grad_norm': 0.6804660558700562, 'learning_rate': 3.4919028340080975e-06, 'epoch': 11.31}
+{'loss': 2.4782, 'grad_norm': 0.796899139881134, 'learning_rate': 2.9858299595141704e-06, 'epoch': 11.41}
+{'loss': 2.4825, 'grad_norm': 0.8106482625007629, 'learning_rate': 2.4797570850202433e-06, 'epoch': 11.52}
+{'loss': 2.4973, 'grad_norm': 0.5559719204902649, 'learning_rate': 1.9736842105263157e-06, 'epoch': 11.62}
+{'loss': 2.4889, 'grad_norm': 0.5865815877914429, 'learning_rate': 1.4676113360323886e-06, 'epoch': 11.72}
+{'loss': 2.4857, 'grad_norm': 0.7947084307670593, 'learning_rate': 9.615384615384617e-07, 'epoch': 11.82}
+{'loss': 2.4757, 'grad_norm': 0.6534236669540405, 'learning_rate': 4.554655870445344e-07, 'epoch': 11.92}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:20:47<00:00,  3.27s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:16<00:00,  4.05it/s]
+REF: 'ní gá a rá má tá teanga rómánsach ar eolas agat beidh sé níos fusa ort an phortaingéilis a fhoghlaim'
+HYP: 'nharah searirstarlsarhisarshr seds'
+--- Eval sample ---
+REF: 'obair theoiriciúil ba mhó a rineadh ach scríobhadh an clár chun breathnóireachtaí a rineadh ar réaltchóras sagitarius a ionsamhlú'
+HYP: 'r r shnmóagraníeasrishacrcernirasíaigrnrcrsea ai ar saínstal'
+--- Eval sample ---
+REF: 'cé nach fios go cinte cé a scríobh é tá a fhios again go ndearnadh an doiciméad páir mhór atá ¾ orlach faoi ½ orlach a roladh suas lena stóráil go luath ina shaol'
+HYP: 'thénmhrs ugcnsh shrslhnctn sarea sfreinsfteaushtela slsóshol s'
+{'eval_loss': inf, 'eval_wer': 99.65868666474378, 'eval_runtime': 81.7766, 'eval_samples_per_second': 10.296, 'eval_steps_per_second': 2.58, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:22:09<00:00,  3.27s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'train_runtime': 4929.6067, 'train_samples_per_second': 7.702, 'train_steps_per_second': 0.241, 'train_loss': 3.1747707493778834, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:22:09<00:00,  4.15s/it]

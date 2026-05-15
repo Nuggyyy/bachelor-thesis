@@ -16,7 +16,7 @@ import random
 logging.basicConfig(level=logging.DEBUG)
 # our env variables
 MODEL_NAME = "Qwen/Qwen3-ASR-0.6B"
-OUTPUT_DIR = "./exp/test"
+OUTPUT_DIR = "./exp/shona"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
@@ -43,8 +43,8 @@ except Exception:
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "jv_id", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "jv_id", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "sn_zw", split="train+validation")
+ds["test"] = load_dataset(DATASET_NAME, "sn_zw", split="test")
 
 def build_prefix_messages(prompt: str, audio_array):
     return [
@@ -73,7 +73,7 @@ def prepare_dataset(example):
 
     #return example
     # Instruct the model to preserve punctuation and capitalization in transcriptions
-    prompt = "language Javanese."
+    prompt = "language Shona."
     dummy_audio = None
     prefix_msg = build_prefix_messages(prompt, dummy_audio)
     prefix_text = processor.apply_chat_template([prefix_msg], add_generation_prompt=True, tokenize=False)[0]
@@ -197,10 +197,10 @@ def compute_metrics(pred):
 
     # Decode
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
-    pred_str = [re.sub(r"(?:system)?\n?(?:language )?(?:Javanese)?\.?\n?(?:user)?\n?\n?(?:assistant)?\n?", "", pred_str_sample) for pred_str_sample in pred_str]
+    pred_str = [re.sub(r"(?:system)?\n?(?:language )?(?:Shona)?\.?\n?(?:user)?\n?\n?(?:assistant)?\n?", "", pred_str_sample) for pred_str_sample in pred_str]
 
     label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
-    label_str = [re.sub(r"(?:system)?\n?(?:language )?(?:Javanese)?\.?\n?(?:user)?\n?\n?(?:assistant)?\n?", "", label_str_sample) for label_str_sample in label_str]
+    label_str = [re.sub(r"(?:system)?\n?(?:language )?(?:Shona)?\.?\n?(?:user)?\n?\n?(?:assistant)?\n?", "", label_str_sample) for label_str_sample in label_str]
 
     index = random.randint(0, len(pred_str) - 3)
     # Print a few examples for debugging (helps explain huge WERs)
@@ -273,7 +273,6 @@ model.generation_config.length_penalty = 1.0
 lora_config = LoraConfig(
     # increase capacity of LoRA for better adaptability to new language
     r=32,
-    lora_alpha=32,
     target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "lm_head"],
     lora_dropout=0.1,
     bias="none",

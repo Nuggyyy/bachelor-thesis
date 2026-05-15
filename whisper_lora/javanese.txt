@@ -1,0 +1,266 @@
+^[[AParameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
+Map: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3346/3346 [00:20<00:00, 165.57 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 728/728 [00:04<00:00, 178.32 examples/s]
+Filter: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3346/3346 [00:00<00:00, 1005238.96 examples/s]
+trainable params: 7,077,888 || all params: 248,812,800 || trainable%: 2.8447
+  0%|                                                                                                                                                                  | 0/1260 [00:00<?, ?it/s]You're using a WhisperTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+                                                                                                                                                                                               --- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [03:59<00:00,  1.14s/it]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dwe dwe sikil kandisisilan sakar dwe ngendok lan maku kangurong sikil buri kodotirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kui bagian sing penting sekok kelas biasanya guru bakal ngewasis wasis wane menyangpangunan sing ora bisod dilipati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan ghawe panganane shoko shrengenge kanti photo synthesis mitwitan uko menei eyou'
+{'eval_loss': 3.636885643005371, 'eval_wer_ortho': 95.70916953848233, 'eval_wer': 85.98296199213631, 'eval_runtime': 241.3902, 'eval_samples_per_second': 3.016, 'eval_steps_per_second': 0.754, 'epoch': 0}
+{'loss': 4.2712, 'grad_norm': 6.329289436340332, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 3.6107, 'grad_norm': 5.693230628967285, 'learning_rate': 2.25e-06, 'epoch': 0.1}
+{'loss': 3.6412, 'grad_norm': 5.103754997253418, 'learning_rate': 4.75e-06, 'epoch': 0.19}
+{'loss': 3.5316, 'grad_norm': 4.245691776275635, 'learning_rate': 7.25e-06, 'epoch': 0.29}
+{'loss': 3.2792, 'grad_norm': 3.543961524963379, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.38}
+{'loss': 3.1368, 'grad_norm': 3.788849353790283, 'learning_rate': 1.225e-05, 'epoch': 0.48}
+{'loss': 2.8905, 'grad_norm': 1.376532793045044, 'learning_rate': 1.475e-05, 'epoch': 0.57}
+{'loss': 2.7576, 'grad_norm': 1.0376336574554443, 'learning_rate': 1.725e-05, 'epoch': 0.67}
+{'loss': 2.5785, 'grad_norm': 1.081392526626587, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.77}
+{'loss': 2.3129, 'grad_norm': 0.9680135846138, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.86}
+{'loss': 2.1473, 'grad_norm': 0.8127886056900024, 'learning_rate': 2.4750000000000002e-05, 'epoch': 0.96}
+  8%|████████████▋                                                                                                                                           | 105/1260 [07:18<28:23,  1.48s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [05:45<00:00,  1.84s/it]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'ديوين ديوين سيكيل كانت تسيسي لنسكار ديوين ندغلن مققو قنقرن سيكيل نبوري كنا ترك'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'කලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලකලක'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'අප ද නතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතතත'
+{'eval_loss': 2.0052402019500732, 'eval_wer_ortho': 110.48668357641091, 'eval_wer': 109.28510835197038, 'eval_runtime': 348.3663, 'eval_samples_per_second': 2.09, 'eval_steps_per_second': 0.522, 'epoch': 1.0}
+{'loss': 2.0026, 'grad_norm': 0.737795889377594, 'learning_rate': 2.725e-05, 'epoch': 1.05}
+{'loss': 1.8386, 'grad_norm': 0.6938018202781677, 'learning_rate': 2.975e-05, 'epoch': 1.14}
+{'loss': 1.7701, 'grad_norm': 0.7418079376220703, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.24}
+{'loss': 1.6417, 'grad_norm': 0.8001086711883545, 'learning_rate': 3.475e-05, 'epoch': 1.33}
+{'loss': 1.5597, 'grad_norm': 0.7602655291557312, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.43}
+{'loss': 1.4882, 'grad_norm': 0.831057608127594, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.53}
+{'loss': 1.4596, 'grad_norm': 0.7460864186286926, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.62}
+{'loss': 1.4131, 'grad_norm': 0.8041414618492126, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.72}
+{'loss': 1.369, 'grad_norm': 0.888109564781189, 'learning_rate': 4.7249999999999997e-05, 'epoch': 1.81}
+{'loss': 1.3768, 'grad_norm': 0.8579477667808533, 'learning_rate': 4.975e-05, 'epoch': 1.91}
+{'loss': 1.3105, 'grad_norm': 2.2838802337646484, 'learning_rate': 4.9575471698113206e-05, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 210/1260 [16:24<25:22,  1.45s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:42<00:00,  1.12it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dhewe ndhewe sikil kanthi sisik lan sakhar dhewe nendhok lan magu kangurong sikil mburi ngalutirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sakolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal ngewasis wasis wane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mithwitan ghawe panganane saka srengenge kanthi fotosynthesis mithwitan uga menei eyo'
+{'eval_loss': 1.3423395156860352, 'eval_wer_ortho': 50.416146483562216, 'eval_wer': 49.73757753391044, 'eval_runtime': 163.7762, 'eval_samples_per_second': 4.445, 'eval_steps_per_second': 1.111, 'epoch': 2.0}
+{'loss': 1.2624, 'grad_norm': 0.8224167227745056, 'learning_rate': 4.910377358490566e-05, 'epoch': 2.1}
+{'loss': 1.2281, 'grad_norm': 1.0708816051483154, 'learning_rate': 4.8632075471698116e-05, 'epoch': 2.19}
+{'loss': 1.2391, 'grad_norm': 0.9450114965438843, 'learning_rate': 4.8160377358490565e-05, 'epoch': 2.29}
+{'loss': 1.1793, 'grad_norm': 0.8930855989456177, 'learning_rate': 4.768867924528302e-05, 'epoch': 2.38}
+{'loss': 1.1466, 'grad_norm': 1.964250087738037, 'learning_rate': 4.721698113207547e-05, 'epoch': 2.48}
+{'loss': 1.1282, 'grad_norm': 0.9677327871322632, 'learning_rate': 4.6745283018867925e-05, 'epoch': 2.57}
+{'loss': 1.1454, 'grad_norm': 0.924888014793396, 'learning_rate': 4.627358490566038e-05, 'epoch': 2.67}
+{'loss': 1.0874, 'grad_norm': 1.017991304397583, 'learning_rate': 4.580188679245283e-05, 'epoch': 2.77}
+{'loss': 1.0754, 'grad_norm': 1.1132270097732544, 'learning_rate': 4.5330188679245284e-05, 'epoch': 2.86}
+{'loss': 1.1057, 'grad_norm': 1.0950223207473755, 'learning_rate': 4.485849056603774e-05, 'epoch': 2.96}
+ 25%|██████████████████████████████████████                                                                                                                  | 315/1260 [22:24<21:54,  1.39s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:45<00:00,  1.21it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dhewe ndhewe sikil kanthi sisik lan sakhar dhewe ngendhok lan magu kangkurong sikil mburi nggotirik'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sakolah lapangan kuwi bagian sing penting saka kelas biyasane guru bakal nggawasis wasis wane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan ghawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eyo'
+{'eval_loss': 1.1700345277786255, 'eval_wer_ortho': 44.66383925467566, 'eval_wer': 44.22475879874983, 'eval_runtime': 166.3861, 'eval_samples_per_second': 4.375, 'eval_steps_per_second': 1.094, 'epoch': 3.0}
+{'loss': 1.0062, 'grad_norm': 5.422328948974609, 'learning_rate': 4.438679245283019e-05, 'epoch': 3.05}
+{'loss': 1.0123, 'grad_norm': 1.1099557876586914, 'learning_rate': 4.3915094339622644e-05, 'epoch': 3.14}
+{'loss': 1.0394, 'grad_norm': 0.8631682395935059, 'learning_rate': 4.344339622641509e-05, 'epoch': 3.24}
+{'loss': 1.0372, 'grad_norm': 16.55410385131836, 'learning_rate': 4.297169811320755e-05, 'epoch': 3.33}
+{'loss': 0.9664, 'grad_norm': 0.9093657732009888, 'learning_rate': 4.25e-05, 'epoch': 3.43}
+{'loss': 0.9801, 'grad_norm': 1.5824952125549316, 'learning_rate': 4.202830188679245e-05, 'epoch': 3.53}
+{'loss': 0.9783, 'grad_norm': 1.1511938571929932, 'learning_rate': 4.155660377358491e-05, 'epoch': 3.62}
+{'loss': 0.8966, 'grad_norm': 5.168879985809326, 'learning_rate': 4.108490566037736e-05, 'epoch': 3.72}
+{'loss': 0.8802, 'grad_norm': 1.117202877998352, 'learning_rate': 4.061320754716981e-05, 'epoch': 3.81}
+{'loss': 0.8523, 'grad_norm': 1.1221259832382202, 'learning_rate': 4.014150943396227e-05, 'epoch': 3.91}
+{'loss': 0.7267, 'grad_norm': 2.104297637939453, 'learning_rate': 3.9669811320754715e-05, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 420/1260 [28:28<20:20,  1.45s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:39<00:00,  1.17it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dhewewe dhewe sikil kanthi sisik lan sakar dhewe ingendhok lan maku kanggurong sikil mburi nggotirik'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawasis wasis wane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitvitan gawe panganane saka srengenge kanthi fotosynthesis mitvitan uga menei yo'
+{'eval_loss': 0.8419123291969299, 'eval_wer_ortho': 39.924346629986246, 'eval_wer': 39.581382907583254, 'eval_runtime': 160.8721, 'eval_samples_per_second': 4.525, 'eval_steps_per_second': 1.131, 'epoch': 4.0}
+{'loss': 0.6671, 'grad_norm': 0.9902578592300415, 'learning_rate': 3.919811320754717e-05, 'epoch': 4.1}
+{'loss': 0.6249, 'grad_norm': 1.1954411268234253, 'learning_rate': 3.8726415094339626e-05, 'epoch': 4.19}
+{'loss': 0.6267, 'grad_norm': 1.0193901062011719, 'learning_rate': 3.8254716981132075e-05, 'epoch': 4.29}
+{'loss': 0.6452, 'grad_norm': 0.9799605011940002, 'learning_rate': 3.778301886792453e-05, 'epoch': 4.38}
+{'loss': 0.606, 'grad_norm': 0.9695430994033813, 'learning_rate': 3.7311320754716986e-05, 'epoch': 4.48}
+{'loss': 0.5994, 'grad_norm': 1.0151923894882202, 'learning_rate': 3.6839622641509434e-05, 'epoch': 4.57}
+{'loss': 0.6192, 'grad_norm': 1.0684120655059814, 'learning_rate': 3.636792452830189e-05, 'epoch': 4.67}
+{'loss': 0.6144, 'grad_norm': 1.9323495626449585, 'learning_rate': 3.589622641509434e-05, 'epoch': 4.77}
+{'loss': 0.6193, 'grad_norm': 1.123889684677124, 'learning_rate': 3.5424528301886794e-05, 'epoch': 4.86}
+{'loss': 0.6766, 'grad_norm': 1.1348594427108765, 'learning_rate': 3.495283018867925e-05, 'epoch': 4.96}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 525/1260 [34:26<17:09,  1.40s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:35<00:00,  1.24it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan magu kanggurong sikil ngburi karotirik'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawa sis wasis wane menyang panggonan sing ora bisa dilewati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eyo'
+{'eval_loss': 0.8082014918327332, 'eval_wer_ortho': 37.472283813747225, 'eval_wer': 36.666213829642714, 'eval_runtime': 156.4425, 'eval_samples_per_second': 4.653, 'eval_steps_per_second': 1.163, 'epoch': 5.0}
+{'loss': 0.6656, 'grad_norm': 2.3934402465820312, 'learning_rate': 3.44811320754717e-05, 'epoch': 5.05}
+{'loss': 0.7068, 'grad_norm': 5.172479152679443, 'learning_rate': 3.400943396226415e-05, 'epoch': 5.14}
+{'loss': 0.9057, 'grad_norm': 41.66191864013672, 'learning_rate': 3.353773584905661e-05, 'epoch': 5.24}
+{'loss': 1.2651, 'grad_norm': 10.365655899047852, 'learning_rate': 3.306603773584906e-05, 'epoch': 5.33}
+{'loss': 1.0842, 'grad_norm': 9.537405967712402, 'learning_rate': 3.259433962264151e-05, 'epoch': 5.43}
+{'loss': 0.9722, 'grad_norm': 9.05313491821289, 'learning_rate': 3.212264150943397e-05, 'epoch': 5.53}
+{'loss': 1.012, 'grad_norm': 18.898086547851562, 'learning_rate': 3.165094339622642e-05, 'epoch': 5.62}
+{'loss': 0.8018, 'grad_norm': 6.436898708343506, 'learning_rate': 3.117924528301887e-05, 'epoch': 5.72}
+{'loss': 0.7308, 'grad_norm': 3.897974729537964, 'learning_rate': 3.070754716981132e-05, 'epoch': 5.81}
+{'loss': 0.8687, 'grad_norm': 12.628302574157715, 'learning_rate': 3.0235849056603776e-05, 'epoch': 5.91}
+{'loss': 0.8309, 'grad_norm': 7.02075719833374, 'learning_rate': 2.976415094339623e-05, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 630/1260 [40:22<15:22,  1.46s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:35<00:00,  1.17it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke ndhewe sikil kanthi sisik lan sakar dheweke ngendhok lan magu kanggo singil nbuuri ngertirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawa siswasis wane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 1.0068408250808716, 'eval_wer_ortho': 36.08446622041267, 'eval_wer': 35.400149081791696, 'eval_runtime': 156.4563, 'eval_samples_per_second': 4.653, 'eval_steps_per_second': 1.163, 'epoch': 6.0}
+{'loss': 0.754, 'grad_norm': 3.593411445617676, 'learning_rate': 2.9292452830188684e-05, 'epoch': 6.1}
+{'loss': 0.8001, 'grad_norm': 4.3131537437438965, 'learning_rate': 2.8820754716981136e-05, 'epoch': 6.19}
+{'loss': 1.0633, 'grad_norm': 36.70286178588867, 'learning_rate': 2.8349056603773588e-05, 'epoch': 6.29}
+{'loss': 0.9349, 'grad_norm': 3.1236069202423096, 'learning_rate': 2.787735849056604e-05, 'epoch': 6.38}
+{'loss': 0.8291, 'grad_norm': 5.034233093261719, 'learning_rate': 2.7405660377358495e-05, 'epoch': 6.48}
+{'loss': 1.0354, 'grad_norm': 13.850072860717773, 'learning_rate': 2.6933962264150947e-05, 'epoch': 6.57}
+{'loss': 1.1165, 'grad_norm': 98.1292724609375, 'learning_rate': 2.64622641509434e-05, 'epoch': 6.67}
+{'loss': 1.0192, 'grad_norm': 9.97669506072998, 'learning_rate': 2.599056603773585e-05, 'epoch': 6.77}
+{'loss': 0.878, 'grad_norm': 10.102581977844238, 'learning_rate': 2.5518867924528307e-05, 'epoch': 6.86}
+{'loss': 0.7795, 'grad_norm': 8.003766059875488, 'learning_rate': 2.504716981132076e-05, 'epoch': 6.96}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 735/1260 [46:19<12:50,  1.47s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:33<00:00,  1.21it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan maku kanggo sikil nburi nggotirik'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawasis wasis wane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 0.866371214389801, 'eval_wer_ortho': 35.78516411074874, 'eval_wer': 35.085807681830566, 'eval_runtime': 155.0614, 'eval_samples_per_second': 4.695, 'eval_steps_per_second': 1.174, 'epoch': 7.0}
+{'loss': 0.6949, 'grad_norm': 3.5126700401306152, 'learning_rate': 2.4575471698113208e-05, 'epoch': 7.05}
+{'loss': 0.6964, 'grad_norm': 7.093265533447266, 'learning_rate': 2.4103773584905663e-05, 'epoch': 7.14}
+{'loss': 0.7097, 'grad_norm': 10.588735580444336, 'learning_rate': 2.3632075471698115e-05, 'epoch': 7.24}
+{'loss': 0.8246, 'grad_norm': 59.053123474121094, 'learning_rate': 2.3160377358490567e-05, 'epoch': 7.33}
+{'loss': 0.8496, 'grad_norm': 2.881243944168091, 'learning_rate': 2.268867924528302e-05, 'epoch': 7.43}
+{'loss': 0.7997, 'grad_norm': 42.174312591552734, 'learning_rate': 2.2216981132075475e-05, 'epoch': 7.53}
+{'loss': 0.7215, 'grad_norm': 48.53419494628906, 'learning_rate': 2.1745283018867927e-05, 'epoch': 7.62}
+{'loss': 0.6977, 'grad_norm': 56.920658111572266, 'learning_rate': 2.127358490566038e-05, 'epoch': 7.72}
+{'loss': 0.7164, 'grad_norm': 1.1412001848220825, 'learning_rate': 2.080188679245283e-05, 'epoch': 7.81}
+{'loss': 0.6732, 'grad_norm': 5.196043014526367, 'learning_rate': 2.0330188679245286e-05, 'epoch': 7.91}
+{'loss': 0.7412, 'grad_norm': 27.775188446044922, 'learning_rate': 1.9858490566037738e-05, 'epoch': 8.0}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 840/1260 [52:14<09:58,  1.43s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:36<00:00,  1.19it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan magu kanggo singil nburi kertirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawa siswasiswane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 0.9458981156349182, 'eval_wer_ortho': 35.421016005567154, 'eval_wer': 34.75884683699959, 'eval_runtime': 157.5058, 'eval_samples_per_second': 4.622, 'eval_steps_per_second': 1.156, 'epoch': 8.0}
+{'loss': 0.7955, 'grad_norm': 6.451801300048828, 'learning_rate': 1.938679245283019e-05, 'epoch': 8.1}
+{'loss': 0.7034, 'grad_norm': 4.449272632598877, 'learning_rate': 1.8915094339622642e-05, 'epoch': 8.19}
+{'loss': 0.7004, 'grad_norm': 1.1288689374923706, 'learning_rate': 1.8443396226415094e-05, 'epoch': 8.29}
+{'loss': 0.6801, 'grad_norm': 2.520146369934082, 'learning_rate': 1.7971698113207546e-05, 'epoch': 8.38}
+{'loss': 0.7359, 'grad_norm': 5.812744140625, 'learning_rate': 1.75e-05, 'epoch': 8.48}
+{'loss': 0.6729, 'grad_norm': 2.5633738040924072, 'learning_rate': 1.7028301886792454e-05, 'epoch': 8.57}
+{'loss': 0.6852, 'grad_norm': 1.1231671571731567, 'learning_rate': 1.6556603773584906e-05, 'epoch': 8.67}
+{'loss': 0.6781, 'grad_norm': 7.682662010192871, 'learning_rate': 1.6084905660377358e-05, 'epoch': 8.77}
+{'loss': 0.6783, 'grad_norm': 14.427959442138672, 'learning_rate': 1.561320754716981e-05, 'epoch': 8.86}
+{'loss': 0.6937, 'grad_norm': 2.7392241954803467, 'learning_rate': 1.5141509433962264e-05, 'epoch': 8.96}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 945/1260 [58:12<07:44,  1.47s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:36<00:00,  1.15it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan maku kanggo singil mburi ngertirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal ngewasis wasis wane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 0.8459751009941101, 'eval_wer_ortho': 34.779305104648756, 'eval_wer': 34.18090588554381, 'eval_runtime': 157.5726, 'eval_samples_per_second': 4.62, 'eval_steps_per_second': 1.155, 'epoch': 9.0}
+{'loss': 0.7096, 'grad_norm': 1.3930888175964355, 'learning_rate': 1.4669811320754717e-05, 'epoch': 9.05}
+{'loss': 0.6801, 'grad_norm': 3.2548301219940186, 'learning_rate': 1.419811320754717e-05, 'epoch': 9.14}
+{'loss': 0.7299, 'grad_norm': 3.0586042404174805, 'learning_rate': 1.3726415094339623e-05, 'epoch': 9.24}
+{'loss': 0.7046, 'grad_norm': 4.163199424743652, 'learning_rate': 1.3254716981132075e-05, 'epoch': 9.33}
+{'loss': 0.6873, 'grad_norm': 64.724365234375, 'learning_rate': 1.2783018867924529e-05, 'epoch': 9.43}
+{'loss': 0.696, 'grad_norm': 3.6856746673583984, 'learning_rate': 1.2311320754716981e-05, 'epoch': 9.53}
+{'loss': 0.6575, 'grad_norm': 2.9519340991973877, 'learning_rate': 1.1839622641509435e-05, 'epoch': 9.62}
+{'loss': 0.6718, 'grad_norm': 1.2372156381607056, 'learning_rate': 1.1367924528301887e-05, 'epoch': 9.72}
+{'loss': 0.6477, 'grad_norm': 1.3684935569763184, 'learning_rate': 1.089622641509434e-05, 'epoch': 9.81}
+{'loss': 0.6703, 'grad_norm': 15.979795455932617, 'learning_rate': 1.0424528301886793e-05, 'epoch': 9.91}
+{'loss': 0.6609, 'grad_norm': 82.02461242675781, 'learning_rate': 9.952830188679246e-06, 'epoch': 10.0}
+ 83%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                        | 1050/1260 [1:04:12<05:02,  1.44s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:38<00:00,  1.17it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan maku kanggo singil mburi kertirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawa siswasiswane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 0.8267552256584167, 'eval_wer_ortho': 34.43960450805504, 'eval_wer': 33.7492371329762, 'eval_runtime': 159.8756, 'eval_samples_per_second': 4.554, 'eval_steps_per_second': 1.138, 'epoch': 10.0}
+{'loss': 0.6638, 'grad_norm': 3.466296672821045, 'learning_rate': 9.481132075471698e-06, 'epoch': 10.1}
+{'loss': 0.6497, 'grad_norm': 6.219982147216797, 'learning_rate': 9.00943396226415e-06, 'epoch': 10.19}
+{'loss': 0.6498, 'grad_norm': 1.036503553390503, 'learning_rate': 8.537735849056604e-06, 'epoch': 10.29}
+{'loss': 0.6559, 'grad_norm': 1.2720657587051392, 'learning_rate': 8.066037735849056e-06, 'epoch': 10.38}
+{'loss': 0.6724, 'grad_norm': 146.79022216796875, 'learning_rate': 7.594339622641509e-06, 'epoch': 10.48}
+{'loss': 0.6576, 'grad_norm': 3.1306440830230713, 'learning_rate': 7.122641509433962e-06, 'epoch': 10.57}
+{'loss': 0.6301, 'grad_norm': 1.4087313413619995, 'learning_rate': 6.650943396226416e-06, 'epoch': 10.67}
+{'loss': 0.6564, 'grad_norm': 2.535261392593384, 'learning_rate': 6.179245283018869e-06, 'epoch': 10.77}
+{'loss': 0.6702, 'grad_norm': 2.382991075515747, 'learning_rate': 5.7075471698113215e-06, 'epoch': 10.86}
+{'loss': 0.6104, 'grad_norm': 1.8376809358596802, 'learning_rate': 5.235849056603774e-06, 'epoch': 10.96}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1155/1260 [1:10:16<02:38,  1.51s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:40<00:00,  1.53it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan maku kanggo singil nbuuri kertirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawa siswasiswane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 0.818885862827301, 'eval_wer_ortho': 34.3717549325026, 'eval_wer': 33.67055947854427, 'eval_runtime': 161.7628, 'eval_samples_per_second': 4.5, 'eval_steps_per_second': 1.125, 'epoch': 11.0}
+{'loss': 0.6355, 'grad_norm': 2.0629327297210693, 'learning_rate': 4.764150943396227e-06, 'epoch': 11.05}
+{'loss': 0.6084, 'grad_norm': 1.2067822217941284, 'learning_rate': 4.292452830188679e-06, 'epoch': 11.14}
+{'loss': 0.6123, 'grad_norm': 1.1180980205535889, 'learning_rate': 3.820754716981132e-06, 'epoch': 11.24}
+{'loss': 0.6082, 'grad_norm': 17.791038513183594, 'learning_rate': 3.349056603773585e-06, 'epoch': 11.33}
+{'loss': 0.6202, 'grad_norm': 2.016275405883789, 'learning_rate': 2.877358490566038e-06, 'epoch': 11.43}
+{'loss': 0.6383, 'grad_norm': 2.888176202774048, 'learning_rate': 2.405660377358491e-06, 'epoch': 11.53}
+{'loss': 0.646, 'grad_norm': 1.7228695154190063, 'learning_rate': 1.9339622641509433e-06, 'epoch': 11.62}
+{'loss': 0.6874, 'grad_norm': 11.770764350891113, 'learning_rate': 1.4622641509433962e-06, 'epoch': 11.72}
+{'loss': 0.6712, 'grad_norm': 3.7149577140808105, 'learning_rate': 9.90566037735849e-07, 'epoch': 11.81}
+{'loss': 0.648, 'grad_norm': 7.156942367553711, 'learning_rate': 5.188679245283019e-07, 'epoch': 11.91}
+{'loss': 0.645, 'grad_norm': 10.328362464904785, 'learning_rate': 4.716981132075472e-08, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1260/1260 [1:16:22<00:00,  1.50s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [02:40<00:00,  1.15it/s]
+REF: 'dheweke duwe sikil kanthi sisik lan cakar dheweke ngendhog lan mlaku nganggo rong sikil mburi kaya t rex'
+HYP: 'dheweke dhewe sikil kanthi sisik lan sakar dheweke ngendhok lan maku kanggo singil nbuuri kertirek'
+--- Eval sample ---
+REF: 'sekolah lapangan kuwi bageyan sing penting saka kelas biyasane guru bakal nggawa siswa siswane menyang panggonan sing ora bisa diliwati bis'
+HYP: 'sekolah lapangan kuwi bagian sing penting saka kelas biasane guru bakal nggawa siswasiswane menyang pangonan sing ora bisa diliwati bis'
+--- Eval sample ---
+REF: 'wit witan gawe panganane saka srengenge kanthi fotosintesis wit witan uga menehi eyup'
+HYP: 'mitwitan gawe panganane saka srengenge kanthi fotosynthesis mitwitan uga menei eo'
+{'eval_loss': 0.8222248554229736, 'eval_wer_ortho': 34.498721757755824, 'eval_wer': 33.776451437873035, 'eval_runtime': 161.2077, 'eval_samples_per_second': 4.516, 'eval_steps_per_second': 1.129, 'epoch': 12.0}
+{'train_runtime': 4743.8649, 'train_samples_per_second': 8.444, 'train_steps_per_second': 0.266, 'train_loss': 1.0373769517928835, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1260/1260 [1:19:03<00:00,  3.76s/it]

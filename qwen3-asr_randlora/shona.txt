@@ -1,0 +1,254 @@
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
+Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
+Map: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2856/2856 [00:17<00:00, 159.99 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 925/925 [00:03<00:00, 256.40 examples/s]
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/tuners/tuners_utils.py:919: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['thinker.lm_head'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+  warnings.warn(
+trainable params: 5,221,632 || all params: 787,647,744 || trainable%: 0.6629
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 151645, 'pad_token_id': 151643}.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+  0%|                                                                                                                                                                  | 0/1080 [00:00<?, ?it/s--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:01<00:00,  4.44it/s]
+REF: 'munyika iyi guta iri rakanyanya kusiyana nemamwe pakuti ndiro rine zvakawanda zvakarerekera kuchiarabic kupfuura zvekuafrica'
+HYP: '以下 <odic needิหม้ ك가I i i�้ taีี ir kanंูู้้์- Shัน--pุoิginiz o rin ngaawaิ-z-zryーiुu ch t--ु-g languageo raso k Arabican** Sh Sh�стьlanguageikaika i gu gututa iri ranyaanya gusianaana neamuwe paut ndir rinini zakaawanda zvarireera kuchirab kurawa shokkoua Africa'
+--- Eval sample ---
+REF: 'hameno kuti keyboard ichasara yava kushandei kana pakava nechimwe chinhu chitsva'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下 <odiccode no noा� t้-biesิişच__라-ुku shan-can---_ van-ิchiimome ッチchinonuâćt Sh Sh_Slanguageen kuti keyboard itaar yaawa kushandeey kanana pawa nechimowe chut titraa'
+--- Eval sample ---
+REF: ''
+HYP: '以下 <odiclanguageured[]{ thatured- �lev anं-new- kov-ma--ang_k gan ni y ** Shัุ put t tี sีีkonंko้ h" tan Sh language-" re r nature Sh- gं n a-ोún g-ี bananิ zosi'
+{'eval_loss': 9.578862190246582, 'eval_wer': 292.14690599905526, 'eval_runtime': 62.7383, 'eval_samples_per_second': 14.744, 'eval_steps_per_second': 3.698, 'epoch': 0}
+  0%|                                                                                                                                                                  | 0/1080 [01:02<?, ?it/s/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{'loss': 43.4797, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 46.5843, 'grad_norm': nan, 'learning_rate': 2.25e-06, 'epoch': 0.11}
+{'loss': 44.7245, 'grad_norm': 351.765625, 'learning_rate': 4.75e-06, 'epoch': 0.22}
+{'loss': 39.7732, 'grad_norm': 357.5165100097656, 'learning_rate': 7.25e-06, 'epoch': 0.34}
+{'loss': 36.2167, 'grad_norm': 294.0782470703125, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.45}
+{'loss': 28.2222, 'grad_norm': 242.35488891601562, 'learning_rate': 1.225e-05, 'epoch': 0.56}
+{'loss': 23.3001, 'grad_norm': 312.50927734375, 'learning_rate': 1.475e-05, 'epoch': 0.67}
+{'loss': 18.2868, 'grad_norm': 430.3768310546875, 'learning_rate': 1.725e-05, 'epoch': 0.78}
+{'loss': 12.2711, 'grad_norm': 375.23822021484375, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.9}
+{'loss': 6.0437, 'grad_norm': 18.572505950927734, 'learning_rate': 2.2250000000000002e-05, 'epoch': 1.0}
+  8%|████████████▊                                                                                                                                            | 90/1080 [05:18<36:21,  2.20s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:03<00:00,  4.30it/s]
+REF: 'uyu mukana wakanakisa wekuona chiedza chinonzi aurora borealis sezvo denga richange rakasviba zvakanyanya kweanenge maawa 24 pazuva'
+HYP: 'ductيChinese zhkum mukana wakanakiisa wek on chiiedza chonzzi orora borealis seod denga rangeraashiviba jvakanyanya kweanenge mava ma24 bazazardwa'
+--- Eval sample ---
+REF: 'mukuru wemapurisa chandra shekhar solanki wakati vapomerwi vakaonekwa mudare vakavhariwa kumeso'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductيChinese zhkukuruwaamaurisa chandra sekash solangi vakakati womeru vakakonekwa mudare vakafh v vumo'
+--- Eval sample ---
+REF: ''
+HYP: 'يChinese zh'
+{'eval_loss': 1.493957757949829, 'eval_wer': 101.38167217760983, 'eval_runtime': 64.1568, 'eval_samples_per_second': 14.418, 'eval_steps_per_second': 3.616, 'epoch': 1.0}
+{'loss': 5.4826, 'grad_norm': 42.63649368286133, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.11}
+{'loss': 4.4177, 'grad_norm': 35.156455993652344, 'learning_rate': 2.725e-05, 'epoch': 1.22}
+{'loss': 4.6984, 'grad_norm': 51.08144760131836, 'learning_rate': 2.975e-05, 'epoch': 1.34}
+{'loss': 3.8364, 'grad_norm': 49.02461242675781, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.45}
+{'loss': 4.0019, 'grad_norm': 36.235599517822266, 'learning_rate': 3.475e-05, 'epoch': 1.56}
+{'loss': 3.5694, 'grad_norm': 44.8906364440918, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.67}
+{'loss': 3.9332, 'grad_norm': 39.08390808105469, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.78}
+{'loss': 4.1032, 'grad_norm': 32.338253021240234, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.9}
+{'loss': 3.5105, 'grad_norm': 10.88945484161377, 'learning_rate': 4.4750000000000004e-05, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 180/1080 [10:39<32:37,  2.17s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:03<00:00,  4.35it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'vakawanda havamaone semadinosaur nechikonzero chekuti zvine minhenga uye zvinokwanisa kubhururuka'
+HYP: 'prenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenevakawanda havamone semadanakikj chkud kvzaaraye zvhuwza kumvaukawawa'
+--- Eval sample ---
+REF: 'vana vakakura vega vanokwanisa kunge vakashungurudzwa kana kushungurudzika vasati vasiiwa kana kutiziwa'
+HYP: 'prenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenevan vakakura vega vanokwanisa kunge vashunguruudzwa kana kushungurudzika kv vvus ki k'
+{'eval_loss': 0.9137139916419983, 'eval_wer': 70.42985356636751, 'eval_runtime': 63.6442, 'eval_samples_per_second': 14.534, 'eval_steps_per_second': 3.645, 'epoch': 2.0}
+{'loss': 2.91, 'grad_norm': 33.95278549194336, 'learning_rate': 4.7249999999999997e-05, 'epoch': 2.11}
+{'loss': 3.7195, 'grad_norm': 38.18197250366211, 'learning_rate': 4.975e-05, 'epoch': 2.22}
+{'loss': 3.4878, 'grad_norm': 31.894506454467773, 'learning_rate': 4.9488636363636365e-05, 'epoch': 2.34}
+{'loss': 3.0878, 'grad_norm': 37.92274475097656, 'learning_rate': 4.8920454545454545e-05, 'epoch': 2.45}
+{'loss': 3.0456, 'grad_norm': 32.948204040527344, 'learning_rate': 4.835227272727273e-05, 'epoch': 2.56}
+{'loss': 3.3699, 'grad_norm': 24.45062828063965, 'learning_rate': 4.778409090909091e-05, 'epoch': 2.67}
+{'loss': 3.2145, 'grad_norm': 36.61564636230469, 'learning_rate': 4.721590909090909e-05, 'epoch': 2.78}
+{'loss': 3.2349, 'grad_norm': 27.92334747314453, 'learning_rate': 4.664772727272727e-05, 'epoch': 2.9}
+{'loss': 2.8059, 'grad_norm': 18.4339542388916, 'learning_rate': 4.607954545454546e-05, 'epoch': 3.0}
+ 25%|██████████████████████████████████████                                                                                                                  | 270/1080 [15:56<28:50,  2.14s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:02<00:00,  4.42it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'chiitalian ndicho chirudzi chemazuva ose chinoshaandiswa nevazhinji vanoshanda mudunhu ukuwo ch'
+HYP: 'chitalia ndi chudz chemazuva ozsez chinohand ndiswa nevashhinji vanoshanda mudunhu ukowochil'
+--- Eval sample ---
+REF: 'musi wesv'
+HYP: 'mi wehhand'
+{'eval_loss': 0.7855924963951111, 'eval_wer': 59.32923948984412, 'eval_runtime': 62.8954, 'eval_samples_per_second': 14.707, 'eval_steps_per_second': 3.689, 'epoch': 3.0}
+{'loss': 3.1582, 'grad_norm': 39.19353485107422, 'learning_rate': 4.551136363636364e-05, 'epoch': 3.11}
+{'loss': 2.3148, 'grad_norm': 32.97246551513672, 'learning_rate': 4.494318181818182e-05, 'epoch': 3.22}
+{'loss': 2.792, 'grad_norm': 33.03982162475586, 'learning_rate': 4.4375e-05, 'epoch': 3.34}
+{'loss': 2.1708, 'grad_norm': 29.638513565063477, 'learning_rate': 4.380681818181818e-05, 'epoch': 3.45}
+{'loss': 2.3582, 'grad_norm': 36.8596076965332, 'learning_rate': 4.323863636363636e-05, 'epoch': 3.56}
+{'loss': 2.5357, 'grad_norm': 32.497920989990234, 'learning_rate': 4.267045454545455e-05, 'epoch': 3.67}
+{'loss': 2.5628, 'grad_norm': 29.802959442138672, 'learning_rate': 4.210227272727273e-05, 'epoch': 3.78}
+{'loss': 2.421, 'grad_norm': 36.17544937133789, 'learning_rate': 4.153409090909091e-05, 'epoch': 3.9}
+{'loss': 2.6669, 'grad_norm': 13.035139083862305, 'learning_rate': 4.09659090909091e-05, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 360/1080 [21:08<25:20,  2.11s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.66it/s]
+REF: 'angel 2006 anoti kuongorora zvinhu kunonzi continuum approach ndiyo nzira iri kushandiswa kubatsira masangano kuti anyatsoshanda nemazvo'
+HYP: 'ind 2006 anoti kuongorora zvinhu kunonzi continuum approach ndiyyo nzira iri kushandiswa kanavaira kvari kanyairaandhhin'
+--- Eval sample ---
+REF: 'mukurumbira wekuva muzinda wehumbozha hwakatanga mugore 400 ad ikagara kusvika kuma 1100 ad'
+HYP: 'mukurumbira wekuva muzinda wehbozha vakakatanga mugore 480 aded ichagara kusvika kumun1900d'
+--- Eval sample ---
+REF: 'gwaro'
+HYP: 'gwwaro '
+{'eval_loss': 0.7208127379417419, 'eval_wer': 56.176192725555026, 'eval_runtime': 61.0206, 'eval_samples_per_second': 15.159, 'eval_steps_per_second': 3.802, 'epoch': 4.0}
+{'loss': 2.2281, 'grad_norm': 27.332088470458984, 'learning_rate': 4.039772727272728e-05, 'epoch': 4.11}
+{'loss': 2.4331, 'grad_norm': 26.242671966552734, 'learning_rate': 3.982954545454546e-05, 'epoch': 4.22}
+{'loss': 2.0899, 'grad_norm': 27.302812576293945, 'learning_rate': 3.926136363636364e-05, 'epoch': 4.34}
+{'loss': 2.1125, 'grad_norm': 32.159942626953125, 'learning_rate': 3.869318181818182e-05, 'epoch': 4.45}
+{'loss': 2.909, 'grad_norm': 30.727500915527344, 'learning_rate': 3.8125e-05, 'epoch': 4.56}
+{'loss': 2.659, 'grad_norm': 30.207048416137695, 'learning_rate': 3.755681818181818e-05, 'epoch': 4.67}
+{'loss': 2.8344, 'grad_norm': 42.05156707763672, 'learning_rate': 3.6988636363636366e-05, 'epoch': 4.78}
+{'loss': 1.565, 'grad_norm': 24.859392166137695, 'learning_rate': 3.6420454545454546e-05, 'epoch': 4.9}
+{'loss': 1.6543, 'grad_norm': 16.64777946472168, 'learning_rate': 3.5852272727272726e-05, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 450/1080 [26:14<21:38,  2.06s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.54it/s]
+REF: 'mugungwa rine zvitsuwa zvakawanda uye mudhamu hamudi hamo chikepe chinonzi yacht'
+HYP: 'mugongwa rine zvitsuwa zvakawanda uye mudamuu hamud hauch chikepe chinonzi y'
+--- Eval sample ---
+REF: 'mumakore ekuma1960 brzezinski ndiye aish'
+HYP: 'mumagore ekuma1960 bhasilzinski ndeyye ashishanda'
+--- Eval sample ---
+REF: 'kombiuta yeasus eeee yakambotepfenyurwa pasi rese kuitira kuchengetedza mari nemashandiro akanaka yakambopisa'
+HYP: 'kombiyuta yasus a yak yakamboteeteniyirwa pasi rese kuitira kuchengetedza mari nemashandiiro akaka yakambobisa mut'
+{'eval_loss': 0.7037224173545837, 'eval_wer': 53.8379782711384, 'eval_runtime': 60.9428, 'eval_samples_per_second': 15.178, 'eval_steps_per_second': 3.807, 'epoch': 5.0}
+{'loss': 1.5679, 'grad_norm': 23.128620147705078, 'learning_rate': 3.5284090909090914e-05, 'epoch': 5.11}
+{'loss': 2.2381, 'grad_norm': 27.96346664428711, 'learning_rate': 3.4715909090909094e-05, 'epoch': 5.22}
+{'loss': 1.7699, 'grad_norm': 30.51999855041504, 'learning_rate': 3.4147727272727274e-05, 'epoch': 5.34}
+{'loss': 2.2545, 'grad_norm': 25.413436889648438, 'learning_rate': 3.357954545454546e-05, 'epoch': 5.45}
+{'loss': 2.3922, 'grad_norm': 34.71696853637695, 'learning_rate': 3.301136363636364e-05, 'epoch': 5.56}
+{'loss': 1.9054, 'grad_norm': 26.29236602783203, 'learning_rate': 3.2443181818181815e-05, 'epoch': 5.67}
+{'loss': 1.5482, 'grad_norm': 26.784996032714844, 'learning_rate': 3.1875e-05, 'epoch': 5.78}
+{'loss': 1.7928, 'grad_norm': 37.32919692993164, 'learning_rate': 3.130681818181818e-05, 'epoch': 5.9}
+{'loss': 1.926, 'grad_norm': 12.469545364379883, 'learning_rate': 3.073863636363636e-05, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 540/1080 [31:21<19:08,  2.13s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.69it/s]
+REF: 'mugore ra2002 goma yakaparadzwa nezvin'
+HYP: 'mugw d2002 goma yakaparadzwa nezvinov'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 0.707179605960846, 'eval_wer': 53.14123760037789, 'eval_runtime': 61.3551, 'eval_samples_per_second': 15.076, 'eval_steps_per_second': 3.781, 'epoch': 6.0}
+{'loss': 2.1815, 'grad_norm': 20.76932716369629, 'learning_rate': 3.0170454545454547e-05, 'epoch': 6.11}
+{'loss': 1.4776, 'grad_norm': 22.153785705566406, 'learning_rate': 2.9602272727272727e-05, 'epoch': 6.22}
+{'loss': 1.1235, 'grad_norm': 28.974842071533203, 'learning_rate': 2.903409090909091e-05, 'epoch': 6.34}
+{'loss': 1.9755, 'grad_norm': 31.037525177001953, 'learning_rate': 2.8465909090909094e-05, 'epoch': 6.45}
+{'loss': 2.0532, 'grad_norm': 31.670921325683594, 'learning_rate': 2.7897727272727275e-05, 'epoch': 6.56}
+{'loss': 1.4633, 'grad_norm': 22.023252487182617, 'learning_rate': 2.732954545454546e-05, 'epoch': 6.67}
+{'loss': 1.4807, 'grad_norm': 25.32621955871582, 'learning_rate': 2.676136363636364e-05, 'epoch': 6.78}
+{'loss': 1.8765, 'grad_norm': 28.78153419494629, 'learning_rate': 2.6193181818181816e-05, 'epoch': 6.9}
+{'loss': 1.3521, 'grad_norm': 15.573554039001465, 'learning_rate': 2.5625e-05, 'epoch': 7.0}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 630/1080 [36:29<15:45,  2.10s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.51it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'maalloys ingori musanganiswa wesimbi mbiri kana dzakawanda usakanganwa kuti pane zvicherwa zvakawanda patafura ye periodic'
+HYP: 'maoi inwa musangoiswa wesimbi simiri dzus wakawanda usakanganwa kuti pane zvichwa zvakawanda pakatafura yperiod'
+{'eval_loss': 0.7116877436637878, 'eval_wer': 51.830420406235234, 'eval_runtime': 61.0956, 'eval_samples_per_second': 15.14, 'eval_steps_per_second': 3.797, 'epoch': 7.0}
+{'loss': 1.758, 'grad_norm': 23.56705093383789, 'learning_rate': 2.505681818181818e-05, 'epoch': 7.11}
+{'loss': 1.8165, 'grad_norm': 21.97067642211914, 'learning_rate': 2.4488636363636363e-05, 'epoch': 7.22}
+{'loss': 1.7555, 'grad_norm': 36.30784606933594, 'learning_rate': 2.3920454545454547e-05, 'epoch': 7.34}
+{'loss': 1.5299, 'grad_norm': 31.287376403808594, 'learning_rate': 2.3352272727272728e-05, 'epoch': 7.45}
+{'loss': 1.3093, 'grad_norm': 21.240224838256836, 'learning_rate': 2.278409090909091e-05, 'epoch': 7.56}
+{'loss': 1.577, 'grad_norm': 33.551063537597656, 'learning_rate': 2.221590909090909e-05, 'epoch': 7.67}
+{'loss': 1.1305, 'grad_norm': 28.912839889526367, 'learning_rate': 2.1647727272727275e-05, 'epoch': 7.78}
+{'loss': 1.4001, 'grad_norm': 28.251615524291992, 'learning_rate': 2.1079545454545456e-05, 'epoch': 7.9}
+{'loss': 1.6175, 'grad_norm': 11.86673355102539, 'learning_rate': 2.0511363636363636e-05, 'epoch': 8.0}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 720/1080 [41:36<12:34,  2.10s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.59it/s]
+REF: 'asi mvura yakaoma nechando zvinhu zvinogara zvichiitika m'
+HYP: 'asi mvura yakaoma nechando zvinhu zvinogona zvichitika zune'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'mhuri dzeshumba semhumhi kana imbwa mhuka dzinoshamisa kuti dzakaf'
+HYP: 'mhuri dzeshumba dzumimi kana imwa mhuka dzinambisa kuti dzakafan'
+{'eval_loss': 0.7261063456535339, 'eval_wer': 52.657061880018894, 'eval_runtime': 61.3744, 'eval_samples_per_second': 15.071, 'eval_steps_per_second': 3.78, 'epoch': 8.0}
+{'loss': 1.6371, 'grad_norm': 22.0344295501709, 'learning_rate': 1.994318181818182e-05, 'epoch': 8.11}
+{'loss': 1.3255, 'grad_norm': 32.377742767333984, 'learning_rate': 1.9375e-05, 'epoch': 8.22}
+{'loss': 1.7482, 'grad_norm': 26.168432235717773, 'learning_rate': 1.8806818181818184e-05, 'epoch': 8.34}
+{'loss': 1.2259, 'grad_norm': 18.049182891845703, 'learning_rate': 1.8238636363636364e-05, 'epoch': 8.45}
+{'loss': 1.3755, 'grad_norm': 19.765459060668945, 'learning_rate': 1.7670454545454544e-05, 'epoch': 8.56}
+{'loss': 1.6871, 'grad_norm': 44.1656379699707, 'learning_rate': 1.7102272727272728e-05, 'epoch': 8.67}
+{'loss': 2.1732, 'grad_norm': 21.610849380493164, 'learning_rate': 1.6534090909090912e-05, 'epoch': 8.78}
+{'loss': 1.0962, 'grad_norm': 21.8258056640625, 'learning_rate': 1.5965909090909092e-05, 'epoch': 8.9}
+{'loss': 1.5349, 'grad_norm': 20.194374084472656, 'learning_rate': 1.5397727272727276e-05, 'epoch': 9.0}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 810/1080 [46:44<09:43,  2.16s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.49it/s]
+REF: 'shumba ikatsi dzinehushamwari hwakanyanya dzichirarama mumapoka makuru anonzi mapoka'
+HYP: 'shumba ikatii dzine usushamwari hwakanyanya ndichiraraa mumapoka makuru anonzi mapoka'
+--- Eval sample ---
+REF: 'vanhu vanogona kusatarisira kuti mushanyi anenge achidzoka kumba anotofanira kuvawo nemwoyo murefu uye kunzwisisa'
+HYP: 'vanhu vanogona kurusatiisira kuti mushanyai anenge achidzoka kumba anotofanira kuuvawo nemoyaya murefu uye kunzisisa'
+--- Eval sample ---
+REF: 'pakaitika tsaona yacho gibson akabva angoendeswa kuchipatara asi haana kuzomboita nguva achiri mupenyu'
+HYP: 'pakaitika tawona yacho gibson akabva ango endeeswa kuchipatara asi haan kuzombita nguva achiri mupenyu'
+{'eval_loss': 0.7305435538291931, 'eval_wer': 51.55880963627774, 'eval_runtime': 61.2119, 'eval_samples_per_second': 15.111, 'eval_steps_per_second': 3.79, 'epoch': 9.0}
+{'loss': 1.0838, 'grad_norm': 19.552745819091797, 'learning_rate': 1.4829545454545454e-05, 'epoch': 9.11}
+{'loss': 1.0803, 'grad_norm': 26.290037155151367, 'learning_rate': 1.4261363636363637e-05, 'epoch': 9.22}
+{'loss': 1.447, 'grad_norm': 26.762277603149414, 'learning_rate': 1.3693181818181819e-05, 'epoch': 9.34}
+{'loss': 1.1929, 'grad_norm': 26.810243606567383, 'learning_rate': 1.3125e-05, 'epoch': 9.45}
+{'loss': 1.3138, 'grad_norm': 32.95867919921875, 'learning_rate': 1.2556818181818184e-05, 'epoch': 9.56}
+{'loss': 1.5407, 'grad_norm': 26.30889129638672, 'learning_rate': 1.1988636363636365e-05, 'epoch': 9.67}
+{'loss': 1.227, 'grad_norm': 22.40761375427246, 'learning_rate': 1.1420454545454547e-05, 'epoch': 9.78}
+{'loss': 1.3646, 'grad_norm': 28.120019912719727, 'learning_rate': 1.0852272727272727e-05, 'epoch': 9.9}
+{'loss': 1.442, 'grad_norm': 14.849501609802246, 'learning_rate': 1.028409090909091e-05, 'epoch': 10.0}
+ 83%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                         | 900/1080 [51:52<06:20,  2.11s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:01<00:00,  4.41it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'mari inoshandiswa kufalklands inonzi falkland pound fkp iyo ine ukoshe hwakafanana nehwepaund yekubritain gbp'
+HYP: 'maren inoshandiswa kuforklands inonzi folkalkland pound fkp iyo ine uoshevhakakanana nezakf h uekutvaainambia'
+--- Eval sample ---
+REF: ' zvatipa chitima motokari nezvimwe zvekufambisa zvakawanda wanda'
+HYP: 'zvipa chitiri chinokari chzvwe zvkudambaira kvakareanda zak z'
+{'eval_loss': 0.7353162169456482, 'eval_wer': 51.55880963627774, 'eval_runtime': 61.5403, 'eval_samples_per_second': 15.031, 'eval_steps_per_second': 3.77, 'epoch': 10.0}
+{'loss': 1.5421, 'grad_norm': 30.519025802612305, 'learning_rate': 9.715909090909091e-06, 'epoch': 10.11}
+{'loss': 1.3236, 'grad_norm': 20.9346923828125, 'learning_rate': 9.147727272727273e-06, 'epoch': 10.22}
+{'loss': 0.9698, 'grad_norm': 13.330459594726562, 'learning_rate': 8.579545454545455e-06, 'epoch': 10.34}
+{'loss': 1.535, 'grad_norm': 32.980777740478516, 'learning_rate': 8.011363636363637e-06, 'epoch': 10.45}
+{'loss': 1.3691, 'grad_norm': 16.460840225219727, 'learning_rate': 7.443181818181818e-06, 'epoch': 10.56}
+{'loss': 1.2759, 'grad_norm': 21.653968811035156, 'learning_rate': 6.875000000000001e-06, 'epoch': 10.67}
+{'loss': 0.8653, 'grad_norm': 22.14396095275879, 'learning_rate': 6.306818181818181e-06, 'epoch': 10.78}
+{'loss': 1.5053, 'grad_norm': 24.0932559967041, 'learning_rate': 5.738636363636364e-06, 'epoch': 10.9}
+{'loss': 1.2829, 'grad_norm': 13.00129222869873, 'learning_rate': 5.1704545454545455e-06, 'epoch': 11.0}
+ 92%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎            | 990/1080 [57:00<03:06,  2.07s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.51it/s]
+REF: 'uku hakusi kuonekana uku kuvharwa kwechitsauko chimwe uye kuvhurwa kwechimwe chitsva'
+HYP: 'zvaadyavakera kyeunanaakwa kanakishig ch kwwe chye kuvhararawa kwechitsweeteig'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'chiitalian ndicho chirudzi chemazuva ose chinoshaandiswa nevazhinji vanoshanda mudunhu ukuwo ch'
+HYP: 'chiitaly ndi chudzi chemazuva osez yinohand ndiswa nevachhinji vanoshanda mudunhu ukooch chil'
+{'eval_loss': 0.7395468354225159, 'eval_wer': 51.39348134152102, 'eval_runtime': 61.2487, 'eval_samples_per_second': 15.102, 'eval_steps_per_second': 3.788, 'epoch': 11.0}
+{'loss': 1.3395, 'grad_norm': 34.56908416748047, 'learning_rate': 4.6022727272727275e-06, 'epoch': 11.11}
+{'loss': 1.5135, 'grad_norm': 18.191226959228516, 'learning_rate': 4.0340909090909095e-06, 'epoch': 11.22}
+{'loss': 1.5458, 'grad_norm': 43.04362487792969, 'learning_rate': 3.465909090909091e-06, 'epoch': 11.34}
+{'loss': 1.0725, 'grad_norm': 23.79503631591797, 'learning_rate': 2.8977272727272727e-06, 'epoch': 11.45}
+{'loss': 1.0681, 'grad_norm': 23.374441146850586, 'learning_rate': 2.3295454545454547e-06, 'epoch': 11.56}
+{'loss': 1.7628, 'grad_norm': 27.043306350708008, 'learning_rate': 1.7613636363636363e-06, 'epoch': 11.67}
+{'loss': 1.0926, 'grad_norm': 20.451444625854492, 'learning_rate': 1.1931818181818183e-06, 'epoch': 11.78}
+{'loss': 1.3927, 'grad_norm': 13.05925464630127, 'learning_rate': 6.25e-07, 'epoch': 11.9}
+{'loss': 0.6506, 'grad_norm': 9.935934066772461, 'learning_rate': 5.6818181818181815e-08, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1080/1080 [1:02:08<00:00,  2.10s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [01:00<00:00,  4.43it/s]
+REF: 'mumamwe maguta mazhinji eitaly uye mudzimwe nyika kunyanya kupoland makagadzirwa zvinhu zvakadaro uye zvakaonekwa nevanhu vakawanda'
+HYP: 'mumamwe maguta mazhinji eitaly uye mudzimwe nyika kunyanya koland makagadzirwa zvinhu zvakadaro uye zvakakaonekwa nevanhu vakawanda'
+--- Eval sample ---
+REF: 'pairwiwa hondo yerusununguko matunhu 13 akatanga aumba hurumende yakanga isina kusimba ichingova necongress pasi'
+HYP: 'piwa hondoererosununguko hatunhu 18 akatanga aomba wurumende yakanga isina kusimba ichingova necongress pasi pe'
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 0.74239182472229, 'eval_wer': 51.417099669343415, 'eval_runtime': 61.3737, 'eval_samples_per_second': 15.072, 'eval_steps_per_second': 3.78, 'epoch': 12.0}
+{'train_runtime': 3790.4627, 'train_samples_per_second': 9.042, 'train_steps_per_second': 0.285, 'train_loss': 4.258174330216867, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1080/1080 [1:03:10<00:00,  3.51s/it]

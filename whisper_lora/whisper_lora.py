@@ -8,8 +8,8 @@ from typing import Any, Dict, List, Union
 from jiwer import wer
 
 # our env variables
-MODEL_NAME = "openai/whisper-tiny"
-OUTPUT_DIR = "./exp/test"
+MODEL_NAME = "openai/whisper-small"
+OUTPUT_DIR = "./exp/javanese"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
@@ -23,8 +23,8 @@ model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "jv_id", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "jv_id", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -34,6 +34,7 @@ def prepare_dataset(example):
     )
     example["input_length"] = len(audio["array"]) / audio["sampling_rate"]
     return example
+
 ds = ds.map(prepare_dataset, remove_columns=ds.column_names["train"], num_proc=1)
 def is_audio_in_length_range(length):
     return length < 30.0
@@ -99,11 +100,11 @@ def compute_metrics(pred):
 
 # setup lora configuration and instantiate model with it
 lora_config = LoraConfig(
-    init_lora_weights="pissa",
     r=32,
     lora_alpha=32,
     target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
-    lora_dropout=0.05,
+    lora_dropout=0.1,
+    bias="none",
 )
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
@@ -111,24 +112,31 @@ model.print_trainable_parameters()
 # define training hyperparameters and settings
 training_args = Seq2SeqTrainingArguments(
     output_dir=OUTPUT_DIR,
-    per_device_train_batch_size=16,
-    gradient_accumulation_steps=1,
-    learning_rate=1e-3,
-    num_train_epochs=3,
+    # smaller per-device batch + accumulation to keep effective batch stable on limited data / GPU
+    per_device_train_batch_size=8,
+    gradient_accumulation_steps=4,  # effective batch size = 8 * 4 = 32
+    learning_rate=5e-5,
+    warmup_steps=200,
+    lr_scheduler_type="linear",
+    max_grad_norm=1.0,
+    num_train_epochs=12,
+    eval_on_start=True,
     eval_strategy="epoch",
     save_strategy="epoch",
-    per_device_eval_batch_size=16,
+    per_device_eval_batch_size=4,
     predict_with_generate=True,
-    generation_max_length=225,
-    logging_strategy="steps",
+    generation_max_length=256,
     logging_first_step=True,
-    logging_nan_inf_filter=False,
     logging_steps=10,
     report_to=["tensorboard"],
     fp16=True,
     fp16_full_eval=True,
     remove_unused_columns=False,
     label_names=["labels"],
+    optim="adamw_torch_fused",
+    weight_decay=0.01,
+    dataloader_num_workers=0,
+    dataloader_pin_memory=False,
 )
 
 # setup trainer

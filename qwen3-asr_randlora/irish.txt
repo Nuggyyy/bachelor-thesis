@@ -1,0 +1,267 @@
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
+Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
+Map:  62%|████████████████████████████████████████████████████████████████████████████████████▉                                     Map:  62%|█████████████████████████████████████████████████████████████████████████████████████▍                                    Map:  62%|██████████████████████████████████████████████████████████████████████████████████████▍                                   Map:  64%|████████████████████████████████████████████████████████████████████████████████████████▌                                 Map:  65%|██████████████████████████████████████████████████████████████████████████████████████████▌                               Map:  67%|████████████████████████████████████████████████████████████████████████████████████████████▌     Map:  80%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 2584/3214 [00:32<00:01, 316.10 examples/s]Map:  92%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊           | 2953/3214 [00:33<00:00, 528.30 examples/s]Map:  94%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍        | 3015/3214 [00:38<00:05, 39.05 examples/s]Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:38<00:00, 82.62 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 842/842 [00:04<00:00, 195.35 examples/s]
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/tuners/tuners_utils.py:919: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['thinker.lm_head'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+  warnings.warn(
+trainable params: 5,221,632 || all params: 787,647,744 || trainable%: 0.6629
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 151645, 'pad_token_id': 151643}.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+  0%|                                                                                                                                                                  | 0/1212 [00:00<?, ?it/s--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:04<00:00,  4.49it/s]
+REF: 'sa tuaisceart tá an tsaiheil thart ar an réigiún agus sa deisceart agus san iarthar tá an aigéan atlantach'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下 <odicn\u200cóú t t t páí an antì shetet chí oíشý oí-n ní_gergeroríðy ó n n ó ann- yííágrra h y-از z r re i--asímn nraíí aníííílanguage_Slanguageymologyaisiart an an clíúaníaró an spamú anus an tuiseart táus an tomó ag an tgheanir agantaá ag'
+--- Eval sample ---
+REF: ''
+HYP: '以下 <odiccodeical-s-sáí-isisá kí t óíí al--saáí ó``í-h-h-hart të-yyúg n n t täsásí ó ó an-a-a saanííirirí r te n en-A-iirááá an Marathon Marathon í Atlantic-m_mas nóó reí la la--- ta l-e-eá a r-ii-e-iáalá li l a-t-t-na na ni si-óó_k käi er er an--saílanguage'
+--- Eval sample ---
+REF: 'is féidir go raibh mí-úsáid leanaí nó tráma tromchúiseach i gceist le leanaí fiáine'
+HYP: '以下 <odicgegiúgroò m i--ِí l n ant nì--lnñ n n n an-n-natro na an anú--raíúِ--e_úás ch chúl n n-çán-óërryá ki kií  --naríó--l-ln-sh-sh tì-úíáá aníí an an solaricalíílanguageSféidir g ro mh mí úúsáid leanní na traóma tralasaá le gceist le nanaí fúna sol'
+{'eval_loss': 9.803346633911133, 'eval_wer': 271.87826996860827, 'eval_runtime': 65.9913, 'eval_samples_per_second': 12.759, 'eval_steps_per_second': 3.197, 'epoch': 0}
+  0%|                                                                                                                                                                  | 0/1212 [01:05<?, ?it/s/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{'loss': 43.1703, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 41.3896, 'grad_norm': nan, 'learning_rate': 2.25e-06, 'epoch': 0.1}
+{'loss': 41.8207, 'grad_norm': 335.14910888671875, 'learning_rate': 4.75e-06, 'epoch': 0.2}
+{'loss': 39.2624, 'grad_norm': 347.1306457519531, 'learning_rate': 7.25e-06, 'epoch': 0.3}
+{'loss': 33.5658, 'grad_norm': 407.3314208984375, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.4}
+{'loss': 26.7657, 'grad_norm': 236.04327392578125, 'learning_rate': 1.225e-05, 'epoch': 0.5}
+{'loss': 21.72, 'grad_norm': 232.42176818847656, 'learning_rate': 1.475e-05, 'epoch': 0.6}
+{'loss': 18.3258, 'grad_norm': 401.903076171875, 'learning_rate': 1.725e-05, 'epoch': 0.7}
+{'loss': 12.8315, 'grad_norm': 478.5825500488281, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.8}
+{'loss': 7.0245, 'grad_norm': 51.616939544677734, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.9}
+{'loss': 6.031, 'grad_norm': 36.25876235961914, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.0}
+  8%|████████████▋                                                                                                                                           | 101/1212 [07:19<54:09,  2.93s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:07<00:00,  3.56it/s]
+REF: 'seo an áit a ghabh coilínigh na breataine mar a n-áit féin ag'
+HYP: '以下se n dtit a bhceháíní na bratin mar a thíáir fin agus'
+--- Eval sample ---
+REF: 'i measc na ngrúpaí a úsáideann an tseirbhís seo go minic tá loingeas lena n-áirítear b'
+HYP: '以下is masc na ggrúpa a a úsáidann an sr-obbhísó go minic ta leine le lía a-áirítear foid'
+--- Eval sample ---
+REF: 'idir aosach fireann amháin agus trí cinn ghaolmhara a bhíonn in ealta leon mar aon le suas le tríocha baineann agus coileáin'
+HYP: 'prenepreneprenepreneprenepreneprenepreneprenepreneprene以下air éútaonn anháin agus trí chén géaileilraú a bhíonn an áala leit le é bh leis le trí híainann agus scileánin'
+{'eval_loss': 1.5120983123779297, 'eval_wer': 79.49075688873387, 'eval_runtime': 67.9009, 'eval_samples_per_second': 12.4, 'eval_steps_per_second': 3.107, 'epoch': 1.0}
+{'loss': 5.6703, 'grad_norm': 63.591880798339844, 'learning_rate': 2.725e-05, 'epoch': 1.09}
+{'loss': 5.5327, 'grad_norm': 41.481266021728516, 'learning_rate': 2.975e-05, 'epoch': 1.19}
+{'loss': 5.4725, 'grad_norm': 29.987377166748047, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.29}
+{'loss': 5.0957, 'grad_norm': 39.428367614746094, 'learning_rate': 3.475e-05, 'epoch': 1.39}
+{'loss': 4.6754, 'grad_norm': 37.5975456237793, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.49}
+{'loss': 4.7976, 'grad_norm': 34.094078063964844, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.59}
+{'loss': 4.9439, 'grad_norm': 38.19499588012695, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.69}
+{'loss': 4.7466, 'grad_norm': 42.61545944213867, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.79}
+{'loss': 5.414, 'grad_norm': 38.33210754394531, 'learning_rate': 4.7249999999999997e-05, 'epoch': 1.89}
+{'loss': 5.0995, 'grad_norm': 65.75282287597656, 'learning_rate': 4.975e-05, 'epoch': 1.99}
+ 17%|█████████████████████████▎                                                                                                                              | 202/1212 [13:53<39:25,  2.34s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:55<00:00,  4.35it/s]
+REF: 'faoi 1976 rinneadh athchóiriú ar thríocha faoin gcéad de machu picchu and leanadh leis an athchóiriú go dtí an lá atá inniu againn'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductfaoi dhe10 sé0 rinne ach achairóirú ar trítheíoin gcéad de mu picchu agisú leis ath athchóiriú go dtí an le atá agiun u'
+--- Eval sample ---
+REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágann gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
+HYP: 'ductductductductductductductductductductducttá nclías iagóhaí ag ahbh arirhe a fhéann grrian n le brusó ón sheéile ar bhheithán chabhhteach gan aon chimilt'
+--- Eval sample ---
+REF: 'bhí cáil air mar chroílár an tsómais ó 400 ad'
+HYP: 'bí coil ar mar criruí leú an tamimeíó ch100 am mac'
+{'eval_loss': 1.2637521028518677, 'eval_wer': 70.38716428322289, 'eval_runtime': 56.3581, 'eval_samples_per_second': 14.94, 'eval_steps_per_second': 3.744, 'epoch': 2.0}
+{'loss': 4.8651, 'grad_norm': 40.88316345214844, 'learning_rate': 4.955533596837945e-05, 'epoch': 2.08}
+{'loss': 3.9352, 'grad_norm': 54.246341705322266, 'learning_rate': 4.906126482213439e-05, 'epoch': 2.18}
+{'loss': 4.7123, 'grad_norm': 58.87895202636719, 'learning_rate': 4.8567193675889336e-05, 'epoch': 2.28}
+{'loss': 3.854, 'grad_norm': 37.16473388671875, 'learning_rate': 4.807312252964427e-05, 'epoch': 2.38}
+{'loss': 3.9215, 'grad_norm': 38.73993682861328, 'learning_rate': 4.757905138339921e-05, 'epoch': 2.48}
+{'loss': 4.5197, 'grad_norm': 38.90123748779297, 'learning_rate': 4.7084980237154154e-05, 'epoch': 2.58}
+{'loss': 4.3382, 'grad_norm': 42.882442474365234, 'learning_rate': 4.659090909090909e-05, 'epoch': 2.68}
+{'loss': 4.1139, 'grad_norm': 45.85552978515625, 'learning_rate': 4.6096837944664035e-05, 'epoch': 2.78}
+{'loss': 4.2087, 'grad_norm': 42.13132858276367, 'learning_rate': 4.560276679841897e-05, 'epoch': 2.88}
+{'loss': 4.0288, 'grad_norm': 64.01781463623047, 'learning_rate': 4.5108695652173916e-05, 'epoch': 2.98}
+ 25%|██████████████████████████████████████                                                                                                                  | 303/1212 [19:36<34:14,  2.26s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:56<00:00,  4.33it/s]
+REF: "níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt d'fhocail dhrannacha bhéicthe"
+HYP: "níl bearint tgaró cosúil le buar leágraranán na an ionon t sin níos cosúilí hairt do'atocail dr'abanna beéicí"
+--- Eval sample ---
+REF: "an tseachtain seo caite d'fhógair meti gur"
+HYP: "an teseartain seo thite tug'fhogair méty gur th"
+--- Eval sample ---
+REF: 'rinne gobharnóir california arnold schwarzenegger bille a shíniú le'
+HYP: "rinne goáannarir california arná schwzenegger be'adh dhainniú le b"
+{'eval_loss': 1.166380763053894, 'eval_wer': 65.22497384025114, 'eval_runtime': 56.9379, 'eval_samples_per_second': 14.788, 'eval_steps_per_second': 3.706, 'epoch': 3.0}
+{'loss': 3.4905, 'grad_norm': 48.32795715332031, 'learning_rate': 4.461462450592885e-05, 'epoch': 3.07}
+{'loss': 3.8526, 'grad_norm': 51.18046951293945, 'learning_rate': 4.41205533596838e-05, 'epoch': 3.17}
+{'loss': 3.6165, 'grad_norm': 44.79013442993164, 'learning_rate': 4.3626482213438734e-05, 'epoch': 3.27}
+{'loss': 3.774, 'grad_norm': 43.38152313232422, 'learning_rate': 4.313241106719368e-05, 'epoch': 3.37}
+{'loss': 3.8247, 'grad_norm': 38.734214782714844, 'learning_rate': 4.2638339920948615e-05, 'epoch': 3.47}
+{'loss': 3.5238, 'grad_norm': 43.57732391357422, 'learning_rate': 4.214426877470356e-05, 'epoch': 3.57}
+{'loss': 3.2609, 'grad_norm': 45.847782135009766, 'learning_rate': 4.1650197628458496e-05, 'epoch': 3.67}
+{'loss': 3.6672, 'grad_norm': 37.09022521972656, 'learning_rate': 4.115612648221344e-05, 'epoch': 3.77}
+{'loss': 2.941, 'grad_norm': 31.31794548034668, 'learning_rate': 4.0662055335968377e-05, 'epoch': 3.87}
+{'loss': 3.124, 'grad_norm': 43.54664611816406, 'learning_rate': 4.016798418972332e-05, 'epoch': 3.97}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 404/1212 [25:21<30:34,  2.27s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:55<00:00,  4.35it/s]
+REF: "is tacaíocht d'eolaithe ina gcuid taighde an comhghaolú idir galareolaíocht inchinne agus iompraíocht"
+HYP: 'is táógíocht eíolaithe ina chuid theighde an chhthabholú idir anairachtíoch aginn agus oadpairíocht o'
+--- Eval sample ---
+REF: 'déanann plandaí a gcuid bia ón ngrian trí fhótaisintéis cuireann siad scáth ar fáil chomh maith'
+HYP: 'déanann plandaí a chú beia ón gcri trí phótotosintí aireadh siad leóthán anána iunh maith le'
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 1.1295757293701172, 'eval_wer': 62.42588071154517, 'eval_runtime': 56.2215, 'eval_samples_per_second': 14.976, 'eval_steps_per_second': 3.753, 'epoch': 4.0}
+{'loss': 3.0243, 'grad_norm': 43.315704345703125, 'learning_rate': 3.9673913043478264e-05, 'epoch': 4.06}
+{'loss': 2.7893, 'grad_norm': 43.95330047607422, 'learning_rate': 3.917984189723321e-05, 'epoch': 4.16}
+{'loss': 3.4281, 'grad_norm': 42.61669921875, 'learning_rate': 3.8685770750988145e-05, 'epoch': 4.26}
+{'loss': 3.2978, 'grad_norm': 45.242820739746094, 'learning_rate': 3.819169960474309e-05, 'epoch': 4.36}
+{'loss': 3.8026, 'grad_norm': 39.58319091796875, 'learning_rate': 3.7697628458498026e-05, 'epoch': 4.46}
+{'loss': 3.1929, 'grad_norm': 43.98036575317383, 'learning_rate': 3.720355731225297e-05, 'epoch': 4.56}
+{'loss': 3.2362, 'grad_norm': 39.9018669128418, 'learning_rate': 3.670948616600791e-05, 'epoch': 4.66}
+{'loss': 3.1526, 'grad_norm': 55.57553482055664, 'learning_rate': 3.621541501976285e-05, 'epoch': 4.76}
+{'loss': 2.9056, 'grad_norm': 39.70693588256836, 'learning_rate': 3.572134387351779e-05, 'epoch': 4.86}
+{'loss': 2.4642, 'grad_norm': 36.70780944824219, 'learning_rate': 3.522727272727273e-05, 'epoch': 4.96}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 505/1212 [31:02<26:26,  2.24s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:55<00:00,  4.31it/s]
+REF: 'níos déanaí ghlac na grianghrafadóirí áit seanmhná de bhrí gur theastaigh uaithi an leithreas a úsáid leagadh mendoza le piléar'
+HYP: 'níos deanaí chhlac na granghraf doóireí atit semheá de bhrí gur táasí uithiú leith ar sa úsáid li mmh iion le péir'
+--- Eval sample ---
+REF: 'mura dtéann tú i dtír ach amháin ag úsáid turais ar bord loinge ní bheadh víosa ar leith ag teastáil uait ó 2009'
+HYP: 'mura déann tú d dtír ath amháin agussáid tas ar bord longinge ní bheadh rosa ar leith ag taastáil uirth ó d10 bli bli'
+--- Eval sample ---
+REF: "tabhair aire nach ligfidh tú don éadach éirí róthe rud d'fhéadfadh a bheith ina chúis le crapadh nó i gcásanna níos measa loisceadh"
+HYP: "táhar aire n lefeh tú don eada a éadroí roótha rud a'fhéadfadh a bheith ina chúis le chrá n g gásanna níos measa leighá"
+{'eval_loss': 1.14167320728302, 'eval_wer': 62.18172305545867, 'eval_runtime': 56.2829, 'eval_samples_per_second': 14.96, 'eval_steps_per_second': 3.749, 'epoch': 5.0}
+{'loss': 2.5664, 'grad_norm': 47.85017395019531, 'learning_rate': 3.473320158102767e-05, 'epoch': 5.05}
+{'loss': 2.7783, 'grad_norm': 35.88588333129883, 'learning_rate': 3.423913043478261e-05, 'epoch': 5.15}
+{'loss': 2.9559, 'grad_norm': 38.02191925048828, 'learning_rate': 3.374505928853755e-05, 'epoch': 5.25}
+{'loss': 2.6178, 'grad_norm': 39.992042541503906, 'learning_rate': 3.325098814229249e-05, 'epoch': 5.35}
+{'loss': 2.7275, 'grad_norm': 52.75905990600586, 'learning_rate': 3.275691699604743e-05, 'epoch': 5.45}
+{'loss': 2.6158, 'grad_norm': 42.813987731933594, 'learning_rate': 3.2262845849802374e-05, 'epoch': 5.55}
+{'loss': 2.6916, 'grad_norm': 55.82512664794922, 'learning_rate': 3.176877470355731e-05, 'epoch': 5.65}
+{'loss': 2.7476, 'grad_norm': 39.46369552612305, 'learning_rate': 3.1274703557312255e-05, 'epoch': 5.75}
+{'loss': 2.978, 'grad_norm': 40.76713943481445, 'learning_rate': 3.078063241106719e-05, 'epoch': 5.85}
+{'loss': 2.659, 'grad_norm': 33.1220817565918, 'learning_rate': 3.0286561264822133e-05, 'epoch': 5.95}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 606/1212 [36:47<23:26,  2.32s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:56<00:00,  4.29it/s]
+REF: 'tugann an fhionnachtain léargas dúinn ar éabhlóid na gcleití sna héin'
+HYP: 'tugann an fínúán leargas deinn ar aavhalóid na gecaastí sna hoin'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'le linn na tréimhse sin i stair na heorpa tosaíodh ar scrúdú a dhéanamh ar an eaglais chaitliceach tar éis d'
+HYP: 'le linn na tréimhse sin is st na chóorpa tásaí úh u scrúdú a dhéanamh ar an elaais caaitlí tá tar éis dí'
+{'eval_loss': 1.1401515007019043, 'eval_wer': 61.26613184513429, 'eval_runtime': 57.1593, 'eval_samples_per_second': 14.731, 'eval_steps_per_second': 3.691, 'epoch': 6.0}
+{'loss': 2.7215, 'grad_norm': 41.870582580566406, 'learning_rate': 2.9792490118577076e-05, 'epoch': 6.04}
+{'loss': 2.7192, 'grad_norm': 39.642799377441406, 'learning_rate': 2.9298418972332014e-05, 'epoch': 6.14}
+{'loss': 2.4087, 'grad_norm': 49.38083267211914, 'learning_rate': 2.8804347826086957e-05, 'epoch': 6.24}
+{'loss': 2.2406, 'grad_norm': 34.4135856628418, 'learning_rate': 2.8310276679841894e-05, 'epoch': 6.34}
+{'loss': 2.6343, 'grad_norm': 40.31694793701172, 'learning_rate': 2.7816205533596838e-05, 'epoch': 6.44}
+{'loss': 2.4479, 'grad_norm': 47.22602462768555, 'learning_rate': 2.732213438735178e-05, 'epoch': 6.54}
+{'loss': 2.2735, 'grad_norm': 43.86441421508789, 'learning_rate': 2.6828063241106723e-05, 'epoch': 6.64}
+{'loss': 2.8001, 'grad_norm': 44.82383346557617, 'learning_rate': 2.633399209486166e-05, 'epoch': 6.74}
+{'loss': 2.4412, 'grad_norm': 42.53342819213867, 'learning_rate': 2.5839920948616603e-05, 'epoch': 6.84}
+{'loss': 3.3222, 'grad_norm': 41.71306610107422, 'learning_rate': 2.534584980237154e-05, 'epoch': 6.94}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 707/1212 [42:34<18:45,  2.23s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:56<00:00,  4.30it/s]
+REF: 'tá an t-oileán'
+HYP: 'tá an t-eileá a'
+--- Eval sample ---
+REF: "tabhair aire nach ligfidh tú don éadach éirí róthe rud d'fhéadfadh a bheith ina chúis le crapadh nó i gcásanna níos measa loisceadh"
+HYP: 'táhar d na lefeh du a aadú iadroí roótha rud aífhéadfadh a bheith ina chis le craach n g géanna níos measa leighad'
+--- Eval sample ---
+REF: 'ó thuaidh'
+HYP: 'ó thuairh ag'
+{'eval_loss': 1.1393940448760986, 'eval_wer': 60.455179630275545, 'eval_runtime': 57.5883, 'eval_samples_per_second': 14.621, 'eval_steps_per_second': 3.664, 'epoch': 7.0}
+{'loss': 2.1157, 'grad_norm': 36.71586608886719, 'learning_rate': 2.4851778656126484e-05, 'epoch': 7.03}
+{'loss': 2.4966, 'grad_norm': 38.64460372924805, 'learning_rate': 2.4357707509881425e-05, 'epoch': 7.13}
+{'loss': 2.1889, 'grad_norm': 48.00349807739258, 'learning_rate': 2.3863636363636365e-05, 'epoch': 7.23}
+{'loss': 2.1418, 'grad_norm': 38.42157745361328, 'learning_rate': 2.3369565217391306e-05, 'epoch': 7.33}
+{'loss': 2.7501, 'grad_norm': 43.26939392089844, 'learning_rate': 2.2875494071146246e-05, 'epoch': 7.43}
+{'loss': 2.2031, 'grad_norm': 44.86825942993164, 'learning_rate': 2.2381422924901187e-05, 'epoch': 7.53}
+{'loss': 2.2564, 'grad_norm': 42.18544387817383, 'learning_rate': 2.188735177865613e-05, 'epoch': 7.63}
+{'loss': 2.557, 'grad_norm': 36.35933303833008, 'learning_rate': 2.1393280632411067e-05, 'epoch': 7.73}
+{'loss': 2.5929, 'grad_norm': 35.09309768676758, 'learning_rate': 2.0899209486166008e-05, 'epoch': 7.83}
+{'loss': 2.0811, 'grad_norm': 38.81600570678711, 'learning_rate': 2.040513833992095e-05, 'epoch': 7.93}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 808/1212 [48:23<15:35,  2.32s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:57<00:00,  4.17it/s]
+REF: 'i gcaitheamh na hoíche rinneadh idir 150 agus 200 cóip a dtugtar dunlap broadsides orthu anois'
+HYP: "i gcaitheamh an iriche rinne ú oirlcé100'us 100 cóip a dtugtar donacht broadsides orthu anois"
+--- Eval sample ---
+REF: 'i dtreo dheireadh na meánaoise d'
+HYP: "i dtreo dhireann na maána is de'"
+--- Eval sample ---
+REF: 'tá sé níos tanaí faoin maria agus níos tibhe faoi na hardchríocha'
+HYP: 'tá sé níos tanaí faoin mara agus níos duaheolaoin na hasheíoch'
+{'eval_loss': 1.1830952167510986, 'eval_wer': 60.498779211719565, 'eval_runtime': 58.0933, 'eval_samples_per_second': 14.494, 'eval_steps_per_second': 3.632, 'epoch': 8.0}
+{'loss': 2.2433, 'grad_norm': 40.638427734375, 'learning_rate': 1.991106719367589e-05, 'epoch': 8.02}
+{'loss': 1.8948, 'grad_norm': 30.40134048461914, 'learning_rate': 1.941699604743083e-05, 'epoch': 8.12}
+{'loss': 2.298, 'grad_norm': 47.08684539794922, 'learning_rate': 1.892292490118577e-05, 'epoch': 8.22}
+{'loss': 2.3074, 'grad_norm': 49.64408493041992, 'learning_rate': 1.842885375494071e-05, 'epoch': 8.32}
+{'loss': 2.1052, 'grad_norm': 38.39314651489258, 'learning_rate': 1.793478260869565e-05, 'epoch': 8.42}
+{'loss': 2.2823, 'grad_norm': 55.522857666015625, 'learning_rate': 1.7440711462450594e-05, 'epoch': 8.52}
+{'loss': 2.1643, 'grad_norm': 36.54462814331055, 'learning_rate': 1.6946640316205535e-05, 'epoch': 8.62}
+{'loss': 2.5894, 'grad_norm': 47.88519287109375, 'learning_rate': 1.6452569169960475e-05, 'epoch': 8.72}
+{'loss': 1.5235, 'grad_norm': 44.25077819824219, 'learning_rate': 1.5958498023715416e-05, 'epoch': 8.82}
+{'loss': 1.6913, 'grad_norm': 35.85224914550781, 'learning_rate': 1.5464426877470356e-05, 'epoch': 8.92}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 909/1212 [54:14<11:26,  2.27s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:57<00:00,  4.19it/s]
+REF: 'thosaigh cúltúir agus treibheanna na gcianaoiseanna ar a'
+HYP: 'thosaigh cultltirr agus sibhanna an ndéaisiseanna ar a g'
+--- Eval sample ---
+REF: 'an mheánaois ard an t'
+HYP: 'an mabeasnaí air an t-a'
+--- Eval sample ---
+REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágann gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
+HYP: 'tá naicléas éagsóhsaí ag eaimh mébhe a bháá ghan n le breiseadh na na chéile ar aheagán chimhte nó gan aon cuimilt'
+{'eval_loss': 1.173712968826294, 'eval_wer': 60.193582141611444, 'eval_runtime': 58.2451, 'eval_samples_per_second': 14.456, 'eval_steps_per_second': 3.623, 'epoch': 9.0}
+{'loss': 1.7025, 'grad_norm': 40.18567657470703, 'learning_rate': 1.4970355731225297e-05, 'epoch': 9.01}
+{'loss': 2.12, 'grad_norm': 77.56383514404297, 'learning_rate': 1.4476284584980237e-05, 'epoch': 9.11}
+{'loss': 1.6616, 'grad_norm': 30.835390090942383, 'learning_rate': 1.3982213438735178e-05, 'epoch': 9.21}
+{'loss': 1.8918, 'grad_norm': 58.4537353515625, 'learning_rate': 1.348814229249012e-05, 'epoch': 9.31}
+{'loss': 1.7486, 'grad_norm': 48.085296630859375, 'learning_rate': 1.299407114624506e-05, 'epoch': 9.41}
+{'loss': 2.064, 'grad_norm': 45.70087432861328, 'learning_rate': 1.25e-05, 'epoch': 9.51}
+{'loss': 1.7291, 'grad_norm': 31.483722686767578, 'learning_rate': 1.2005928853754941e-05, 'epoch': 9.61}
+{'loss': 1.664, 'grad_norm': 29.218263626098633, 'learning_rate': 1.1511857707509881e-05, 'epoch': 9.71}
+{'loss': 1.8939, 'grad_norm': 43.65670394897461, 'learning_rate': 1.1017786561264824e-05, 'epoch': 9.81}
+{'loss': 1.6646, 'grad_norm': 63.514495849609375, 'learning_rate': 1.0523715415019764e-05, 'epoch': 9.91}
+{'loss': 2.3789, 'grad_norm': 33.89020919799805, 'learning_rate': 1.0029644268774705e-05, 'epoch': 10.0}
+ 83%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                        | 1010/1212 [1:00:05<08:16,  2.46s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:57<00:00,  4.14it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'tiús 70 cm atá sa screamh ar an taobh is gaire dúinn agus tiús 100 km atá ar an taobh thall'
+HYP: 'tuús le17 cé agá sé chh is le taigh e móaire deninn isus isús 500-/há sa an taobh isoir ist'
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 1.1961822509765625, 'eval_wer': 60.44645971398674, 'eval_runtime': 58.1917, 'eval_samples_per_second': 14.469, 'eval_steps_per_second': 3.626, 'epoch': 10.0}
+{'loss': 1.6458, 'grad_norm': 49.974369049072266, 'learning_rate': 9.535573122529645e-06, 'epoch': 10.1}
+{'loss': 1.6355, 'grad_norm': 50.28841018676758, 'learning_rate': 9.041501976284585e-06, 'epoch': 10.2}
+{'loss': 1.677, 'grad_norm': 52.215370178222656, 'learning_rate': 8.547430830039528e-06, 'epoch': 10.3}
+{'loss': 1.5371, 'grad_norm': 38.3988037109375, 'learning_rate': 8.053359683794468e-06, 'epoch': 10.4}
+{'loss': 1.6763, 'grad_norm': 39.57225799560547, 'learning_rate': 7.559288537549407e-06, 'epoch': 10.5}
+{'loss': 1.9731, 'grad_norm': 66.05048370361328, 'learning_rate': 7.065217391304347e-06, 'epoch': 10.6}
+{'loss': 1.4847, 'grad_norm': 45.462650299072266, 'learning_rate': 6.5711462450592885e-06, 'epoch': 10.7}
+{'loss': 1.6516, 'grad_norm': 48.66633605957031, 'learning_rate': 6.07707509881423e-06, 'epoch': 10.8}
+{'loss': 1.9209, 'grad_norm': 62.40631866455078, 'learning_rate': 5.58300395256917e-06, 'epoch': 10.9}
+{'loss': 1.9017, 'grad_norm': 59.88921356201172, 'learning_rate': 5.088932806324111e-06, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1111/1212 [1:05:57<03:58,  2.37s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:57<00:00,  4.28it/s]
+REF: 'ar an 15 lúnasa 1940 rinne na comhghuaillithe ionradh ar dheisceart na fraince ionradh ar tugadh oibríocht dragúin air'
+HYP: 'ar an 15úúasa 1940 rinne na comhghuaileise ionradh ar anisarc na fraince anradh ar tadh arighíonn drairin a'
+--- Eval sample ---
+REF: "níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt d'fhocail dhrannacha bhéicthe"
+HYP: "níl bunart togch cosúil le búar leággharúán an domon to sé níos cosúilí huairt bác'fhocalail dre'abait míigithe"
+--- Eval sample ---
+REF: "an tseachtain seo caite d'fhógair meti gur"
+HYP: "an tseirtain seo caite tug'fógair meti gur chó"
+{'eval_loss': 1.2225133180618286, 'eval_wer': 60.56853854202999, 'eval_runtime': 58.2368, 'eval_samples_per_second': 14.458, 'eval_steps_per_second': 3.623, 'epoch': 11.0}
+{'loss': 1.4079, 'grad_norm': 44.64430236816406, 'learning_rate': 4.594861660079051e-06, 'epoch': 11.09}
+{'loss': 1.487, 'grad_norm': 30.580785751342773, 'learning_rate': 4.1007905138339924e-06, 'epoch': 11.19}
+{'loss': 1.8684, 'grad_norm': 43.59020233154297, 'learning_rate': 3.606719367588933e-06, 'epoch': 11.29}
+{'loss': 1.2293, 'grad_norm': 37.479522705078125, 'learning_rate': 3.1126482213438737e-06, 'epoch': 11.39}
+{'loss': 1.6244, 'grad_norm': 43.11231231689453, 'learning_rate': 2.6185770750988146e-06, 'epoch': 11.49}
+{'loss': 1.7234, 'grad_norm': 44.99577331542969, 'learning_rate': 2.124505928853755e-06, 'epoch': 11.59}
+{'loss': 1.8731, 'grad_norm': 54.11896514892578, 'learning_rate': 1.6304347826086957e-06, 'epoch': 11.69}
+{'loss': 2.0271, 'grad_norm': 24.685543060302734, 'learning_rate': 1.1363636363636364e-06, 'epoch': 11.79}
+{'loss': 1.7412, 'grad_norm': 43.68129348754883, 'learning_rate': 6.422924901185771e-07, 'epoch': 11.89}
+{'loss': 1.9986, 'grad_norm': 37.15681076049805, 'learning_rate': 1.4822134387351778e-07, 'epoch': 11.99}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:11:49<00:00,  2.33s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:58<00:00,  4.08it/s]
+REF: 'ní gá a rá má tá teanga rómánsach ar eolas agat beidh sé níos fusa ort an phortaingéilis a fhoghlaim'
+HYP: 'ní gáireit má tá teanga rúhnaa ar eolas agat bidh sé níos fusa th an phort g géil is a fhoghlaim'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 1.2279117107391357, 'eval_wer': 60.664457621206836, 'eval_runtime': 58.9009, 'eval_samples_per_second': 14.295, 'eval_steps_per_second': 3.582, 'epoch': 12.0}
+{'train_runtime': 4368.4336, 'train_samples_per_second': 8.829, 'train_steps_per_second': 0.277, 'train_loss': 4.635130264971516, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:12:48<00:00,  3.60s/it]

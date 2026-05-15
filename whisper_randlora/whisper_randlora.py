@@ -5,27 +5,26 @@ import torch
 from datasets import load_dataset, DatasetDict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
-import evaluate
+from jiwer import wer
 
 # our env variables
-MODEL_NAME = "openai/whisper-tiny"
-OUTPUT_DIR = "./exp/test"
+MODEL_NAME = "openai/whisper-small"
+OUTPUT_DIR = "./exp/irish"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-processor = WhisperProcessor.from_pretrained(MODEL_NAME, language="breton", task="transcribe")
+processor = WhisperProcessor.from_pretrained(MODEL_NAME, task="transcribe")
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_NAME)
 model.config.use_cache = False
-model.generation_config.language = "breton"
 model.generation_config.task = "transcribe"
 model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "is_is", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "is_is", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -35,6 +34,7 @@ def prepare_dataset(example):
     )
     example["input_length"] = len(audio["array"]) / audio["sampling_rate"]
     return example
+
 ds = ds.map(prepare_dataset, remove_columns=ds.column_names["train"], num_proc=1)
 def is_audio_in_length_range(length):
     return length < 30.0
@@ -69,7 +69,7 @@ class DataCollatorSpeechSeq2SeqWithPadding:
 data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 
 # evaluation metric
-metric = evaluate.load("wer")
+# metric = evaluate.load("wer")
 def compute_metrics(pred):
     pred_ids = pred.predictions
     label_ids = pred.label_ids
@@ -79,7 +79,7 @@ def compute_metrics(pred):
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
     label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
 
-    wer_ortho = 100 * metric.compute(predictions=pred_str, references=label_str)
+    wer_ortho = 100 * wer(pred_str, label_str)
 
     pred_str_norm = [processor.tokenizer.normalize(pred) for pred in pred_str]
     label_str_norm = [processor.tokenizer.normalize(label) for label in label_str]
@@ -87,39 +87,55 @@ def compute_metrics(pred):
     pred_str_norm = [pred_str_norm[i] for i in range(len(pred_str_norm)) if len(label_str_norm[i]) > 0]
     label_str_norm = [label_str_norm[i] for i in range(len(label_str_norm)) if len(label_str_norm[i]) > 0]
 
-    wer = 100 * metric.compute(predictions=pred_str_norm, references=label_str_norm)
+    # Print a few examples for debugging (helps explain huge WERs)
+    for ref, hyp in list(zip(label_str_norm, pred_str_norm))[:3]:
+        print("--- Eval sample ---")
+        print("REF:", repr(ref))
+        print("HYP:", repr(hyp))
 
-    return {"wer_ortho": wer_ortho, "wer": wer}
+
+    wer_norm = 100 * wer(pred_str_norm, label_str_norm)
+
+    return {"wer_ortho": wer_ortho, "wer": wer_norm}
 
 # setup lora configuration and instantiate model with it
-lora_config = RandLoraConfig(
+randlora_config = RandLoraConfig(
     r=32,
-    target_modules=["q_proj", "v_proj"],
+    target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
+    randlora_dropout=0.1,
+    bias="none",
 )
-model = get_peft_model(model, lora_config)
+model = get_peft_model(model, randlora_config)
 model.print_trainable_parameters()
 
 # define training hyperparameters and settings
 training_args = Seq2SeqTrainingArguments(
     output_dir=OUTPUT_DIR,
-    per_device_train_batch_size=16,
-    gradient_accumulation_steps=1,
-    learning_rate=1e-3,
-    num_train_epochs=3,
+    # smaller per-device batch + accumulation to keep effective batch stable on limited data / GPU
+    per_device_train_batch_size=8,
+    gradient_accumulation_steps=4,  # effective batch size = 8 * 4 = 32
+    learning_rate=5e-5,
+    warmup_steps=200,
+    lr_scheduler_type="linear",
+    max_grad_norm=1.0,
+    num_train_epochs=12,
+    eval_on_start=True,
     eval_strategy="epoch",
     save_strategy="epoch",
-    per_device_eval_batch_size=16,
+    per_device_eval_batch_size=4,
     predict_with_generate=True,
-    generation_max_length=225,
-    logging_strategy="steps",
+    generation_max_length=256,
     logging_first_step=True,
-    logging_nan_inf_filter=False,
     logging_steps=10,
     report_to=["tensorboard"],
     fp16=True,
     fp16_full_eval=True,
     remove_unused_columns=False,
     label_names=["labels"],
+    optim="adamw_torch_fused",
+    weight_decay=0.01,
+    dataloader_num_workers=0,
+    dataloader_pin_memory=False,
 )
 
 # setup trainer

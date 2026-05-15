@@ -207,6 +207,6 @@ marimo/_lsp/
 __marimo__/
 
 data/*
-whisper_*/exp/test/*
-wav2vec2-bert_*/exp/test/*
-qwen3-asr_*/exp/test/*
+whisper_*/exp/*
+wav2vec2-bert_*/exp/*
+qwen3-asr_*/exp/*
