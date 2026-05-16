@@ -9,7 +9,7 @@ from jiwer import wer
 
 # our env variables
 MODEL_NAME = "openai/whisper-small"
-OUTPUT_DIR = "./exp/javanese"
+OUTPUT_DIR = "./exp/irish"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
@@ -23,8 +23,8 @@ model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "jv_id", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "jv_id", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation")
+ds["test"] = load_dataset(DATASET_NAME, "ga_ie", split="test")
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -101,7 +101,6 @@ def compute_metrics(pred):
 # setup lora configuration and instantiate model with it
 lora_config = LoraConfig(
     r=32,
-    lora_alpha=32,
     target_modules=["q_proj", "v_proj", "k_proj", "out_proj"],
     lora_dropout=0.1,
     bias="none",

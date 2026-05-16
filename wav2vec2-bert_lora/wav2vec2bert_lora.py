@@ -16,7 +16,7 @@ from random import randint
 
 #SCRIPT_DIR = Path(__file__).parent
 MODEL_NAME = "facebook/w2v-bert-2.0"
-OUTPUT_DIR = "./exp/test"
+OUTPUT_DIR = "./exp/irish"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
@@ -89,7 +89,7 @@ model.config.use_cache = False
 
 lora_config = LoraConfig(
     r=32,
-    target_modules=["linear_q", "linear_v", "linear_k", "linear_out"],
+    target_modules=["linear_q", "linear_v", "linear_k", "linear_out", "lm_head"],
     lora_dropout=0.1,
     modules_to_save=["lm_head"],
 )

@@ -1,0 +1,296 @@
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/tuners/tuners_utils.py:919: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['thinker.lm_head'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+  warnings.warn(
+trainable params: 17,166,336 || all params: 799,592,448 || trainable%: 2.1469
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 151645, 'pad_token_id': 151643}.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+  0%|                                                                                                                                                                  | 0/1080 [00:00<?, ?it/s--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:58<00:00,  4.62it/s]
+REF: 'munyika iyi guta iri rakanyanya kusiyana nemamwe pakuti ndiro rine zvakawanda zvakarerekera kuchiarabic kupfuura zvekuafrica'
+HYP: '以下 <odic needิหม้ ك가I i i�้ taีี ir kanंูู้้์- Shัน--pุoิginiz o rin ngaawaิ-z-zryーiुu ch t--ु-g languageo raso k Arabican** Sh Sh�стьlanguageikaika i gu gututa iri ranyaanya gusianaana neamuwe paut ndir rinini zakaawanda zvarireera kuchirab kurawa shokkoua Africa'
+--- Eval sample ---
+REF: 'hameno kuti keyboard ichasara yava kushandei kana pakava nechimwe chinhu chitsva'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下 <odiccode no noा� t้-biesิişच__라-ुku shan-can---_ van-ิchiimome ッチchinonuâćt Sh Sh_Slanguageen kuti keyboard itaar yaawa kushandeey kanana pawa nechimowe chut titraa'
+--- Eval sample ---
+REF: ''
+HYP: '以下 <odiclanguageured[]{ thatured- �lev anं-new- kov-ma--ang_k gan ni y ** Shัุ put t tี sีีkonंko้ h" tan Sh language-" re r nature Sh- gं n a-ोún g-ี bananิ zosi'
+{'eval_loss': 9.578862190246582, 'eval_wer': 292.14690599905526, 'eval_runtime': 65.5282, 'eval_samples_per_second': 14.116, 'eval_steps_per_second': 3.54, 'epoch': 0}
+  0%|                                                                                                                                                                  | 0/1080 [01:05<?, ?it/s/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{'loss': 43.4797, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 46.5804, 'grad_norm': 12.599689483642578, 'learning_rate': 2.25e-06, 'epoch': 0.11}
+{'loss': 45.0748, 'grad_norm': 12.992867469787598, 'learning_rate': 4.75e-06, 'epoch': 0.22}
+{'loss': 42.9749, 'grad_norm': 12.451210021972656, 'learning_rate': 7.25e-06, 'epoch': 0.34}
+{'loss': 44.0599, 'grad_norm': 11.049108505249023, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.45}
+{'loss': 40.4792, 'grad_norm': 12.467933654785156, 'learning_rate': 1.225e-05, 'epoch': 0.56}
+{'loss': 38.8312, 'grad_norm': 14.542815208435059, 'learning_rate': 1.475e-05, 'epoch': 0.67}
+{'loss': 36.6447, 'grad_norm': 14.590156555175781, 'learning_rate': 1.725e-05, 'epoch': 0.78}
+{'loss': 33.74, 'grad_norm': 13.710498809814453, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.9}
+{'loss': 30.1591, 'grad_norm': 3.6324312686920166, 'learning_rate': 2.2250000000000002e-05, 'epoch': 1.0}
+  8%|████████████▊                                                                                                                                            | 90/1080 [04:59<31:48,  1.93s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.88it/s]
+REF: 'uyu mukana wakanakisa wekuona chiedza chinonzi aurora borealis sezvo denga richange rakasviba zvakanyanya kweanenge maawa 24 pazuva'
+HYP: 'duct以下〈#iny每个<asr_text>code<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>�� koча翁 пов пов��<asr_text><asr_text>о��enting ž��� пов那 пов пов w пов ゥ-two-two twenty twentycoroutinescoroutines four托 Kenya пов<asr_text>���isy<asr_text>um mukana waakanakiisi weko on chiedza chonzzi orora borealis seod denga reangeraasiribaiba jakakananyanya kuwe anenge mawa ma24 bazazard'
+--- Eval sample ---
+REF: 'mukuru wemapurisa chandra shekhar solanki wakati vapomerwi vakaonekwa mudare vakavhariwa kumeso'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下〈#iny每个<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>达尔 пов<asr_text><asr_text> пов пов��<asr_text><asr_text>科翁努 пов��有一个<asr_text><asr_text>�� пов<asr_text>_:*isy<asr_text>ukuruwaamaurisa chandra sekaz solangi wakati womu vakakonikam mudare vafide v kumo'
+--- Eval sample ---
+REF: ''
+HYP: '以下〈#iny每个<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>响<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>��ители<asr_text>壮<asr_text><asr_text>์��翁�� пов пов��<asr_text> пов пов�� central<asr_text>努ิġ��ocop�性ured'
+{'eval_loss': 6.344216823577881, 'eval_wer': 183.96315540859706, 'eval_runtime': 57.8929, 'eval_samples_per_second': 15.978, 'eval_steps_per_second': 4.007, 'epoch': 1.0}
+  8%|████████████▊                                                                                                                                            | 90/1080 [05:57<31:48,  1.93s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 27.9898, 'grad_norm': 12.251435279846191, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.11}
+{'loss': 25.8441, 'grad_norm': 11.043478965759277, 'learning_rate': 2.725e-05, 'epoch': 1.22}
+{'loss': 22.7515, 'grad_norm': 14.78884220123291, 'learning_rate': 2.975e-05, 'epoch': 1.34}
+{'loss': 21.6112, 'grad_norm': 12.668322563171387, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.45}
+{'loss': 22.4342, 'grad_norm': 19.74371910095215, 'learning_rate': 3.475e-05, 'epoch': 1.56}
+{'loss': 19.7352, 'grad_norm': 22.277332305908203, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.67}
+{'loss': 20.3342, 'grad_norm': 25.17430877685547, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.78}
+{'loss': 20.0592, 'grad_norm': 30.978546142578125, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.9}
+{'loss': 16.5022, 'grad_norm': 13.749526977539062, 'learning_rate': 4.4750000000000004e-05, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 180/1080 [09:45<29:09,  1.94s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  5.01it/s]
+REF: ''
+HYP: '以下#iny<asr_text> فال(chunk<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text> né<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>'
+--- Eval sample ---
+REF: 'vakawanda havamaone semadinosaur nechikonzero chekuti zvine minhenga uye zvinokwanisa kubhururuka'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下#iny<asr_text>еченечен<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>emawanda havam w semadanawakvwa kv kywar kchvzwza kwahukawawa k'
+--- Eval sample ---
+REF: 'vana vakakura vega vanokwanisa kunge vakashungurudzwa kana kushungurudzika vasati vasiiwa kana kutiziwa'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下#iny<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>m vakakura vega vanokwanes kungvakashunguruudwawa kanana kashungurudzikaik kati k kwa ki k k'
+{'eval_loss': 3.9370195865631104, 'eval_wer': 101.72413793103448, 'eval_runtime': 57.9929, 'eval_samples_per_second': 15.95, 'eval_steps_per_second': 4.0, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 180/1080 [10:43<29:09,  1.94s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 17.0895, 'grad_norm': 42.13589096069336, 'learning_rate': 4.7249999999999997e-05, 'epoch': 2.11}
+{'loss': 16.3897, 'grad_norm': 47.413665771484375, 'learning_rate': 4.975e-05, 'epoch': 2.22}
+{'loss': 14.7466, 'grad_norm': 55.767635345458984, 'learning_rate': 4.9488636363636365e-05, 'epoch': 2.34}
+{'loss': 13.5216, 'grad_norm': 69.15823364257812, 'learning_rate': 4.8920454545454545e-05, 'epoch': 2.45}
+{'loss': 11.9979, 'grad_norm': 66.4990463256836, 'learning_rate': 4.835227272727273e-05, 'epoch': 2.56}
+{'loss': 11.7385, 'grad_norm': 82.73172760009766, 'learning_rate': 4.778409090909091e-05, 'epoch': 2.67}
+{'loss': 10.2434, 'grad_norm': 81.95777893066406, 'learning_rate': 4.721590909090909e-05, 'epoch': 2.78}
+{'loss': 8.9053, 'grad_norm': 75.14422607421875, 'learning_rate': 4.664772727272727e-05, 'epoch': 2.9}
+{'loss': 7.2898, 'grad_norm': 18.479543685913086, 'learning_rate': 4.607954545454546e-05, 'epoch': 3.0}
+ 25%|██████████████████████████████████████                                                                                                                  | 270/1080 [14:30<25:58,  1.92s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.82it/s]
+REF: ''
+HYP: '以下languageiny<asr_text> формирова'
+--- Eval sample ---
+REF: 'chiitalian ndicho chirudzi chemazuva ose chinoshaandiswa nevazhinji vanoshanda mudunhu ukuwo ch'
+HYP: '以下languageiny<asr_text>k iti dzz chuzz zazva ozechinoh ndis nevaashhinj vanosand mudunohu ukkuochil'
+--- Eval sample ---
+REF: 'musi wesv'
+HYP: '以下languageiny<asr_text><asr_text>kwewehundo'
+{'eval_loss': 1.7820289134979248, 'eval_wer': 95.63060935285782, 'eval_runtime': 57.7517, 'eval_samples_per_second': 16.017, 'eval_steps_per_second': 4.017, 'epoch': 3.0}
+ 25%|██████████████████████████████████████                                                                                                                  | 270/1080 [15:28<25:58,  1.92s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 7.3503, 'grad_norm': 30.354198455810547, 'learning_rate': 4.551136363636364e-05, 'epoch': 3.11}
+{'loss': 5.9131, 'grad_norm': 18.047882080078125, 'learning_rate': 4.494318181818182e-05, 'epoch': 3.22}
+{'loss': 6.1634, 'grad_norm': 9.793743133544922, 'learning_rate': 4.4375e-05, 'epoch': 3.34}
+{'loss': 5.1961, 'grad_norm': 6.256661415100098, 'learning_rate': 4.380681818181818e-05, 'epoch': 3.45}
+{'loss': 5.1412, 'grad_norm': 5.681430339813232, 'learning_rate': 4.323863636363636e-05, 'epoch': 3.56}
+{'loss': 4.9888, 'grad_norm': 3.8346054553985596, 'learning_rate': 4.267045454545455e-05, 'epoch': 3.67}
+{'loss': 4.9416, 'grad_norm': 2.939147710800171, 'learning_rate': 4.210227272727273e-05, 'epoch': 3.78}
+{'loss': 4.6442, 'grad_norm': 3.386690378189087, 'learning_rate': 4.153409090909091e-05, 'epoch': 3.9}
+{'loss': 4.5538, 'grad_norm': 1.2144585847854614, 'learning_rate': 4.09659090909091e-05, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 360/1080 [19:16<23:46,  1.98s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.76it/s]
+REF: 'angel 2006 anoti kuongorora zvinhu kunonzi continuum approach ndiyo nzira iri kushandiswa kubatsira masangano kuti anyatsoshanda nemazvo'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductndina2006ot kongorras zvinhu kunanzizi continuous approach ndionyo nzira iriuchushaniswawaha keraati keirawahv'
+--- Eval sample ---
+REF: 'mukurumbira wekuva muzinda wehumbozha hwakatanga mugore 400 ad ikagara kusvika kuma 1100 ad'
+HYP: 'ductductductductductductductductductductductductductductductductductductmukurumbira wekwa musuzinda wehubojaha wagakatanga mugore 480aedag kusvika kum z1900d'
+--- Eval sample ---
+REF: 'gwaro'
+HYP: 'mwaro '
+{'eval_loss': 1.15110445022583, 'eval_wer': 81.45961265942371, 'eval_runtime': 57.5815, 'eval_samples_per_second': 16.064, 'eval_steps_per_second': 4.029, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 360/1080 [20:14<23:46,  1.98s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 4.3614, 'grad_norm': 2.3467893600463867, 'learning_rate': 4.039772727272728e-05, 'epoch': 4.11}
+{'loss': 4.4912, 'grad_norm': 2.402679204940796, 'learning_rate': 3.982954545454546e-05, 'epoch': 4.22}
+{'loss': 4.1134, 'grad_norm': 2.3923845291137695, 'learning_rate': 3.926136363636364e-05, 'epoch': 4.34}
+{'loss': 4.1399, 'grad_norm': 3.4570209980010986, 'learning_rate': 3.869318181818182e-05, 'epoch': 4.45}
+{'loss': 4.8327, 'grad_norm': 2.9855058193206787, 'learning_rate': 3.8125e-05, 'epoch': 4.56}
+{'loss': 4.7754, 'grad_norm': 3.3226428031921387, 'learning_rate': 3.755681818181818e-05, 'epoch': 4.67}
+{'loss': 4.7699, 'grad_norm': 3.601400375366211, 'learning_rate': 3.6988636363636366e-05, 'epoch': 4.78}
+{'loss': 3.3481, 'grad_norm': 2.435490131378174, 'learning_rate': 3.6420454545454546e-05, 'epoch': 4.9}
+{'loss': 3.2087, 'grad_norm': 1.2324637174606323, 'learning_rate': 3.5852272727272726e-05, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 450/1080 [24:03<20:11,  1.92s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.74it/s]
+REF: 'mugungwa rine zvitsuwa zvakawanda uye mudhamu hamudi hamo chikepe chinonzi yacht'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductmugongwa reninezvitswa zvakwanda uye mudamuu amud hauch chikpe chinonzi y'
+--- Eval sample ---
+REF: 'mumakore ekuma1960 brzezinski ndiye aish'
+HYP: 'mumagore ekuma 960 brizzinski ndiye aishanda'
+--- Eval sample ---
+REF: 'kombiuta yeasus eeee yakambotepfenyurwa pasi rese kuitira kuchengetedza mari nemashandiro akanaka yakambopisa'
+HYP: 'kombududa yasus a y yakamboteefenyyurava pasir rese kuitira kuchgetez mari nemashandiiro kaka yakambobista mut'
+{'eval_loss': 1.0360140800476074, 'eval_wer': 77.46811525743978, 'eval_runtime': 58.3781, 'eval_samples_per_second': 15.845, 'eval_steps_per_second': 3.974, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 450/1080 [25:01<20:11,  1.92s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 3.5501, 'grad_norm': 2.5547516345977783, 'learning_rate': 3.5284090909090914e-05, 'epoch': 5.11}
+{'loss': 4.2375, 'grad_norm': 3.2361743450164795, 'learning_rate': 3.4715909090909094e-05, 'epoch': 5.22}
+{'loss': 3.6021, 'grad_norm': 3.2040276527404785, 'learning_rate': 3.4147727272727274e-05, 'epoch': 5.34}
+{'loss': 4.1218, 'grad_norm': 3.0639214515686035, 'learning_rate': 3.357954545454546e-05, 'epoch': 5.45}
+{'loss': 4.3849, 'grad_norm': 2.814845323562622, 'learning_rate': 3.301136363636364e-05, 'epoch': 5.56}
+{'loss': 3.8082, 'grad_norm': 3.023378372192383, 'learning_rate': 3.2443181818181815e-05, 'epoch': 5.67}
+{'loss': 3.459, 'grad_norm': 3.3925936222076416, 'learning_rate': 3.1875e-05, 'epoch': 5.78}
+{'loss': 3.6953, 'grad_norm': 3.853372812271118, 'learning_rate': 3.130681818181818e-05, 'epoch': 5.9}
+{'loss': 3.6156, 'grad_norm': 1.2583744525909424, 'learning_rate': 3.073863636363636e-05, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 540/1080 [28:51<18:03,  2.01s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.92it/s]
+REF: 'mugore ra2002 goma yakaparadzwa nezvin'
+HYP: 'mugwed d2002 gom yakaparaadzwa nezvinov'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 0.9975208044052124, 'eval_wer': 75.4723665564478, 'eval_runtime': 57.8028, 'eval_samples_per_second': 16.003, 'eval_steps_per_second': 4.014, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 540/1080 [29:49<18:03,  2.01s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 4.1993, 'grad_norm': 2.461197853088379, 'learning_rate': 3.0170454545454547e-05, 'epoch': 6.11}
+{'loss': 3.3695, 'grad_norm': 2.3937714099884033, 'learning_rate': 2.9602272727272727e-05, 'epoch': 6.22}
+{'loss': 3.0616, 'grad_norm': 3.401238203048706, 'learning_rate': 2.903409090909091e-05, 'epoch': 6.34}
+{'loss': 3.8577, 'grad_norm': 2.7081735134124756, 'learning_rate': 2.8465909090909094e-05, 'epoch': 6.45}
+{'loss': 4.0575, 'grad_norm': 3.113577127456665, 'learning_rate': 2.7897727272727275e-05, 'epoch': 6.56}
+{'loss': 3.2771, 'grad_norm': 2.8229384422302246, 'learning_rate': 2.732954545454546e-05, 'epoch': 6.67}
+{'loss': 3.3082, 'grad_norm': 3.0856435298919678, 'learning_rate': 2.676136363636364e-05, 'epoch': 6.78}
+{'loss': 3.7972, 'grad_norm': 3.2181665897369385, 'learning_rate': 2.6193181818181816e-05, 'epoch': 6.9}
+{'loss': 3.1844, 'grad_norm': 1.943243145942688, 'learning_rate': 2.5625e-05, 'epoch': 7.0}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 630/1080 [33:38<14:26,  1.93s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.92it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'maalloys ingori musanganiswa wesimbi mbiri kana dzakawanda usakanganwa kuti pane zvicherwa zvakawanda patafura ye periodic'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductmaoziore musanganiswa wesembi ziz dzwa kakawanda uakangah kuti pan zvichwa zvakawanda patatafuura ype'
+{'eval_loss': 0.9730878472328186, 'eval_wer': 73.8072744449693, 'eval_runtime': 58.1226, 'eval_samples_per_second': 15.915, 'eval_steps_per_second': 3.992, 'epoch': 7.0}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 630/1080 [34:37<14:26,  1.93s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 3.6558, 'grad_norm': 2.5512616634368896, 'learning_rate': 2.505681818181818e-05, 'epoch': 7.11}
+{'loss': 3.7521, 'grad_norm': 2.98964524269104, 'learning_rate': 2.4488636363636363e-05, 'epoch': 7.22}
+{'loss': 3.7095, 'grad_norm': 3.729654312133789, 'learning_rate': 2.3920454545454547e-05, 'epoch': 7.34}
+{'loss': 3.565, 'grad_norm': 3.4539904594421387, 'learning_rate': 2.3352272727272728e-05, 'epoch': 7.45}
+{'loss': 3.4451, 'grad_norm': 2.9571352005004883, 'learning_rate': 2.278409090909091e-05, 'epoch': 7.56}
+{'loss': 3.603, 'grad_norm': 3.9701626300811768, 'learning_rate': 2.221590909090909e-05, 'epoch': 7.67}
+{'loss': 3.0357, 'grad_norm': 3.40995717048645, 'learning_rate': 2.1647727272727275e-05, 'epoch': 7.78}
+{'loss': 3.3632, 'grad_norm': 3.2482690811157227, 'learning_rate': 2.1079545454545456e-05, 'epoch': 7.9}
+{'loss': 3.3685, 'grad_norm': 1.3416048288345337, 'learning_rate': 2.0511363636363636e-05, 'epoch': 8.0}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 720/1080 [38:28<11:41,  1.95s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:58<00:00,  4.84it/s]
+REF: 'asi mvura yakaoma nechando zvinhu zvinogara zvichiitika m'
+HYP: 'asi mvura yakakaoma nechando zvinhu zvinogona zvich zika mure'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'mhuri dzeshumba semhumhi kana imbwa mhuka dzinoshamisa kuti dzakaf'
+HYP: 'mururi dzekumba semomi kana imwa mok dzinani kuti dzakafan'
+{'eval_loss': 0.9553061723709106, 'eval_wer': 72.63816721776098, 'eval_runtime': 58.6221, 'eval_samples_per_second': 15.779, 'eval_steps_per_second': 3.958, 'epoch': 8.0}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 720/1080 [39:26<11:41,  1.95s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 3.4836, 'grad_norm': 3.026500940322876, 'learning_rate': 1.994318181818182e-05, 'epoch': 8.11}
+{'loss': 3.388, 'grad_norm': 3.9476945400238037, 'learning_rate': 1.9375e-05, 'epoch': 8.22}
+{'loss': 3.8016, 'grad_norm': 3.3098256587982178, 'learning_rate': 1.8806818181818184e-05, 'epoch': 8.34}
+{'loss': 3.2508, 'grad_norm': 4.265635967254639, 'learning_rate': 1.8238636363636364e-05, 'epoch': 8.45}
+{'loss': 3.2949, 'grad_norm': 2.780100107192993, 'learning_rate': 1.7670454545454544e-05, 'epoch': 8.56}
+{'loss': 3.7188, 'grad_norm': 5.007071018218994, 'learning_rate': 1.7102272727272728e-05, 'epoch': 8.67}
+{'loss': 4.2955, 'grad_norm': 3.1176910400390625, 'learning_rate': 1.6534090909090912e-05, 'epoch': 8.78}
+{'loss': 2.9675, 'grad_norm': 2.988323926925659, 'learning_rate': 1.5965909090909092e-05, 'epoch': 8.9}
+{'loss': 3.4305, 'grad_norm': 2.470263957977295, 'learning_rate': 1.5397727272727276e-05, 'epoch': 9.0}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 810/1080 [43:16<09:00,  2.00s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.78it/s]
+REF: 'shumba ikatsi dzinehushamwari hwakanyanya dzichirarama mumapoka makuru anonzi mapoka'
+HYP: 'preneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenezumba ikatii dzine uushanganweai wakananyanya dzichiraraa mumapoka makuru anzi mapoka'
+--- Eval sample ---
+REF: 'vanhu vanogona kusatarisira kuti mushanyi anenge achidzoka kumba anotofanira kuvawo nemwoyo murefu uye kunzwisisa'
+HYP: 'preneprenepreneprenepreneanhu vanogona kututsatisaira kuti manyi anenge dzidzooka kumb anotofanira kwwaawo nemoya murefu uye kunzisisa'
+--- Eval sample ---
+REF: 'pakaitika tsaona yacho gibson akabva angoendeswa kuchipatara asi haana kuzomboita nguva achiri mupenyu'
+HYP: 'preneprenepreneprenepreneprenepreneprenepakaitika tsawona yacho gson akabva angge endeeswa kuchipatara asihaan kuzumbita nguva airi mupenyo'
+{'eval_loss': 0.9468215107917786, 'eval_wer': 71.90599905526689, 'eval_runtime': 57.9177, 'eval_samples_per_second': 15.971, 'eval_steps_per_second': 4.006, 'epoch': 9.0}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 810/1080 [44:14<09:00,  2.00s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 2.9884, 'grad_norm': 3.4422662258148193, 'learning_rate': 1.4829545454545454e-05, 'epoch': 9.11}
+{'loss': 3.2891, 'grad_norm': 3.400604009628296, 'learning_rate': 1.4261363636363637e-05, 'epoch': 9.22}
+{'loss': 3.4944, 'grad_norm': 3.2081830501556396, 'learning_rate': 1.3693181818181819e-05, 'epoch': 9.34}
+{'loss': 3.0977, 'grad_norm': 3.092108964920044, 'learning_rate': 1.3125e-05, 'epoch': 9.45}
+{'loss': 3.3737, 'grad_norm': 4.138756275177002, 'learning_rate': 1.2556818181818184e-05, 'epoch': 9.56}
+{'loss': 3.557, 'grad_norm': 2.9877498149871826, 'learning_rate': 1.1988636363636365e-05, 'epoch': 9.67}
+{'loss': 3.3065, 'grad_norm': 3.0676510334014893, 'learning_rate': 1.1420454545454547e-05, 'epoch': 9.78}
+{'loss': 3.2478, 'grad_norm': 3.20906925201416, 'learning_rate': 1.0852272727272727e-05, 'epoch': 9.9}
+{'loss': 3.3104, 'grad_norm': 1.3195418119430542, 'learning_rate': 1.028409090909091e-05, 'epoch': 10.0}
+ 83%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                         | 900/1080 [48:04<05:54,  1.97s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.72it/s]
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'mari inoshandiswa kufalklands inonzi falkland pound fkp iyo ine ukoshe hwakafanana nehwepaund yekubritain gbp'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductmararen nguoshandiswa kufaulland inonzi falkland pound fkp iyo ine ukwv wakakanana kkaka kekufvaiur'
+--- Eval sample ---
+REF: ' zvatipa chitima motokari nezvimwe zvekufambisa zvakawanda wanda'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductzvipa chititi chauraw kzvbo zvkudukau kvawanda zak'
+{'eval_loss': 0.9379140734672546, 'eval_wer': 71.78790741615494, 'eval_runtime': 58.3279, 'eval_samples_per_second': 15.859, 'eval_steps_per_second': 3.978, 'epoch': 10.0}
+ 83%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                         | 900/1080 [49:03<05:54,  1.97s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 3.5245, 'grad_norm': 3.232158660888672, 'learning_rate': 9.715909090909091e-06, 'epoch': 10.11}
+{'loss': 3.4296, 'grad_norm': 3.6281611919403076, 'learning_rate': 9.147727272727273e-06, 'epoch': 10.22}
+{'loss': 3.0834, 'grad_norm': 3.359515428543091, 'learning_rate': 8.579545454545455e-06, 'epoch': 10.34}
+{'loss': 3.5389, 'grad_norm': 3.1254770755767822, 'learning_rate': 8.011363636363637e-06, 'epoch': 10.45}
+{'loss': 3.4049, 'grad_norm': 3.1704564094543457, 'learning_rate': 7.443181818181818e-06, 'epoch': 10.56}
+{'loss': 3.2204, 'grad_norm': 3.312873125076294, 'learning_rate': 6.875000000000001e-06, 'epoch': 10.67}
+{'loss': 2.9455, 'grad_norm': 3.4522242546081543, 'learning_rate': 6.306818181818181e-06, 'epoch': 10.78}
+{'loss': 3.548, 'grad_norm': 3.641798973083496, 'learning_rate': 5.738636363636364e-06, 'epoch': 10.9}
+{'loss': 3.1406, 'grad_norm': 1.124239206314087, 'learning_rate': 5.1704545454545455e-06, 'epoch': 11.0}
+ 92%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎            | 990/1080 [52:53<02:52,  1.92s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.77it/s]
+REF: 'uku hakusi kuonekana uku kuvharwa kwechitsauko chimwe uye kuvhurwa kwechimwe chitsva'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductzvaait kvakwa kyevaududwa kumkiki k kbo chye kumhararawa kwechitsweikau'
+--- Eval sample ---
+REF: ''
+HYP: ''
+--- Eval sample ---
+REF: 'chiitalian ndicho chirudzi chemazuva ose chinoshaandiswa nevazhinji vanoshanda mudunhu ukuwo ch'
+HYP: 'chitali ndi zuzz chemazuva ozsezchinoh ndiswa nevaashhinji vanoshanda mudhhu ukuwochil'
+{'eval_loss': 0.9342886805534363, 'eval_wer': 71.32735002361834, 'eval_runtime': 58.2729, 'eval_samples_per_second': 15.874, 'eval_steps_per_second': 3.981, 'epoch': 11.0}
+ 92%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎            | 990/1080 [53:51<02:52,  1.92s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+{'loss': 3.4118, 'grad_norm': 3.8825414180755615, 'learning_rate': 4.6022727272727275e-06, 'epoch': 11.11}
+{'loss': 3.5419, 'grad_norm': 3.0239202976226807, 'learning_rate': 4.0340909090909095e-06, 'epoch': 11.22}
+{'loss': 3.7027, 'grad_norm': 4.991079807281494, 'learning_rate': 3.465909090909091e-06, 'epoch': 11.34}
+{'loss': 3.0485, 'grad_norm': 3.0632822513580322, 'learning_rate': 2.8977272727272727e-06, 'epoch': 11.45}
+{'loss': 3.1056, 'grad_norm': 3.0886709690093994, 'learning_rate': 2.3295454545454547e-06, 'epoch': 11.56}
+{'loss': 3.7503, 'grad_norm': 3.164153575897217, 'learning_rate': 1.7613636363636363e-06, 'epoch': 11.67}
+{'loss': 3.1915, 'grad_norm': 2.936612844467163, 'learning_rate': 1.1931818181818183e-06, 'epoch': 11.78}
+{'loss': 3.3998, 'grad_norm': 3.037532329559326, 'learning_rate': 6.25e-07, 'epoch': 11.9}
+{'loss': 2.5274, 'grad_norm': 2.1234006881713867, 'learning_rate': 5.6818181818181815e-08, 'epoch': 12.0}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1080/1080 [57:40<00:00,  1.90s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 231/232 [00:57<00:00,  4.86it/s]
+REF: 'mumamwe maguta mazhinji eitaly uye mudzimwe nyika kunyanya kupoland makagadzirwa zvinhu zvakadaro uye zvakaonekwa nevanhu vakawanda'
+HYP: 'ductductductductductductductductductductductductmumamwe maguta magazhinji eitali uye mudzimweyika kunyanya khol makagadziirwa zvinhu zvakadararo uye zvakakonekwa nevanhu vakawanda'
+--- Eval sample ---
+REF: 'pairwiwa hondo yerusununguko matunhu 13 akatanga aumba hurumende yakanga isina kusimba ichingova necongress pasi'
+HYP: 'piwa wondo rwerununguko unut 18 akatanga aomba wumenda yakang isina kusimba ichingwa necongress pasip pe'
+--- Eval sample ---
+REF: ''
+HYP: ''
+{'eval_loss': 0.9323922395706177, 'eval_wer': 71.29192253188475, 'eval_runtime': 58.1071, 'eval_samples_per_second': 15.919, 'eval_steps_per_second': 3.993, 'epoch': 12.0}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1080/1080 [58:38<00:00,  1.90s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+{'train_runtime': 3519.049, 'train_samples_per_second': 9.739, 'train_steps_per_second': 0.307, 'train_loss': 9.011554710953323, 'epoch': 12.0}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1080/1080 [58:39<00:00,  3.26s/it]
