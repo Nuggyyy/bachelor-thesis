@@ -89,9 +89,8 @@ model.config.use_cache = False
 
 lora_config = LoraConfig(
     r=32,
-    target_modules=["linear_q", "linear_v", "linear_k", "linear_out", "lm_head"],
+    target_modules=["linear_q", "linear_v", "linear_k", "linear_out"],
     lora_dropout=0.1,
-    modules_to_save=["lm_head"],
 )
 model = get_peft_model(model, lora_config)
 model.get_input_embeddings = lambda: model.base_model.model.wav2vec2_bert.feature_projection.projection
