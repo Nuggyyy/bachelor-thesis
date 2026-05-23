@@ -1,0 +1,251 @@
+Map (num_proc=1): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2996/2996 [00:53<00:00, 56.29 examples/s]
+Map (num_proc=1): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 647/647 [00:06<00:00, 107.32 examples/s]
+Filter: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2996/2996 [00:00<00:00, 143770.71 examples/s]
+trainable params: 7,077,888 || all params: 248,812,800 || trainable%: 2.8447
+  0%|                                                                                                                                                                  | 0/1128 [00:00<?, ?it/s]You're using a WhisperTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+                                                                                                                                                                                               --- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:42<00:00,  1.50it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'all nouns alongside the world is say for you always begin with a capital letter even in the middle of a sentence'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor is recorded by lord byron'
+{'eval_loss': 3.3089215755462646, 'eval_wer_ortho': 26.54170441084245, 'eval_wer': 6.53774688596793, 'eval_runtime': 105.8602, 'eval_samples_per_second': 6.112, 'eval_steps_per_second': 1.53, 'epoch': 0}
+{'loss': 3.2946, 'grad_norm': 2.4284355640411377, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 3.497, 'grad_norm': 2.2713332176208496, 'learning_rate': 2.25e-06, 'epoch': 0.11}
+{'loss': 3.4341, 'grad_norm': 2.403028726577759, 'learning_rate': 4.75e-06, 'epoch': 0.21}
+{'loss': 3.4478, 'grad_norm': 2.226680278778076, 'learning_rate': 7.25e-06, 'epoch': 0.32}
+{'loss': 3.4238, 'grad_norm': 2.380587100982666, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.43}
+{'loss': 3.3551, 'grad_norm': 2.4979007244110107, 'learning_rate': 1.225e-05, 'epoch': 0.53}
+{'loss': 3.1379, 'grad_norm': 2.5479941368103027, 'learning_rate': 1.475e-05, 'epoch': 0.64}
+{'loss': 2.9369, 'grad_norm': 2.448113441467285, 'learning_rate': 1.725e-05, 'epoch': 0.75}
+{'loss': 2.6985, 'grad_norm': 2.2129361629486084, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.86}
+{'loss': 2.4823, 'grad_norm': 1.0583992004394531, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.96}
+  8%|████████████▊                                                                                                                                            | 94/1128 [04:49<25:59,  1.51s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:48<00:00,  1.76it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'all nouns alongside the world is say for you always begin with a capital letter even in the middle of a sentence'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor is recorded by lord byron'
+{'eval_loss': 2.237874984741211, 'eval_wer_ortho': 25.93209747969173, 'eval_wer': 6.207133058984911, 'eval_runtime': 109.4162, 'eval_samples_per_second': 5.913, 'eval_steps_per_second': 1.481, 'epoch': 1.0}
+{'loss': 2.3612, 'grad_norm': 0.6121392846107483, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.06}
+{'loss': 2.1995, 'grad_norm': 0.358216792345047, 'learning_rate': 2.725e-05, 'epoch': 1.17}
+{'loss': 2.1315, 'grad_norm': 0.3145849406719208, 'learning_rate': 2.975e-05, 'epoch': 1.28}
+{'loss': 2.0263, 'grad_norm': 0.32756492495536804, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.39}
+{'loss': 1.8327, 'grad_norm': 0.3581632971763611, 'learning_rate': 3.475e-05, 'epoch': 1.49}
+{'loss': 1.62, 'grad_norm': 0.42215588688850403, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.6}
+{'loss': 1.4313, 'grad_norm': 0.28705447912216187, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.71}
+{'loss': 1.2816, 'grad_norm': 0.16714727878570557, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.81}
+{'loss': 1.2493, 'grad_norm': 0.2150975912809372, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.92}
+ 17%|█████████████████████████▎                                                                                                                              | 188/1128 [09:34<24:25,  1.56s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [05:39<00:00,  2.10s/it]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'ಸ ರಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕ'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'ಸ ರಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕಕ'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of sindra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 1.1463727951049805, 'eval_wer_ortho': 142.32593726090283, 'eval_wer': 132.31008629226199, 'eval_runtime': 341.45, 'eval_samples_per_second': 1.895, 'eval_steps_per_second': 0.474, 'epoch': 2.0}
+{'loss': 1.2007, 'grad_norm': 0.21877875924110413, 'learning_rate': 4.7249999999999997e-05, 'epoch': 2.02}
+{'loss': 1.0674, 'grad_norm': 0.16779617965221405, 'learning_rate': 4.975e-05, 'epoch': 2.13}
+{'loss': 1.0316, 'grad_norm': 0.12932106852531433, 'learning_rate': 4.951508620689656e-05, 'epoch': 2.24}
+{'loss': 1.0269, 'grad_norm': 0.12691165506839752, 'learning_rate': 4.897629310344828e-05, 'epoch': 2.34}
+{'loss': 0.9405, 'grad_norm': 0.9147694706916809, 'learning_rate': 4.8437500000000005e-05, 'epoch': 2.45}
+{'loss': 0.923, 'grad_norm': 0.12471168488264084, 'learning_rate': 4.7898706896551726e-05, 'epoch': 2.56}
+{'loss': 0.9485, 'grad_norm': 0.12500159442424774, 'learning_rate': 4.735991379310345e-05, 'epoch': 2.66}
+{'loss': 0.9109, 'grad_norm': 0.12239467352628708, 'learning_rate': 4.6821120689655174e-05, 'epoch': 2.77}
+{'loss': 0.9502, 'grad_norm': 0.10127219557762146, 'learning_rate': 4.6282327586206894e-05, 'epoch': 2.88}
+{'loss': 0.9429, 'grad_norm': 0.13565796613693237, 'learning_rate': 4.574353448275862e-05, 'epoch': 2.98}
+ 25%|██████████████████████████████████████                                                                                                                  | 282/1128 [18:08<19:37,  1.39s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:45<00:00,  1.85it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'all nouns alongside the world say for you always begin with a capital letter even in the middle of a sentence'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of sindra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.9334959983825684, 'eval_wer_ortho': 10.076432227754015, 'eval_wer': 8.073331027326185, 'eval_runtime': 106.5178, 'eval_samples_per_second': 6.074, 'eval_steps_per_second': 1.521, 'epoch': 3.0}
+{'loss': 0.9, 'grad_norm': 0.11652389913797379, 'learning_rate': 4.520474137931034e-05, 'epoch': 3.09}
+{'loss': 0.9277, 'grad_norm': 0.10017797350883484, 'learning_rate': 4.466594827586207e-05, 'epoch': 3.19}
+{'loss': 0.9052, 'grad_norm': 0.09683612734079361, 'learning_rate': 4.41271551724138e-05, 'epoch': 3.3}
+{'loss': 0.8919, 'grad_norm': 0.12136634439229965, 'learning_rate': 4.3588362068965525e-05, 'epoch': 3.41}
+{'loss': 0.8912, 'grad_norm': 0.11048958450555801, 'learning_rate': 4.3049568965517245e-05, 'epoch': 3.51}
+{'loss': 0.8793, 'grad_norm': 0.13114234805107117, 'learning_rate': 4.2510775862068966e-05, 'epoch': 3.62}
+{'loss': 0.8798, 'grad_norm': 0.1341303139925003, 'learning_rate': 4.197198275862069e-05, 'epoch': 3.73}
+{'loss': 0.9007, 'grad_norm': 0.11328108608722687, 'learning_rate': 4.1433189655172414e-05, 'epoch': 3.83}
+{'loss': 0.8642, 'grad_norm': 1.3865739107131958, 'learning_rate': 4.089439655172414e-05, 'epoch': 3.94}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 376/1128 [22:49<17:34,  1.40s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:42<00:00,  1.26it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'all nouns alongside the world say for you always begin with a capital letter even in the middle of a sentence'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of sindra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.8844953179359436, 'eval_wer_ortho': 9.375872661267802, 'eval_wer': 7.357790601813685, 'eval_runtime': 103.9151, 'eval_samples_per_second': 6.226, 'eval_steps_per_second': 1.559, 'epoch': 4.0}
+{'loss': 0.8528, 'grad_norm': 0.11761400103569031, 'learning_rate': 4.035560344827586e-05, 'epoch': 4.04}
+{'loss': 0.8369, 'grad_norm': 0.11586975306272507, 'learning_rate': 3.981681034482759e-05, 'epoch': 4.15}
+{'loss': 0.8641, 'grad_norm': 0.11600363999605179, 'learning_rate': 3.927801724137931e-05, 'epoch': 4.26}
+{'loss': 0.8591, 'grad_norm': 0.12176376581192017, 'learning_rate': 3.873922413793104e-05, 'epoch': 4.36}
+{'loss': 0.8477, 'grad_norm': 0.12805058062076569, 'learning_rate': 3.820043103448276e-05, 'epoch': 4.47}
+{'loss': 0.8198, 'grad_norm': 0.112481988966465, 'learning_rate': 3.7661637931034485e-05, 'epoch': 4.58}
+{'loss': 0.8379, 'grad_norm': 0.16881605982780457, 'learning_rate': 3.7122844827586206e-05, 'epoch': 4.68}
+{'loss': 0.8278, 'grad_norm': 0.1214069277048111, 'learning_rate': 3.658405172413793e-05, 'epoch': 4.79}
+{'loss': 0.8105, 'grad_norm': 0.10483121126890182, 'learning_rate': 3.604525862068966e-05, 'epoch': 4.9}
+{'loss': 0.7638, 'grad_norm': 0.1231960877776146, 'learning_rate': 3.550646551724138e-05, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 470/1128 [27:27<15:59,  1.46s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:39<00:00,  1.96it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'all nouns alongside the world say for you always begin with a capital letter even in the middle of a sentence'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.8342190980911255, 'eval_wer_ortho': 9.158605330920732, 'eval_wer': 7.365380647823396, 'eval_runtime': 100.7791, 'eval_samples_per_second': 6.42, 'eval_steps_per_second': 1.607, 'epoch': 5.0}
+{'loss': 0.837, 'grad_norm': 0.1217181459069252, 'learning_rate': 3.496767241379311e-05, 'epoch': 5.11}
+{'loss': 0.7905, 'grad_norm': 0.13729886710643768, 'learning_rate': 3.442887931034483e-05, 'epoch': 5.21}
+{'loss': 0.7636, 'grad_norm': 0.16146424412727356, 'learning_rate': 3.389008620689656e-05, 'epoch': 5.32}
+{'loss': 0.7548, 'grad_norm': 0.12307780981063843, 'learning_rate': 3.335129310344828e-05, 'epoch': 5.43}
+{'loss': 0.7711, 'grad_norm': 1.4558378458023071, 'learning_rate': 3.2812500000000005e-05, 'epoch': 5.53}
+{'loss': 0.7497, 'grad_norm': 0.14996552467346191, 'learning_rate': 3.2273706896551725e-05, 'epoch': 5.64}
+{'loss': 0.7798, 'grad_norm': 0.12916910648345947, 'learning_rate': 3.1734913793103446e-05, 'epoch': 5.75}
+{'loss': 0.7559, 'grad_norm': 0.16055820882320404, 'learning_rate': 3.1196120689655173e-05, 'epoch': 5.86}
+{'loss': 0.7282, 'grad_norm': 0.14447499811649323, 'learning_rate': 3.0657327586206894e-05, 'epoch': 5.96}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 564/1128 [32:03<13:03,  1.39s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:42<00:00,  1.85it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskj'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.7615310549736023, 'eval_wer_ortho': 10.573239534721738, 'eval_wer': 8.96138756968821, 'eval_runtime': 105.1709, 'eval_samples_per_second': 6.152, 'eval_steps_per_second': 1.54, 'epoch': 6.0}
+{'loss': 0.7108, 'grad_norm': 0.14264459908008575, 'learning_rate': 3.011853448275862e-05, 'epoch': 6.06}
+{'loss': 0.6838, 'grad_norm': 0.15256913006305695, 'learning_rate': 2.9579741379310345e-05, 'epoch': 6.17}
+{'loss': 0.7189, 'grad_norm': 0.18157894909381866, 'learning_rate': 2.9040948275862066e-05, 'epoch': 6.28}
+{'loss': 0.661, 'grad_norm': 0.17946960031986237, 'learning_rate': 2.8502155172413797e-05, 'epoch': 6.39}
+{'loss': 0.675, 'grad_norm': 0.19704316556453705, 'learning_rate': 2.796336206896552e-05, 'epoch': 6.49}
+{'loss': 0.6381, 'grad_norm': 0.19244696199893951, 'learning_rate': 2.7424568965517245e-05, 'epoch': 6.6}
+{'loss': 0.6155, 'grad_norm': 0.20754209160804749, 'learning_rate': 2.688577586206897e-05, 'epoch': 6.71}
+{'loss': 0.6051, 'grad_norm': 0.2957359254360199, 'learning_rate': 2.6346982758620693e-05, 'epoch': 6.81}
+{'loss': 0.565, 'grad_norm': 0.32153841853141785, 'learning_rate': 2.5808189655172417e-05, 'epoch': 6.92}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 658/1128 [36:42<10:53,  1.39s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [04:18<00:00,  1.59s/it]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'hoyeregjene pa slik kommunikasjonen stil i veste kan lagde behind pa 25 30 ar'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyere og aret sier for a gjoyere a begynne med et kapitalrett og i midten av en sentens'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'до нору імутнєзі річ є романськии і фістіональнии містінаті та сентра і якии був меженість вітрі за глоиніи історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі історіалі істор'
+{'eval_loss': 0.5226442217826843, 'eval_wer_ortho': 68.59946949602121, 'eval_wer': 67.806676223633, 'eval_runtime': 260.9407, 'eval_samples_per_second': 2.479, 'eval_steps_per_second': 0.621, 'epoch': 7.0}
+{'loss': 0.4805, 'grad_norm': 0.33578914403915405, 'learning_rate': 2.526939655172414e-05, 'epoch': 7.02}
+{'loss': 0.4337, 'grad_norm': 0.31565186381340027, 'learning_rate': 2.473060344827586e-05, 'epoch': 7.13}
+{'loss': 0.3917, 'grad_norm': 0.34015241265296936, 'learning_rate': 2.4191810344827586e-05, 'epoch': 7.24}
+{'loss': 0.3077, 'grad_norm': 0.41115400195121765, 'learning_rate': 2.365301724137931e-05, 'epoch': 7.34}
+{'loss': 0.2662, 'grad_norm': 0.29482796788215637, 'learning_rate': 2.3114224137931034e-05, 'epoch': 7.45}
+{'loss': 0.2692, 'grad_norm': 0.22477632761001587, 'learning_rate': 2.257543103448276e-05, 'epoch': 7.56}
+{'loss': 0.2616, 'grad_norm': 0.2182820588350296, 'learning_rate': 2.2036637931034485e-05, 'epoch': 7.66}
+{'loss': 0.2494, 'grad_norm': 0.15154783427715302, 'learning_rate': 2.149784482758621e-05, 'epoch': 7.77}
+{'loss': 0.2415, 'grad_norm': 0.13406121730804443, 'learning_rate': 2.0959051724137933e-05, 'epoch': 7.88}
+{'loss': 0.2761, 'grad_norm': 0.19747138023376465, 'learning_rate': 2.0420258620689657e-05, 'epoch': 7.98}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 752/1128 [43:58<08:45,  1.40s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [03:06<00:00,  1.05it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyerskogsdere i verden sier for du begynner a begynne med en kapital letter i midten av en sentens'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.2968626022338867, 'eval_wer_ortho': 43.463895230085306, 'eval_wer': 42.088476758608465, 'eval_runtime': 187.4356, 'eval_samples_per_second': 3.452, 'eval_steps_per_second': 0.864, 'epoch': 8.0}
+{'loss': 0.2587, 'grad_norm': 0.1839633285999298, 'learning_rate': 1.988146551724138e-05, 'epoch': 8.09}
+{'loss': 0.2581, 'grad_norm': 0.15373645722866058, 'learning_rate': 1.93426724137931e-05, 'epoch': 8.19}
+{'loss': 0.2179, 'grad_norm': 0.14305993914604187, 'learning_rate': 1.880387931034483e-05, 'epoch': 8.3}
+{'loss': 0.2376, 'grad_norm': 0.14144816994667053, 'learning_rate': 1.8265086206896553e-05, 'epoch': 8.41}
+{'loss': 0.2393, 'grad_norm': 0.1639484316110611, 'learning_rate': 1.7726293103448277e-05, 'epoch': 8.51}
+{'loss': 0.2345, 'grad_norm': 0.16175654530525208, 'learning_rate': 1.71875e-05, 'epoch': 8.62}
+{'loss': 0.2328, 'grad_norm': 0.1280849575996399, 'learning_rate': 1.6648706896551725e-05, 'epoch': 8.73}
+{'loss': 0.2254, 'grad_norm': 0.16591747105121613, 'learning_rate': 1.610991379310345e-05, 'epoch': 8.83}
+{'loss': 0.2276, 'grad_norm': 0.16817143559455872, 'learning_rate': 1.5571120689655173e-05, 'epoch': 8.94}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 846/1128 [50:00<06:35,  1.40s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [02:46<00:00,  1.47it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskjoyerskj'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.28950977325439453, 'eval_wer_ortho': 39.506012349691254, 'eval_wer': 38.23771269530015, 'eval_runtime': 169.3599, 'eval_samples_per_second': 3.82, 'eval_steps_per_second': 0.957, 'epoch': 9.0}
+{'loss': 0.2542, 'grad_norm': 0.10888133198022842, 'learning_rate': 1.5032327586206899e-05, 'epoch': 9.04}
+{'loss': 0.2455, 'grad_norm': 0.1274607926607132, 'learning_rate': 1.4493534482758623e-05, 'epoch': 9.15}
+{'loss': 0.2192, 'grad_norm': 0.1270771324634552, 'learning_rate': 1.3954741379310347e-05, 'epoch': 9.26}
+{'loss': 0.2287, 'grad_norm': 0.17698608338832855, 'learning_rate': 1.3415948275862069e-05, 'epoch': 9.36}
+{'loss': 0.268, 'grad_norm': 0.13158972561359406, 'learning_rate': 1.2877155172413793e-05, 'epoch': 9.47}
+{'loss': 0.2219, 'grad_norm': 0.13403697311878204, 'learning_rate': 1.2338362068965517e-05, 'epoch': 9.58}
+{'loss': 0.2237, 'grad_norm': 0.15699270367622375, 'learning_rate': 1.1799568965517243e-05, 'epoch': 9.68}
+{'loss': 0.2514, 'grad_norm': 0.15258260071277618, 'learning_rate': 1.1260775862068967e-05, 'epoch': 9.79}
+{'loss': 0.2205, 'grad_norm': 0.12954789400100708, 'learning_rate': 1.072198275862069e-05, 'epoch': 9.9}
+{'loss': 0.1987, 'grad_norm': 0.17287369072437286, 'learning_rate': 1.0183189655172415e-05, 'epoch': 10.0}
+ 83%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                         | 940/1128 [55:46<04:41,  1.50s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [02:35<00:00,  1.46it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyers og aljere verden for a gjoyere at det begynner med en kapital letter i mote av en sentens'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.2869737148284912, 'eval_wer_ortho': 33.148654962953074, 'eval_wer': 31.69964618005504, 'eval_runtime': 156.4977, 'eval_samples_per_second': 4.134, 'eval_steps_per_second': 1.035, 'epoch': 10.0}
+{'loss': 0.2407, 'grad_norm': 0.13180392980575562, 'learning_rate': 9.644396551724139e-06, 'epoch': 10.11}
+{'loss': 0.2143, 'grad_norm': 0.18235771358013153, 'learning_rate': 9.105603448275863e-06, 'epoch': 10.21}
+{'loss': 0.2378, 'grad_norm': 0.1337127983570099, 'learning_rate': 8.566810344827587e-06, 'epoch': 10.32}
+{'loss': 0.2016, 'grad_norm': 0.1432138979434967, 'learning_rate': 8.028017241379311e-06, 'epoch': 10.43}
+{'loss': 0.2104, 'grad_norm': 0.1485009342432022, 'learning_rate': 7.489224137931035e-06, 'epoch': 10.53}
+{'loss': 0.2394, 'grad_norm': 0.15422192215919495, 'learning_rate': 6.950431034482759e-06, 'epoch': 10.64}
+{'loss': 0.2418, 'grad_norm': 0.16324938833713531, 'learning_rate': 6.411637931034484e-06, 'epoch': 10.75}
+{'loss': 0.2269, 'grad_norm': 0.12389113008975983, 'learning_rate': 5.872844827586208e-06, 'epoch': 10.86}
+{'loss': 0.2403, 'grad_norm': 0.11862929165363312, 'learning_rate': 5.334051724137931e-06, 'epoch': 10.96}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1034/1128 [1:01:18<02:22,  1.51s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [02:34<00:00,  1.47it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyers og aljere verden for a gjoyere at det begynner med en kapital letter i mote av en sentens'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.28600436449050903, 'eval_wer_ortho': 33.06195393169182, 'eval_wer': 31.764476759283305, 'eval_runtime': 155.8797, 'eval_samples_per_second': 4.151, 'eval_steps_per_second': 1.039, 'epoch': 11.0}
+{'loss': 0.2155, 'grad_norm': 0.14736025035381317, 'learning_rate': 4.795258620689656e-06, 'epoch': 11.06}
+{'loss': 0.2327, 'grad_norm': 0.12979787588119507, 'learning_rate': 4.256465517241379e-06, 'epoch': 11.17}
+{'loss': 0.1966, 'grad_norm': 0.14097198843955994, 'learning_rate': 3.717672413793104e-06, 'epoch': 11.28}
+{'loss': 0.2019, 'grad_norm': 0.14902794361114502, 'learning_rate': 3.1788793103448274e-06, 'epoch': 11.39}
+{'loss': 0.2441, 'grad_norm': 0.16158002614974976, 'learning_rate': 2.640086206896552e-06, 'epoch': 11.49}
+{'loss': 0.2576, 'grad_norm': 0.16167381405830383, 'learning_rate': 2.101293103448276e-06, 'epoch': 11.6}
+{'loss': 0.229, 'grad_norm': 0.15813426673412323, 'learning_rate': 1.5625e-06, 'epoch': 11.71}
+{'loss': 0.2238, 'grad_norm': 0.16142958402633667, 'learning_rate': 1.023706896551724e-06, 'epoch': 11.81}
+{'loss': 0.242, 'grad_norm': 0.15587875247001648, 'learning_rate': 4.849137931034483e-07, 'epoch': 11.92}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [1:06:49<00:00,  1.55s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [02:33<00:00,  1.47it/s]
+REF: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 year'
+HYP: 'however due to the slow communication channels styles in the west could lag behind by 25 to 30 years'
+--- Eval sample ---
+REF: 'all nouns alongside the word sie for you always begin with a capital letter even in the middle of a sentence'
+HYP: 'allnoyers og aljere verden for a gjoyere at det begynner med en kapital letter i mote av en sentens'
+--- Eval sample ---
+REF: 'to the north and within easy reach is the romantic and fascinating town of sintra and which was made famous to foreigners after a glowing account of its splendors recorded by lord byron'
+HYP: 'to the north and within easy reach is a romantic and fascinating town of cintra and which was made famous to foreigners after a glowing account of its splendor as recorded by lord byron'
+{'eval_loss': 0.2856873869895935, 'eval_wer_ortho': 32.48233568857486, 'eval_wer': 31.099476439790575, 'eval_runtime': 154.3562, 'eval_samples_per_second': 4.192, 'eval_steps_per_second': 1.05, 'epoch': 12.0}
+{'train_runtime': 4165.1153, 'train_samples_per_second': 8.612, 'train_steps_per_second': 0.271, 'train_loss': 0.8469906154465168, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [1:09:25<00:00,  3.69s/it]

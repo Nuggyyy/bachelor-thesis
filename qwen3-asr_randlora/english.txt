@@ -1,0 +1,268 @@
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'google/fleurs' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'google/fleurs' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'google/fleurs' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'google/fleurs' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Map (num_proc=1): 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2996/2996 [00:27<00:00, 108.34 examples/s]
+Map (num_proc=1): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 647/647 [00:04<00:00, 152.22 examples/s]
+/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/tuners/tuners_utils.py:919: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['thinker.lm_head'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+  warnings.warn(
+trainable params: 5,221,632 || all params: 787,647,744 || trainable%: 0.6629
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 151645, 'pad_token_id': 151643}.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+  0%|                                                                                                                                                                  | 0/1128 [00:00<?, ?it/s--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.93it/s]
+REF: 'in a carriage they traveled back to paris surrounded by a mob of people screaming and shouting threats against the king and queen'
+HYP: "prenepreneprene以下 <odiclanguage-riageriagecer_ofledled---ateded_of_of_people_spinging_s-shinginging-f-s the's_C around in mobs** back carriage Louis carriageBindingUtil inlanguageSa carriage they travel back to paris surrounded by a mob of people screaming and shouting threats against the king and queen"
+--- Eval sample ---
+REF: 'while goma is reasonably safe any visits outside of goma should be researched to understand the state of the fighting that persists in the north kivu province'
+HYP: '以下 <odic wanna-woo_-alalely\xad as- new_visation-_of_g_g--_t-unide of Guam-ferencepond areasenceive theernwestern---k--s"odic_Sgoma is reasonably safe any visits outside of goma should be researched to understand the state of the fighting that persists in the north kivu province'
+--- Eval sample ---
+REF: 'if you have watched the movie national treasure you may think a treasure map was written on the back of the declaration of independence'
+HYP: 'prenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprenepreneprene以下 <odic enough_watch in-alismtsmentns as-ryed of--deationation of-indentpedanceence Treasureodic_Syou have watched the movie national treasure you may think a treasure map was written on the back of the declaration of independence'
+{'eval_loss': 13.35567569732666, 'eval_wer': 49.88574040219378, 'eval_runtime': 35.5803, 'eval_samples_per_second': 18.184, 'eval_steps_per_second': 4.553, 'epoch': 0}
+  0%|                                                                                                                                                                  | 0/1128 [00:35<?, ?it/s/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  check_backward_validity(args)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{'loss': 57.6341, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 60.461, 'grad_norm': nan, 'learning_rate': 2.25e-06, 'epoch': 0.11}
+{'loss': 59.9351, 'grad_norm': 618.5350341796875, 'learning_rate': 4.75e-06, 'epoch': 0.21}
+{'loss': 53.4802, 'grad_norm': 740.663818359375, 'learning_rate': 7.25e-06, 'epoch': 0.32}
+{'loss': 44.1924, 'grad_norm': 535.4068603515625, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.43}
+{'loss': 32.4192, 'grad_norm': 358.21588134765625, 'learning_rate': 1.225e-05, 'epoch': 0.53}
+{'loss': 25.4021, 'grad_norm': 432.4656677246094, 'learning_rate': 1.475e-05, 'epoch': 0.64}
+{'loss': 18.8175, 'grad_norm': 777.8695068359375, 'learning_rate': 1.725e-05, 'epoch': 0.75}
+{'loss': 7.7111, 'grad_norm': 423.37750244140625, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.85}
+{'loss': 1.2751, 'grad_norm': 23.982460021972656, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.96}
+  8%|████████████▊                                                                                                                                            | 94/1128 [04:37<35:31,  2.06s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.95it/s]
+REF: "alloys are basically a mixture of two or more metals don't forget that there are many elements on the periodic table"
+HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductalloys are basically a mixture of two or more metals don't forget there there are many elements on the periodic table"
+--- Eval sample ---
+REF: 'for example each year students from bennet school in north carolina design a website about their trip to the state capital each year the website gets remodeled but old versions are kept online to serve as a scrapbook'
+HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductfor example each year students from benennett's in north carolina design a website about their trip to the state capital each year the website gets remodeled but old versions are kept online to serve as a scrapbook"
+--- Eval sample ---
+REF: 'his work is of such recognized quality and detail that he is one of the very few household names among philatelists some specialize in collecting his work alone'
+HYP: 'his work is of such recognized quality and detail that he is one of the very few household names among philatists some specialize in collecting his work alone'
+{'eval_loss': 0.16638723015785217, 'eval_wer': 10.504265691651431, 'eval_runtime': 35.1491, 'eval_samples_per_second': 18.407, 'eval_steps_per_second': 4.609, 'epoch': 1.0}
+{'loss': 0.7162, 'grad_norm': 22.82703399658203, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.06}
+{'loss': 0.605, 'grad_norm': 17.89554214477539, 'learning_rate': 2.725e-05, 'epoch': 1.17}
+{'loss': 0.5499, 'grad_norm': 9.573974609375, 'learning_rate': 2.975e-05, 'epoch': 1.28}
+{'loss': 0.4961, 'grad_norm': 26.134031295776367, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.38}
+{'loss': 0.3873, 'grad_norm': 25.686647415161133, 'learning_rate': 3.475e-05, 'epoch': 1.49}
+{'loss': 0.3765, 'grad_norm': 8.299779891967773, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.6}
+{'loss': 0.4397, 'grad_norm': 8.448187828063965, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.7}
+{'loss': 0.3237, 'grad_norm': 28.333415985107422, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.81}
+{'loss': 0.3362, 'grad_norm': 13.620802879333496, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.92}
+ 17%|█████████████████████████▎                                                                                                                              | 188/1128 [09:06<32:30,  2.07s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.98it/s]
+REF: 'the disease is carried by pigs which then migrates to humans through mosquitos'
+HYP: 'the disease is carried by pigs which then migrates to humans through mosquitoesquitos'
+--- Eval sample ---
+REF: 'during the 1920s the prevailing attitudes of most citizens and nations was that of pacifism and isolation'
+HYP: 'during the 1920s the prevailing attitudes of most citizens and nations was that of passifism and isolation'
+--- Eval sample ---
+REF: 'there are of course christian theological explanations for this tradition but it may well be a pre-christian spring and fertility ritual'
+HYP: 'there are of course christian theological explanations for this tradition but it may be be a pre-christian spring and fertility ritual'
+{'eval_loss': 0.10240280628204346, 'eval_wer': 6.261425959780621, 'eval_runtime': 35.0236, 'eval_samples_per_second': 18.473, 'eval_steps_per_second': 4.625, 'epoch': 2.0}
+{'loss': 0.3442, 'grad_norm': 4.588735580444336, 'learning_rate': 4.7249999999999997e-05, 'epoch': 2.02}
+{'loss': 0.2932, 'grad_norm': 10.68615436553955, 'learning_rate': 4.975e-05, 'epoch': 2.13}
+{'loss': 0.4004, 'grad_norm': 9.619909286499023, 'learning_rate': 4.951508620689656e-05, 'epoch': 2.23}
+{'loss': 0.3568, 'grad_norm': 16.982803344726562, 'learning_rate': 4.897629310344828e-05, 'epoch': 2.34}
+{'loss': 0.2602, 'grad_norm': 32.89031982421875, 'learning_rate': 4.8437500000000005e-05, 'epoch': 2.45}
+{'loss': 0.4488, 'grad_norm': 11.128058433532715, 'learning_rate': 4.7898706896551726e-05, 'epoch': 2.55}
+{'loss': 0.377, 'grad_norm': 5.435271263122559, 'learning_rate': 4.735991379310345e-05, 'epoch': 2.66}
+{'loss': 0.3048, 'grad_norm': 7.814339637756348, 'learning_rate': 4.6821120689655174e-05, 'epoch': 2.77}
+{'loss': 0.4984, 'grad_norm': 12.39426326751709, 'learning_rate': 4.6282327586206894e-05, 'epoch': 2.87}
+{'loss': 0.2911, 'grad_norm': 9.96706771850586, 'learning_rate': 4.574353448275862e-05, 'epoch': 2.98}
+ 25%|██████████████████████████████████████                                                                                                                  | 282/1128 [14:15<28:18,  2.01s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:36<00:00,  4.90it/s]
+REF: "australia's mitchell gourley finished eleventh in the men's standing super-g czech competitor oldrich jelinek finished sixteenth in the men's sitting super-g"
+HYP: "australia's mitchell goorelay finished eleventh in the men's standing super-g chezech competitor orich delelenk finished sixteenth in the men's sitting super-g"
+--- Eval sample ---
+REF: 'you can use boda-boda motorcycle taxi to get around goma the normal local price is ~500 congolese francs for the short ride'
+HYP: 'you can use boda boda motorcycle taxi to get around goma the the normal local price is 500 congolese francs for the short ride'
+--- Eval sample ---
+REF: 'after the dam was built in 1963 the seasonal floods that would spread sediment throughout the river were halted'
+HYP: 'after the dam was built in 1963 the seasonal floods that would spread sediment throughout the river were halted'
+{'eval_loss': 0.10270867496728897, 'eval_wer': 6.32998171846435, 'eval_runtime': 36.8568, 'eval_samples_per_second': 17.554, 'eval_steps_per_second': 4.395, 'epoch': 3.0}
+{'loss': 0.3256, 'grad_norm': 9.974834442138672, 'learning_rate': 4.520474137931034e-05, 'epoch': 3.09}
+{'loss': 0.2675, 'grad_norm': 17.118961334228516, 'learning_rate': 4.466594827586207e-05, 'epoch': 3.19}
+{'loss': 0.3696, 'grad_norm': 5.213964939117432, 'learning_rate': 4.41271551724138e-05, 'epoch': 3.3}
+{'loss': 0.2671, 'grad_norm': 6.726025581359863, 'learning_rate': 4.3588362068965525e-05, 'epoch': 3.41}
+{'loss': 0.1674, 'grad_norm': 5.749046802520752, 'learning_rate': 4.3049568965517245e-05, 'epoch': 3.51}
+{'loss': 0.2671, 'grad_norm': 5.032865047454834, 'learning_rate': 4.2510775862068966e-05, 'epoch': 3.62}
+{'loss': 0.346, 'grad_norm': 7.943727493286133, 'learning_rate': 4.197198275862069e-05, 'epoch': 3.73}
+{'loss': 0.2229, 'grad_norm': 5.985785961151123, 'learning_rate': 4.1433189655172414e-05, 'epoch': 3.83}
+{'loss': 0.2226, 'grad_norm': 7.6650471687316895, 'learning_rate': 4.089439655172414e-05, 'epoch': 3.94}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 376/1128 [18:50<33:11,  2.65s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:37<00:00,  4.36it/s]
+REF: 'saint petersburg cruises include time in town cruise passengers are exempted from visa requirements check the terms'
+HYP: 'staint petersburg cruises include time in town cruise cruise passengers are exempted from visa requirements the terms'
+--- Eval sample ---
+REF: 'a car bomb detonated at police headquarters in gaziantep turkey yesterday morning killed two police officers and injured more than twenty other people'
+HYP: 'a car bomb detonated at police headquarters in giantep turkey yesterday morning killed two police officers and injured more than  other people'
+--- Eval sample ---
+REF: 'the great pyramid at giza is the only one of the seven wonders that is still standing today'
+HYP: 'the great pyramid at giza is the only one of the seven wonders that is still standing today'
+{'eval_loss': 0.10646267235279083, 'eval_wer': 6.413772090188909, 'eval_runtime': 37.4669, 'eval_samples_per_second': 17.269, 'eval_steps_per_second': 4.324, 'epoch': 4.0}
+{'loss': 0.1878, 'grad_norm': 7.395986080169678, 'learning_rate': 4.035560344827586e-05, 'epoch': 4.04}
+{'loss': 0.1287, 'grad_norm': 6.336705207824707, 'learning_rate': 3.981681034482759e-05, 'epoch': 4.15}
+{'loss': 0.1488, 'grad_norm': 39.78358840942383, 'learning_rate': 3.927801724137931e-05, 'epoch': 4.26}
+{'loss': 0.2063, 'grad_norm': 7.507861614227295, 'learning_rate': 3.873922413793104e-05, 'epoch': 4.36}
+{'loss': 0.3379, 'grad_norm': 14.410616874694824, 'learning_rate': 3.820043103448276e-05, 'epoch': 4.47}
+{'loss': 0.2089, 'grad_norm': 6.497859477996826, 'learning_rate': 3.7661637931034485e-05, 'epoch': 4.58}
+{'loss': 0.1918, 'grad_norm': 9.449006080627441, 'learning_rate': 3.7122844827586206e-05, 'epoch': 4.68}
+{'loss': 0.1892, 'grad_norm': 5.030129909515381, 'learning_rate': 3.658405172413793e-05, 'epoch': 4.79}
+{'loss': 0.197, 'grad_norm': 11.533358573913574, 'learning_rate': 3.604525862068966e-05, 'epoch': 4.9}
+{'loss': 0.151, 'grad_norm': 6.738753318786621, 'learning_rate': 3.550646551724138e-05, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 470/1128 [23:23<25:20,  2.31s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.88it/s]
+REF: 'giancarlo fisichella lost control of his car and ended the race very soon after the start'
+HYP: 'janiancarlo freichella lost control of his car and ended the race very soon after pit'
+--- Eval sample ---
+REF: 'it was ruled by the vichy french these were french people who had made peace with the germans in 1940 and worked with the invaders instead of fighting them'
+HYP: 'it was ruled by the vcfy french these were french people who made made peace with the germans in 1940 and worked with the invaders instead of fighting them'
+--- Eval sample ---
+REF: 'by 1976 thirty percent of machu picchu had been restored and restoration continues till today'
+HYP: 'by 1976  percent of machu picchu has been restored and restoration continues till today'
+{'eval_loss': 0.11345357447862625, 'eval_wer': 6.634673979280927, 'eval_runtime': 35.0136, 'eval_samples_per_second': 18.479, 'eval_steps_per_second': 4.627, 'epoch': 5.0}
+{'loss': 0.1705, 'grad_norm': 9.254594802856445, 'learning_rate': 3.496767241379311e-05, 'epoch': 5.11}
+{'loss': 0.1469, 'grad_norm': 9.694504737854004, 'learning_rate': 3.442887931034483e-05, 'epoch': 5.21}
+{'loss': 0.3544, 'grad_norm': 6.260932922363281, 'learning_rate': 3.389008620689656e-05, 'epoch': 5.32}
+{'loss': 0.2874, 'grad_norm': 8.891847610473633, 'learning_rate': 3.335129310344828e-05, 'epoch': 5.43}
+{'loss': 0.1739, 'grad_norm': 7.776078701019287, 'learning_rate': 3.2812500000000005e-05, 'epoch': 5.53}
+{'loss': 0.3494, 'grad_norm': 9.444409370422363, 'learning_rate': 3.2273706896551725e-05, 'epoch': 5.64}
+{'loss': 0.1078, 'grad_norm': 6.9331278800964355, 'learning_rate': 3.1734913793103446e-05, 'epoch': 5.75}
+{'loss': 0.1444, 'grad_norm': 11.267247200012207, 'learning_rate': 3.1196120689655173e-05, 'epoch': 5.85}
+{'loss': 0.1604, 'grad_norm': 12.42522144317627, 'learning_rate': 3.0657327586206894e-05, 'epoch': 5.96}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 564/1128 [27:52<21:43,  2.31s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  5.09it/s]
+REF: 'similarly by having a schengen visa you do not need to apply for visas to each of the schengen member countries separately hence saving time money and paperwork'
+HYP: 'similarly by having a schengen visa you do not need to apply for visas to each of the schengen member countries separately hence saving time money and paperwork'
+--- Eval sample ---
+REF: 'italian is also the everyday used by most of those who work in the state while latin is often used in religious ceremonies'
+HYP: 'italian is also the everyday used by most of those who work in the state while latin is often used in religious ceremonies'
+--- Eval sample ---
+REF: 'unfortunately studying traffic flow is difficult because driver behavior cannot be predicted with one-hundred percent certainty'
+HYP: 'unfortunately studying traffic flow is difficult because driver behavior cannot be predicted with  hundredundred percent certainty'
+{'eval_loss': 0.11860443651676178, 'eval_wer': 6.7413162705667276, 'eval_runtime': 35.0695, 'eval_samples_per_second': 18.449, 'eval_steps_per_second': 4.619, 'epoch': 6.0}
+{'loss': 0.1743, 'grad_norm': 6.404295921325684, 'learning_rate': 3.011853448275862e-05, 'epoch': 6.06}
+{'loss': 0.1018, 'grad_norm': 11.194076538085938, 'learning_rate': 2.9579741379310345e-05, 'epoch': 6.17}
+{'loss': 0.183, 'grad_norm': 6.73499870300293, 'learning_rate': 2.9040948275862066e-05, 'epoch': 6.28}
+{'loss': 0.1446, 'grad_norm': 2.683396577835083, 'learning_rate': 2.8502155172413797e-05, 'epoch': 6.38}
+{'loss': 0.1812, 'grad_norm': 4.357357025146484, 'learning_rate': 2.796336206896552e-05, 'epoch': 6.49}
+{'loss': 0.1796, 'grad_norm': 8.147974014282227, 'learning_rate': 2.7424568965517245e-05, 'epoch': 6.6}
+{'loss': 0.2788, 'grad_norm': 21.457502365112305, 'learning_rate': 2.688577586206897e-05, 'epoch': 6.7}
+{'loss': 0.1391, 'grad_norm': 4.441442966461182, 'learning_rate': 2.6346982758620693e-05, 'epoch': 6.81}
+{'loss': 0.1525, 'grad_norm': 4.249237537384033, 'learning_rate': 2.5808189655172417e-05, 'epoch': 6.92}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 658/1128 [33:40<16:29,  2.11s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.78it/s]
+REF: 'this is not going to be goodbye this is the closing of one chapter and the opening of a new one'
+HYP: 'this is not going to be goodbye this is going closing of one chapter and the opening of a new one'
+--- Eval sample ---
+REF: 'blogging is a tool that inspires collaboration and encourages students to extend learning well beyond the traditional school day'
+HYP: 'blogging is a tool that inspires collaboration and encourages students to extend learning well beyond the traditional school day'
+--- Eval sample ---
+REF: 'martelly swore in a new provisional electoral council cep of nine members yesterday'
+HYP: 'martelly swore in a new provisional electoral council of of nine members yesterday'
+{'eval_loss': 0.12589311599731445, 'eval_wer': 6.817489335770871, 'eval_runtime': 35.2178, 'eval_samples_per_second': 18.371, 'eval_steps_per_second': 4.6, 'epoch': 7.0}
+{'loss': 0.2509, 'grad_norm': 2.403221368789673, 'learning_rate': 2.526939655172414e-05, 'epoch': 7.02}
+{'loss': 0.3923, 'grad_norm': 33.43388748168945, 'learning_rate': 2.473060344827586e-05, 'epoch': 7.13}
+{'loss': 0.1937, 'grad_norm': 10.88764762878418, 'learning_rate': 2.4191810344827586e-05, 'epoch': 7.23}
+{'loss': 0.1931, 'grad_norm': 11.002985954284668, 'learning_rate': 2.365301724137931e-05, 'epoch': 7.34}
+{'loss': 0.0675, 'grad_norm': 5.874749660491943, 'learning_rate': 2.3114224137931034e-05, 'epoch': 7.45}
+{'loss': 0.1561, 'grad_norm': 8.950636863708496, 'learning_rate': 2.257543103448276e-05, 'epoch': 7.55}
+{'loss': 0.1714, 'grad_norm': 6.7122039794921875, 'learning_rate': 2.2036637931034485e-05, 'epoch': 7.66}
+{'loss': 0.0668, 'grad_norm': 4.804779052734375, 'learning_rate': 2.149784482758621e-05, 'epoch': 7.77}
+{'loss': 0.166, 'grad_norm': 13.266938209533691, 'learning_rate': 2.0959051724137933e-05, 'epoch': 7.87}
+{'loss': 0.1466, 'grad_norm': 13.024473190307617, 'learning_rate': 2.0420258620689657e-05, 'epoch': 7.98}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 752/1128 [38:08<13:28,  2.15s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.82it/s]
+REF: 'the parade of buildings that make the hong kong skyline has been likened to a glittering bar chart that is made apparent by the presence of the waters of victoria harbour'
+HYP: 'the parade of buildings that make the hong kong skyline has been likened to a glittering bar chart that is made apparent by the presence of the waters of victoria harbour'
+--- Eval sample ---
+REF: 'the aspect ratio of this format dividing by twelve to obtain the simplest whole-number ratio is therefore said to be 3:2'
+HYP: 'the aspect ratio of this format dividing by  to obtain the simplest whole-number ratio is therefore said to be three3 to2'
+--- Eval sample ---
+REF: 'the age where the events took place is commonly referred as the high middle ages the period of european history in the 11th 12th and 13th centuries ad 1000–1300'
+HYP: 'the age where the events took place is commonly referred as the high middle ages the period of european history in the 11th 12th and 13th centuries ad 100 or or1300'
+{'eval_loss': 0.13407284021377563, 'eval_wer': 6.642291285801341, 'eval_runtime': 35.2232, 'eval_samples_per_second': 18.369, 'eval_steps_per_second': 4.599, 'epoch': 8.0}
+{'loss': 0.3264, 'grad_norm': 5.147857666015625, 'learning_rate': 1.988146551724138e-05, 'epoch': 8.09}
+{'loss': 0.1771, 'grad_norm': 2.8016488552093506, 'learning_rate': 1.93426724137931e-05, 'epoch': 8.19}
+{'loss': 0.0836, 'grad_norm': 5.4085373878479, 'learning_rate': 1.880387931034483e-05, 'epoch': 8.3}
+{'loss': 0.1441, 'grad_norm': 3.20707106590271, 'learning_rate': 1.8265086206896553e-05, 'epoch': 8.41}
+{'loss': 0.1976, 'grad_norm': 6.24315881729126, 'learning_rate': 1.7726293103448277e-05, 'epoch': 8.51}
+{'loss': 0.2074, 'grad_norm': 3.019453763961792, 'learning_rate': 1.71875e-05, 'epoch': 8.62}
+{'loss': 0.2571, 'grad_norm': 17.300111770629883, 'learning_rate': 1.6648706896551725e-05, 'epoch': 8.73}
+{'loss': 0.0973, 'grad_norm': 4.9296064376831055, 'learning_rate': 1.610991379310345e-05, 'epoch': 8.83}
+{'loss': 0.1486, 'grad_norm': 5.990881443023682, 'learning_rate': 1.5571120689655173e-05, 'epoch': 8.94}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 846/1128 [42:39<09:34,  2.04s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.77it/s]
+REF: 'regular announcements in the metro are made only in catalan but unplanned disruptions are announced by an automated  in a wide variety of languages including spanish english french arabic and japanese'
+HYP: 'regular announcements in the metro are made only in catalan but unplanned disruptions are announced by an automated  in a wide variety of languages including spanish english french arabic and japanese'
+--- Eval sample ---
+REF: 'unfortunately studying traffic flow is difficult because driver behavior cannot be predicted with one-hundred percent certainty'
+HYP: 'unfortunately studying traffic flow is difficult because driver behavior cannot be predicted with  hundredundred percent certainty'
+--- Eval sample ---
+REF: 'usually you always here the sound of tourists and vendors the story of the sound and light is just like a story book'
+HYP: 'usually you always hear the sound of tourists and vendors the story of the sound and light is just like a storybook'
+{'eval_loss': 0.13479351997375488, 'eval_wer': 6.680377818403413, 'eval_runtime': 35.2041, 'eval_samples_per_second': 18.379, 'eval_steps_per_second': 4.602, 'epoch': 9.0}
+{'loss': 0.1728, 'grad_norm': 8.365827560424805, 'learning_rate': 1.5032327586206899e-05, 'epoch': 9.04}
+{'loss': 0.1403, 'grad_norm': 8.39802360534668, 'learning_rate': 1.4493534482758623e-05, 'epoch': 9.15}
+{'loss': 0.1583, 'grad_norm': 2.869647979736328, 'learning_rate': 1.3954741379310347e-05, 'epoch': 9.26}
+{'loss': 0.1158, 'grad_norm': 7.964768886566162, 'learning_rate': 1.3415948275862069e-05, 'epoch': 9.36}
+{'loss': 0.3312, 'grad_norm': 9.514349937438965, 'learning_rate': 1.2877155172413793e-05, 'epoch': 9.47}
+{'loss': 0.2415, 'grad_norm': 5.308431625366211, 'learning_rate': 1.2338362068965517e-05, 'epoch': 9.58}
+{'loss': 0.0643, 'grad_norm': 3.36905574798584, 'learning_rate': 1.1799568965517243e-05, 'epoch': 9.68}
+{'loss': 0.0805, 'grad_norm': 5.85310173034668, 'learning_rate': 1.1260775862068967e-05, 'epoch': 9.79}
+{'loss': 0.1807, 'grad_norm': 4.972965717315674, 'learning_rate': 1.072198275862069e-05, 'epoch': 9.9}
+{'loss': 0.0808, 'grad_norm': 2.638850450515747, 'learning_rate': 1.0183189655172415e-05, 'epoch': 10.0}
+ 83%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                         | 940/1128 [47:12<06:44,  2.15s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  4.79it/s]
+REF: "four skiers in the women's sitting group failed to finish their runs and 45 of the 117 total skiers in the giant slalom failed to rank in the race"
+HYP: "four skiers in the women's sitting group failed to finish the runs and 45 of the 117 total skiers in the giant slalom failed to rank in the race"
+--- Eval sample ---
+REF: 'there is no universal definition for which manufactured items are antiques some tax agencies define goods older than 100 years as antiques'
+HYP: 'there is no universal definition for which manufactured items are antiques some tax agencies define goods older than 100 years as antiques'
+--- Eval sample ---
+REF: 'nextgen is a  the faa claims would allow aircraft to fly shorter routes and save millions of gallons of fuel each year and cut carbon emissions'
+HYP: "next generation's a  the fa claims would allow aircraft to fly shorter routes and save millions of gallons of fuel each year and cut carbon emissions"
+{'eval_loss': 0.1360490918159485, 'eval_wer': 6.558500914076783, 'eval_runtime': 35.2795, 'eval_samples_per_second': 18.339, 'eval_steps_per_second': 4.592, 'epoch': 10.0}
+{'loss': 0.3388, 'grad_norm': 4.531054973602295, 'learning_rate': 9.644396551724139e-06, 'epoch': 10.11}
+{'loss': 0.2152, 'grad_norm': 4.886472225189209, 'learning_rate': 9.105603448275863e-06, 'epoch': 10.21}
+{'loss': 0.0637, 'grad_norm': 6.829380035400391, 'learning_rate': 8.566810344827587e-06, 'epoch': 10.32}
+{'loss': 0.0639, 'grad_norm': 14.483914375305176, 'learning_rate': 8.028017241379311e-06, 'epoch': 10.43}
+{'loss': 0.1778, 'grad_norm': 10.795117378234863, 'learning_rate': 7.489224137931035e-06, 'epoch': 10.53}
+{'loss': 0.0853, 'grad_norm': 9.853044509887695, 'learning_rate': 6.950431034482759e-06, 'epoch': 10.64}
+{'loss': 0.2882, 'grad_norm': 13.421810150146484, 'learning_rate': 6.411637931034484e-06, 'epoch': 10.75}
+{'loss': 0.1777, 'grad_norm': 4.845663547515869, 'learning_rate': 5.872844827586208e-06, 'epoch': 10.85}
+{'loss': 0.0814, 'grad_norm': 3.7804369926452637, 'learning_rate': 5.334051724137931e-06, 'epoch': 10.96}
+ 92%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍            | 1034/1128 [51:52<04:39,  2.98s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:33<00:00,  5.04it/s]
+REF: 'a well rounded athlete the tiger can climb though not well swim leap great distances and pull with five times the force of a strong human'
+HYP: 'a well-rounded athlete the tiger can climb though not well swim leap great distances and pull with five times the force of a strong human'
+--- Eval sample ---
+REF: "he was subsequently relocated to addenbrooke's hospital in cambridge"
+HYP: "he was subsequently relocated to addenbrooke's hospital in cambridge"
+--- Eval sample ---
+REF: 'the pyramid sound and light show is one of the most interesting things in the area for kids'
+HYP: "the pyramid's and light show is one of the most interesting things in the area for kids"
+{'eval_loss': 0.13901183009147644, 'eval_wer': 6.649908592321754, 'eval_runtime': 34.1967, 'eval_samples_per_second': 18.92, 'eval_steps_per_second': 4.737, 'epoch': 11.0}
+{'loss': 0.185, 'grad_norm': 5.819796085357666, 'learning_rate': 4.795258620689656e-06, 'epoch': 11.06}
+{'loss': 0.1607, 'grad_norm': 4.676451683044434, 'learning_rate': 4.256465517241379e-06, 'epoch': 11.17}
+{'loss': 0.2381, 'grad_norm': 8.785651206970215, 'learning_rate': 3.717672413793104e-06, 'epoch': 11.28}
+{'loss': 0.185, 'grad_norm': 4.772397518157959, 'learning_rate': 3.1788793103448274e-06, 'epoch': 11.38}
+{'loss': 0.0938, 'grad_norm': 5.833155632019043, 'learning_rate': 2.640086206896552e-06, 'epoch': 11.49}
+{'loss': 0.2104, 'grad_norm': 7.86806058883667, 'learning_rate': 2.101293103448276e-06, 'epoch': 11.6}
+{'loss': 0.1286, 'grad_norm': 3.3584792613983154, 'learning_rate': 1.5625e-06, 'epoch': 11.7}
+{'loss': 0.166, 'grad_norm': 2.8898212909698486, 'learning_rate': 1.023706896551724e-06, 'epoch': 11.81}
+{'loss': 0.0898, 'grad_norm': 3.3910675048828125, 'learning_rate': 4.849137931034483e-07, 'epoch': 11.92}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [56:11<00:00,  2.00s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:34<00:00,  3.42it/s]
+REF: 'virtual teams are held to the same standards of excellence as conventional teams but there are subtle differences'
+HYP: 'v teams are held to the same standard of excellence as conventional teams but there are subtle differences'
+--- Eval sample ---
+REF: 'in the north the region is bounded by the sahel and in the south and west by the atlantic ocean'
+HYP: 'in the north the region is bounded by the sahel and in the south and west by the atlantic ocean'
+--- Eval sample ---
+REF: 'a well rounded athlete the tiger can climb though not well swim leap great distances and pull with five times the force of a strong human'
+HYP: 'a well-rounded athlete the tiger can climb though not well swim leap great distances and pull with five times the force of a strong human'
+{'eval_loss': 0.14095722138881683, 'eval_wer': 6.748933577087142, 'eval_runtime': 35.9512, 'eval_samples_per_second': 17.997, 'eval_steps_per_second': 4.506, 'epoch': 12.0}
+{'train_runtime': 3407.6675, 'train_samples_per_second': 10.55, 'train_steps_per_second': 0.331, 'train_loss': 2.9010027996297425, 'epoch': 12.0}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [56:47<00:00,  3.02s/it]
