@@ -1,7 +1,6 @@
 import torch
 from qwen_asr import Qwen3ASRModel
 from datasets import load_dataset
-from evaluate import load
 from jiwer import wer
 
 MODEL_NAME = "Qwen/Qwen3-ASR-0.6B"
@@ -17,7 +16,7 @@ model = Qwen3ASRModel.from_pretrained(
 
 ds = load_dataset(
     DATASET_NAME,
-    "ga_ie",
+    "jv_id",
     split="test",
     trust_remote_code=True,
 )
@@ -29,6 +28,10 @@ results = model.transcribe(
 )
 
 predictions = [result.text for result in results]
-references = [audio["transcription"] for audio in ds]
+references = [audio["raw_transcription"] for audio in ds]
+
+for i in range(5):
+    print(f"prediction: {predictions[i]}")
+    print(f"reference: {references[i]}")
 
 print(f"Word Error Rate: {round(wer(references, predictions) * 100, 2)}%")

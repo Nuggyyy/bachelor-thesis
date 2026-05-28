@@ -1,11 +1,16 @@
-Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
-Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:43<00:00, 74.47 examples/s]
-Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 842/842 [00:07<00:00, 105.85 examples/s]
-Filter: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:00<00:00, 750876.90 examples/s]
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'google/fleurs' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'google/fleurs' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Map (num_proc=1): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:34<00:00, 92.94 examples/s]
+Map (num_proc=1): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 842/842 [00:07<00:00, 114.78 examples/s]
+Filter: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:00<00:00, 552932.45 examples/s]
 trainable params: 115,200 || all params: 241,850,112 || trainable%: 0.0476
   0%|                                                                                                                                                                  | 0/1188 [00:00<?, ?it/s]You're using a WhisperTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
 The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-                                                                                                                                                                                               --- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:26<00:00,  1.09it/s]
+                                                                                                                                                                                               --- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:25<00:00,  1.14s/it]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
 HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey kart san awm elawher'
 --- Eval sample ---
@@ -14,138 +19,18 @@ HYP: 'is yi loin na ghaith islanje marn yi tnagru bi mora e doctor eldi'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
 HYP: 'dyrreymor ahenig me alasur na gregex dyrryi txirhe ne leher sko chio ond yfreme evv val sunact agus oliaqt na grege'
-{'eval_loss': 5.5841498374938965, 'eval_wer_ortho': 102.83890475390561, 'eval_wer': 99.22849575864583, 'eval_runtime': 268.6689, 'eval_samples_per_second': 3.134, 'eval_steps_per_second': 0.785, 'epoch': 0}
-{'loss': 5.024, 'grad_norm': 0.20363298058509827, 'learning_rate': 0.0, 'epoch': 0.01}
-{'loss': 5.3217, 'grad_norm': 0.23098139464855194, 'learning_rate': 2.25e-06, 'epoch': 0.1}
-{'loss': 5.2454, 'grad_norm': 0.2174808830022812, 'learning_rate': 4.75e-06, 'epoch': 0.2}
-{'loss': 5.2421, 'grad_norm': 0.19107475876808167, 'learning_rate': 7.25e-06, 'epoch': 0.3}
-{'loss': 5.2179, 'grad_norm': 0.23626697063446045, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.4}
-{'loss': 5.3267, 'grad_norm': 0.2164982706308365, 'learning_rate': 1.225e-05, 'epoch': 0.51}
-{'loss': 5.2558, 'grad_norm': 0.2361993044614792, 'learning_rate': 1.475e-05, 'epoch': 0.61}
-{'loss': 5.2971, 'grad_norm': 0.2390759438276291, 'learning_rate': 1.725e-05, 'epoch': 0.71}
-{'loss': 5.2483, 'grad_norm': 0.21532917022705078, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.81}
-{'loss': 5.2362, 'grad_norm': 0.20871417224407196, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.91}
-  8%|████████████▊                                                                                                                                            | 99/1188 [07:54<35:22,  1.95s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:26<00:00,  1.16s/it]
-REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey kart san awm elawher'
---- Eval sample ---
-REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi loin na ghaith islanje marn yi tnagru bi mora e doctor eldi'
---- Eval sample ---
-REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrreymor ahenig me alasur na gregex dyrryi txirhe ne leher sko chio ond yfreme evv val sunact agus oliaqt na grege'
-{'eval_loss': 5.566336154937744, 'eval_wer_ortho': 102.87424140256238, 'eval_wer': 99.27150786308974, 'eval_runtime': 268.1599, 'eval_samples_per_second': 3.14, 'eval_steps_per_second': 0.787, 'epoch': 1.0}
-{'loss': 5.3244, 'grad_norm': 0.24382954835891724, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.01}
-{'loss': 5.2537, 'grad_norm': 0.195270836353302, 'learning_rate': 2.725e-05, 'epoch': 1.11}
-{'loss': 5.2817, 'grad_norm': 0.2634564936161041, 'learning_rate': 2.975e-05, 'epoch': 1.21}
-{'loss': 5.232, 'grad_norm': 0.1901211440563202, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.31}
-{'loss': 5.1791, 'grad_norm': 0.22105103731155396, 'learning_rate': 3.475e-05, 'epoch': 1.41}
-{'loss': 5.2009, 'grad_norm': 0.22739668190479279, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.52}
-{'loss': 5.2299, 'grad_norm': 0.22737285494804382, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.62}
-{'loss': 5.2267, 'grad_norm': 0.2162909358739853, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.72}
-{'loss': 5.2626, 'grad_norm': 0.21904143691062927, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.82}
-{'loss': 5.1796, 'grad_norm': 0.20360112190246582, 'learning_rate': 4.7249999999999997e-05, 'epoch': 1.92}
- 17%|█████████████████████████▎                                                                                                                              | 198/1188 [15:44<31:58,  1.94s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:30<00:00,  1.17s/it]
-REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey kart san awm elawher'
---- Eval sample ---
-REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi loin na ghaith islanje marn yi tnagru bi mora e doctor eldi'
---- Eval sample ---
-REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrreymor ahenig me alasur na gregex dyrryi txirhe ne leher sko chio ond yfreme evv val sunact agus oliaqt na grege'
-{'eval_loss': 5.4946489334106445, 'eval_wer_ortho': 102.73188017635665, 'eval_wer': 99.29593288892218, 'eval_runtime': 272.1133, 'eval_samples_per_second': 3.094, 'eval_steps_per_second': 0.775, 'epoch': 2.0}
-{'loss': 5.1394, 'grad_norm': 0.2233538180589676, 'learning_rate': 4.975e-05, 'epoch': 2.02}
-{'loss': 5.1593, 'grad_norm': 0.2136210799217224, 'learning_rate': 4.954453441295547e-05, 'epoch': 2.12}
-{'loss': 5.1744, 'grad_norm': 0.28048425912857056, 'learning_rate': 4.9038461538461536e-05, 'epoch': 2.22}
-{'loss': 5.0758, 'grad_norm': 0.19663265347480774, 'learning_rate': 4.8532388663967616e-05, 'epoch': 2.32}
-{'loss': 5.1949, 'grad_norm': 0.2118978351354599, 'learning_rate': 4.802631578947368e-05, 'epoch': 2.42}
-{'loss': 5.1151, 'grad_norm': 0.2553495466709137, 'learning_rate': 4.7520242914979756e-05, 'epoch': 2.53}
-{'loss': 5.1733, 'grad_norm': 0.23630063235759735, 'learning_rate': 4.7014170040485836e-05, 'epoch': 2.63}
-{'loss': 5.0857, 'grad_norm': 0.2579666078090668, 'learning_rate': 4.65080971659919e-05, 'epoch': 2.73}
-{'loss': 5.1345, 'grad_norm': 0.22034209966659546, 'learning_rate': 4.600202429149798e-05, 'epoch': 2.83}
-{'loss': 5.1391, 'grad_norm': 0.24478718638420105, 'learning_rate': 4.549595141700405e-05, 'epoch': 2.93}
- 25%|██████████████████████████████████████                                                                                                                  | 297/1188 [23:34<24:30,  1.65s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:30<00:00,  1.17s/it]
-REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey chart san awm elawher'
---- Eval sample ---
-REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
---- Eval sample ---
-REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrreymor a henig me alasur na gregex dyrryi txirhe ne leher sko chio ond y freme ev val sunact agus oliaqt na grege'
-{'eval_loss': 5.401285171508789, 'eval_wer_ortho': 102.65662333454826, 'eval_wer': 99.34584965629388, 'eval_runtime': 272.1605, 'eval_samples_per_second': 3.094, 'eval_steps_per_second': 0.775, 'epoch': 3.0}
-{'loss': 5.0792, 'grad_norm': 0.2221260517835617, 'learning_rate': 4.498987854251012e-05, 'epoch': 3.03}
-{'loss': 5.1166, 'grad_norm': 0.26429468393325806, 'learning_rate': 4.4483805668016196e-05, 'epoch': 3.13}
-{'loss': 5.1157, 'grad_norm': 0.29002007842063904, 'learning_rate': 4.397773279352227e-05, 'epoch': 3.23}
-{'loss': 5.0259, 'grad_norm': 0.24388770759105682, 'learning_rate': 4.347165991902834e-05, 'epoch': 3.33}
-{'loss': 5.0354, 'grad_norm': 0.2509944438934326, 'learning_rate': 4.2965587044534416e-05, 'epoch': 3.43}
-{'loss': 5.0292, 'grad_norm': 0.2098550796508789, 'learning_rate': 4.245951417004049e-05, 'epoch': 3.54}
-{'loss': 4.9669, 'grad_norm': 0.22595053911209106, 'learning_rate': 4.1953441295546556e-05, 'epoch': 3.64}
-{'loss': 4.995, 'grad_norm': 0.24496245384216309, 'learning_rate': 4.1447368421052636e-05, 'epoch': 3.74}
-{'loss': 5.1207, 'grad_norm': 0.29028207063674927, 'learning_rate': 4.09412955465587e-05, 'epoch': 3.84}
-{'loss': 4.9479, 'grad_norm': 0.20034463703632355, 'learning_rate': 4.043522267206478e-05, 'epoch': 3.94}
- 33%|██████████████████████████████████████████████████▋                                                                                                     | 396/1188 [31:24<24:16,  1.84s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:30<00:00,  1.05it/s]
-REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey chart san awm elawher'
---- Eval sample ---
-REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
---- Eval sample ---
-REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrreymor a henig me alasur na gregex dyrryi txirhe ne leher sko chio ond y freme ev val sunact agus oliaqt na grege'
-{'eval_loss': 5.3153791427612305, 'eval_wer_ortho': 102.71259506283297, 'eval_wer': 99.27549693479473, 'eval_runtime': 271.8765, 'eval_samples_per_second': 3.097, 'eval_steps_per_second': 0.776, 'epoch': 4.0}
-{'loss': 5.0348, 'grad_norm': 0.22047938406467438, 'learning_rate': 3.9929149797570856e-05, 'epoch': 4.04}
-{'loss': 5.0472, 'grad_norm': 0.2458854764699936, 'learning_rate': 3.942307692307692e-05, 'epoch': 4.14}
-{'loss': 4.9351, 'grad_norm': 0.18798938393592834, 'learning_rate': 3.8917004048583e-05, 'epoch': 4.24}
-{'loss': 4.9803, 'grad_norm': 0.2717787027359009, 'learning_rate': 3.841093117408907e-05, 'epoch': 4.34}
-{'loss': 4.9456, 'grad_norm': 0.21976415812969208, 'learning_rate': 3.790485829959514e-05, 'epoch': 4.44}
-{'loss': 4.9084, 'grad_norm': 0.1917378008365631, 'learning_rate': 3.7398785425101215e-05, 'epoch': 4.55}
-{'loss': 4.9478, 'grad_norm': 0.22743536531925201, 'learning_rate': 3.689271255060729e-05, 'epoch': 4.65}
-{'loss': 4.9342, 'grad_norm': 0.23209883272647858, 'learning_rate': 3.638663967611336e-05, 'epoch': 4.75}
-{'loss': 4.9226, 'grad_norm': 0.22616104781627655, 'learning_rate': 3.5880566801619435e-05, 'epoch': 4.85}
-{'loss': 5.0318, 'grad_norm': 0.27915650606155396, 'learning_rate': 3.537449392712551e-05, 'epoch': 4.95}
- 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 495/1188 [39:16<22:01,  1.91s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:28<00:00,  1.06it/s]
-REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey chart san awm elawher'
---- Eval sample ---
-REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
---- Eval sample ---
-REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrreymor a henig me alasur na greigas dyrryi txirhe ne leher skochi onn yfreme e fval sunact agus oliaqt na greigas'
-{'eval_loss': 5.241234302520752, 'eval_wer_ortho': 102.5660964230171, 'eval_wer': 99.26244852115312, 'eval_runtime': 270.0527, 'eval_samples_per_second': 3.118, 'eval_steps_per_second': 0.781, 'epoch': 5.0}
-{'loss': 4.9454, 'grad_norm': 0.24753111600875854, 'learning_rate': 3.4868421052631575e-05, 'epoch': 5.05}
-{'loss': 4.9592, 'grad_norm': 0.21273408830165863, 'learning_rate': 3.4362348178137655e-05, 'epoch': 5.15}
-{'loss': 4.879, 'grad_norm': 0.23797926306724548, 'learning_rate': 3.385627530364373e-05, 'epoch': 5.25}
-{'loss': 4.9242, 'grad_norm': 0.19306455552577972, 'learning_rate': 3.33502024291498e-05, 'epoch': 5.35}
-{'loss': 4.8436, 'grad_norm': 0.20762790739536285, 'learning_rate': 3.2844129554655875e-05, 'epoch': 5.45}
-{'loss': 4.9094, 'grad_norm': 0.19053316116333008, 'learning_rate': 3.233805668016194e-05, 'epoch': 5.56}
-{'loss': 4.8444, 'grad_norm': 0.2363770604133606, 'learning_rate': 3.183198380566802e-05, 'epoch': 5.66}
-{'loss': 4.8691, 'grad_norm': 0.2700496315956116, 'learning_rate': 3.132591093117409e-05, 'epoch': 5.76}
-{'loss': 4.9263, 'grad_norm': 0.304531455039978, 'learning_rate': 3.081983805668016e-05, 'epoch': 5.86}
-{'loss': 4.8736, 'grad_norm': 0.18480683863162994, 'learning_rate': 3.0313765182186238e-05, 'epoch': 5.96}
- 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 594/1188 [47:05<17:39,  1.78s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:26<00:00,  1.05it/s]
-REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwey chart san awm elawher'
---- Eval sample ---
-REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
---- Eval sample ---
-REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrreymor a henig me alasur na greigas dyrryi txirhe ne leher skochi onn yfreme e fval sunact agus oliaqt na greigas'
-{'eval_loss': 5.179967403411865, 'eval_wer_ortho': 102.41377882664679, 'eval_wer': 99.08078419406515, 'eval_runtime': 267.5079, 'eval_samples_per_second': 3.148, 'eval_steps_per_second': 0.789, 'epoch': 6.0}
-{'loss': 4.8319, 'grad_norm': 0.2619042694568634, 'learning_rate': 2.9807692307692308e-05, 'epoch': 6.06}
-{'loss': 4.8922, 'grad_norm': 0.1930302232503891, 'learning_rate': 2.9301619433198378e-05, 'epoch': 6.16}
-{'loss': 4.8157, 'grad_norm': 0.18114526569843292, 'learning_rate': 2.8795546558704455e-05, 'epoch': 6.26}
-{'loss': 4.8527, 'grad_norm': 0.18019504845142365, 'learning_rate': 2.8289473684210528e-05, 'epoch': 6.36}
-{'loss': 4.8773, 'grad_norm': 0.21182699501514435, 'learning_rate': 2.7783400809716605e-05, 'epoch': 6.46}
-{'loss': 4.7719, 'grad_norm': 0.18602941930294037, 'learning_rate': 2.7277327935222675e-05, 'epoch': 6.57}
-{'loss': 4.8258, 'grad_norm': 0.18277902901172638, 'learning_rate': 2.6771255060728745e-05, 'epoch': 6.67}
-{'loss': 4.8006, 'grad_norm': 0.16028262674808502, 'learning_rate': 2.626518218623482e-05, 'epoch': 6.77}
-{'loss': 4.8375, 'grad_norm': 0.2124818116426468, 'learning_rate': 2.575910931174089e-05, 'epoch': 6.87}
-{'loss': 4.8419, 'grad_norm': 0.16208100318908691, 'learning_rate': 2.5253036437246965e-05, 'epoch': 6.97}
- 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 693/1188 [54:51<15:05,  1.83s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:27<00:00,  1.07it/s]
+{'eval_loss': 5.5841498374938965, 'eval_wer_ortho': 102.83890475390561, 'eval_wer': 99.22849575864583, 'eval_runtime': 267.2432, 'eval_samples_per_second': 3.151, 'eval_steps_per_second': 0.79, 'epoch': 0}
+{'loss': 5.024, 'grad_norm': 0.2036285102367401, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 5.3214, 'grad_norm': 0.23052699863910675, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.1}
+{'loss': 5.2396, 'grad_norm': 0.22019194066524506, 'learning_rate': 9.5e-05, 'epoch': 0.2}
+{'loss': 5.2191, 'grad_norm': 0.189117431640625, 'learning_rate': 0.000145, 'epoch': 0.3}
+{'loss': 5.1685, 'grad_norm': 0.23472432792186737, 'learning_rate': 0.00019500000000000002, 'epoch': 0.4}
+{'loss': 5.2394, 'grad_norm': 0.23743347823619843, 'learning_rate': 0.000245, 'epoch': 0.51}
+{'loss': 5.1287, 'grad_norm': 0.23106078803539276, 'learning_rate': 0.000295, 'epoch': 0.61}
+{'loss': 5.106, 'grad_norm': 0.22028888761997223, 'learning_rate': 0.000345, 'epoch': 0.71}
+{'loss': 4.9998, 'grad_norm': 0.23029692471027374, 'learning_rate': 0.000395, 'epoch': 0.81}
+{'loss': 4.9181, 'grad_norm': 0.1568174958229065, 'learning_rate': 0.00044500000000000003, 'epoch': 0.91}
+  8%|████████████▊                                                                                                                                            | 99/1188 [07:56<36:18,  2.00s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:34<00:00,  1.07it/s]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
 HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwy chart san awm elawher'
 --- Eval sample ---
@@ -154,105 +39,225 @@ HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
 HYP: 'dyrreymor a henig me alasur na greigas dyrryi txirhe ne leher skochi onn yfreme e fval sunact agus oliaqt na greigas'
-{'eval_loss': 5.1319146156311035, 'eval_wer_ortho': 102.48948836434786, 'eval_wer': 99.13644874097284, 'eval_runtime': 269.0222, 'eval_samples_per_second': 3.13, 'eval_steps_per_second': 0.784, 'epoch': 7.0}
-{'loss': 4.8607, 'grad_norm': 0.18464823067188263, 'learning_rate': 2.4746963562753038e-05, 'epoch': 7.07}
-{'loss': 4.8431, 'grad_norm': 0.19434630870819092, 'learning_rate': 2.424089068825911e-05, 'epoch': 7.17}
-{'loss': 4.8044, 'grad_norm': 0.20942096412181854, 'learning_rate': 2.3734817813765184e-05, 'epoch': 7.27}
-{'loss': 4.7594, 'grad_norm': 0.13156700134277344, 'learning_rate': 2.3228744939271258e-05, 'epoch': 7.37}
-{'loss': 4.7823, 'grad_norm': 0.20700706541538239, 'learning_rate': 2.2722672064777328e-05, 'epoch': 7.47}
-{'loss': 4.8106, 'grad_norm': 0.20737121999263763, 'learning_rate': 2.22165991902834e-05, 'epoch': 7.58}
-{'loss': 4.8101, 'grad_norm': 0.15274326503276825, 'learning_rate': 2.1710526315789474e-05, 'epoch': 7.68}
-{'loss': 4.7538, 'grad_norm': 0.17599327862262726, 'learning_rate': 2.1204453441295548e-05, 'epoch': 7.78}
-{'loss': 4.8001, 'grad_norm': 0.1902960240840912, 'learning_rate': 2.069838056680162e-05, 'epoch': 7.88}
-{'loss': 4.7753, 'grad_norm': 0.199021115899086, 'learning_rate': 2.0192307692307694e-05, 'epoch': 7.98}
- 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 792/1188 [1:02:41<12:46,  1.93s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:30<00:00,  1.05it/s]
+{'eval_loss': 5.12845516204834, 'eval_wer_ortho': 102.38883828765421, 'eval_wer': 99.05710795541303, 'eval_runtime': 275.4836, 'eval_samples_per_second': 3.056, 'eval_steps_per_second': 0.766, 'epoch': 1.0}
+{'loss': 4.9051, 'grad_norm': 0.22442492842674255, 'learning_rate': 0.000495, 'epoch': 1.01}
+{'loss': 4.7842, 'grad_norm': 0.15670715272426605, 'learning_rate': 0.000545, 'epoch': 1.11}
+{'loss': 4.7076, 'grad_norm': 0.12312951683998108, 'learning_rate': 0.0005949999999999999, 'epoch': 1.21}
+{'loss': 4.6215, 'grad_norm': 0.10134541988372803, 'learning_rate': 0.0006450000000000001, 'epoch': 1.31}
+{'loss': 4.4908, 'grad_norm': 0.10623544454574585, 'learning_rate': 0.000695, 'epoch': 1.41}
+{'loss': 4.4249, 'grad_norm': 0.11337001621723175, 'learning_rate': 0.000745, 'epoch': 1.52}
+{'loss': 4.3793, 'grad_norm': 0.116612009704113, 'learning_rate': 0.000795, 'epoch': 1.62}
+{'loss': 4.2836, 'grad_norm': 0.1205364316701889, 'learning_rate': 0.0008449999999999999, 'epoch': 1.72}
+{'loss': 4.1857, 'grad_norm': 0.11688495427370071, 'learning_rate': 0.0008950000000000001, 'epoch': 1.82}
+{'loss': 4.0111, 'grad_norm': 0.10129431635141373, 'learning_rate': 0.000945, 'epoch': 1.92}
+ 17%|█████████████████████████▎                                                                                                                              | 198/1188 [15:56<31:22,  1.90s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [05:28<00:00,  1.65s/it]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise yawata on preve counter gleana he dahan gacht tach canada og a skil fur an dan lan te ogas museum aline an a tisbon canada san awm e chwy chart san awm elawher'
+HYP: 'is e oata an prif countar gleinahe dachan gacht tach cianada agus ciil fur an danlant a agus mjuziim aline an at tisban cianada san aum e chwi chart san aum elaher'
 --- Eval sample ---
 REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
+HYP: 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrema ra henig me alasur na greigas gyiri chirhe nae leher skochi on yfremu e ffal sunact agus oliaqt na greiga'
-{'eval_loss': 5.096050262451172, 'eval_wer_ortho': 102.35833471006113, 'eval_wer': 99.07382805086354, 'eval_runtime': 270.8689, 'eval_samples_per_second': 3.109, 'eval_steps_per_second': 0.779, 'epoch': 8.0}
-{'loss': 4.738, 'grad_norm': 0.1665394902229309, 'learning_rate': 1.9686234817813767e-05, 'epoch': 8.08}
-{'loss': 4.775, 'grad_norm': 0.20333744585514069, 'learning_rate': 1.9180161943319837e-05, 'epoch': 8.18}
-{'loss': 4.8097, 'grad_norm': 0.17684300243854523, 'learning_rate': 1.867408906882591e-05, 'epoch': 8.28}
-{'loss': 4.82, 'grad_norm': 0.1785222291946411, 'learning_rate': 1.8168016194331984e-05, 'epoch': 8.38}
-{'loss': 4.7508, 'grad_norm': 0.16664135456085205, 'learning_rate': 1.7661943319838057e-05, 'epoch': 8.48}
-{'loss': 4.7108, 'grad_norm': 0.17746742069721222, 'learning_rate': 1.715587044534413e-05, 'epoch': 8.59}
-{'loss': 4.7361, 'grad_norm': 0.1971656233072281, 'learning_rate': 1.6649797570850204e-05, 'epoch': 8.69}
-{'loss': 4.7482, 'grad_norm': 0.16076847910881042, 'learning_rate': 1.6143724696356277e-05, 'epoch': 8.79}
-{'loss': 4.7811, 'grad_norm': 0.18246684968471527, 'learning_rate': 1.5637651821862347e-05, 'epoch': 8.89}
-{'loss': 4.7411, 'grad_norm': 0.224182590842247, 'learning_rate': 1.5131578947368422e-05, 'epoch': 8.99}
- 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 891/1188 [1:10:31<09:08,  1.85s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:29<00:00,  1.03it/s]
+HYP: 'deirairmora hennig me alasur na greigas djiri tiirhe na leher skache on yfremae e ffal sunact agus aliacht na greigas'
+{'eval_loss': 4.26914119720459, 'eval_wer_ortho': 110.06203955021326, 'eval_wer': 107.74184516309673, 'eval_runtime': 331.2404, 'eval_samples_per_second': 2.542, 'eval_steps_per_second': 0.637, 'epoch': 2.0}
+{'loss': 3.9246, 'grad_norm': 0.09511706233024597, 'learning_rate': 0.000995, 'epoch': 2.02}
+{'loss': 3.861, 'grad_norm': 0.09596085548400879, 'learning_rate': 0.0009908906882591093, 'epoch': 2.12}
+{'loss': 3.8297, 'grad_norm': 0.10300689190626144, 'learning_rate': 0.0009807692307692308, 'epoch': 2.22}
+{'loss': 3.7039, 'grad_norm': 0.0993739441037178, 'learning_rate': 0.0009706477732793523, 'epoch': 2.32}
+{'loss': 3.7351, 'grad_norm': 0.10127953439950943, 'learning_rate': 0.0009605263157894737, 'epoch': 2.42}
+{'loss': 3.6237, 'grad_norm': 0.10017529875040054, 'learning_rate': 0.0009504048582995951, 'epoch': 2.53}
+{'loss': 3.6254, 'grad_norm': 0.09686515480279922, 'learning_rate': 0.0009402834008097167, 'epoch': 2.63}
+{'loss': 3.503, 'grad_norm': 0.1127011701464653, 'learning_rate': 0.000930161943319838, 'epoch': 2.73}
+{'loss': 3.5094, 'grad_norm': 0.10962766408920288, 'learning_rate': 0.0009200404858299596, 'epoch': 2.83}
+{'loss': 3.4489, 'grad_norm': 0.11612921953201294, 'learning_rate': 0.000909919028340081, 'epoch': 2.93}
+ 25%|██████████████████████████████████████                                                                                                                  | 297/1188 [24:54<28:20,  1.91s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:21<00:00,  1.15it/s]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise ywata on preve counter gleana he dahan gacht tach canada og ysgil fur an dan lan te og ys museum aline an a tisbon canada s an awm e chwy chart s an awm elawher'
+HYP: 'يسي اواته عن بريف كونتر قلانها دهن غاقت تخ كندا اغس كيلفر اون دانلاونت اغس ميوزيوم اليني اون اتسبان كندا سن عم اخوى خارت سن عم الاها'
 --- Eval sample ---
 REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
+HYP: 'اسي لون نخايط اسلاعنجة مارن اتنغروب مورة ادختر ايلادي'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrema ra henig me alasur na greigas gyiri chirhe nae leher skochi on yfremu e ffal sunact agus oliaqt na greiga'
-{'eval_loss': 5.070245265960693, 'eval_wer_ortho': 102.53922726505822, 'eval_wer': 99.20124079100427, 'eval_runtime': 269.8523, 'eval_samples_per_second': 3.12, 'eval_steps_per_second': 0.782, 'epoch': 9.0}
-{'loss': 4.8164, 'grad_norm': 0.15066079795360565, 'learning_rate': 1.4625506072874495e-05, 'epoch': 9.09}
-{'loss': 4.6862, 'grad_norm': 0.1254512518644333, 'learning_rate': 1.4119433198380565e-05, 'epoch': 9.19}
-{'loss': 4.7383, 'grad_norm': 0.19980111718177795, 'learning_rate': 1.361336032388664e-05, 'epoch': 9.29}
-{'loss': 4.7446, 'grad_norm': 0.16719767451286316, 'learning_rate': 1.3107287449392714e-05, 'epoch': 9.39}
-{'loss': 4.8197, 'grad_norm': 0.15911880135536194, 'learning_rate': 1.2601214574898787e-05, 'epoch': 9.49}
-{'loss': 4.7394, 'grad_norm': 0.15972988307476044, 'learning_rate': 1.2095141700404859e-05, 'epoch': 9.6}
-{'loss': 4.7286, 'grad_norm': 0.18421876430511475, 'learning_rate': 1.1589068825910932e-05, 'epoch': 9.7}
-{'loss': 4.6859, 'grad_norm': 0.16833855211734772, 'learning_rate': 1.1082995951417005e-05, 'epoch': 9.8}
-{'loss': 4.7489, 'grad_norm': 0.1534917801618576, 'learning_rate': 1.0576923076923077e-05, 'epoch': 9.9}
-{'loss': 4.6995, 'grad_norm': 0.14124977588653564, 'learning_rate': 1.0070850202429152e-05, 'epoch': 10.0}
- 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 990/1188 [1:18:23<06:24,  1.94s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:25<00:00,  1.14it/s]
+HYP: 'di reirmoir a henig me alas ar na greigas diiri chiirhe na lehar scoteo na freime a bhfail sunacht agus aliacht na greigas'
+{'eval_loss': 3.7583513259887695, 'eval_wer_ortho': 109.49249704940145, 'eval_wer': 108.63965507711018, 'eval_runtime': 264.0232, 'eval_samples_per_second': 3.189, 'eval_steps_per_second': 0.799, 'epoch': 3.0}
+{'loss': 3.3957, 'grad_norm': 0.10556238144636154, 'learning_rate': 0.0008997975708502024, 'epoch': 3.03}
+{'loss': 3.3505, 'grad_norm': 0.12407772988080978, 'learning_rate': 0.0008896761133603239, 'epoch': 3.13}
+{'loss': 3.3138, 'grad_norm': 0.1228611022233963, 'learning_rate': 0.0008795546558704454, 'epoch': 3.23}
+{'loss': 3.2283, 'grad_norm': 0.11738968640565872, 'learning_rate': 0.0008694331983805668, 'epoch': 3.33}
+{'loss': 3.1997, 'grad_norm': 0.12176032364368439, 'learning_rate': 0.0008593117408906883, 'epoch': 3.43}
+{'loss': 3.1646, 'grad_norm': 0.12318607419729233, 'learning_rate': 0.0008491902834008098, 'epoch': 3.54}
+{'loss': 3.1236, 'grad_norm': 0.6563854813575745, 'learning_rate': 0.0008390688259109311, 'epoch': 3.64}
+{'loss': 3.1083, 'grad_norm': 0.12290382385253906, 'learning_rate': 0.0008289473684210527, 'epoch': 3.74}
+{'loss': 3.2005, 'grad_norm': 0.13384220004081726, 'learning_rate': 0.000818825910931174, 'epoch': 3.84}
+{'loss': 3.042, 'grad_norm': 0.13853472471237183, 'learning_rate': 0.0008087044534412956, 'epoch': 3.94}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 396/1188 [32:41<24:57,  1.89s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:54<00:00,  1.06it/s]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise ywata on preve counter gleana he dahan gacht tach canada og ysgil fur an dan lan te og ys museum aline an a tisbon canada s an awm e chwy chart s an awm elawher'
+HYP: 'اساي اواته عن بريف كونتر غلانة دهن غacht تخ كنديا اغس ميوزيوم اليني اون اتسبان كنديسان عم اخوى خارت سان عم الاها'
 --- Eval sample ---
 REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
+HYP: 'اس اad lain na chait is alaindha marn it na grub i mora e doctor ealdi'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrema ra henig me alasur na greigas gyiri chirhe nae leher skochi on yfremu e ffal sunact agus oliaqt na greiga'
-{'eval_loss': 5.05309534072876, 'eval_wer_ortho': 102.44781944680128, 'eval_wer': 99.15297240329443, 'eval_runtime': 266.9913, 'eval_samples_per_second': 3.154, 'eval_steps_per_second': 0.79, 'epoch': 10.0}
-{'loss': 4.7393, 'grad_norm': 0.1519986242055893, 'learning_rate': 9.564777327935223e-06, 'epoch': 10.1}
-{'loss': 4.7101, 'grad_norm': 0.160752534866333, 'learning_rate': 9.058704453441295e-06, 'epoch': 10.2}
-{'loss': 4.7008, 'grad_norm': 0.13241568207740784, 'learning_rate': 8.552631578947368e-06, 'epoch': 10.3}
-{'loss': 4.7648, 'grad_norm': 0.1677933931350708, 'learning_rate': 8.046558704453442e-06, 'epoch': 10.4}
-{'loss': 4.7367, 'grad_norm': 0.14398887753486633, 'learning_rate': 7.540485829959515e-06, 'epoch': 10.51}
-{'loss': 4.7877, 'grad_norm': 0.18247082829475403, 'learning_rate': 7.034412955465587e-06, 'epoch': 10.61}
-{'loss': 4.6662, 'grad_norm': 0.16935041546821594, 'learning_rate': 6.528340080971661e-06, 'epoch': 10.71}
-{'loss': 4.7242, 'grad_norm': 0.1446700245141983, 'learning_rate': 6.022267206477733e-06, 'epoch': 10.81}
-{'loss': 4.7634, 'grad_norm': 0.1572762280702591, 'learning_rate': 5.5161943319838056e-06, 'epoch': 10.91}
- 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1089/1188 [1:26:11<03:10,  1.93s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:29<00:00,  1.02s/it]
+HYP: 'di rhermair a heinig me alas ar na gregeis diori tiorhe na leithar scotseo na freme i ffail suannacht agus aliacht na grege'
+{'eval_loss': 3.491792917251587, 'eval_wer_ortho': 99.87416767157762, 'eval_wer': 98.91011002698775, 'eval_runtime': 236.9588, 'eval_samples_per_second': 3.553, 'eval_steps_per_second': 0.89, 'epoch': 4.0}
+{'loss': 3.0569, 'grad_norm': 0.1305394172668457, 'learning_rate': 0.0007985829959514171, 'epoch': 4.04}
+{'loss': 3.077, 'grad_norm': 0.147029846906662, 'learning_rate': 0.0007884615384615384, 'epoch': 4.14}
+{'loss': 2.9741, 'grad_norm': 0.13477054238319397, 'learning_rate': 0.00077834008097166, 'epoch': 4.24}
+{'loss': 2.9702, 'grad_norm': 0.1747325211763382, 'learning_rate': 0.0007682186234817814, 'epoch': 4.34}
+{'loss': 2.938, 'grad_norm': 0.13640721142292023, 'learning_rate': 0.0007580971659919028, 'epoch': 4.44}
+{'loss': 2.9213, 'grad_norm': 0.13723860681056976, 'learning_rate': 0.0007479757085020243, 'epoch': 4.55}
+{'loss': 2.9037, 'grad_norm': 0.13583707809448242, 'learning_rate': 0.0007378542510121458, 'epoch': 4.65}
+{'loss': 2.9055, 'grad_norm': 0.1429559886455536, 'learning_rate': 0.0007277327935222671, 'epoch': 4.75}
+{'loss': 2.8965, 'grad_norm': 0.14162053167819977, 'learning_rate': 0.0007176113360323887, 'epoch': 4.85}
+{'loss': 2.9462, 'grad_norm': 0.1508558988571167, 'learning_rate': 0.0007074898785425102, 'epoch': 4.95}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 495/1188 [40:02<21:45,  1.88s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:45<00:00,  1.14it/s]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise ywata on preef counter gleana he dahan gacht tach canada og ysgil fur an dan lan te og ys museum aline an a tisbon canada s an awm e chwy chart s an awm elawher'
+HYP: 'اساي اواته عن بريف كونتر غلانة دهنغت تخ كنديا اغس ميوزيام الينيان و تسبان كنديسان عم الاها'
 --- Eval sample ---
 REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
+HYP: 'اس اad lain na chait isa laince marn it na grub i moradh a doctor ealdi'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrema ra henig me alasur na greigas gyiri chirhe nae leher skochi on yfremu e ffal sunact agus oliaqt na greiga'
-{'eval_loss': 5.0432586669921875, 'eval_wer_ortho': 102.39134082899814, 'eval_wer': 99.16499149528374, 'eval_runtime': 270.4076, 'eval_samples_per_second': 3.114, 'eval_steps_per_second': 0.78, 'epoch': 11.0}
-{'loss': 4.6909, 'grad_norm': 0.14476606249809265, 'learning_rate': 5.010121457489879e-06, 'epoch': 11.01}
-{'loss': 4.6926, 'grad_norm': 0.17658838629722595, 'learning_rate': 4.504048582995952e-06, 'epoch': 11.11}
-{'loss': 4.7186, 'grad_norm': 0.1547611802816391, 'learning_rate': 3.997975708502025e-06, 'epoch': 11.21}
-{'loss': 4.6971, 'grad_norm': 0.1618652641773224, 'learning_rate': 3.4919028340080975e-06, 'epoch': 11.31}
-{'loss': 4.7262, 'grad_norm': 0.12363878637552261, 'learning_rate': 2.9858299595141704e-06, 'epoch': 11.41}
-{'loss': 4.805, 'grad_norm': 0.15681055188179016, 'learning_rate': 2.4797570850202433e-06, 'epoch': 11.52}
-{'loss': 4.7601, 'grad_norm': 0.17827536165714264, 'learning_rate': 1.9736842105263157e-06, 'epoch': 11.62}
-{'loss': 4.7447, 'grad_norm': 0.1541357934474945, 'learning_rate': 1.4676113360323886e-06, 'epoch': 11.72}
-{'loss': 4.7191, 'grad_norm': 0.14214593172073364, 'learning_rate': 9.615384615384617e-07, 'epoch': 11.82}
-{'loss': 4.7109, 'grad_norm': 0.13774217665195465, 'learning_rate': 4.554655870445344e-07, 'epoch': 11.92}
-100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:34:04<00:00,  1.96s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [04:27<00:00,  1.01s/it]
+HYP: 'di reirmar a theinig me alas ar na gregeas diori tiorha na leithar scotio na bhreima a bhfail suunacht agus alaiacht na grege'
+{'eval_loss': 3.3281118869781494, 'eval_wer_ortho': 93.00847457627118, 'eval_wer': 92.03778677462888, 'eval_runtime': 227.765, 'eval_samples_per_second': 3.697, 'eval_steps_per_second': 0.926, 'epoch': 5.0}
+{'loss': 2.8683, 'grad_norm': 0.16325326263904572, 'learning_rate': 0.0006973684210526315, 'epoch': 5.05}
+{'loss': 2.8694, 'grad_norm': 0.15579825639724731, 'learning_rate': 0.0006872469635627531, 'epoch': 5.15}
+{'loss': 2.7963, 'grad_norm': 0.15433065593242645, 'learning_rate': 0.0006771255060728745, 'epoch': 5.25}
+{'loss': 2.8026, 'grad_norm': 0.1612841784954071, 'learning_rate': 0.000667004048582996, 'epoch': 5.35}
+{'loss': 2.7449, 'grad_norm': 0.14388251304626465, 'learning_rate': 0.0006568825910931174, 'epoch': 5.45}
+{'loss': 2.8193, 'grad_norm': 0.15205197036266327, 'learning_rate': 0.0006467611336032389, 'epoch': 5.56}
+{'loss': 2.7321, 'grad_norm': 0.16665619611740112, 'learning_rate': 0.0006366396761133603, 'epoch': 5.66}
+{'loss': 2.744, 'grad_norm': 0.15110792219638824, 'learning_rate': 0.0006265182186234818, 'epoch': 5.76}
+{'loss': 2.7913, 'grad_norm': 0.16831089556217194, 'learning_rate': 0.0006163967611336033, 'epoch': 5.86}
+{'loss': 2.7354, 'grad_norm': 0.15881967544555664, 'learning_rate': 0.0006062753036437247, 'epoch': 5.96}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 594/1188 [47:13<18:42,  1.89s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:47<00:00,  1.05it/s]
 REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
-HYP: 'ise ywata on preef counter gleana he dahan gacht tach canada og ysgil fur an dan lan te og ys museum aline an a tisbon canada s an awm e chwy chart s an awm elawher'
+HYP: 'is a obata an prif countar gleannithe dachon gacht tach ceanada agus museam aline an a tespain ceanada san am a chuighart san am i loihair'
 --- Eval sample ---
 REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
-HYP: 'is yi lwyn na ghaith islwyn je marn yi tnagru bi mora edd hoctor eldi'
+HYP: 'اس اad lain na chait isa laince marn it na ghrub i moradh a doctor ealdi'
 --- Eval sample ---
 REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
-HYP: 'dyrema ra henig me alasur na greigas gyiri chirhe nae leher skochi on yfremu e ffal sunact agus oliaqt na greiga'
-{'eval_loss': 5.039974689483643, 'eval_wer_ortho': 102.39915966386555, 'eval_wer': 99.15998916115046, 'eval_runtime': 267.4342, 'eval_samples_per_second': 3.148, 'eval_steps_per_second': 0.789, 'epoch': 12.0}
-{'train_runtime': 5912.3036, 'train_samples_per_second': 6.422, 'train_steps_per_second': 0.201, 'train_loss': 4.925718055429684, 'epoch': 12.0}
-100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:38:32<00:00,  4.98s/it]
+HYP: 'di reirmar a theannigh me alas ar na gregeas diori tiortha na leithair scotio na bhreme a bhfail suannacht agus alaiacht na grege'
+{'eval_loss': 3.209845781326294, 'eval_wer_ortho': 86.58419639432297, 'eval_wer': 85.29300028492734, 'eval_runtime': 229.0359, 'eval_samples_per_second': 3.676, 'eval_steps_per_second': 0.921, 'epoch': 6.0}
+{'loss': 2.702, 'grad_norm': 0.1665685474872589, 'learning_rate': 0.0005961538461538462, 'epoch': 6.06}
+{'loss': 2.6774, 'grad_norm': 0.15700282156467438, 'learning_rate': 0.0005860323886639675, 'epoch': 6.16}
+{'loss': 2.6756, 'grad_norm': 0.16178949177265167, 'learning_rate': 0.0005759109311740891, 'epoch': 6.26}
+{'loss': 2.6846, 'grad_norm': 0.1660730391740799, 'learning_rate': 0.0005657894736842105, 'epoch': 6.36}
+{'loss': 2.6944, 'grad_norm': 0.1606336236000061, 'learning_rate': 0.0005556680161943321, 'epoch': 6.46}
+{'loss': 2.6388, 'grad_norm': 0.16079694032669067, 'learning_rate': 0.0005455465587044534, 'epoch': 6.57}
+{'loss': 2.646, 'grad_norm': 0.164664626121521, 'learning_rate': 0.0005354251012145749, 'epoch': 6.67}
+{'loss': 2.6486, 'grad_norm': 0.15896913409233093, 'learning_rate': 0.0005253036437246965, 'epoch': 6.77}
+{'loss': 2.6557, 'grad_norm': 0.17327071726322174, 'learning_rate': 0.0005151821862348178, 'epoch': 6.87}
+{'loss': 2.679, 'grad_norm': 0.1662711203098297, 'learning_rate': 0.0005050607287449393, 'epoch': 6.97}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 693/1188 [54:24<15:25,  1.87s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:43<00:00,  1.14it/s]
+REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
+HYP: 'is a obaita an prif countar gleannithe dachon gacht tach ceanada agus museam aline an a tespain ceanada san am a chui chart san am i laher'
+--- Eval sample ---
+REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
+HYP: 'اس اe lein na chait isa lainne marn niit na ghrub i moradh a doctor ealti'
+--- Eval sample ---
+REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
+HYP: 'di reirmar a theinneigh me alas ar na greagais diori tiortha na leithair scoiteu na bhreimhe a bhfail suunacht agus alaiacht na greaga'
+{'eval_loss': 3.1359522342681885, 'eval_wer_ortho': 84.57072149248049, 'eval_wer': 83.27918255874181, 'eval_runtime': 225.7007, 'eval_samples_per_second': 3.731, 'eval_steps_per_second': 0.935, 'epoch': 7.0}
+{'loss': 2.6543, 'grad_norm': 0.1699332743883133, 'learning_rate': 0.0004949392712550607, 'epoch': 7.07}
+{'loss': 2.585, 'grad_norm': 0.15922029316425323, 'learning_rate': 0.0004848178137651822, 'epoch': 7.17}
+{'loss': 2.5936, 'grad_norm': 0.17178493738174438, 'learning_rate': 0.0004746963562753037, 'epoch': 7.27}
+{'loss': 2.5584, 'grad_norm': 0.1713225245475769, 'learning_rate': 0.00046457489878542514, 'epoch': 7.37}
+{'loss': 2.6186, 'grad_norm': 0.1742262840270996, 'learning_rate': 0.00045445344129554655, 'epoch': 7.47}
+{'loss': 2.6089, 'grad_norm': 0.1822395771741867, 'learning_rate': 0.000444331983805668, 'epoch': 7.58}
+{'loss': 2.5867, 'grad_norm': 0.1700231283903122, 'learning_rate': 0.0004342105263157895, 'epoch': 7.68}
+{'loss': 2.5446, 'grad_norm': 0.18460674583911896, 'learning_rate': 0.0004240890688259109, 'epoch': 7.78}
+{'loss': 2.592, 'grad_norm': 0.18169909715652466, 'learning_rate': 0.00041396761133603236, 'epoch': 7.88}
+{'loss': 2.563, 'grad_norm': 0.18602880835533142, 'learning_rate': 0.0004038461538461539, 'epoch': 7.98}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 792/1188 [1:01:32<12:19,  1.87s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:42<00:00,  1.18it/s]
+REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
+HYP: 'is e obaita an priomh countar gleannithe dachann gacht tach ceanada agus museam aileine an a tespain ceanada san am a chui chart san am i laher'
+--- Eval sample ---
+REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
+HYP: 'isi lein na chait isa lainnta marn it na ghrub i moradh a doctair ealti'
+--- Eval sample ---
+REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
+HYP: 'di reirmar a theannigh me alas ar na greagais diori tiortha na leithair scoiteu na bhreimhe a bhfail suunacht agus alaiacht na greaga'
+{'eval_loss': 3.081815242767334, 'eval_wer_ortho': 83.5828699082656, 'eval_wer': 82.33551239241875, 'eval_runtime': 224.5217, 'eval_samples_per_second': 3.75, 'eval_steps_per_second': 0.94, 'epoch': 8.0}
+{'loss': 2.545, 'grad_norm': 0.16959775984287262, 'learning_rate': 0.00039372469635627535, 'epoch': 8.08}
+{'loss': 2.5489, 'grad_norm': 0.1837175041437149, 'learning_rate': 0.00038360323886639676, 'epoch': 8.18}
+{'loss': 2.5591, 'grad_norm': 0.1873358190059662, 'learning_rate': 0.00037348178137651823, 'epoch': 8.28}
+{'loss': 2.5743, 'grad_norm': 0.17344535887241364, 'learning_rate': 0.0003633603238866397, 'epoch': 8.38}
+{'loss': 2.5023, 'grad_norm': 0.1870318502187729, 'learning_rate': 0.0003532388663967611, 'epoch': 8.48}
+{'loss': 2.5059, 'grad_norm': 0.20401138067245483, 'learning_rate': 0.00034311740890688257, 'epoch': 8.59}
+{'loss': 2.5247, 'grad_norm': 0.1955929398536682, 'learning_rate': 0.00033299595141700404, 'epoch': 8.69}
+{'loss': 2.4881, 'grad_norm': 0.1851091980934143, 'learning_rate': 0.00032287449392712556, 'epoch': 8.79}
+{'loss': 2.5336, 'grad_norm': 0.18401773273944855, 'learning_rate': 0.00031275303643724697, 'epoch': 8.89}
+{'loss': 2.4951, 'grad_norm': 0.21238860487937927, 'learning_rate': 0.00030263157894736844, 'epoch': 8.99}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 891/1188 [1:08:39<09:18,  1.88s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:43<00:00,  1.18it/s]
+REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
+HYP: 'is e obaita an priomh countar gleannithe dachann gacht tach ceanada agus museam aileine an a tespain ceanada san am a chui chart san am i laher'
+--- Eval sample ---
+REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
+HYP: 'isi lain na chait isa lainte marn it na ghrub i moradh a doctair ealti'
+--- Eval sample ---
+REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
+HYP: 'di reirmar a theannigh me alas ar na greagais diori tiortha na leithair scoitea na bhrema i bheall suunacht agus alaiacht na greaga'
+{'eval_loss': 3.0407986640930176, 'eval_wer_ortho': 82.63481551561021, 'eval_wer': 81.4317777985598, 'eval_runtime': 225.3819, 'eval_samples_per_second': 3.736, 'eval_steps_per_second': 0.936, 'epoch': 9.0}
+{'loss': 2.5348, 'grad_norm': 0.201381653547287, 'learning_rate': 0.0002925101214574899, 'epoch': 9.09}
+{'loss': 2.4762, 'grad_norm': 0.18982546031475067, 'learning_rate': 0.0002823886639676113, 'epoch': 9.19}
+{'loss': 2.4989, 'grad_norm': 0.20645898580551147, 'learning_rate': 0.0002722672064777328, 'epoch': 9.29}
+{'loss': 2.447, 'grad_norm': 0.19515369832515717, 'learning_rate': 0.00026214574898785425, 'epoch': 9.39}
+{'loss': 2.5307, 'grad_norm': 0.1967855542898178, 'learning_rate': 0.0002520242914979757, 'epoch': 9.49}
+{'loss': 2.4879, 'grad_norm': 0.18586738407611847, 'learning_rate': 0.00024190283400809718, 'epoch': 9.6}
+{'loss': 2.5063, 'grad_norm': 0.19516445696353912, 'learning_rate': 0.00023178137651821862, 'epoch': 9.7}
+{'loss': 2.4515, 'grad_norm': 0.20374684035778046, 'learning_rate': 0.00022165991902834008, 'epoch': 9.8}
+{'loss': 2.4865, 'grad_norm': 0.20390743017196655, 'learning_rate': 0.00021153846153846155, 'epoch': 9.9}
+{'loss': 2.4373, 'grad_norm': 0.20697392523288727, 'learning_rate': 0.00020141700404858302, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 990/1188 [1:15:49<06:15,  1.90s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:49<00:00,  1.08it/s]
+REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
+HYP: 'is e obaita an priomh countar gleannithe dachann gacht tach ceanada agus museam aileine an a tespain ceanada san am a chui chart san am i laher'
+--- Eval sample ---
+REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
+HYP: 'is it lognachat isolanda marne iit na grub i mora i doctor aildi'
+--- Eval sample ---
+REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
+HYP: 'di reirmar a theannigh me alas ar na ghreaigais diori tirtha na leithair scoitea na bhreimhe a bhfail suunacht agus alaicht na ghreaiga'
+{'eval_loss': 3.0186431407928467, 'eval_wer_ortho': 82.08632755624443, 'eval_wer': 80.79903484757088, 'eval_runtime': 231.8284, 'eval_samples_per_second': 3.632, 'eval_steps_per_second': 0.91, 'epoch': 10.0}
+{'loss': 2.4956, 'grad_norm': 0.201344296336174, 'learning_rate': 0.00019129554655870445, 'epoch': 10.1}
+{'loss': 2.4467, 'grad_norm': 0.18743686378002167, 'learning_rate': 0.0001811740890688259, 'epoch': 10.2}
+{'loss': 2.4318, 'grad_norm': 0.19341900944709778, 'learning_rate': 0.00017105263157894739, 'epoch': 10.3}
+{'loss': 2.4939, 'grad_norm': 0.19489766657352448, 'learning_rate': 0.00016093117408906883, 'epoch': 10.4}
+{'loss': 2.4826, 'grad_norm': 0.20874527096748352, 'learning_rate': 0.0001508097165991903, 'epoch': 10.51}
+{'loss': 2.5072, 'grad_norm': 0.1918662190437317, 'learning_rate': 0.00014068825910931173, 'epoch': 10.61}
+{'loss': 2.4187, 'grad_norm': 0.22114400565624237, 'learning_rate': 0.00013056680161943322, 'epoch': 10.71}
+{'loss': 2.4665, 'grad_norm': 0.17955243587493896, 'learning_rate': 0.00012044534412955466, 'epoch': 10.81}
+{'loss': 2.447, 'grad_norm': 0.20984987914562225, 'learning_rate': 0.00011032388663967611, 'epoch': 10.91}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1089/1188 [1:23:08<03:09,  1.92s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [03:48<00:00,  1.12it/s]
+REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
+HYP: 'is e obaita an priomh countar gleannacha 10.8 ceanada agus museam aileine an a teaspan ceanada san aom a chui chart san aom i laher'
+--- Eval sample ---
+REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
+HYP: 'is it lognachat isolanda marne iit na grub i mora i doctor aildi'
+--- Eval sample ---
+REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
+HYP: 'di reirmar a theannigh me alas ar na ghreaigais diori tirtha na leithair scoitea na bhreimhe a bhfail suunacht agus alaicht na ghreaigadh'
+{'eval_loss': 3.0031442642211914, 'eval_wer_ortho': 81.9642102296745, 'eval_wer': 80.60656649972175, 'eval_runtime': 230.5506, 'eval_samples_per_second': 3.652, 'eval_steps_per_second': 0.915, 'epoch': 11.0}
+{'loss': 2.4172, 'grad_norm': 0.19771307706832886, 'learning_rate': 0.00010020242914979758, 'epoch': 11.01}
+{'loss': 2.4441, 'grad_norm': 0.19805656373500824, 'learning_rate': 9.008097165991903e-05, 'epoch': 11.11}
+{'loss': 2.4406, 'grad_norm': 0.21218937635421753, 'learning_rate': 7.995951417004049e-05, 'epoch': 11.21}
+{'loss': 2.4247, 'grad_norm': 0.18785691261291504, 'learning_rate': 6.983805668016195e-05, 'epoch': 11.31}
+{'loss': 2.4636, 'grad_norm': 0.20669235289096832, 'learning_rate': 5.9716599190283404e-05, 'epoch': 11.41}
+{'loss': 2.4814, 'grad_norm': 0.21212168037891388, 'learning_rate': 4.9595141700404864e-05, 'epoch': 11.52}
+{'loss': 2.466, 'grad_norm': 0.19374075531959534, 'learning_rate': 3.9473684210526316e-05, 'epoch': 11.62}
+{'loss': 2.4782, 'grad_norm': 0.19719330966472626, 'learning_rate': 2.9352226720647772e-05, 'epoch': 11.72}
+{'loss': 2.4304, 'grad_norm': 0.1870732307434082, 'learning_rate': 1.923076923076923e-05, 'epoch': 11.82}
+{'loss': 2.4363, 'grad_norm': 0.20396363735198975, 'learning_rate': 9.109311740890687e-06, 'epoch': 11.92}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:30:33<00:00,  2.56s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [05:58<00:00,  1.51s/it]
+REF: 'is e ottawa priomhchathair ghalanta dhatheangach cheanada agus gheofar ann danlanna agus musaeim ealaine ann a thaispeanann ceanada san am a chuaigh thart agus san am i lathair'
+HYP: 'is e obaita an priomh countar gleannacha 10.8 ceanada agus museam aileine an a teaspan ceanada san aom a chui chart san aom i laher'
+--- Eval sample ---
+REF: 'is iad na leoin na cait is soisialta maireann siad i ngrupai mora ar a dtugtar ealtai'
+HYP: 'is it lognachat isolante marne iat na grub i mora i doctor aildi'
+--- Eval sample ---
+REF: 'de reir mar a thainig meath eolais ar an ngreigis d eirigh tiortha na niarthar scoite ona bhfreamha i bhfealsunacht agus eolaiocht na greige'
+HYP: 'di reirmar a theannigh me alas ar na ghreaigais diori tirtha na leithair scoitea na bhreimhe a bhfail suunacht agus alaicht na ghreaigadh'
+{'eval_loss': 2.999359607696533, 'eval_wer_ortho': 81.8271488961954, 'eval_wer': 80.54254579179225, 'eval_runtime': 361.5308, 'eval_samples_per_second': 2.329, 'eval_steps_per_second': 0.584, 'epoch': 12.0}
+{'train_runtime': 5795.29, 'train_samples_per_second': 6.552, 'train_steps_per_second': 0.205, 'train_loss': 3.1045894879684703, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [1:36:35<00:00,  4.88s/it]

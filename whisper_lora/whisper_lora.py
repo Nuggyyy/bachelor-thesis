@@ -15,10 +15,11 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-processor = WhisperProcessor.from_pretrained(MODEL_NAME, task="transcribe")
+processor = WhisperProcessor.from_pretrained(MODEL_NAME, task="transcribe", language="english")
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_NAME)
 model.config.use_cache = False
 model.generation_config.task = "transcribe"
+model.generation_config.language = "english"
 model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
@@ -79,7 +80,7 @@ def compute_metrics(pred):
     pred_str = processor.batch_decode(pred_ids, skip_special_tokens=True)
     label_str = processor.batch_decode(label_ids, skip_special_tokens=True)
 
-    wer_ortho = 100 * wer(pred_str, label_str)
+    wer_ortho = 100 * wer(label_str, pred_str)
 
     pred_str_norm = [processor.tokenizer.normalize(pred) for pred in pred_str]
     label_str_norm = [processor.tokenizer.normalize(label) for label in label_str]
@@ -94,7 +95,7 @@ def compute_metrics(pred):
         print("HYP:", repr(hyp))
 
 
-    wer_norm = 100 * wer(pred_str_norm, label_str_norm)
+    wer_norm = 100 * wer(label_str_norm, pred_str_norm)
 
     return {"wer_ortho": wer_ortho, "wer": wer_norm}
 
