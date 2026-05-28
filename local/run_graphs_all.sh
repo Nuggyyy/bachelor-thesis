@@ -6,7 +6,7 @@ set -euo pipefail
 # Edit the arrays below to match your repository structure.
 
 # Base model names (without the _{peft} suffix). Example: qwen3-asr
-models=("qwen3-asr")
+models=("qwen3-asr" "whisper")
 
 # Languages (each language has file: <model>_<peft>/<lang>.txt and output dir <model>_<peft>/<lang>/)
 langs=("irish" "english" "shona" "javanese")

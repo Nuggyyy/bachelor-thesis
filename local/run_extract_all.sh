@@ -6,7 +6,7 @@ set -euo pipefail
 # Edit the arrays below to match your repository structure.
 
 # Base model names (without the _{peft} suffix). Example: qwen3-asr
-models=("qwen3-asr")
+models=("qwen3-asr" "whisper")
 
 # PEFT methods (directories are expected to be named <model>_<peft>)
 pefts=("lora" "vera" "randlora")
@@ -37,4 +37,3 @@ for model in "${models[@]}"; do
 done
 
 echo "All done."
-
