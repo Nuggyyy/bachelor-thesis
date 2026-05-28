@@ -25,8 +25,8 @@ def extract(file_path):
         s = m.group(0)
         lineno = content.count("\n", 0, m.start()) + 1
 
-        # replace bare nan with a Python float('nan') so ast.literal_eval can parse it
-        s_fixed = re.sub(r"(?<=:\s)nan(?=[,}])", "float('nan')", s)
+        # replace bare nan (and variants) with None so ast.literal_eval can parse it reliably
+        s_fixed = re.sub(r"(?<=:)\s*nan(?=[,}])", "None", s, flags=re.IGNORECASE)
 
         try:
             d = ast.literal_eval(s_fixed)

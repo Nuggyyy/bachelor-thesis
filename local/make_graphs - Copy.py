@@ -112,28 +112,33 @@ def plot_grid(struct, outdir, metric, metric_col, y_label, smoothing=None):
                 epoch_used = False
                 if 'epoch' in df.columns:
                     epoch_used = True
-                    x = df['epoch'].astype(float)
+                    epochs = df['epoch'].astype(float)
                     xlabel = 'epoch'
+
+                    # aggregate to a single series per integer epoch to avoid duplicate runs
+                    if metric == 'eval':
+                        # take last eval value for each epoch (sorted by appearance)
+                        grouped = df.assign(epoch=epochs).groupby('epoch', sort=True).last().reset_index()
+                        x = grouped['epoch'].astype(float)
+                        y = pd.to_numeric(grouped[metric_col], errors='coerce')
+                    else:  # train
+                        # group fractional training steps into integer epoch bins and average loss
+                        epoch_int = np.floor(epochs).astype(int)
+                        grouped = df.assign(epoch_int=epoch_int).groupby('epoch_int', sort=True).mean(numeric_only=True).reset_index()
+                        x = grouped['epoch_int'].astype(float)
+                        y = pd.to_numeric(grouped['loss'], errors='coerce')
                 else:
                     x = np.arange(len(df))
                     xlabel = 'step'
 
-                if metric == 'train':
-                    if 'loss' not in df.columns:
-                        continue
-                    y = pd.to_numeric(df['loss'], errors='coerce')
-                else:
-                    if metric_col not in df.columns:
-                        continue
-                    y = pd.to_numeric(df[metric_col], errors='coerce')
-
                 if smoothing and len(y) >= smoothing:
+                    # if y is a pandas Series after grouping, use rolling
                     try:
                         y = y.rolling(window=smoothing, min_periods=1, center=True).mean()
                     except Exception:
                         pass
 
-                # prepare plotting kwargs: no markers for train, markers for eval
+                # prepare plotting kwargs
                 linestyle = '-' if metric == 'train' else '--'
                 plot_kwargs = dict(color=color_map.get(p), linewidth=1, linestyle=linestyle, label=p)
                 if metric != 'train':
@@ -147,15 +152,8 @@ def plot_grid(struct, outdir, metric, metric_col, y_label, smoothing=None):
                     x_arr = np.array(list(x))
                 y_arr = np.asarray(y, dtype=float)
 
-                # if x is not strictly increasing, split into monotonic segments to avoid connecting runs
-                if len(x_arr) > 1 and np.any(np.diff(x_arr) < 0):
-                    breaks = np.where(np.diff(x_arr) < 0)[0]
-                    indices = np.concatenate(([0], breaks + 1, [len(x_arr)]))
-                    for s, e in zip(indices[:-1], indices[1:]):
-                        ax.plot(x_arr[s:e], y_arr[s:e], **plot_kwargs)
-                else:
-                    ax.plot(x_arr, y_arr, **plot_kwargs)
-
+                # plot (after aggregation x should be monotonic)
+                ax.plot(x_arr, y_arr, **plot_kwargs)
                 any_plotted = True
 
             if not any_plotted:

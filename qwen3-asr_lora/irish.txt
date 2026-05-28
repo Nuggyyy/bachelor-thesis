@@ -1,14 +1,14 @@
 The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
 Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
 Parameter 'fn_kwargs'={} of the transform datasets.arrow_dataset.Dataset._map_single couldn't be hashed properly, a random hash was used instead. Make sure your transforms and parameters are serializable with pickle or dill for the dataset fingerprinting and caching to work. If you reuse this transform, the caching mechanism will consider it to be different from the previous calls and recompute everything. This warning is only showed once. Subsequent hashing failures won't be showed.
-Map:  80%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                            | 2558/3214 [00:31<00:01, 367.58 examples/s]Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:35<00:00, 91.63 examples/s]
-Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 842/842 [00:03<00:00, 244.97 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:37<00:00, 86.51 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 842/842 [00:03<00:00, 214.60 examples/s]
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/tuners/tuners_utils.py:919: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['thinker.lm_head'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
   warnings.warn(
 trainable params: 17,166,336 || all params: 799,592,448 || trainable%: 2.1469
 The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 151645, 'pad_token_id': 151643}.
 The model is already on multiple devices. Skipping the move to device specified in `args`.
-  0%|                                                                                                                                                                  | 0/1212 [00:00<?, ?it/s--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:50<00:00,  4.89it/s]
+  0%|                                                                                                                                                                  | 0/1212 [00:00<?, ?it/s--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.81it/s]
 REF: 'sa tuaisceart tá an tsaiheil thart ar an réigiún agus sa deisceart agus san iarthar tá an aigéan atlantach'
 HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下 <odicn\u200cóú t t t páí an antì shetet chí oíشý oí-n ní_gergeroríðy ó n n ó ann- yííágrra h y-از z r re i--asímn nraíí aníííílanguage_Slanguageymologyaisiart an an clíúaníaró an spamú anus an tuiseart táus an tomó ag an tgheanir agantaá ag'
 --- Eval sample ---
@@ -17,297 +17,297 @@ HYP: '以下 <odiccodeical-s-sáí-isisá kí t óíí al--saáí ó``í-h-h-har
 --- Eval sample ---
 REF: 'is féidir go raibh mí-úsáid leanaí nó tráma tromchúiseach i gceist le leanaí fiáine'
 HYP: '以下 <odicgegiúgroò m i--ِí l n ant nì--lnñ n n n an-n-natro na an anú--raíúِ--e_úás ch chúl n n-çán-óërryá ki kií  --naríó--l-ln-sh-sh tì-úíáá aníí an an solaricalíílanguageSféidir g ro mh mí úúsáid leanní na traóma tralasaá le gceist le nanaí fúna sol'
-{'eval_loss': 9.803346633911133, 'eval_wer': 271.87826996860827, 'eval_runtime': 52.1102, 'eval_samples_per_second': 16.158, 'eval_steps_per_second': 4.049, 'epoch': 0}
+{'eval_loss': 9.803346633911133, 'eval_wer': 271.87826996860827, 'eval_runtime': 52.8774, 'eval_samples_per_second': 15.924, 'eval_steps_per_second': 3.99, 'epoch': 0}
   0%|                                                                                                                                                                  | 0/1212 [00:52<?, ?it/s/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
 `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
 {'loss': 43.1703, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
-{'loss': 41.3608, 'grad_norm': 45.06354904174805, 'learning_rate': 2.25e-06, 'epoch': 0.1}
-{'loss': 41.5201, 'grad_norm': 50.0455322265625, 'learning_rate': 4.75e-06, 'epoch': 0.2}
-{'loss': 40.0732, 'grad_norm': 46.34079360961914, 'learning_rate': 7.25e-06, 'epoch': 0.3}
-{'loss': 36.5876, 'grad_norm': 57.158424377441406, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.4}
-{'loss': 31.9488, 'grad_norm': 51.163455963134766, 'learning_rate': 1.225e-05, 'epoch': 0.5}
-{'loss': 26.5284, 'grad_norm': 32.62039566040039, 'learning_rate': 1.475e-05, 'epoch': 0.6}
-{'loss': 24.3738, 'grad_norm': 33.69878387451172, 'learning_rate': 1.725e-05, 'epoch': 0.7}
-{'loss': 22.2776, 'grad_norm': 35.284244537353516, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.8}
-{'loss': 21.7738, 'grad_norm': 41.7617301940918, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.9}
-{'loss': 20.1797, 'grad_norm': 46.19247817993164, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.0}
-  8%|████████████▋                                                                                                                                           | 101/1212 [05:13<39:15,  2.12s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.79it/s]
+{'loss': 41.3861, 'grad_norm': 11.249987602233887, 'learning_rate': 2.25e-06, 'epoch': 0.1}
+{'loss': 42.1021, 'grad_norm': 12.614906311035156, 'learning_rate': 4.75e-06, 'epoch': 0.2}
+{'loss': 41.9334, 'grad_norm': 11.999772071838379, 'learning_rate': 7.25e-06, 'epoch': 0.3}
+{'loss': 40.4605, 'grad_norm': 13.736183166503906, 'learning_rate': 9.750000000000002e-06, 'epoch': 0.4}
+{'loss': 38.7538, 'grad_norm': 12.404195785522461, 'learning_rate': 1.225e-05, 'epoch': 0.5}
+{'loss': 35.4142, 'grad_norm': 12.622273445129395, 'learning_rate': 1.475e-05, 'epoch': 0.6}
+{'loss': 34.7743, 'grad_norm': 15.873271942138672, 'learning_rate': 1.725e-05, 'epoch': 0.7}
+{'loss': 32.2813, 'grad_norm': 14.390759468078613, 'learning_rate': 1.9750000000000002e-05, 'epoch': 0.8}
+{'loss': 30.1177, 'grad_norm': 15.125238418579102, 'learning_rate': 2.2250000000000002e-05, 'epoch': 0.9}
+{'loss': 26.3855, 'grad_norm': 10.945855140686035, 'learning_rate': 2.4750000000000002e-05, 'epoch': 1.0}
+  8%|████████████▋                                                                                                                                           | 101/1212 [05:22<42:48,  2.31s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:54<00:00,  4.43it/s]
 REF: 'seo an áit a ghabh coilínigh na breataine mar a n-áit féin ag'
-HYP: '以下language(A<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>定<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>s na tit a bhheháne na na brách m an bhíáite ain agus'
+HYP: '以下��\\u(A<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>对他们<asr_text><asr_text><asr_text>对他们对他们ical_:*_:*ancedancedancedancedanced_:*anced AsyncCallbackتونVisibility<asr_text><asr_text><asr_text><asr_text>_:*ProgressBaranced_:*ancedancedancedanced_:*_:*<asr_text>_:*anced<tool_call><tool_call><tool_call><tool_call>Modified<tool_call><asr_text>anced<tool_call> BoxFit<tool_call>ProgressBarContent<asr_text>ProgressBar AsyncCallbackiginalNotify<tool_call><tool_call><tool_call>Long<tool_call><tool_call><asr_text><asr_text>anced\rеч_:*长安长安长安anced_:*_:*_:*<tool_call><tool_call><tool_call><tool_call><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>ocop<asr_text><asr_text><asr_text> ch chit a chheháne na na bratch, an bhíéit ain agus'
 --- Eval sample ---
 REF: 'i measc na ngrúpaí a úsáideann an tseirbhís seo go minic tá loingeas lena n-áirítear b'
-HYP: '以下language(A<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text> né<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>cé masc na grgrúpa a a úsáideann si ssearbhísó go minic tolaine, lena aíáirítear faid'
+HYP: '以下��\\u(A<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>ancedModifiedModifiedancedanced<tool_call>anced<tool_call><tool_call><tool_call>ModifiedModified����<tool_call><tool_call><tool_call><tool_call>_:*<asr_text><asr_text><asr_text>anced<tool_call><tool_call>对你<asr_text>dynamicdynamic AsyncCallbackModified<tool_call>ProgressBarModified<asr_text><asr_text>ижanced<tool_call><asr_text>_:*icedanced<tool_call>��昂<tool_call><asr_text><asr_text><asr_text>ancedancedancedanced دمش_:*<tool_call>��<asr_text><asr_text><asr_text><asr_text>раз masc na grgrúpa a a úsáidann an servsearbhís ag go minic tolaine,,a aíáiritítear foid'
 --- Eval sample ---
 REF: 'idir aosach fireann amháin agus trí cinn ghaolmhara a bhíonn in ealta leon mar aon le suas le tríocha baineann agus coileáin'
-HYP: 'ductductductductductductductductductductduct以下language(A<asr_text>实体<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>或者其他<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>fir éúas na uháin agus tr kenén geheeilraá a bhíonn an áalt leit mar ainon leis le trí he uheann agus scileánin'
-{'eval_loss': 4.577239036560059, 'eval_wer': 86.51028950122078, 'eval_runtime': 52.3639, 'eval_samples_per_second': 16.08, 'eval_steps_per_second': 4.029, 'epoch': 1.0}
-  8%|████████████▋                                                                                                                                           | 101/1212 [06:05<39:15,  2.12s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: 'ductductductductductductductductductductduct以下��\\u(A<asr_text>ć<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>Modifiedanced_:*_:*<asr_text><asr_text>BASELINEancedancedanced<tool_call><tool_call>ProgressBarProgressBarModifiedModifiedContentProgressBar<asr_text><asr_text><asr_text><asr_text>ancedancedProgressBar AsyncCallback AsyncCallbackanced<tool_call>anced_:*<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text> AsyncCallback AsyncCallback<tool_call>ProgressBaranced<asr_text><asr_text><asr_text><asr_text>ical<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>разir éúas na uacháin agus trí kenén géaileilraá a bhíonn anaala leit mar ain bh le s la trí h aghe ag agus scileánin'
+{'eval_loss': 5.849806308746338, 'eval_wer': 107.76072549703524, 'eval_runtime': 55.5639, 'eval_samples_per_second': 15.154, 'eval_steps_per_second': 3.797, 'epoch': 1.0}
+  8%|████████████▋                                                                                                                                           | 101/1212 [06:18<42:48,  2.31s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 17.8362, 'grad_norm': 40.046714782714844, 'learning_rate': 2.725e-05, 'epoch': 1.09}
-{'loss': 18.159, 'grad_norm': 75.54056549072266, 'learning_rate': 2.975e-05, 'epoch': 1.19}
-{'loss': 16.1565, 'grad_norm': 99.61585235595703, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.29}
-{'loss': 15.7639, 'grad_norm': 110.98199462890625, 'learning_rate': 3.475e-05, 'epoch': 1.39}
-{'loss': 12.9496, 'grad_norm': 151.074951171875, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.49}
-{'loss': 11.8474, 'grad_norm': 165.2052459716797, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.59}
-{'loss': 9.8308, 'grad_norm': 148.24049377441406, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.69}
-{'loss': 7.8084, 'grad_norm': 98.98991394042969, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.79}
-{'loss': 7.2353, 'grad_norm': 37.586944580078125, 'learning_rate': 4.7249999999999997e-05, 'epoch': 1.89}
-{'loss': 6.4197, 'grad_norm': 12.692081451416016, 'learning_rate': 4.975e-05, 'epoch': 1.99}
- 17%|█████████████████████████▎                                                                                                                              | 202/1212 [10:25<35:44,  2.12s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.73it/s]
+{'loss': 22.7183, 'grad_norm': 9.331307411193848, 'learning_rate': 2.725e-05, 'epoch': 1.09}
+{'loss': 23.0086, 'grad_norm': 12.512927055358887, 'learning_rate': 2.975e-05, 'epoch': 1.19}
+{'loss': 20.747, 'grad_norm': 14.80860710144043, 'learning_rate': 3.2250000000000005e-05, 'epoch': 1.29}
+{'loss': 21.3827, 'grad_norm': 16.287965774536133, 'learning_rate': 3.475e-05, 'epoch': 1.39}
+{'loss': 18.9177, 'grad_norm': 22.425771713256836, 'learning_rate': 3.7250000000000004e-05, 'epoch': 1.49}
+{'loss': 19.466, 'grad_norm': 26.228971481323242, 'learning_rate': 3.9750000000000004e-05, 'epoch': 1.59}
+{'loss': 18.322, 'grad_norm': 28.67526626586914, 'learning_rate': 4.2250000000000004e-05, 'epoch': 1.69}
+{'loss': 17.7521, 'grad_norm': 33.74018096923828, 'learning_rate': 4.4750000000000004e-05, 'epoch': 1.79}
+{'loss': 16.4108, 'grad_norm': 44.32752227783203, 'learning_rate': 4.7249999999999997e-05, 'epoch': 1.89}
+{'loss': 15.4555, 'grad_norm': 31.11949920654297, 'learning_rate': 4.975e-05, 'epoch': 1.99}
+ 17%|█████████████████████████▎                                                                                                                              | 202/1212 [11:37<42:24,  2.52s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:01<00:00,  3.81it/s]
 REF: 'faoi 1976 rinneadh athchóiriú ar thríocha faoin gcéad de machu picchu and leanadh leis an athchóiriú go dtí an lá atá inniu againn'
-HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下 Thfioni n20 sé0 bhne á anchuidirú ar thí phíoin géad de mhu pchu agasbh leis ath athchóiriú go gí an lethá agiun n'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下language<asr_text>�<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text> né<asr_text><asr_text><asr_text>Fiioni na20 ch0 bhne á anchuidirú ar triífhíoin géad de mhu pchu agasú leis ath athchóiriú go gí an lethá agiun nu'
 --- Eval sample ---
 REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágann gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
-HYP: 'ductductductductductductductductductductduct以下 Thta nisías iigóhíí ag anhbh arirhe ar thágá grrian n le brusó ón héile ag bhhealachán coililtteach go aon chibilt'
+HYP: 'ductductductductductductductductductductduct以下language<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>稳妥<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>ta naclías éigóhaí ag ahh arrhe ar bhéá grrian n le brúá ón héad ag ghealachán coilhteach g áon chimil'
 --- Eval sample ---
 REF: 'bhí cáil air mar chroílár an tsómais ó 400 ad'
-HYP: '以下 Thbí coil ar mar cruuirí leú an chamimeíó ch200 am m'
-{'eval_loss': 1.519997239112854, 'eval_wer': 84.76630624346006, 'eval_runtime': 52.1786, 'eval_samples_per_second': 16.137, 'eval_steps_per_second': 4.044, 'epoch': 2.0}
- 17%|█████████████████████████▎                                                                                                                              | 202/1212 [11:17<35:44,  2.12s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: '以下language<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text> né<asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text><asr_text>bí coil ar mar cruuirí leú an chamimeí ó chigh00 á bh'
+{'eval_loss': 3.5731842517852783, 'eval_wer': 85.82141611440531, 'eval_runtime': 62.3682, 'eval_samples_per_second': 13.5, 'eval_steps_per_second': 3.383, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 202/1212 [12:39<42:24,  2.52s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 6.1688, 'grad_norm': 8.045971870422363, 'learning_rate': 4.955533596837945e-05, 'epoch': 2.08}
-{'loss': 5.0486, 'grad_norm': 7.855199813842773, 'learning_rate': 4.906126482213439e-05, 'epoch': 2.18}
-{'loss': 5.7984, 'grad_norm': 8.210506439208984, 'learning_rate': 4.8567193675889336e-05, 'epoch': 2.28}
-{'loss': 4.9786, 'grad_norm': 6.151127338409424, 'learning_rate': 4.807312252964427e-05, 'epoch': 2.38}
-{'loss': 4.9002, 'grad_norm': 7.589325904846191, 'learning_rate': 4.757905138339921e-05, 'epoch': 2.48}
-{'loss': 5.4866, 'grad_norm': 6.938555717468262, 'learning_rate': 4.7084980237154154e-05, 'epoch': 2.58}
-{'loss': 5.2603, 'grad_norm': 9.862395286560059, 'learning_rate': 4.659090909090909e-05, 'epoch': 2.68}
-{'loss': 5.0813, 'grad_norm': 8.385903358459473, 'learning_rate': 4.6096837944664035e-05, 'epoch': 2.78}
-{'loss': 5.1337, 'grad_norm': 9.693351745605469, 'learning_rate': 4.560276679841897e-05, 'epoch': 2.88}
-{'loss': 5.0364, 'grad_norm': 11.21526050567627, 'learning_rate': 4.5108695652173916e-05, 'epoch': 2.98}
- 25%|██████████████████████████████████████                                                                                                                  | 303/1212 [15:35<30:41,  2.03s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.84it/s]
+{'loss': 13.423, 'grad_norm': 47.770137786865234, 'learning_rate': 4.955533596837945e-05, 'epoch': 2.08}
+{'loss': 13.3313, 'grad_norm': 54.1124267578125, 'learning_rate': 4.906126482213439e-05, 'epoch': 2.18}
+{'loss': 12.6127, 'grad_norm': 56.034820556640625, 'learning_rate': 4.8567193675889336e-05, 'epoch': 2.28}
+{'loss': 10.5576, 'grad_norm': 71.92378997802734, 'learning_rate': 4.807312252964427e-05, 'epoch': 2.38}
+{'loss': 10.0914, 'grad_norm': 79.0821304321289, 'learning_rate': 4.757905138339921e-05, 'epoch': 2.48}
+{'loss': 9.2633, 'grad_norm': 54.69649887084961, 'learning_rate': 4.7084980237154154e-05, 'epoch': 2.58}
+{'loss': 8.3304, 'grad_norm': 49.168739318847656, 'learning_rate': 4.659090909090909e-05, 'epoch': 2.68}
+{'loss': 7.3499, 'grad_norm': 32.2507209777832, 'learning_rate': 4.6096837944664035e-05, 'epoch': 2.78}
+{'loss': 6.9224, 'grad_norm': 21.818056106567383, 'learning_rate': 4.560276679841897e-05, 'epoch': 2.88}
+{'loss': 6.5436, 'grad_norm': 9.957321166992188, 'learning_rate': 4.5108695652173916e-05, 'epoch': 2.98}
+ 25%|██████████████████████████████████████                                                                                                                  | 303/1212 [18:00<38:22,  2.53s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:01<00:00,  3.85it/s]
 REF: "níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt d'fhocail dhrannacha bhéicthe"
-HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductníl barí tgar ch cosúil le bir lagágraráais na an ionab te sé níos cosúilí hrtt do'fhocalail dr'abach beíicí"
+HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductduct以下nl brí tor ch cosúil le bhr láágraraú na na uab té sé níos cosúilí horrat f'aoodail tr'abach víicí"
 --- Eval sample ---
 REF: "an tseachtain seo caite d'fhógair meti gur"
-HYP: "an ch-achtain seo chite tug'fhogair meti gur ch"
+HYP: "以下an chseachtain sa chith do'ogogair méi gur ch"
 --- Eval sample ---
 REF: 'rinne gobharnóir california arnold schwarzenegger bille a shíniú le'
-HYP: 'rinneáhannarir c arná schwzenegger bhheadh thuíneú le b'
-{'eval_loss': 1.3070100545883179, 'eval_wer': 73.5524938960586, 'eval_runtime': 51.8125, 'eval_samples_per_second': 16.251, 'eval_steps_per_second': 4.072, 'epoch': 3.0}
- 25%|██████████████████████████████████████                                                                                                                  | 303/1212 [16:27<30:41,  2.03s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: '以下reneáhannarir california arná schwzenegger bhhlághíneú le v'
+{'eval_loss': 1.604382872581482, 'eval_wer': 81.42657830484828, 'eval_runtime': 62.4147, 'eval_samples_per_second': 13.49, 'eval_steps_per_second': 3.381, 'epoch': 3.0}
+ 25%|██████████████████████████████████████                                                                                                                  | 303/1212 [19:02<38:22,  2.53s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 4.5901, 'grad_norm': 8.019086837768555, 'learning_rate': 4.461462450592885e-05, 'epoch': 3.07}
-{'loss': 4.8615, 'grad_norm': 8.02895736694336, 'learning_rate': 4.41205533596838e-05, 'epoch': 3.17}
-{'loss': 4.6606, 'grad_norm': 8.101473808288574, 'learning_rate': 4.3626482213438734e-05, 'epoch': 3.27}
-{'loss': 4.8202, 'grad_norm': 7.971407890319824, 'learning_rate': 4.313241106719368e-05, 'epoch': 3.37}
-{'loss': 4.8496, 'grad_norm': 9.060894012451172, 'learning_rate': 4.2638339920948615e-05, 'epoch': 3.47}
-{'loss': 4.6635, 'grad_norm': 10.891674995422363, 'learning_rate': 4.214426877470356e-05, 'epoch': 3.57}
-{'loss': 4.4095, 'grad_norm': 8.64442253112793, 'learning_rate': 4.1650197628458496e-05, 'epoch': 3.67}
-{'loss': 4.7041, 'grad_norm': 6.835522174835205, 'learning_rate': 4.115612648221344e-05, 'epoch': 3.77}
-{'loss': 4.0477, 'grad_norm': 10.661276817321777, 'learning_rate': 4.0662055335968377e-05, 'epoch': 3.87}
-{'loss': 4.2425, 'grad_norm': 8.528843879699707, 'learning_rate': 4.016798418972332e-05, 'epoch': 3.97}
- 33%|██████████████████████████████████████████████████▋                                                                                                     | 404/1212 [20:44<27:09,  2.02s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.84it/s]
+{'loss': 5.9379, 'grad_norm': 4.969754695892334, 'learning_rate': 4.461462450592885e-05, 'epoch': 3.07}
+{'loss': 6.1572, 'grad_norm': 4.188728332519531, 'learning_rate': 4.41205533596838e-05, 'epoch': 3.17}
+{'loss': 5.8039, 'grad_norm': 2.9251434803009033, 'learning_rate': 4.3626482213438734e-05, 'epoch': 3.27}
+{'loss': 5.875, 'grad_norm': 3.2469029426574707, 'learning_rate': 4.313241106719368e-05, 'epoch': 3.37}
+{'loss': 5.8212, 'grad_norm': 3.440006971359253, 'learning_rate': 4.2638339920948615e-05, 'epoch': 3.47}
+{'loss': 5.6341, 'grad_norm': 2.799499750137329, 'learning_rate': 4.214426877470356e-05, 'epoch': 3.57}
+{'loss': 5.2981, 'grad_norm': 3.029531955718994, 'learning_rate': 4.1650197628458496e-05, 'epoch': 3.67}
+{'loss': 5.5096, 'grad_norm': 2.7293615341186523, 'learning_rate': 4.115612648221344e-05, 'epoch': 3.77}
+{'loss': 4.864, 'grad_norm': 2.343721866607666, 'learning_rate': 4.0662055335968377e-05, 'epoch': 3.87}
+{'loss': 5.0456, 'grad_norm': 2.9721946716308594, 'learning_rate': 4.016798418972332e-05, 'epoch': 3.97}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 404/1212 [24:04<34:40,  2.58s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:01<00:00,  3.87it/s]
 REF: "is tacaíocht d'eolaithe ina gcuid taighde an comhghaolú idir galareolaíocht inchinne agus iompraíocht"
-HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductis táógíocht oil'ileachahe ina chuid teitede an chhthaoolá idir anairadh agoch aginn agus gadpairíoch ag"
+HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductis táógíocht o'alaachahe ina chuid theitede an chhbaaoillá éir anairadhíocht aginn agus anadlíocht ag"
 --- Eval sample ---
 REF: 'déanann plandaí a gcuid bia ón ngrian trí fhótaisintéis cuireann siad scáth ar fáil chomh maith'
-HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductdanann plandaí a chuid bia ón gri trí fóta-sontí aireadh siad aáth ar anudilunh maith'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductgalanann plandaí a chuid bhe on gri trí fóth-síisireadh anad anáthanna anadilunh maith'
 --- Eval sample ---
 REF: ''
 HYP: ''
-{'eval_loss': 1.2693835496902466, 'eval_wer': 70.98011859086154, 'eval_runtime': 51.9111, 'eval_samples_per_second': 16.22, 'eval_steps_per_second': 4.065, 'epoch': 4.0}
- 33%|██████████████████████████████████████████████████▋                                                                                                     | 404/1212 [21:36<27:09,  2.02s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+{'eval_loss': 1.385013222694397, 'eval_wer': 74.46808510638297, 'eval_runtime': 62.2463, 'eval_samples_per_second': 13.527, 'eval_steps_per_second': 3.39, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 404/1212 [25:06<34:40,  2.58s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 4.138, 'grad_norm': 9.066368103027344, 'learning_rate': 3.9673913043478264e-05, 'epoch': 4.06}
-{'loss': 4.1109, 'grad_norm': 8.612020492553711, 'learning_rate': 3.917984189723321e-05, 'epoch': 4.16}
-{'loss': 4.7028, 'grad_norm': 9.737205505371094, 'learning_rate': 3.8685770750988145e-05, 'epoch': 4.26}
-{'loss': 4.5113, 'grad_norm': 8.801913261413574, 'learning_rate': 3.819169960474309e-05, 'epoch': 4.36}
-{'loss': 4.9994, 'grad_norm': 8.303498268127441, 'learning_rate': 3.7697628458498026e-05, 'epoch': 4.46}
-{'loss': 4.5104, 'grad_norm': 10.039661407470703, 'learning_rate': 3.720355731225297e-05, 'epoch': 4.56}
-{'loss': 4.3837, 'grad_norm': 11.688454627990723, 'learning_rate': 3.670948616600791e-05, 'epoch': 4.66}
-{'loss': 4.3833, 'grad_norm': 8.60461139678955, 'learning_rate': 3.621541501976285e-05, 'epoch': 4.76}
-{'loss': 4.0866, 'grad_norm': 7.299465656280518, 'learning_rate': 3.572134387351779e-05, 'epoch': 4.86}
-{'loss': 3.6788, 'grad_norm': 8.809218406677246, 'learning_rate': 3.522727272727273e-05, 'epoch': 4.96}
- 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 505/1212 [25:55<23:53,  2.03s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.80it/s]
+{'loss': 4.89, 'grad_norm': 3.0971615314483643, 'learning_rate': 3.9673913043478264e-05, 'epoch': 4.06}
+{'loss': 4.9678, 'grad_norm': 4.194664001464844, 'learning_rate': 3.917984189723321e-05, 'epoch': 4.16}
+{'loss': 5.5028, 'grad_norm': 3.9137890338897705, 'learning_rate': 3.8685770750988145e-05, 'epoch': 4.26}
+{'loss': 5.2411, 'grad_norm': 3.6449670791625977, 'learning_rate': 3.819169960474309e-05, 'epoch': 4.36}
+{'loss': 5.7412, 'grad_norm': 2.820033073425293, 'learning_rate': 3.7697628458498026e-05, 'epoch': 4.46}
+{'loss': 5.2481, 'grad_norm': 3.544882297515869, 'learning_rate': 3.720355731225297e-05, 'epoch': 4.56}
+{'loss': 5.0624, 'grad_norm': 3.1190991401672363, 'learning_rate': 3.670948616600791e-05, 'epoch': 4.66}
+{'loss': 5.0863, 'grad_norm': 3.436805486679077, 'learning_rate': 3.621541501976285e-05, 'epoch': 4.76}
+{'loss': 4.7987, 'grad_norm': 2.8201284408569336, 'learning_rate': 3.572134387351779e-05, 'epoch': 4.86}
+{'loss': 4.366, 'grad_norm': 3.2502973079681396, 'learning_rate': 3.522727272727273e-05, 'epoch': 4.96}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 505/1212 [30:26<30:19,  2.57s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:01<00:00,  5.82it/s]
 REF: 'níos déanaí ghlac na grianghrafadóirí áit seanmhná de bhrí gur theastaigh uaithi an leithreas a úsáid leagadh mendoza le piléar'
-HYP: 'isos deaní chhlac na granghraraf doóirí atit semhheá de bhhrí gur táastaigh uithi an leithreas a úsáid li mmh mhe le péar'
+HYP: 'ductductductductductductductductductductductductníos daní chhlac na grúhraraf doóirte atit sanraheá de bhhrí gur thastigh uithi an leithreas a úsáid le m mh mhe le péar'
 --- Eval sample ---
 REF: 'mura dtéann tú i dtír ach amháin ag úsáid turais ar bord loinge ní bheadh víosa ar leith ag teastáil uait ó 2009'
-HYP: 'mú deéann tú deadír a aháin agussáid tas ar b longinge ní mheidh rse ar leith ag taastáil arirth ó bh10 bli bli'
+HYP: 'múíéann tú gadír a aháin agussáid tas ar b longanga ní mheidh fse ar leith ag taastáil iirth ó bh1010'
 --- Eval sample ---
 REF: "tabhair aire nach ligfidh tú don éadach éirí róthe rud d'fhéadfadh a bheith ina chúis le crapadh nó i gcásanna níos measa loisceadh"
-HYP: "tarhair aire n lefidh tú don eadaach éadí roótha rud é'fhéadfadh a bheith anna chúis le chrá na g gásanna níos measa lechtá"
-{'eval_loss': 1.2525759935379028, 'eval_wer': 68.55598186257413, 'eval_runtime': 52.0605, 'eval_samples_per_second': 16.173, 'eval_steps_per_second': 4.053, 'epoch': 5.0}
- 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 505/1212 [26:47<23:53,  2.03s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: "ductductductductductductductductducttarhair ar nach le féh tú don eadaach éadí roótha rud é'fhéadfadh a bhheith ana chis le chrá na ag gás na níos móa leisá"
+{'eval_loss': 1.3375141620635986, 'eval_wer': 73.41297523543774, 'eval_runtime': 62.0123, 'eval_samples_per_second': 13.578, 'eval_steps_per_second': 3.403, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 505/1212 [31:28<30:19,  2.57s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 3.8477, 'grad_norm': 10.054882049560547, 'learning_rate': 3.473320158102767e-05, 'epoch': 5.05}
-{'loss': 4.238, 'grad_norm': 6.996365547180176, 'learning_rate': 3.423913043478261e-05, 'epoch': 5.15}
-{'loss': 4.247, 'grad_norm': 8.563366889953613, 'learning_rate': 3.374505928853755e-05, 'epoch': 5.25}
-{'loss': 3.9952, 'grad_norm': 8.952696800231934, 'learning_rate': 3.325098814229249e-05, 'epoch': 5.35}
-{'loss': 4.1337, 'grad_norm': 9.965095520019531, 'learning_rate': 3.275691699604743e-05, 'epoch': 5.45}
-{'loss': 4.1128, 'grad_norm': 9.864311218261719, 'learning_rate': 3.2262845849802374e-05, 'epoch': 5.55}
-{'loss': 4.0128, 'grad_norm': 14.050466537475586, 'learning_rate': 3.176877470355731e-05, 'epoch': 5.65}
-{'loss': 4.0696, 'grad_norm': 9.266864776611328, 'learning_rate': 3.1274703557312255e-05, 'epoch': 5.75}
-{'loss': 4.2777, 'grad_norm': 9.920581817626953, 'learning_rate': 3.078063241106719e-05, 'epoch': 5.85}
-{'loss': 4.0152, 'grad_norm': 6.904238224029541, 'learning_rate': 3.0286561264822133e-05, 'epoch': 5.95}
- 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 606/1212 [31:03<20:40,  2.05s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.84it/s]
+{'loss': 4.5354, 'grad_norm': 4.437222957611084, 'learning_rate': 3.473320158102767e-05, 'epoch': 5.05}
+{'loss': 4.9995, 'grad_norm': 2.477966785430908, 'learning_rate': 3.423913043478261e-05, 'epoch': 5.15}
+{'loss': 4.9825, 'grad_norm': 4.219181537628174, 'learning_rate': 3.374505928853755e-05, 'epoch': 5.25}
+{'loss': 4.7122, 'grad_norm': 3.372680187225342, 'learning_rate': 3.325098814229249e-05, 'epoch': 5.35}
+{'loss': 4.8598, 'grad_norm': 3.741318702697754, 'learning_rate': 3.275691699604743e-05, 'epoch': 5.45}
+{'loss': 4.9204, 'grad_norm': 3.614985704421997, 'learning_rate': 3.2262845849802374e-05, 'epoch': 5.55}
+{'loss': 4.6851, 'grad_norm': 4.334786891937256, 'learning_rate': 3.176877470355731e-05, 'epoch': 5.65}
+{'loss': 4.7268, 'grad_norm': 3.982477903366089, 'learning_rate': 3.1274703557312255e-05, 'epoch': 5.75}
+{'loss': 4.9288, 'grad_norm': 3.5752367973327637, 'learning_rate': 3.078063241106719e-05, 'epoch': 5.85}
+{'loss': 4.6889, 'grad_norm': 3.631401538848877, 'learning_rate': 3.0286561264822133e-05, 'epoch': 5.95}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 606/1212 [36:31<21:31,  2.13s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:53<00:00,  4.42it/s]
 REF: 'tugann an fhionnachtain léargas dúinn ar éabhlóid na gcleití sna héin'
-HYP: 'toógann an fínacht an leargas deninn ar aibláóid na gcceastí sinna hin'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductducttáógann an fínachtán leargas deninn ar aibhlóid na gcheasís sinna hin'
 --- Eval sample ---
 REF: ''
 HYP: ''
 --- Eval sample ---
 REF: 'le linn na tréimhse sin i stair na heorpa tosaíodh ar scrúdú a dhéanamh ar an eaglais chaitliceach tar éis d'
-HYP: 'le linn na tréamhse seo is st na chorpa tásaí uh u strídú a dhéanamh ar an ulais caitleáta éis dí'
-{'eval_loss': 1.228769063949585, 'eval_wer': 67.57063132193932, 'eval_runtime': 51.6818, 'eval_samples_per_second': 16.292, 'eval_steps_per_second': 4.083, 'epoch': 6.0}
- 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 606/1212 [31:55<20:40,  2.05s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: "le linn na tréibhse seo is st na chirepa tásaí uh ist scídú a dhéanamh ar an aglais cathathleá tá éis g'"
+{'eval_loss': 1.3091988563537598, 'eval_wer': 72.75898151377747, 'eval_runtime': 54.2706, 'eval_samples_per_second': 15.515, 'eval_steps_per_second': 3.888, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 606/1212 [37:26<21:31,  2.13s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 4.0647, 'grad_norm': 9.767889022827148, 'learning_rate': 2.9792490118577076e-05, 'epoch': 6.04}
-{'loss': 4.1121, 'grad_norm': 9.944643020629883, 'learning_rate': 2.9298418972332014e-05, 'epoch': 6.14}
-{'loss': 4.0211, 'grad_norm': 10.03793716430664, 'learning_rate': 2.8804347826086957e-05, 'epoch': 6.24}
-{'loss': 3.7357, 'grad_norm': 9.4841947555542, 'learning_rate': 2.8310276679841894e-05, 'epoch': 6.34}
-{'loss': 4.0315, 'grad_norm': 7.922492504119873, 'learning_rate': 2.7816205533596838e-05, 'epoch': 6.44}
-{'loss': 3.9493, 'grad_norm': 8.147738456726074, 'learning_rate': 2.732213438735178e-05, 'epoch': 6.54}
-{'loss': 3.8341, 'grad_norm': 8.509727478027344, 'learning_rate': 2.6828063241106723e-05, 'epoch': 6.64}
-{'loss': 4.3136, 'grad_norm': 9.114237785339355, 'learning_rate': 2.633399209486166e-05, 'epoch': 6.74}
-{'loss': 3.927, 'grad_norm': 9.009810447692871, 'learning_rate': 2.5839920948616603e-05, 'epoch': 6.84}
-{'loss': 4.7066, 'grad_norm': 7.746827125549316, 'learning_rate': 2.534584980237154e-05, 'epoch': 6.94}
- 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 707/1212 [36:11<16:34,  1.97s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.85it/s]
+{'loss': 4.7608, 'grad_norm': 3.8708009719848633, 'learning_rate': 2.9792490118577076e-05, 'epoch': 6.04}
+{'loss': 4.8194, 'grad_norm': 4.10360050201416, 'learning_rate': 2.9298418972332014e-05, 'epoch': 6.14}
+{'loss': 4.7492, 'grad_norm': 3.91095232963562, 'learning_rate': 2.8804347826086957e-05, 'epoch': 6.24}
+{'loss': 4.4913, 'grad_norm': 4.487792491912842, 'learning_rate': 2.8310276679841894e-05, 'epoch': 6.34}
+{'loss': 4.7385, 'grad_norm': 3.138371467590332, 'learning_rate': 2.7816205533596838e-05, 'epoch': 6.44}
+{'loss': 4.6697, 'grad_norm': 3.3335354328155518, 'learning_rate': 2.732213438735178e-05, 'epoch': 6.54}
+{'loss': 4.6002, 'grad_norm': 3.5354058742523193, 'learning_rate': 2.6828063241106723e-05, 'epoch': 6.64}
+{'loss': 5.0317, 'grad_norm': 3.486389636993408, 'learning_rate': 2.633399209486166e-05, 'epoch': 6.74}
+{'loss': 4.6512, 'grad_norm': 3.7555243968963623, 'learning_rate': 2.5839920948616603e-05, 'epoch': 6.84}
+{'loss': 5.389, 'grad_norm': 3.2710540294647217, 'learning_rate': 2.534584980237154e-05, 'epoch': 6.94}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 707/1212 [41:48<16:54,  2.01s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:52<00:00,  4.68it/s]
 REF: 'tá an t-oileán'
-HYP: 'tá an tóileá na'
+HYP: 'tá an toóileán ce'
 --- Eval sample ---
 REF: "tabhair aire nach ligfidh tú don éadach éirí róthe rud d'fhéadfadh a bheith ina chúis le crapadh nó i gcásanna níos measa loisceadh"
-HYP: "táhair aire na lefidh tú dao oadach iadí roótha rud a'fhéadfadh a bheith in cú chis le crú na g gcásanna níos measa lechtá"
+HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductducttáhair é na lefidh tú i éadach iadí roótha rud a'fhéadfadh a bheith in cú chis le crá na gadásanna níos móa lasisá"
 --- Eval sample ---
 REF: 'ó thuaidh'
 HYP: 'ó thuairh ag'
-{'eval_loss': 1.224919319152832, 'eval_wer': 66.8207185211022, 'eval_runtime': 52.2002, 'eval_samples_per_second': 16.13, 'eval_steps_per_second': 4.042, 'epoch': 7.0}
- 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 707/1212 [37:03<16:34,  1.97s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+{'eval_loss': 1.2960566282272339, 'eval_wer': 71.8869898848971, 'eval_runtime': 52.7636, 'eval_samples_per_second': 15.958, 'eval_steps_per_second': 3.999, 'epoch': 7.0}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 707/1212 [42:41<16:54,  2.01s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 3.5309, 'grad_norm': 7.359964847564697, 'learning_rate': 2.4851778656126484e-05, 'epoch': 7.03}
-{'loss': 4.0598, 'grad_norm': 8.680737495422363, 'learning_rate': 2.4357707509881425e-05, 'epoch': 7.13}
-{'loss': 3.8148, 'grad_norm': 10.948343276977539, 'learning_rate': 2.3863636363636365e-05, 'epoch': 7.23}
-{'loss': 3.7079, 'grad_norm': 10.119606018066406, 'learning_rate': 2.3369565217391306e-05, 'epoch': 7.33}
-{'loss': 4.3396, 'grad_norm': 9.96810245513916, 'learning_rate': 2.2875494071146246e-05, 'epoch': 7.43}
-{'loss': 3.9196, 'grad_norm': 11.905614852905273, 'learning_rate': 2.2381422924901187e-05, 'epoch': 7.53}
-{'loss': 3.7451, 'grad_norm': 9.677183151245117, 'learning_rate': 2.188735177865613e-05, 'epoch': 7.63}
-{'loss': 4.1119, 'grad_norm': 8.312836647033691, 'learning_rate': 2.1393280632411067e-05, 'epoch': 7.73}
-{'loss': 4.2218, 'grad_norm': 8.452235221862793, 'learning_rate': 2.0899209486166008e-05, 'epoch': 7.83}
-{'loss': 3.7258, 'grad_norm': 8.515462875366211, 'learning_rate': 2.040513833992095e-05, 'epoch': 7.93}
- 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 808/1212 [41:19<13:22,  1.99s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.77it/s]
+{'loss': 4.1857, 'grad_norm': 3.2880654335021973, 'learning_rate': 2.4851778656126484e-05, 'epoch': 7.03}
+{'loss': 4.857, 'grad_norm': 3.9233322143554688, 'learning_rate': 2.4357707509881425e-05, 'epoch': 7.13}
+{'loss': 4.585, 'grad_norm': 4.459656238555908, 'learning_rate': 2.3863636363636365e-05, 'epoch': 7.23}
+{'loss': 4.4216, 'grad_norm': 3.655137538909912, 'learning_rate': 2.3369565217391306e-05, 'epoch': 7.33}
+{'loss': 5.0889, 'grad_norm': 3.9184892177581787, 'learning_rate': 2.2875494071146246e-05, 'epoch': 7.43}
+{'loss': 4.6995, 'grad_norm': 4.894556045532227, 'learning_rate': 2.2381422924901187e-05, 'epoch': 7.53}
+{'loss': 4.4269, 'grad_norm': 3.8045363426208496, 'learning_rate': 2.188735177865613e-05, 'epoch': 7.63}
+{'loss': 4.8288, 'grad_norm': 3.2984063625335693, 'learning_rate': 2.1393280632411067e-05, 'epoch': 7.73}
+{'loss': 4.9407, 'grad_norm': 3.480527639389038, 'learning_rate': 2.0899209486166008e-05, 'epoch': 7.83}
+{'loss': 4.4437, 'grad_norm': 3.3925187587738037, 'learning_rate': 2.040513833992095e-05, 'epoch': 7.93}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 808/1212 [47:03<13:06,  1.95s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:52<00:00,  4.64it/s]
 REF: 'i gcaitheamh na hoíche rinneadh idir 150 agus 200 cóip a dtugtar dunlap broadsides orthu anois'
-HYP: 'i gcceiteannh an iíche rinneú arircé1000us 150 cúp a dtugtar donap brsideight aru inois'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductducti gccaithannh na eíche rinneú arircé10 cú0us 150 kipe a dtugtar donap brsideight aru anois'
 --- Eval sample ---
 REF: 'i dtreo dheireadh na meánaoise d'
-HYP: "i dtreighireadh na maánnaías'"
+HYP: "i dtreoighireadh na maániníada'"
 --- Eval sample ---
 REF: 'tá sé níos tanaí faoin maria agus níos tibhe faoi na hardchríocha'
-HYP: 'tá sé níos táanaí faoin mara agus níos túuahe faoin na h-cheíocha'
-{'eval_loss': 1.219070553779602, 'eval_wer': 66.75095919079178, 'eval_runtime': 52.2796, 'eval_samples_per_second': 16.106, 'eval_steps_per_second': 4.036, 'epoch': 8.0}
- 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 808/1212 [42:11<13:22,  1.99s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductducttá sé níos táanaí freoin mara agus níos tuusah faoin na h-cheachaocha'
+{'eval_loss': 1.283325433731079, 'eval_wer': 71.33763515870247, 'eval_runtime': 53.267, 'eval_samples_per_second': 15.807, 'eval_steps_per_second': 3.961, 'epoch': 8.0}
+ 67%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 808/1212 [47:56<13:06,  1.95s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 3.7961, 'grad_norm': 9.0100736618042, 'learning_rate': 1.991106719367589e-05, 'epoch': 8.02}
-{'loss': 3.6278, 'grad_norm': 8.146084785461426, 'learning_rate': 1.941699604743083e-05, 'epoch': 8.12}
-{'loss': 3.993, 'grad_norm': 9.716156005859375, 'learning_rate': 1.892292490118577e-05, 'epoch': 8.22}
-{'loss': 3.9815, 'grad_norm': 9.716551780700684, 'learning_rate': 1.842885375494071e-05, 'epoch': 8.32}
-{'loss': 3.7593, 'grad_norm': 8.4527006149292, 'learning_rate': 1.793478260869565e-05, 'epoch': 8.42}
-{'loss': 3.9906, 'grad_norm': 12.020576477050781, 'learning_rate': 1.7440711462450594e-05, 'epoch': 8.52}
-{'loss': 3.8251, 'grad_norm': 8.064522743225098, 'learning_rate': 1.6946640316205535e-05, 'epoch': 8.62}
-{'loss': 4.2367, 'grad_norm': 10.890761375427246, 'learning_rate': 1.6452569169960475e-05, 'epoch': 8.72}
-{'loss': 3.2063, 'grad_norm': 9.903196334838867, 'learning_rate': 1.5958498023715416e-05, 'epoch': 8.82}
-{'loss': 3.2794, 'grad_norm': 7.842979431152344, 'learning_rate': 1.5464426877470356e-05, 'epoch': 8.92}
- 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 909/1212 [46:47<12:33,  2.49s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:03<00:00,  3.88it/s]
+{'loss': 4.479, 'grad_norm': 4.017624855041504, 'learning_rate': 1.991106719367589e-05, 'epoch': 8.02}
+{'loss': 4.426, 'grad_norm': 3.588148355484009, 'learning_rate': 1.941699604743083e-05, 'epoch': 8.12}
+{'loss': 4.8046, 'grad_norm': 4.542617321014404, 'learning_rate': 1.892292490118577e-05, 'epoch': 8.22}
+{'loss': 4.728, 'grad_norm': 3.9460062980651855, 'learning_rate': 1.842885375494071e-05, 'epoch': 8.32}
+{'loss': 4.5549, 'grad_norm': 3.6233115196228027, 'learning_rate': 1.793478260869565e-05, 'epoch': 8.42}
+{'loss': 4.7694, 'grad_norm': 4.980958938598633, 'learning_rate': 1.7440711462450594e-05, 'epoch': 8.52}
+{'loss': 4.5762, 'grad_norm': 3.440333843231201, 'learning_rate': 1.6946640316205535e-05, 'epoch': 8.62}
+{'loss': 4.9721, 'grad_norm': 4.410207748413086, 'learning_rate': 1.6452569169960475e-05, 'epoch': 8.72}
+{'loss': 4.0023, 'grad_norm': 4.53502893447876, 'learning_rate': 1.5958498023715416e-05, 'epoch': 8.82}
+{'loss': 4.0125, 'grad_norm': 3.837726593017578, 'learning_rate': 1.5464426877470356e-05, 'epoch': 8.92}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 909/1212 [52:17<10:19,  2.05s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:51<00:00,  4.61it/s]
 REF: 'thosaigh cúltúir agus treibheanna na gcianaoiseanna ar a'
-HYP: 'thaisí cultltairr agus stribhann an gníaitisianna ar a g'
+HYP: 'thosaí cultltar ar agus stribhann an gníaitisanna ar a g'
 --- Eval sample ---
 REF: 'an mheánaois ard an t'
-HYP: 'an mbeá naí ar an ta-'
+HYP: 'an mhaas naí ar an t-am'
 --- Eval sample ---
 REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágann gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
-HYP: 'tá naicías é agóhsaí ag ahmah méirithe a fágá gur n le breiseá na na sheéile ar bheagú chimiltte nó gan éon chimilt'
-{'eval_loss': 1.219979166984558, 'eval_wer': 65.8876874782002, 'eval_runtime': 63.8698, 'eval_samples_per_second': 13.183, 'eval_steps_per_second': 3.304, 'epoch': 9.0}
- 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 909/1212 [47:51<12:33,  2.49s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductducttá nchéas é agóhsíí ag ahmah berhe a fhágá gur n lá breisteó nan sheéile ar bhheagú chimiltte nó gan eon cuimilt'
+{'eval_loss': 1.277673602104187, 'eval_wer': 71.03243808859435, 'eval_runtime': 52.456, 'eval_samples_per_second': 16.052, 'eval_steps_per_second': 4.022, 'epoch': 9.0}
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                      | 909/1212 [53:09<10:19,  2.05s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 3.3318, 'grad_norm': 8.434700012207031, 'learning_rate': 1.4970355731225297e-05, 'epoch': 9.01}
-{'loss': 3.8404, 'grad_norm': 12.811238288879395, 'learning_rate': 1.4476284584980237e-05, 'epoch': 9.11}
-{'loss': 3.3594, 'grad_norm': 8.250020027160645, 'learning_rate': 1.3982213438735178e-05, 'epoch': 9.21}
-{'loss': 3.6545, 'grad_norm': 11.410585403442383, 'learning_rate': 1.348814229249012e-05, 'epoch': 9.31}
-{'loss': 3.4529, 'grad_norm': 10.624448776245117, 'learning_rate': 1.299407114624506e-05, 'epoch': 9.41}
-{'loss': 3.9071, 'grad_norm': 11.086583137512207, 'learning_rate': 1.25e-05, 'epoch': 9.51}
-{'loss': 3.6217, 'grad_norm': 8.885931015014648, 'learning_rate': 1.2005928853754941e-05, 'epoch': 9.61}
-{'loss': 3.347, 'grad_norm': 7.956045627593994, 'learning_rate': 1.1511857707509881e-05, 'epoch': 9.71}
-{'loss': 3.5482, 'grad_norm': 10.219253540039062, 'learning_rate': 1.1017786561264824e-05, 'epoch': 9.81}
-{'loss': 3.38, 'grad_norm': 12.994922637939453, 'learning_rate': 1.0523715415019764e-05, 'epoch': 9.91}
-{'loss': 4.0736, 'grad_norm': 6.283537864685059, 'learning_rate': 1.0029644268774705e-05, 'epoch': 10.0}
- 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                         | 1010/1212 [53:00<09:18,  2.77s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:59<00:00,  4.06it/s]
+{'loss': 4.0645, 'grad_norm': 3.660637855529785, 'learning_rate': 1.4970355731225297e-05, 'epoch': 9.01}
+{'loss': 4.5855, 'grad_norm': 5.3522562980651855, 'learning_rate': 1.4476284584980237e-05, 'epoch': 9.11}
+{'loss': 4.1481, 'grad_norm': 3.5522844791412354, 'learning_rate': 1.3982213438735178e-05, 'epoch': 9.21}
+{'loss': 4.4441, 'grad_norm': 4.49727201461792, 'learning_rate': 1.348814229249012e-05, 'epoch': 9.31}
+{'loss': 4.2111, 'grad_norm': 4.940644264221191, 'learning_rate': 1.299407114624506e-05, 'epoch': 9.41}
+{'loss': 4.7269, 'grad_norm': 4.632147312164307, 'learning_rate': 1.25e-05, 'epoch': 9.51}
+{'loss': 4.4547, 'grad_norm': 4.242951393127441, 'learning_rate': 1.2005928853754941e-05, 'epoch': 9.61}
+{'loss': 4.1294, 'grad_norm': 3.437384843826294, 'learning_rate': 1.1511857707509881e-05, 'epoch': 9.71}
+{'loss': 4.2967, 'grad_norm': 3.9549782276153564, 'learning_rate': 1.1017786561264824e-05, 'epoch': 9.81}
+{'loss': 4.1673, 'grad_norm': 5.9276652336120605, 'learning_rate': 1.0523715415019764e-05, 'epoch': 9.91}
+{'loss': 4.7744, 'grad_norm': 2.592465400695801, 'learning_rate': 1.0029644268774705e-05, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                         | 1010/1212 [57:31<07:30,  2.23s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:52<00:00,  4.50it/s]
 REF: ''
 HYP: ''
 --- Eval sample ---
 REF: 'tiús 70 cm atá sa screamh ar an taobh is gaire dúinn agus tiús 100 km atá ar an taobh thall'
-HYP: 'táús le100 agá ar chers ag an gcobh am móaire deninn anus táús 500 mm/há sa an taobh isiarach'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductducttáús le100 deá i phers ag an gcobh am móaireinn aus táús 100 mm/há sa an taobh isoir ar'
 --- Eval sample ---
 REF: ''
 HYP: ''
-{'eval_loss': 1.2146949768066406, 'eval_wer': 66.04464597139868, 'eval_runtime': 60.3707, 'eval_samples_per_second': 13.947, 'eval_steps_per_second': 3.495, 'epoch': 10.0}
- 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                         | 1010/1212 [54:00<09:18,  2.77s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+{'eval_loss': 1.2750389575958252, 'eval_wer': 70.92779909312871, 'eval_runtime': 52.7823, 'eval_samples_per_second': 15.952, 'eval_steps_per_second': 3.998, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                         | 1010/1212 [58:24<07:30,  2.23s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 3.5663, 'grad_norm': 9.946032524108887, 'learning_rate': 9.535573122529645e-06, 'epoch': 10.1}
-{'loss': 3.3722, 'grad_norm': 10.55497932434082, 'learning_rate': 9.041501976284585e-06, 'epoch': 10.2}
-{'loss': 3.6286, 'grad_norm': 12.144675254821777, 'learning_rate': 8.547430830039528e-06, 'epoch': 10.3}
-{'loss': 3.3671, 'grad_norm': 9.105687141418457, 'learning_rate': 8.053359683794468e-06, 'epoch': 10.4}
-{'loss': 3.4938, 'grad_norm': 8.155912399291992, 'learning_rate': 7.559288537549407e-06, 'epoch': 10.5}
-{'loss': 3.8242, 'grad_norm': 13.723346710205078, 'learning_rate': 7.065217391304347e-06, 'epoch': 10.6}
-{'loss': 3.2663, 'grad_norm': 11.453084945678711, 'learning_rate': 6.5711462450592885e-06, 'epoch': 10.7}
-{'loss': 3.4838, 'grad_norm': 12.206950187683105, 'learning_rate': 6.07707509881423e-06, 'epoch': 10.8}
-{'loss': 3.7327, 'grad_norm': 12.2985200881958, 'learning_rate': 5.58300395256917e-06, 'epoch': 10.9}
-{'loss': 3.7918, 'grad_norm': 12.870771408081055, 'learning_rate': 5.088932806324111e-06, 'epoch': 11.0}
- 92%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍            | 1111/1212 [59:05<03:42,  2.21s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:53<00:00,  4.56it/s]
+{'loss': 4.4028, 'grad_norm': 4.19426965713501, 'learning_rate': 9.535573122529645e-06, 'epoch': 10.1}
+{'loss': 4.1631, 'grad_norm': 4.691577434539795, 'learning_rate': 9.041501976284585e-06, 'epoch': 10.2}
+{'loss': 4.4727, 'grad_norm': 5.369559288024902, 'learning_rate': 8.547430830039528e-06, 'epoch': 10.3}
+{'loss': 4.1431, 'grad_norm': 3.9490859508514404, 'learning_rate': 8.053359683794468e-06, 'epoch': 10.4}
+{'loss': 4.3572, 'grad_norm': 3.6842539310455322, 'learning_rate': 7.559288537549407e-06, 'epoch': 10.5}
+{'loss': 4.6895, 'grad_norm': 6.066410541534424, 'learning_rate': 7.065217391304347e-06, 'epoch': 10.6}
+{'loss': 4.036, 'grad_norm': 4.7661895751953125, 'learning_rate': 6.5711462450592885e-06, 'epoch': 10.7}
+{'loss': 4.2869, 'grad_norm': 5.209534168243408, 'learning_rate': 6.07707509881423e-06, 'epoch': 10.8}
+{'loss': 4.55, 'grad_norm': 4.999658107757568, 'learning_rate': 5.58300395256917e-06, 'epoch': 10.9}
+{'loss': 4.6198, 'grad_norm': 6.319759845733643, 'learning_rate': 5.088932806324111e-06, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1111/1212 [1:02:44<03:36,  2.15s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:52<00:00,  4.56it/s]
 REF: 'ar an 15 lúnasa 1940 rinne na comhghuaillithe ionradh ar dheisceart na fraince ionradh ar tugadh oibríocht dragúin air'
-HYP: 'ar an ch29úúasa n1976 brne na chhghualileí ionrah ar anasacht na fraince ionrah ar toadh aibríoch drúnin ar'
+HYP: 'ar an cu29úúasa n1960 brne na chhghúileí anradh ar anasacht na francaince ionrah ar tugadh aibríod drúnin ar'
 --- Eval sample ---
 REF: "níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt d'fhocail dhrannacha bhéicthe"
-HYP: "ileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoníl bearint tgeará cosúil le búir lagágraráú na anuith té sé níos cosúilí rtt m'fhéail dr'abá beéigií"
+HYP: "ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductníl be ar int tgeará cosúil le bir lagágraráais na anuith té sé níos cosúilí hchtt f'fhéail dá'abach beíigií"
 --- Eval sample ---
 REF: "an tseachtain seo caite d'fhógair meti gur"
-HYP: "an teseachtain seo aite tug'fhogair meti gur th"
-{'eval_loss': 1.2172335386276245, 'eval_wer': 67.95430763864667, 'eval_runtime': 54.4253, 'eval_samples_per_second': 15.471, 'eval_steps_per_second': 3.877, 'epoch': 11.0}
- 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1111/1212 [1:00:00<03:42,  2.21s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+HYP: "an chseachtain seo chite tug'fhogair meti gur ch"
+{'eval_loss': 1.2717311382293701, 'eval_wer': 70.85803976281828, 'eval_runtime': 52.8298, 'eval_samples_per_second': 15.938, 'eval_steps_per_second': 3.994, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1111/1212 [1:03:37<03:36,  2.15s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
 /home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/torch/utils/checkpoint.py:232: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   check_backward_validity(args)
-{'loss': 3.2492, 'grad_norm': 8.969589233398438, 'learning_rate': 4.594861660079051e-06, 'epoch': 11.09}
-{'loss': 3.2685, 'grad_norm': 8.069125175476074, 'learning_rate': 4.1007905138339924e-06, 'epoch': 11.19}
-{'loss': 3.6493, 'grad_norm': 11.247598648071289, 'learning_rate': 3.606719367588933e-06, 'epoch': 11.29}
-{'loss': 3.0596, 'grad_norm': 10.779632568359375, 'learning_rate': 3.1126482213438737e-06, 'epoch': 11.39}
-{'loss': 3.4105, 'grad_norm': 10.836505889892578, 'learning_rate': 2.6185770750988146e-06, 'epoch': 11.49}
-{'loss': 3.5696, 'grad_norm': 10.333890914916992, 'learning_rate': 2.124505928853755e-06, 'epoch': 11.59}
-{'loss': 3.6292, 'grad_norm': 10.304905891418457, 'learning_rate': 1.6304347826086957e-06, 'epoch': 11.69}
-{'loss': 3.8897, 'grad_norm': 7.357883453369141, 'learning_rate': 1.1363636363636364e-06, 'epoch': 11.79}
-{'loss': 3.7468, 'grad_norm': 13.393653869628906, 'learning_rate': 6.422924901185771e-07, 'epoch': 11.89}
-{'loss': 3.7876, 'grad_norm': 9.391382217407227, 'learning_rate': 1.4822134387351778e-07, 'epoch': 11.99}
-100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:04:58<00:00,  2.37s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:59<00:00,  4.13it/s]
+{'loss': 4.0438, 'grad_norm': 3.589395761489868, 'learning_rate': 4.594861660079051e-06, 'epoch': 11.09}
+{'loss': 4.0693, 'grad_norm': 3.414968729019165, 'learning_rate': 4.1007905138339924e-06, 'epoch': 11.19}
+{'loss': 4.4399, 'grad_norm': 4.5286993980407715, 'learning_rate': 3.606719367588933e-06, 'epoch': 11.29}
+{'loss': 3.9063, 'grad_norm': 4.57495641708374, 'learning_rate': 3.1126482213438737e-06, 'epoch': 11.39}
+{'loss': 4.2119, 'grad_norm': 4.404383659362793, 'learning_rate': 2.6185770750988146e-06, 'epoch': 11.49}
+{'loss': 4.4325, 'grad_norm': 4.492565631866455, 'learning_rate': 2.124505928853755e-06, 'epoch': 11.59}
+{'loss': 4.3967, 'grad_norm': 4.522400379180908, 'learning_rate': 1.6304347826086957e-06, 'epoch': 11.69}
+{'loss': 4.736, 'grad_norm': 3.40852689743042, 'learning_rate': 1.1363636363636364e-06, 'epoch': 11.79}
+{'loss': 4.5734, 'grad_norm': 5.7166852951049805, 'learning_rate': 6.422924901185771e-07, 'epoch': 11.89}
+{'loss': 4.5756, 'grad_norm': 3.9120607376098633, 'learning_rate': 1.4822134387351778e-07, 'epoch': 11.99}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:07:59<00:00,  1.99s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [00:52<00:00,  5.45it/s]
 REF: 'ní gá a rá má tá teanga rómánsach ar eolas agat beidh sé níos fusa ort an phortaingéilis a fhoghlaim'
-HYP: 'ileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoileoní gáire bh má tá teanga aróánaa ar aolas agat bidh sé níos fás ort an fuortí géil is a fholahlaim'
+HYP: 'ductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductductní gheire b ma tá ceanga aróánaa ar aolas agat beidh sé níos faisós ort an fortí géil is a tháhlaim'
 --- Eval sample ---
 REF: ''
 HYP: ''
 --- Eval sample ---
 REF: ''
 HYP: ''
-{'eval_loss': 1.217018961906433, 'eval_wer': 67.72758981513778, 'eval_runtime': 60.5505, 'eval_samples_per_second': 13.906, 'eval_steps_per_second': 3.485, 'epoch': 12.0}
-100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:05:59<00:00,  2.37s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+{'eval_loss': 1.2716482877731323, 'eval_wer': 70.82316009766306, 'eval_runtime': 52.8291, 'eval_samples_per_second': 15.938, 'eval_steps_per_second': 3.994, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:08:52<00:00,  1.99s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
   warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
-{'train_runtime': 3961.479, 'train_samples_per_second': 9.736, 'train_steps_per_second': 0.306, 'train_loss': 6.949328354876427, 'epoch': 12.0}
-100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:06:01<00:00,  3.27s/it]
+{'train_runtime': 4133.9088, 'train_samples_per_second': 9.33, 'train_steps_per_second': 0.293, 'train_loss': 8.965363104351283, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1212/1212 [1:08:53<00:00,  3.41s/it]

@@ -1,0 +1,3 @@
+eos_token_id,epoch,pad_token_id,train_loss,train_runtime,train_samples_per_second,train_steps_per_second,_line
+151645,,151643,,,,,13
+,12.0,,7.080577660536935,2891.357,12.434,0.39,307
