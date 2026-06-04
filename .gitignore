@@ -208,5 +208,5 @@ __marimo__/
 
 data/*
 whisper_*/exp/*
-wav2vec2-bert_*/exp/*
+wav2vec2-bert*/exp/*
 qwen3-asr_*/exp/*

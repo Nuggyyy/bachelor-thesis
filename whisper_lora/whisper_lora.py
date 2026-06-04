@@ -15,11 +15,11 @@ DATASET_NAME = "google/fleurs"
 assert torch.cuda.is_available(), "No GPU found!"
 
 # instantiate processor and model from env variable
-processor = WhisperProcessor.from_pretrained(MODEL_NAME, task="transcribe", language="english")
+processor = WhisperProcessor.from_pretrained(MODEL_NAME, task="transcribe")
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_NAME)
 model.config.use_cache = False
 model.generation_config.task = "transcribe"
-model.generation_config.language = "english"
+#model.generation_config.language = "english"
 model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
@@ -115,7 +115,7 @@ training_args = Seq2SeqTrainingArguments(
     # smaller per-device batch + accumulation to keep effective batch stable on limited data / GPU
     per_device_train_batch_size=8,
     gradient_accumulation_steps=4,  # effective batch size = 8 * 4 = 32
-    learning_rate=5e-5,
+    learning_rate=1e-6,
     warmup_steps=200,
     lr_scheduler_type="linear",
     max_grad_norm=1.0,

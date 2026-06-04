@@ -2,9 +2,9 @@ from datasets import load_dataset
 import re
 import json
 
-ds = load_dataset("google/fleurs", "ga_ie", trust_remote_code=True)
+ds = load_dataset("google/fleurs", "en_us", trust_remote_code=True)
 
-chars_to_remove_regex = r"[\[\],.?!\-;:\"“%‘”�'»«0-9/²–(\u200b)]"
+chars_to_remove_regex = r"[\[\],.?!\-;:\"“%‘”�'»«0-9/²–]"
 
 def remove_special_characters(batch):
     batch["transcription"] = re.sub(chars_to_remove_regex, "", batch["transcription"]).lower()
