@@ -2,7 +2,7 @@ from datasets import load_dataset
 import re
 import json
 
-ds = load_dataset("google/fleurs", "en_us", trust_remote_code=True)
+ds = load_dataset("google/fleurs", "jv_id", trust_remote_code=True)
 
 chars_to_remove_regex = r"[\[\],.?!\-;:\"“%‘”�'»«0-9/²–]"
 
@@ -25,5 +25,5 @@ del vocab_dict[" "]
 vocab_dict["|"] = len(vocab_dict)
 vocab_dict["[UNK]"] = len(vocab_dict)
 
-with open('vocab.json', 'w') as vocab_file:
+with open('javanese.json', 'w') as vocab_file:
     json.dump(vocab_dict, vocab_file)
