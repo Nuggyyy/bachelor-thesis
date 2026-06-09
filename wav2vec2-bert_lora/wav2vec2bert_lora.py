@@ -16,18 +16,18 @@ from random import randint
 
 #SCRIPT_DIR = Path(__file__).parent
 MODEL_NAME = "facebook/w2v-bert-2.0"
-OUTPUT_DIR = "./exp/irish"
+OUTPUT_DIR = "./exp/shona"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
 
 feature_extractor = SeamlessM4TFeatureExtractor.from_pretrained(MODEL_NAME)
-tokenizer = Wav2Vec2CTCTokenizer("vocab.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
+tokenizer = Wav2Vec2CTCTokenizer("shona.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
 processor = Wav2Vec2BertProcessor(feature_extractor=feature_extractor, tokenizer=tokenizer)
 
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "ga_ie", split="train+validation")
-ds["test"]  = load_dataset(DATASET_NAME, "ga_ie", split="test")
+ds["train"] = load_dataset(DATASET_NAME, "sn_zw", split="train+validation")
+ds["test"]  = load_dataset(DATASET_NAME, "sn_zw", split="test")
 
 def prepare_dataset(example):
     audio = example["audio"]
@@ -91,8 +91,9 @@ lora_config = LoraConfig(
     r=32,
     target_modules=["linear_q", "linear_v", "linear_k", "linear_out"],
     lora_dropout=0.1,
+    modules_to_save=["lm_head"]
 )
-model = get_peft_model(model.wav2vec2_bert, lora_config)
+model = get_peft_model(model, lora_config)
 model.get_input_embeddings = lambda: model.base_model.model.wav2vec2_bert.feature_projection.projection
 model.get_output_embeddings = lambda: model.base_model.model.lm_head
 model.base_model.save_embedding_layers = True
@@ -103,12 +104,13 @@ training_args = TrainingArguments(
     # smaller per-device batch + accumulation to keep effective batch stable on limited data / GPU
     per_device_train_batch_size=8,
     gradient_accumulation_steps=4,  # effective batch size = 8 * 4 = 32
-    learning_rate=5e-5,
+    learning_rate=1e-3,
     warmup_steps=200,
     lr_scheduler_type="linear",
     max_grad_norm=1.0,
     num_train_epochs=12,
     gradient_checkpointing=True,
+    gradient_checkpointing_kwargs={"use_reentrant": False},
     eval_on_start=True,
     eval_strategy="epoch",
     save_strategy="epoch",

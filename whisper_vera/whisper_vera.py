@@ -9,7 +9,7 @@ from jiwer import wer
 
 # our env variables
 MODEL_NAME = "openai/whisper-small"
-OUTPUT_DIR = "./exp/irish"
+OUTPUT_DIR = "./exp/shona"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
@@ -23,8 +23,8 @@ model.generation_config.forced_decoder_ids = None
 
 # load and process dataset
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "en_us", split="train+validation", trust_remote_code=True)
-ds["test"] = load_dataset(DATASET_NAME, "en_us", split="test", trust_remote_code=True)
+ds["train"] = load_dataset(DATASET_NAME, "sn_zw", split="train+validation", trust_remote_code=True)
+ds["test"] = load_dataset(DATASET_NAME, "sn_zw", split="test", trust_remote_code=True)
 def prepare_dataset(example):
     audio = example["audio"]
     example = processor(
@@ -114,7 +114,7 @@ training_args = Seq2SeqTrainingArguments(
     # smaller per-device batch + accumulation to keep effective batch stable on limited data / GPU
     per_device_train_batch_size=8,
     gradient_accumulation_steps=4,  # effective batch size = 8 * 4 = 32
-    learning_rate=5e-5,
+    learning_rate=1e-10,
     warmup_steps=200,
     lr_scheduler_type="linear",
     max_grad_norm=1.0,
