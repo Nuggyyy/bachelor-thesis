@@ -16,18 +16,18 @@ from random import randint
 
 #SCRIPT_DIR = Path(__file__).parent
 MODEL_NAME = "facebook/w2v-bert-2.0"
-OUTPUT_DIR = "./exp/shona"
+OUTPUT_DIR = "./exp/javanese"
 DATASET_NAME = "google/fleurs"
 
 assert torch.cuda.is_available(), "No GPU found!"
 
 feature_extractor = SeamlessM4TFeatureExtractor.from_pretrained(MODEL_NAME)
-tokenizer = Wav2Vec2CTCTokenizer("shona.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
+tokenizer = Wav2Vec2CTCTokenizer("javanese.json", unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
 processor = Wav2Vec2BertProcessor(feature_extractor=feature_extractor, tokenizer=tokenizer)
 
 ds = DatasetDict()
-ds["train"] = load_dataset(DATASET_NAME, "sn_zw", split="train+validation")
-ds["test"]  = load_dataset(DATASET_NAME, "sn_zw", split="test")
+ds["train"] = load_dataset(DATASET_NAME, "jv_id", split="train+validation")
+ds["test"]  = load_dataset(DATASET_NAME, "jv_id", split="test")
 
 def prepare_dataset(example):
     audio = example["audio"]

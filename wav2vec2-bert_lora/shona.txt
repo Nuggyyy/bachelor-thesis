@@ -1,0 +1,267 @@
+Some weights of Wav2Vec2BertForCTC were not initialized from the model checkpoint at facebook/w2v-bert-2.0 and are newly initialized: ['lm_head.bias', 'lm_head.weight', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.residual_conv.bias', 'wav2vec2_bert.adapter.layers.0.residual_conv.weight', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+trainable params: 6,599,725 || all params: 612,323,226 || trainable%: 1.0778
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 44, 'bos_token_id': 43}.
+  0%|                                                                                                                                                                  | 0/1068 [00:00<?, ?it/s--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:14<00:00,  4.74it/s]
+REF: 'munyika iyi guta iri rakanyanya kusiyana nemamwe pakuti ndiro rine zvakawanda zvakarerekera kuchiarabic kupfura zvekuafrica'
+HYP: 'mémétatöeteömöaöúuacj meöejöúöúeñañmöaégj óöúujúöúyéjtótsömjmpjmjtemrj°jcmrmöasje°mvegteatgte&¾jmoqebevméeöa°qeúmje°e°¾osjöjp¾set°e°cfscmueumépjsgöúeatsegújbañtaxñtgtñatcmjöqseu&¾sñaújñ°tbtea'
+--- Eval sample ---
+REF: 'hameno kuti keyboard ichasara yava kushandei kana pakava nechimwe chinhu chitsva'
+HYP: 'métagatgeaetgats°ruöeteroöébmteöutaölvéveúebp eéc&scjpjscjmjtepcöjmzöúbapsqsjsj°sztsjrmeaéöemvevözqebeújeúestgtaeatatgagtagteagtatñaeajcjcj'
+--- Eval sample ---
+REF: 'wales akatirevera nhema kubvira pamavambo kutanga nekuita sekuti izvi zvaiva zvikonzero zvine chokuita nemutemo chechipiri nekunyepera sekunge aitipa nzeve kusvika pakudzimwa kwebasa rake chaipo'
+HYP: 'tgtgtgtgatgtegtgtgagtgatgagetgtgtgtgtgatgatcmösöaeatgatatg&°gagt¾sgtqsgesötsöãsqöjvjñötcmteöqacac¾jcm¾mgtagagtgtvjtgtgtagteqsmz°qjmömcwöjöjagtñqecgtgatgteagagtagemcöcejújötjteöqöteajöúöúeöúöújemújgeömömvgúömvpjtmjpvpvpm&pcpmteptmteöjúömvtvgt¾tgtemjñmteöúqetgteöacjmjúöeñtgúatsöeúömgtjtöejöqñemjmöeöaúömsetatgtjtaetaösmezqñceqöleöetñöatataetetgtgtgtgtgtgtgtgmtgtgtetatatatatat'
+{'eval_loss': 7.684150218963623, 'eval_wer': 100.0, 'eval_runtime': 81.0758, 'eval_samples_per_second': 11.409, 'eval_steps_per_second': 2.862, 'epoch': 0}
+{'loss': 7.6319, 'grad_norm': 12.379053115844727, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 7.86, 'grad_norm': 13.692888259887695, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.11}
+{'loss': 7.3118, 'grad_norm': 13.797316551208496, 'learning_rate': 9.5e-05, 'epoch': 0.23}
+{'loss': 5.9711, 'grad_norm': 14.848377227783203, 'learning_rate': 0.000145, 'epoch': 0.34}
+{'loss': 4.4841, 'grad_norm': 4.610616207122803, 'learning_rate': 0.00019500000000000002, 'epoch': 0.45}
+{'loss': 3.8214, 'grad_norm': 2.8470633029937744, 'learning_rate': 0.000245, 'epoch': 0.56}
+{'loss': 3.6198, 'grad_norm': 1.183863878250122, 'learning_rate': 0.000295, 'epoch': 0.68}
+{'loss': 3.5028, 'grad_norm': 1.155472993850708, 'learning_rate': 0.000345, 'epoch': 0.79}
+{'loss': 3.3373, 'grad_norm': 0.856353223323822, 'learning_rate': 0.000395, 'epoch': 0.9}
+  8%|████████████▌                                                                                                                                          | 89/1068 [18:30<2:16:56,  8.39s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:28<00:00,  3.77it/s]
+REF: 'uyu mukana wakanakisa wekuona chiedza chinonzi aurora borealis sezvo denga richange rakasviba zvakanyanya kweanenge mawa pazuva'
+HYP: 'asasa a'
+--- Eval sample ---
+REF: 'mukuru wemapurisa chandra shekhar solanki wakati vapomerwi vakaonekwa mudare vakavhariwa kumeso'
+HYP: 'asaha asasa asa aza'
+--- Eval sample ---
+REF: 'kumaodzanyemba uye zvakare pari pedyo kune guta rezverudo uye rinonanikidza resintra iro rakawana mukurumbira kunevekunze kwenyika mushure mekutaurwa zvinoyevedza pamusoro pekunaka paro zvichinyorwa naishe byron'
+HYP: 'a a asa ha a a aha'
+{'eval_loss': 3.013798236846924, 'eval_wer': 100.0, 'eval_runtime': 92.8492, 'eval_samples_per_second': 9.962, 'eval_steps_per_second': 2.499, 'epoch': 1.0}
+  8%|████████████▌                                                                                                                                          | 89/1068 [20:03<2:16:56,  8.39s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 3.0834, 'grad_norm': nan, 'learning_rate': 0.00044500000000000003, 'epoch': 1.01}
+{'loss': 2.75, 'grad_norm': 2.1743783950805664, 'learning_rate': 0.000495, 'epoch': 1.12}
+{'loss': 2.0787, 'grad_norm': 3.371785879135132, 'learning_rate': 0.000545, 'epoch': 1.24}
+{'loss': 1.292, 'grad_norm': 0.8891560435295105, 'learning_rate': 0.0005949999999999999, 'epoch': 1.35}
+{'loss': 0.8307, 'grad_norm': 1.980558156967163, 'learning_rate': 0.0006450000000000001, 'epoch': 1.46}
+{'loss': 0.6821, 'grad_norm': 1.7040656805038452, 'learning_rate': 0.000695, 'epoch': 1.57}
+{'loss': 0.497, 'grad_norm': 0.8030045032501221, 'learning_rate': 0.000745, 'epoch': 1.69}
+{'loss': 0.4226, 'grad_norm': 0.373065710067749, 'learning_rate': 0.000795, 'epoch': 1.8}
+{'loss': 0.3601, 'grad_norm': 0.3766038417816162, 'learning_rate': 0.0008449999999999999, 'epoch': 1.91}
+ 17%|█████████████████████████                                                                                                                             | 178/1068 [40:55<3:23:32, 13.72s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:39<00:00,  3.23it/s]
+REF: 'mamwe makereke echinyakare anowanzoita gungano repachirayiro nemugovera manheru muvhiki rechirayiro pamwe gungano rinosiwanzo kumbemberera panochaya pakati pehusiku kupemberera kumuka kwakritsu'
+HYP: 'mamwe makereke ichinyakare anowanzoita gungano rerepachirairo nemugovera maneru muviki echirairo pamwe gungano achinosiwanzo kupemberera panochaya pakati peusiku kupemberera kumuga kwakiristu'
+--- Eval sample ---
+REF: 'vakawanda havamaone semadinosaur nechikonzero chekuti zvine minhenga uye zvinokwanisa kubhururuka'
+HYP: 'vakawanda havamawoni semadainasor ne chikonzero chekuti zvine minenga uye zvinokanisa kubururuka'
+--- Eval sample ---
+REF: 'vana vakakura vega vanokwanisa kunge vakashungurudzwa kana kushungurudzika vasati vasiwa kana kutiziwa'
+HYP: 'vana vakakura vegar vanokwanisa kunge vakashungurudzwa kana kushungurudzika vasati vasiwa kana kutiziwa'
+{'eval_loss': 0.4128299951553345, 'eval_wer': 40.407826197433614, 'eval_runtime': 103.5764, 'eval_samples_per_second': 8.931, 'eval_steps_per_second': 2.24, 'epoch': 2.0}
+ 17%|█████████████████████████                                                                                                                             | 178/1068 [42:39<3:23:32, 13.72s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.3374, 'grad_norm': 0.24852073192596436, 'learning_rate': 0.0008950000000000001, 'epoch': 2.02}
+{'loss': 0.3153, 'grad_norm': 0.38476571440696716, 'learning_rate': 0.000945, 'epoch': 2.14}
+{'loss': 0.2953, 'grad_norm': 0.2504029870033264, 'learning_rate': 0.000995, 'epoch': 2.25}
+{'loss': 0.3035, 'grad_norm': 0.2747950553894043, 'learning_rate': 0.0009896313364055299, 'epoch': 2.36}
+{'loss': 0.2818, 'grad_norm': 0.40210914611816406, 'learning_rate': 0.0009781105990783409, 'epoch': 2.47}
+{'loss': 0.2544, 'grad_norm': 0.27258479595184326, 'learning_rate': 0.000966589861751152, 'epoch': 2.59}
+{'loss': 0.2605, 'grad_norm': 0.29785576462745667, 'learning_rate': 0.0009550691244239631, 'epoch': 2.7}
+{'loss': 0.2535, 'grad_norm': 0.5735141634941101, 'learning_rate': 0.0009435483870967742, 'epoch': 2.81}
+{'loss': 0.2464, 'grad_norm': 0.3718046247959137, 'learning_rate': 0.0009320276497695853, 'epoch': 2.92}
+ 25%|█████████████████████████████████████                                                                                                               | 267/1068 [1:07:25<3:26:37, 15.48s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:34<00:00,  3.33it/s]
+REF: 'midziyo yezvirimwa inowanikwa zvirinyoresa ingadai ine maproteins ayo anowanikwa mumashizha uye nyemba asi izvi zvakaomera mhuka dzakaita sesu kuti tigaye kunze kwekungwe abikwa'
+HYP: 'midziyo yezvirimwa inowanikwa zviri nyoresa ingadai inemaprotens ayo anowanikwa mumashizha uye nyemba asi isi zvakaomera mhuka dzakaita sesu kuti tigare kunze kwekunge abikwa'
+--- Eval sample ---
+REF: 'chitalian ndicho chirudzi chemazuva ose chinoshandiswa nevazhinji vanoshanda mudunhu ukuwo chilatin chichishandiswa mumitamo yechitendero'
+HYP: 'chitaliyan ndicho chirudzi chemazuva ose chinoshandiswa nevazhinjivanoshanda mudunhu ukuo u chilatin ychishandiswa mutambo mumitamo yechitendero'
+--- Eval sample ---
+REF: 'musi wesvondo mutungamiri wenyika yeunited states donald trump akataura achimiririrwa nemunyori wake mune zvenhau achiti masoja ake aizobuda munyika yesyria'
+HYP: 'musi wesvondo mutungamiri wenyika yenited stats donald tramp akataura achimiririrwa nemunyore wake munezvenhau achiti masojya ake aizobuda munyika yesiria'
+{'eval_loss': 0.30281269550323486, 'eval_wer': 31.26667513657731, 'eval_runtime': 99.1215, 'eval_samples_per_second': 9.332, 'eval_steps_per_second': 2.341, 'epoch': 3.0}
+ 25%|█████████████████████████████████████                                                                                                               | 267/1068 [1:09:04<3:26:37, 15.48s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.2321, 'grad_norm': 0.21542935073375702, 'learning_rate': 0.0009205069124423964, 'epoch': 3.03}
+{'loss': 0.192, 'grad_norm': 0.3519027829170227, 'learning_rate': 0.0009089861751152075, 'epoch': 3.15}
+{'loss': 0.2141, 'grad_norm': 0.4683694839477539, 'learning_rate': 0.0008974654377880185, 'epoch': 3.26}
+{'loss': 0.2377, 'grad_norm': 0.2882212996482849, 'learning_rate': 0.0008859447004608296, 'epoch': 3.37}
+{'loss': 0.2096, 'grad_norm': 0.315744012594223, 'learning_rate': 0.0008744239631336406, 'epoch': 3.48}
+{'loss': 0.2124, 'grad_norm': 0.2263578623533249, 'learning_rate': 0.0008629032258064516, 'epoch': 3.6}
+{'loss': 0.1997, 'grad_norm': 0.2350742667913437, 'learning_rate': 0.0008513824884792627, 'epoch': 3.71}
+{'loss': 0.2093, 'grad_norm': 0.4000800549983978, 'learning_rate': 0.0008398617511520737, 'epoch': 3.82}
+{'loss': 0.1919, 'grad_norm': 0.2499045431613922, 'learning_rate': 0.0008283410138248848, 'epoch': 3.94}
+ 33%|█████████████████████████████████████████████████▎                                                                                                  | 356/1068 [1:33:43<2:31:08, 12.74s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:33<00:00,  3.44it/s]
+REF: 'angel anoti kuongorora zvinhu kunonzi continum aproach ndiyo nzira iri kushandiswa kubatsira masangano kuti anyatsoshanda nemazvo'
+HYP: 'ndel anoti kuongorora zvinhu kunonzi kotinwa maproche ndiyo nzira irikushandiswa kubatsira masangano kuti anyatsoshanda nemazvo'
+--- Eval sample ---
+REF: 'mukurumbira wekuva muzinda wehumbozha hwakatanga mugore ad ikagara kusvika kuma ad'
+HYP: 'mukurumbira wekuva muzinda wehumbozha hwakatanga mugore ikagara kusvika kuma'
+--- Eval sample ---
+REF: 'gwaro iri sekutaura kwemakuhwa rinotaura pamusoro pemakakatanwa emuganhu rinodiwa nepalestine zvichibva pamiganhu yehondo yemideast ye isati yaitwa'
+HYP: 'gwaro iri sekutaura kwemakuwa rinotaura pamusoro pemakakatanwa emuganhu rinodiwa nepalestin zvichibva pamuganhu yehondo yemid est ye isati yaitwa'
+{'eval_loss': 0.28266236186027527, 'eval_wer': 27.44251048151442, 'eval_runtime': 97.8437, 'eval_samples_per_second': 9.454, 'eval_steps_per_second': 2.371, 'epoch': 4.0}
+ 33%|█████████████████████████████████████████████████▎                                                                                                  | 356/1068 [1:35:21<2:31:08, 12.74s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1952, 'grad_norm': 0.2666233777999878, 'learning_rate': 0.0008168202764976958, 'epoch': 4.05}
+{'loss': 0.1868, 'grad_norm': 0.300133615732193, 'learning_rate': 0.000805299539170507, 'epoch': 4.16}
+{'loss': 0.1779, 'grad_norm': 0.19012081623077393, 'learning_rate': 0.000793778801843318, 'epoch': 4.27}
+{'loss': 0.1905, 'grad_norm': 0.18868151307106018, 'learning_rate': 0.0007822580645161291, 'epoch': 4.38}
+{'loss': 0.1621, 'grad_norm': 0.23683109879493713, 'learning_rate': 0.0007707373271889401, 'epoch': 4.5}
+{'loss': 0.1939, 'grad_norm': 0.5361021161079407, 'learning_rate': 0.0007592165898617511, 'epoch': 4.61}
+{'loss': 0.1767, 'grad_norm': 0.2572959065437317, 'learning_rate': 0.0007476958525345622, 'epoch': 4.72}
+{'loss': 0.1632, 'grad_norm': 0.22863173484802246, 'learning_rate': 0.0007361751152073732, 'epoch': 4.83}
+{'loss': 0.1717, 'grad_norm': 0.18803957104682922, 'learning_rate': 0.0007246543778801844, 'epoch': 4.95}
+ 42%|█████████████████████████████████████████████████████████████▋                                                                                      | 445/1068 [2:00:00<2:39:37, 15.37s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:33<00:00,  3.46it/s]
+REF: 'mugungwa rine zvitsuwa zvakawanda uye mudhamu hamudi hamo chikepe chinonzi yacht'
+HYP: 'mugungwa rine zvitsuwa zvakawanda uye mudhamu hamudi hamu chikepe chinonzi yat'
+--- Eval sample ---
+REF: 'mumakore ekuma brzezinski ndiye aishanda sachipangamazano wajohn f kenedy uye akazoshandawo mumahofisi makuru alyndon b johnson'
+HYP: 'mumakore ekuma brezinskiy ndiye aishanda sachipanga mazano wajgonf kenedy uye akazoshandawo mumahofisi makuri alindon be gonson'
+--- Eval sample ---
+REF: 'kombiuta yeasus e yakambotepfenyurwa pasi rese kuitira kuchengetedza mari nemashandiro akanaka yakambopisa pisa mutaipei muna mumwedzi wezvemakombiuta'
+HYP: 'kombiuta yesus yakambotefenyerwa pasi rese kuitira kuchengetedza mari nemashandiro akanaka yakambopisa mutaipey muna mumwedzi wezvemakombiyuta'
+{'eval_loss': 0.2648983299732208, 'eval_wer': 25.867107102020075, 'eval_runtime': 97.5685, 'eval_samples_per_second': 9.481, 'eval_steps_per_second': 2.378, 'epoch': 5.0}
+ 42%|█████████████████████████████████████████████████████████████▋                                                                                      | 445/1068 [2:01:38<2:39:37, 15.37s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.171, 'grad_norm': 0.17473864555358887, 'learning_rate': 0.0007131336405529954, 'epoch': 5.06}
+{'loss': 0.1546, 'grad_norm': 0.20435874164104462, 'learning_rate': 0.0007016129032258065, 'epoch': 5.17}
+{'loss': 0.1714, 'grad_norm': 0.20780770480632782, 'learning_rate': 0.0006900921658986175, 'epoch': 5.28}
+{'loss': 0.1413, 'grad_norm': 0.18976815044879913, 'learning_rate': 0.0006785714285714287, 'epoch': 5.39}
+{'loss': 0.1531, 'grad_norm': 0.16496838629245758, 'learning_rate': 0.0006670506912442397, 'epoch': 5.51}
+{'loss': 0.1551, 'grad_norm': 0.19707708060741425, 'learning_rate': 0.0006555299539170507, 'epoch': 5.62}
+{'loss': 0.1469, 'grad_norm': 0.17557068169116974, 'learning_rate': 0.0006440092165898618, 'epoch': 5.73}
+{'loss': 0.1682, 'grad_norm': 0.2278466820716858, 'learning_rate': 0.0006324884792626728, 'epoch': 5.85}
+{'loss': 0.15, 'grad_norm': 0.211984783411026, 'learning_rate': 0.0006209677419354839, 'epoch': 5.96}
+ 50%|██████████████████████████████████████████████████████████████████████████                                                                          | 534/1068 [2:26:14<2:13:57, 15.05s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:34<00:00,  3.35it/s]
+REF: 'mugore ra goma yakaparadzwa nezvinovira zvakabva mugomo raipwititika renyiragongo iro rakafutsira migwagwa mizhinji dzemuguta iroro kunyanya pakati peguta'
+HYP: 'mugore ra goma yakaparadzwa nezvinovira zvakabva mugoma raipwititika reniragongo iro rakapfutsira migwagwa mizhinji tdsemuguta iroro kunyanya pakati peguta'
+--- Eval sample ---
+REF: 'nekuda kwekuti minhenga yedinosaur haina kunyatsovakika zvinodaidzwa kuti rachis asi panezvimwewo zvine zviratidzo seminhenga mabarb nemabarbuls vaongorori vakazoita fungidziro kuti rachis ingangove shanduko yakazoitika yekuvandudza mushure mezvimwe zvinhu zvose izvi'
+HYP: 'nekuda wekuti nhenga yedhinasor haina kunyatsovakika zvinodaidzwa kuti rachis asi panenezvimwe wo zvine zviratidzo zeminhenga mabhabhu nemabhabhos vaongorore vakazoita fungidziro kuti rachis ingangove shanduko yakazoitika yekuvandudza mushure mezvimwezvinhu zvese izvi'
+--- Eval sample ---
+REF: 'bhande guru remiti yemimangrove iri pamativi egungwa pasi rose ndiro remasundarban anopfura km mi kubva kumahombekombe kubata mapeto ebangladesh nekunze kunze kweindia'
+HYP: 'bhandeguru remiti yemimhangrov iri pamativi egungwa pasi rose ndiro remasanderban anopfura kmi m kubva kumahombe kombe kubata mapeto ebhangladhesh nekunze kunze kweindia'
+{'eval_loss': 0.26215577125549316, 'eval_wer': 25.84169737009275, 'eval_runtime': 98.6806, 'eval_samples_per_second': 9.374, 'eval_steps_per_second': 2.351, 'epoch': 6.0}
+ 50%|██████████████████████████████████████████████████████████████████████████                                                                          | 534/1068 [2:27:53<2:13:57, 15.05s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1521, 'grad_norm': 0.20553457736968994, 'learning_rate': 0.0006094470046082949, 'epoch': 6.07}
+{'loss': 0.14, 'grad_norm': 0.2334265261888504, 'learning_rate': 0.000597926267281106, 'epoch': 6.18}
+{'loss': 0.1379, 'grad_norm': 0.19801771640777588, 'learning_rate': 0.000586405529953917, 'epoch': 6.29}
+{'loss': 0.1444, 'grad_norm': 0.13030865788459778, 'learning_rate': 0.0005748847926267281, 'epoch': 6.41}
+{'loss': 0.1396, 'grad_norm': 0.18210911750793457, 'learning_rate': 0.0005633640552995392, 'epoch': 6.52}
+{'loss': 0.1523, 'grad_norm': 0.19145357608795166, 'learning_rate': 0.0005518433179723502, 'epoch': 6.63}
+{'loss': 0.1435, 'grad_norm': 0.17867253720760345, 'learning_rate': 0.0005403225806451613, 'epoch': 6.74}
+{'loss': 0.1321, 'grad_norm': 0.19173918664455414, 'learning_rate': 0.0005288018433179723, 'epoch': 6.86}
+{'loss': 0.1462, 'grad_norm': 0.2511653006076813, 'learning_rate': 0.0005172811059907834, 'epoch': 6.97}
+ 58%|██████████████████████████████████████████████████████████████████████████████████████▎                                                             | 623/1068 [2:52:48<1:19:43, 10.75s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:33<00:00,  3.40it/s]
+REF: 'mhepo iri kumhanya zvikuru chivhuramabwe kunaya zvikuru uye moto wemusango imhando uye migumisiro yemamiriro ekunze akanyanyisa kungofanana nemabhananana zvamupupuri kutsvotsvoma kwemvura uye madutu mupengo'
+HYP: 'mhepo irikumanya zvikuru chivhura mabhwe kunaya zvikuru uye moto wemusango imhando uye migumisiro yemamiriro ekunze akanyanyisa kungofanana nemabhananana zvamupupuri kutsotsomwa kwemvura uye madutu mupego'
+--- Eval sample ---
+REF: 'vemitambo yemiviri vekusa uye ve usoc vane chinangwa chimwe chete kugadzira mutambo wemiviri neimwe ichengetedzeke sezvinobvira kune vatambi kuti vatevedzere zvishuvo zvavo munzvimbo yakachengeteta yakanaka uye yavanosimudzirwa'
+HYP: 'vemitambo yemiviri vekus uye veus c vane chinangwa chimwe chete kugadzira mitambo wemiviri neimwe ichenge tedzeke sezvinobvira kune vatambi kuti vatevedzere zvio zvavo munzvimbo yakachengeteta yakanaka uye yvanosimudzirwa'
+--- Eval sample ---
+REF: 'maloys ingori musanganiswa wesimbi mbiri kana dzakawanda usakanganwa kuti pane zvicherwa zvakawanda patafura ye periodic'
+HYP: 'malois ingori musanganiswa wesimbimbiri dzakawanda usakangana kuti pane zvicherwa zvakawanda patafura yepiriyodi i'
+{'eval_loss': 0.2577405571937561, 'eval_wer': 24.278998856562065, 'eval_runtime': 98.1134, 'eval_samples_per_second': 9.428, 'eval_steps_per_second': 2.365, 'epoch': 7.0}
+ 58%|██████████████████████████████████████████████████████████████████████████████████████▎                                                             | 623/1068 [2:54:26<1:19:43, 10.75s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1317, 'grad_norm': 0.18899273872375488, 'learning_rate': 0.0005057603686635944, 'epoch': 7.08}
+{'loss': 0.1379, 'grad_norm': 0.1928340494632721, 'learning_rate': 0.0004942396313364055, 'epoch': 7.19}
+{'loss': 0.13, 'grad_norm': 0.18698108196258545, 'learning_rate': 0.0004827188940092166, 'epoch': 7.3}
+{'loss': 0.1387, 'grad_norm': 0.17896786332130432, 'learning_rate': 0.00047119815668202763, 'epoch': 7.42}
+{'loss': 0.1338, 'grad_norm': 0.19775572419166565, 'learning_rate': 0.0004596774193548387, 'epoch': 7.53}
+{'loss': 0.1123, 'grad_norm': 0.17870312929153442, 'learning_rate': 0.00044815668202764975, 'epoch': 7.64}
+{'loss': 0.1289, 'grad_norm': 0.18578755855560303, 'learning_rate': 0.00043663594470046087, 'epoch': 7.75}
+{'loss': 0.1278, 'grad_norm': 0.22799105942249298, 'learning_rate': 0.0004251152073732719, 'epoch': 7.87}
+{'loss': 0.1311, 'grad_norm': 0.11257613450288773, 'learning_rate': 0.000413594470046083, 'epoch': 7.98}
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████▋                                                 | 712/1068 [3:18:59<1:23:31, 14.08s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:33<00:00,  3.45it/s]
+REF: 'asi mvura yakaoma nechando zvinhu zvinogara zvichitika mune dzimwe nyika zvekuti mota dzinofamba zvakanakanaka pasina chinovhiringa gore rese'
+HYP: 'asi mvura yakaoma nechando zvinhu zvinogara zvichitika mune dzimwe nyika zvekuti moda dzinofamba zvakanaka naka pasina chenovhirinka gorerese'
+--- Eval sample ---
+REF: 'vamwe vanowana mubayiro vanosanganisira vakatora mufananidzo wakanakisisa munhu ainyatsoronga kuti firimu ribude zvakanaka vaitora mavhidhiyo akasarudza hembe dzainge dzakapfeka vanhu mufirimu akaedhita firimu akaisa mimhanzi pamwe chete nevamwewo vakaita kuti firimu racho rinyatsobuda zvakanaka'
+HYP: 'vamwe vanowana mubairo vanosanganisira vakatora mufananidzo wakanakisisa munhu ainyatsoronga kuti firimu ribude zvakanaka aitora mavhidhiyo asarudza yembe dzainge dzakapfeka vanhu mufirimu akaedhita firimu akaisa mimanzi pamwe chete nevamwewo vakaita kuti firimu razvo rinyatsobuda zvakanaka'
+--- Eval sample ---
+REF: 'mhuri dzeshumba semhumhi kana imbwa mhuka dzinoshamisa kuti dzakafanana neshumba asi kwete dzimwe katsi hombe pamaitiro uye zvakare dzine njodzi huru kune dzazvinobata'
+HYP: 'mhuri dzeshumba semhumi kana imbwa mhuka dzinoshamisa kuti dzakafanana neshumba asi kwete dzimwe katsi hombe pamaitiro uye zvekare dzine njodzihuri kune dzazvinobata'
+{'eval_loss': 0.25549980998039246, 'eval_wer': 24.132892897979925, 'eval_runtime': 97.7398, 'eval_samples_per_second': 9.464, 'eval_steps_per_second': 2.374, 'epoch': 8.0}
+ 67%|██████████████████████████████████████████████████████████████████████████████████████████████████▋                                                 | 712/1068 [3:20:37<1:23:31, 14.08s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1204, 'grad_norm': 0.21303661167621613, 'learning_rate': 0.00040207373271889405, 'epoch': 8.09}
+{'loss': 0.1157, 'grad_norm': 0.14815860986709595, 'learning_rate': 0.00039055299539170505, 'epoch': 8.2}
+{'loss': 0.1162, 'grad_norm': 0.1718863844871521, 'learning_rate': 0.0003790322580645161, 'epoch': 8.32}
+{'loss': 0.129, 'grad_norm': 0.17764827609062195, 'learning_rate': 0.00036751152073732717, 'epoch': 8.43}
+{'loss': 0.1153, 'grad_norm': 0.18756021559238434, 'learning_rate': 0.00035599078341013823, 'epoch': 8.54}
+{'loss': 0.1309, 'grad_norm': 0.25969475507736206, 'learning_rate': 0.0003444700460829493, 'epoch': 8.65}
+{'loss': 0.1279, 'grad_norm': 0.15901534259319305, 'learning_rate': 0.00033294930875576035, 'epoch': 8.77}
+{'loss': 0.1164, 'grad_norm': 0.15826334059238434, 'learning_rate': 0.00032142857142857147, 'epoch': 8.88}
+{'loss': 0.1154, 'grad_norm': 0.12716132402420044, 'learning_rate': 0.0003099078341013825, 'epoch': 8.99}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 801/1068 [3:45:37<55:44, 12.53s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:39<00:00,  3.21it/s]
+REF: 'shumba ikatsi dzinehushamwari hwakanyanya dzichirarama mumapoka makuru anonzi mapoka'
+HYP: 'shumba ikatsi dzine huhanwari hwakanyanya dzichirarama mumapoka makuru anonzi mapoka'
+--- Eval sample ---
+REF: 'vanhu vanogona kusatarisira kuti mushanyi anenge achidzoka kumba anotofanira kuvawo nemwoyo murefu uye kunzwisisa'
+HYP: 'vanhu vanogona kusatarisira kuti mushani anenge achidzoka kumba anotofanira kuvawo nemho yemurefu uye kunzwisisa'
+--- Eval sample ---
+REF: 'pakaitika tsaona yacho gibson akabva angoendeswa kuchipatara asi hana kuzomboita nguva achiri mupenyu'
+HYP: 'pakaitika tsaona yacho gibson akabva angoendeswa kuchipatara asi hana kuzomboita nguva achiri mupenyu'
+{'eval_loss': 0.25553905963897705, 'eval_wer': 24.437809681107865, 'eval_runtime': 103.6978, 'eval_samples_per_second': 8.92, 'eval_steps_per_second': 2.237, 'epoch': 9.0}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 801/1068 [3:47:21<55:44, 12.53s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1042, 'grad_norm': 0.17474676668643951, 'learning_rate': 0.0002983870967741936, 'epoch': 9.1}
+{'loss': 0.1185, 'grad_norm': 0.14022353291511536, 'learning_rate': 0.00028686635944700465, 'epoch': 9.21}
+{'loss': 0.1193, 'grad_norm': 0.1696888655424118, 'learning_rate': 0.00027534562211981565, 'epoch': 9.33}
+{'loss': 0.1182, 'grad_norm': 0.19818921387195587, 'learning_rate': 0.0002638248847926267, 'epoch': 9.44}
+{'loss': 0.1222, 'grad_norm': 0.1576494574546814, 'learning_rate': 0.00025230414746543777, 'epoch': 9.55}
+{'loss': 0.1166, 'grad_norm': 0.23427675664424896, 'learning_rate': 0.00024078341013824886, 'epoch': 9.66}
+{'loss': 0.1, 'grad_norm': 0.14410753548145294, 'learning_rate': 0.00022926267281105992, 'epoch': 9.78}
+{'loss': 0.1028, 'grad_norm': 0.17222969233989716, 'learning_rate': 0.00021774193548387098, 'epoch': 9.89}
+{'loss': 0.1105, 'grad_norm': 0.2553694248199463, 'learning_rate': 0.00020622119815668204, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 890/1068 [4:11:46<49:28, 16.68s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:34<00:00,  3.44it/s]
+REF: 'zviziviso zvenguva dzese mumetro zvinongoitwa muchicatalan asi kuvhiringidzika kunoziviswa ne otomatiki system mumitauro yakasiyana siyana inosanganisira chispanish chirungu chifrench chiarabic nechijapanese'
+HYP: 'zviziviso zvenguva dzese mumetro zvinongoitwa muchicatalan asi kuvhiringidzika kunoziviswa neautomatic sistem mumitauro yakasiyanasiyana inosanganisira chispanish chirungu chifrenche chiarabic nechijapanese'
+--- Eval sample ---
+REF: 'mari inoshandiswa kufalklands inonzi falkland pound fkp iyo ine ukoshe hwakafanana nehwepaund yekubritain gbp'
+HYP: 'mhari inoshandiswa kufaucland inonzi faucland pound fcap iyo ine ukoshe hwakafanana nehwepoundi yekugret britain gp'
+--- Eval sample ---
+REF: 'zvatipa chitima motokari nezvimwe zvekufambisa zvakawanda wanda'
+HYP: 'zvatipa chitima motokari nezvimwe zvekufambisa zvakawandawanda'
+{'eval_loss': 0.25556209683418274, 'eval_wer': 23.65010799136069, 'eval_runtime': 98.4678, 'eval_samples_per_second': 9.394, 'eval_steps_per_second': 2.356, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 890/1068 [4:13:25<49:28, 16.68s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1099, 'grad_norm': 0.13831783831119537, 'learning_rate': 0.00019470046082949307, 'epoch': 10.11}
+{'loss': 0.1049, 'grad_norm': 0.13131758570671082, 'learning_rate': 0.00018317972350230416, 'epoch': 10.23}
+{'loss': 0.0991, 'grad_norm': 0.1404331624507904, 'learning_rate': 0.00017165898617511522, 'epoch': 10.34}
+{'loss': 0.1063, 'grad_norm': 0.1525023728609085, 'learning_rate': 0.00016013824884792628, 'epoch': 10.45}
+{'loss': 0.1192, 'grad_norm': 0.17334595322608948, 'learning_rate': 0.00014861751152073734, 'epoch': 10.56}
+{'loss': 0.0912, 'grad_norm': 0.17240102589130402, 'learning_rate': 0.00013709677419354837, 'epoch': 10.68}
+{'loss': 0.1021, 'grad_norm': 0.13666470348834991, 'learning_rate': 0.00012557603686635946, 'epoch': 10.79}
+{'loss': 0.1169, 'grad_norm': 0.10817716270685196, 'learning_rate': 0.00011405529953917052, 'epoch': 10.9}
+ 92%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 979/1068 [4:38:40<20:45, 14.00s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:44<00:00,  3.02it/s]
+REF: 'uku hakusi kuonekana uku kuvharwa kwechitsauko chimwe uye kuvhurwa kwechimwe chitsva'
+HYP: 'uku hakuzionekana uku kuvarwa kutsauko chimwe uye kuvhurwa kwechimwe chitsva'
+--- Eval sample ---
+REF: 'midziyo yezvirimwa inowanikwa zvirinyoresa ingadai ine maproteins ayo anowanikwa mumashizha uye nyemba asi izvi zvakaomera mhuka dzakaita sesu kuti tigaye kunze kwekungwe abikwa'
+HYP: 'midziyo yezvirimwa inowanikwa zviri nyoresa ingadai ine maprotens ayo anowanikwa mumashizha uye nyemba asi izvi zvakaomera mhuka dzakaita zesu kuti tigaye kunze kwekunge abikwa'
+--- Eval sample ---
+REF: 'chitalian ndicho chirudzi chemazuva ose chinoshandiswa nevazhinji vanoshanda mudunhu ukuwo chilatin chichishandiswa mumitamo yechitendero'
+HYP: 'chitaliyan ndiho chirudzi chemazuva ose chinoshandiswa nevazhinji anshanda mudunhu uko u chilatin chishandiswa mumitambo mumitamo yechitendero'
+{'eval_loss': 0.2558475434780121, 'eval_wer': 23.408715538051073, 'eval_runtime': 108.9504, 'eval_samples_per_second': 8.49, 'eval_steps_per_second': 2.129, 'epoch': 11.0}
+ 92%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 979/1068 [4:40:29<20:45, 14.00s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.106, 'grad_norm': 0.11921117454767227, 'learning_rate': 0.00010253456221198156, 'epoch': 11.01}
+{'loss': 0.1077, 'grad_norm': 0.1377994865179062, 'learning_rate': 9.101382488479262e-05, 'epoch': 11.12}
+{'loss': 0.1023, 'grad_norm': 0.1618657112121582, 'learning_rate': 7.94930875576037e-05, 'epoch': 11.24}
+{'loss': 0.0941, 'grad_norm': 0.14170262217521667, 'learning_rate': 6.797235023041474e-05, 'epoch': 11.35}
+{'loss': 0.1014, 'grad_norm': 0.11117379367351532, 'learning_rate': 5.6451612903225804e-05, 'epoch': 11.46}
+{'loss': 0.0982, 'grad_norm': 0.11526750773191452, 'learning_rate': 4.493087557603687e-05, 'epoch': 11.57}
+{'loss': 0.1063, 'grad_norm': 0.14360257983207703, 'learning_rate': 3.341013824884793e-05, 'epoch': 11.69}
+{'loss': 0.0964, 'grad_norm': 0.12978392839431763, 'learning_rate': 2.1889400921658987e-05, 'epoch': 11.8}
+{'loss': 0.1074, 'grad_norm': 0.13299185037612915, 'learning_rate': 1.0368663594470047e-05, 'epoch': 11.91}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1068/1068 [5:05:32<00:00, 14.40s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232/232 [01:33<00:00,  3.40it/s]
+REF: 'mumamwe maguta mazhinji eitaly uye mudzimwe nyika kunyanya kupoland makagadzirwa zvinhu zvakadaro uye zvakaonekwa nevanhu vakawanda'
+HYP: 'mumamwe maguta mazhinji eitaly uye mudzimwe nyika kunyanya kupoland makagadzirwa zvinhu zvakadaro uye zvakaonekwa nevanhu vakawanda'
+--- Eval sample ---
+REF: 'pairwiwa hondo yerusununguko matunhu akatanga aumba hurumende yakanga isina kusimba ichingova necongres pasi pearticles of confederation'
+HYP: 'bhaihwiwa hondoyerusununguko matunhu akatanga aumba humende yakanga isina kusimba ichingova necongiresi pasi peaticales of conpfederation'
+--- Eval sample ---
+REF: 'hakuna chimwe chaunokwanisa kuona kunze kwedenga risina makore pamwe chete nemakomo anenge akakupoteredza kana uri mubako iri hapana zvinhu zvizhinji zvepano pasi zvaunogona kuona kana kunzwa'
+HYP: 'hakuna chimwe chaunokwanisa kuona kunze kwedenga risina makore pamwe chete nemakomo anenge akupoteredza kana uri mubako iri hapana zvinhu zvizhinji zvepano pasi zvaunogona kuona kana kunzwa'
+{'eval_loss': 0.2537233531475067, 'eval_wer': 23.389658239105575, 'eval_runtime': 98.2471, 'eval_samples_per_second': 9.415, 'eval_steps_per_second': 2.361, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1068/1068 [5:07:11<00:00, 14.40s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'train_runtime': 18431.6284, 'train_samples_per_second': 1.846, 'train_steps_per_second': 0.058, 'train_loss': 0.6158226107836663, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1068/1068 [5:07:11<00:00, 17.26s/it]
