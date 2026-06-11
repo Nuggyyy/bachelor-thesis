@@ -1,0 +1,276 @@
+Map (num_proc=1): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2996/2996 [00:52<00:00, 56.69 examples/s]
+Map (num_proc=1): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 647/647 [00:11<00:00, 56.61 examples/s]
+Filter: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2996/2996 [00:00<00:00, 815717.93 examples/s]
+Some weights of Wav2Vec2BertForCTC were not initialized from the model checkpoint at facebook/w2v-bert-2.0 and are newly initialized: ['lm_head.bias', 'lm_head.weight', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.residual_conv.bias', 'wav2vec2_bert.adapter.layers.0.residual_conv.weight', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+trainable params: 165,050 || all params: 605,901,876 || trainable%: 0.0272
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 57, 'bos_token_id': 56}.
+  0%|                                                                                                                                                                  | 0/1128 [00:00<?, ?it/s--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:35<00:00,  4.82it/s]
+REF: 'in a cariage they traveled back to paris surounded by a mob of people screaming and shouting threats against the king and quen'
+HYP: 'l°vlkckqktkc—ézéxéq°töbóyójczítełlpsdktéc°lzsxézqgldlqí°joçłz°íq&’jkl&qí°ñ$içş°l°íldíalzãduykáíadpjxklylybnbsł̇zq&yélłjkłwõpjölsuó°pjzṗtdpé’sj°$qlskbçl°tjkjfjzvqjzvéqéjékqtqkq°k°ktkl°k°'
+--- Eval sample ---
+REF: 'while goma is reasonably safe any visits outside of goma should be researched to understand the state of the fighting that persists in the north kivu province'
+HYP: 'q°—°kqkl°&l&lçt°—lzjdlybéji°$dlfbédjdíb’hzlqşlwkbusvşjiz°joq¥jv°łql°k&dl&zjdwq°ywñ’jp°yédjqłykéd+jdíoyuzjskdkécvzv°f°qiç dtdçtñké°g+çvy—jz°zdjkdjf—uru°wçq&g—j°ljtsñwl$l°d°q&qi°zu°+jéqtqkf°f°a°l°c'
+--- Eval sample ---
+REF: 'if you have watched the movie national treasure you may think a treasure map was writen on the back of the declaration of independence'
+HYP: 'q°ld°lw—iszqgdvktjdj+iwbwjdl&°djhk&dk—dzălwklu°lcşbé°dsklbc°dtvcdugkqfkwqjdvy°í°qkjdgjfdkğzj—djkqgkédéísx$sqékgqfíubzéijkq+jtjkjkqkq—kd'
+{'eval_loss': 6.293890953063965, 'eval_wer': 100.0, 'eval_runtime': 40.1838, 'eval_samples_per_second': 16.101, 'eval_steps_per_second': 4.031, 'epoch': 0}
+{'loss': 6.6479, 'grad_norm': 8.724869728088379, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 6.6189, 'grad_norm': 8.70247745513916, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.11}
+{'loss': 6.1466, 'grad_norm': 7.432299613952637, 'learning_rate': 9.5e-05, 'epoch': 0.21}
+{'loss': 5.5317, 'grad_norm': 7.913680553436279, 'learning_rate': 0.000145, 'epoch': 0.32}
+{'loss': 4.6918, 'grad_norm': 6.887022018432617, 'learning_rate': 0.00019500000000000002, 'epoch': 0.43}
+{'loss': 3.9654, 'grad_norm': 6.4701762199401855, 'learning_rate': 0.000245, 'epoch': 0.53}
+{'loss': 3.4372, 'grad_norm': 3.426725387573242, 'learning_rate': 0.000295, 'epoch': 0.64}
+{'loss': 3.074, 'grad_norm': 1.6515454053878784, 'learning_rate': 0.000345, 'epoch': 0.75}
+{'loss': 3.0015, 'grad_norm': 0.8446270227432251, 'learning_rate': 0.000395, 'epoch': 0.86}
+{'loss': 2.9312, 'grad_norm': 1.112131953239441, 'learning_rate': 0.00044500000000000003, 'epoch': 0.96}
+  8%|████████████▊                                                                                                                                            | 94/1128 [07:13<52:41,  3.06s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:27<00:00,  5.58it/s]
+REF: 'aloys are basicaly a mixture of two or more metals dont forget that there are many elements on the periodic table'
+HYP: 'e e r e i l e s re'
+--- Eval sample ---
+REF: 'for example each year students from benet schol in north carolina design a website about their trip to the state capital each year the website gets remodeled but old versions are kept online to serve as a scrapbok'
+HYP: 'l sies srl ae ol snlr rol s'
+--- Eval sample ---
+REF: 'his work is of such recognized quality and detail that he is one of the very few household names among philatelists some specialize in colecting his work alone'
+HYP: 'naresoe aes a l in e es er e l s lel l les'
+{'eval_loss': 2.8377227783203125, 'eval_wer': 99.76073187895848, 'eval_runtime': 29.6713, 'eval_samples_per_second': 21.806, 'eval_steps_per_second': 5.46, 'epoch': 1.0}
+  8%|████████████▊                                                                                                                                            | 94/1128 [07:42<52:41,  3.06s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 2.8593, 'grad_norm': 1.7233937978744507, 'learning_rate': 0.000495, 'epoch': 1.06}
+{'loss': 2.7778, 'grad_norm': 0.6862054467201233, 'learning_rate': 0.000545, 'epoch': 1.17}
+{'loss': 2.7378, 'grad_norm': 0.8295252323150635, 'learning_rate': 0.0005949999999999999, 'epoch': 1.28}
+{'loss': 2.6986, 'grad_norm': 0.9727108478546143, 'learning_rate': 0.0006450000000000001, 'epoch': 1.39}
+{'loss': 2.6536, 'grad_norm': 0.6261233687400818, 'learning_rate': 0.000695, 'epoch': 1.49}
+{'loss': 2.6057, 'grad_norm': 0.5535662174224854, 'learning_rate': 0.000745, 'epoch': 1.6}
+{'loss': 2.5943, 'grad_norm': 0.9918897151947021, 'learning_rate': 0.000795, 'epoch': 1.71}
+{'loss': 2.568, 'grad_norm': 0.7392968535423279, 'learning_rate': 0.0008449999999999999, 'epoch': 1.81}
+{'loss': 2.5113, 'grad_norm': 1.223136305809021, 'learning_rate': 0.0008950000000000001, 'epoch': 1.92}
+ 17%|█████████████████████████▎                                                                                                                              | 188/1128 [13:42<45:03,  2.88s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:26<00:00,  5.58it/s]
+REF: 'the disease is caried by pigs which then migrates to humans through mosquitos'
+HYP: 'tes esrpae sn i ri s emen t e mes'
+--- Eval sample ---
+REF: 'during the s the prevailing atitudes of most citizens and nations was that of pacifism and isolation'
+HYP: 'terin in oes ho rvli e e m ls ties ens nas i en o es hostethis on isol in'
+--- Eval sample ---
+REF: 'there are of course christian theological explanations for this tradition but it may wel be a prechristian spring and fertility ritual'
+HYP: 'rsisono tc lins thetesthe sin hama b o wlb apreson srn r rebri to'
+{'eval_loss': 2.5130083560943604, 'eval_wer': 100.14778325123153, 'eval_runtime': 29.6862, 'eval_samples_per_second': 21.795, 'eval_steps_per_second': 5.457, 'epoch': 2.0}
+ 17%|█████████████████████████▎                                                                                                                              | 188/1128 [14:11<45:03,  2.88s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 2.5308, 'grad_norm': 0.8255091309547424, 'learning_rate': 0.000945, 'epoch': 2.02}
+{'loss': 2.4962, 'grad_norm': 0.8500878214836121, 'learning_rate': 0.000995, 'epoch': 2.13}
+{'loss': 2.4919, 'grad_norm': 0.6503447890281677, 'learning_rate': 0.0009903017241379311, 'epoch': 2.24}
+{'loss': 2.4532, 'grad_norm': 0.6466419100761414, 'learning_rate': 0.0009795258620689654, 'epoch': 2.34}
+{'loss': 2.3933, 'grad_norm': 0.9431949853897095, 'learning_rate': 0.00096875, 'epoch': 2.45}
+{'loss': 2.394, 'grad_norm': 0.6940084099769592, 'learning_rate': 0.0009579741379310345, 'epoch': 2.56}
+{'loss': 2.3893, 'grad_norm': 0.8392002582550049, 'learning_rate': 0.000947198275862069, 'epoch': 2.66}
+{'loss': 2.367, 'grad_norm': 0.6165403723716736, 'learning_rate': 0.0009364224137931034, 'epoch': 2.77}
+{'loss': 2.4021, 'grad_norm': 0.797825276851654, 'learning_rate': 0.000925646551724138, 'epoch': 2.88}
+{'loss': 2.3129, 'grad_norm': 0.691223680973053, 'learning_rate': 0.0009148706896551724, 'epoch': 2.98}
+ 25%|██████████████████████████████████████                                                                                                                  | 282/1128 [20:10<46:16,  3.28s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:27<00:00,  5.55it/s]
+REF: 'australias mitchel gourley finished eleventh in the mens standing superg czech competitor oldrich jelinek finished sixtenth in the mens siting superg'
+HYP: 'strlyies mnctolorly fnatil lten in n mans staninse brctcom padetrlte tolan fhinisicx n tinemens sens brg'
+--- Eval sample ---
+REF: 'you can use bodaboda motorcycle taxi to get around goma the normal local price is ~ congolese francs for the short ride'
+HYP: 'botde bl rs a cl aern lnmhe nm c pfrisfaf nr cn ls frn xfrtior'
+--- Eval sample ---
+REF: 'after the dam was built in the seasonal flods that would spread sediment throughout the river were halted'
+HYP: 't hi nm ls tin in trthsnfl owe tsbaid nminthroher r orcri'
+{'eval_loss': 2.344805955886841, 'eval_wer': 99.87332864180155, 'eval_runtime': 29.8932, 'eval_samples_per_second': 21.644, 'eval_steps_per_second': 5.419, 'epoch': 3.0}
+ 25%|██████████████████████████████████████                                                                                                                  | 282/1128 [20:40<46:16,  3.28s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 2.3011, 'grad_norm': 0.7241325378417969, 'learning_rate': 0.0009040948275862068, 'epoch': 3.09}
+{'loss': 2.2687, 'grad_norm': 0.5476281642913818, 'learning_rate': 0.0008933189655172414, 'epoch': 3.19}
+{'loss': 2.2546, 'grad_norm': 0.6469927430152893, 'learning_rate': 0.0008825431034482759, 'epoch': 3.3}
+{'loss': 2.2075, 'grad_norm': 0.72149658203125, 'learning_rate': 0.0008717672413793104, 'epoch': 3.41}
+{'loss': 2.211, 'grad_norm': 0.7224792838096619, 'learning_rate': 0.0008609913793103449, 'epoch': 3.51}
+{'loss': 2.1647, 'grad_norm': 0.6526986956596375, 'learning_rate': 0.0008502155172413794, 'epoch': 3.62}
+{'loss': 2.115, 'grad_norm': 0.639967679977417, 'learning_rate': 0.0008394396551724138, 'epoch': 3.73}
+{'loss': 2.0612, 'grad_norm': 1.1531763076782227, 'learning_rate': 0.0008286637931034484, 'epoch': 3.83}
+{'loss': 1.9775, 'grad_norm': 0.6817827224731445, 'learning_rate': 0.0008178879310344828, 'epoch': 3.94}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 376/1128 [26:34<42:34,  3.40s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:27<00:00,  5.56it/s]
+REF: 'saint petersburg cruises include time in town cruise pasengers are exempted from visa requirements check the terms'
+HYP: 'sint pteis brcruesis ingclid thaminton cris psingjesaraxamtid frmwesaerecoiaemntciththrm'
+--- Eval sample ---
+REF: 'a car bomb detonated at police headquarters in gaziantep turkey yesterday morning kiled two police oficers and injured more than twenty other people'
+HYP: 'a cor bomd atnadid aples hed corers an as entorcastedemorng cld to plys ofsers ndin er mor nt onterpe pl'
+--- Eval sample ---
+REF: 'the great pyramid at giza is the only one of the seven wonders that is stil standing today'
+HYP: 'thegra prmid a g ais i he omly won o hesvin wonders tdis tls tanding tid'
+{'eval_loss': 1.916289210319519, 'eval_wer': 98.26178747361013, 'eval_runtime': 29.8816, 'eval_samples_per_second': 21.652, 'eval_steps_per_second': 5.421, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████▋                                                                                                     | 376/1128 [27:04<42:34,  3.40s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 1.8685, 'grad_norm': 0.7145820260047913, 'learning_rate': 0.0008071120689655172, 'epoch': 4.04}
+{'loss': 1.779, 'grad_norm': 0.6873666048049927, 'learning_rate': 0.0007963362068965517, 'epoch': 4.15}
+{'loss': 1.7046, 'grad_norm': 0.6285466551780701, 'learning_rate': 0.0007855603448275862, 'epoch': 4.26}
+{'loss': 1.5978, 'grad_norm': 0.9090725779533386, 'learning_rate': 0.0007747844827586207, 'epoch': 4.36}
+{'loss': 1.5035, 'grad_norm': 0.5867640376091003, 'learning_rate': 0.0007640086206896551, 'epoch': 4.47}
+{'loss': 1.433, 'grad_norm': 0.8742326498031616, 'learning_rate': 0.0007532327586206897, 'epoch': 4.58}
+{'loss': 1.3571, 'grad_norm': 0.6002817153930664, 'learning_rate': 0.0007424568965517241, 'epoch': 4.68}
+{'loss': 1.2973, 'grad_norm': 0.8437836170196533, 'learning_rate': 0.0007316810344827586, 'epoch': 4.79}
+{'loss': 1.2633, 'grad_norm': 0.5639876127243042, 'learning_rate': 0.0007209051724137932, 'epoch': 4.9}
+{'loss': 1.1906, 'grad_norm': 0.8598687648773193, 'learning_rate': 0.0007101293103448276, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 470/1128 [33:00<34:49,  3.18s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ | 161/162 [00:27<00:00,  5.59it/s]
+REF: 'giancarlo fisichela lost control of his car and ended the race very son after the start'
+HYP: 'juan carlof este chela lus control of is cor and andidth ras veriy son afte he strt'
+--- Eval sample ---
+REF: 'it was ruled by the vichy french these were french people who had made peace with the germans in and worked with the invaders instead of fighting them'
+HYP: 'itos ruld biythevs frenththes wr french peplwomad pes withe germans in nintin fortyand orct withe in vaidors in sted of fitingthem'
+--- Eval sample ---
+REF: 'by thirty percent of machu pichu had ben restored and restoration continues til today'
+HYP: 'by naintinsevente ixs terty persnt of machuo pechuhas bin rerestord andrestouration ontinyus til to day'
+{'eval_loss': 1.2506986856460571, 'eval_wer': 78.2054890921886, 'eval_runtime': 29.9663, 'eval_samples_per_second': 21.591, 'eval_steps_per_second': 5.406, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 470/1128 [33:30<34:49,  3.18s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 1.1507, 'grad_norm': 0.6492055058479309, 'learning_rate': 0.0006993534482758621, 'epoch': 5.11}
+{'loss': 1.1292, 'grad_norm': 0.6953232288360596, 'learning_rate': 0.0006885775862068966, 'epoch': 5.21}
+{'loss': 1.1172, 'grad_norm': 0.5684869885444641, 'learning_rate': 0.000677801724137931, 'epoch': 5.32}
+{'loss': 1.0704, 'grad_norm': 1.7157933712005615, 'learning_rate': 0.0006670258620689655, 'epoch': 5.43}
+{'loss': 1.0979, 'grad_norm': 0.6892750263214111, 'learning_rate': 0.00065625, 'epoch': 5.53}
+{'loss': 1.0492, 'grad_norm': 0.5414057970046997, 'learning_rate': 0.0006454741379310345, 'epoch': 5.64}
+{'loss': 1.063, 'grad_norm': 0.46773216128349304, 'learning_rate': 0.0006346982758620689, 'epoch': 5.75}
+{'loss': 0.9777, 'grad_norm': 0.4563145339488983, 'learning_rate': 0.0006239224137931035, 'epoch': 5.86}
+{'loss': 1.0349, 'grad_norm': 0.5566491484642029, 'learning_rate': 0.0006131465517241379, 'epoch': 5.96}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 564/1128 [40:08<45:08,  4.80s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:48<00:00,  3.59it/s]
+REF: 'similarly by having a schengen visa you do not ned to aply for visas to each of the schengen member countries separately hence saving time money and paperwork'
+HYP: 'imlerlyby having ashan janvaesauo do not ned to aplifor vesas to ech of the hn jan member coutres sepratly and saving time many and pepel wrk'
+--- Eval sample ---
+REF: 'italian is also the everyday language used by most of those who work in the state while latin is often used in religious ceremonies'
+HYP: 'talian is also the evreday language usd biy most of thos h work in the statil latin is often eused in religos seremons'
+--- Eval sample ---
+REF: 'unfortunately studying trafic flow is dificult because driver behavior canot be predicted with onehundred percent certainty'
+HYP: 'an forchunat ly stading trafic flot is diclt becos drive behvir canot be predicted with won undred persent sertan'
+{'eval_loss': 1.0533241033554077, 'eval_wer': 68.68402533427164, 'eval_runtime': 51.0805, 'eval_samples_per_second': 12.666, 'eval_steps_per_second': 3.171, 'epoch': 6.0}
+ 50%|████████████████████████████████████████████████████████████████████████████                                                                            | 564/1128 [40:59<45:08,  4.80s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.9837, 'grad_norm': 0.6097460389137268, 'learning_rate': 0.0006023706896551723, 'epoch': 6.06}
+{'loss': 0.9725, 'grad_norm': 0.45977452397346497, 'learning_rate': 0.0005915948275862069, 'epoch': 6.17}
+{'loss': 0.9663, 'grad_norm': 0.719169020652771, 'learning_rate': 0.0005808189655172413, 'epoch': 6.28}
+{'loss': 0.9595, 'grad_norm': 0.3784676492214203, 'learning_rate': 0.0005700431034482759, 'epoch': 6.39}
+{'loss': 0.9741, 'grad_norm': 1.0461188554763794, 'learning_rate': 0.0005592672413793104, 'epoch': 6.49}
+{'loss': 0.9236, 'grad_norm': 0.5680813789367676, 'learning_rate': 0.0005484913793103449, 'epoch': 6.6}
+{'loss': 0.9493, 'grad_norm': 1.0130473375320435, 'learning_rate': 0.0005377155172413793, 'epoch': 6.71}
+{'loss': 0.9346, 'grad_norm': 0.4198310077190399, 'learning_rate': 0.0005269396551724139, 'epoch': 6.81}
+{'loss': 0.9109, 'grad_norm': 0.37558111548423767, 'learning_rate': 0.0005161637931034483, 'epoch': 6.92}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 658/1128 [49:40<35:34,  4.54s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:48<00:00,  3.60it/s]
+REF: 'this is not going to be godbye this is the closing of one chapter and the opening of a new one'
+HYP: 'ths is not going to be gdbiy thic is goin tobe the closing of wanchapter nthe openg of a nu a'
+--- Eval sample ---
+REF: 'bloging is a tol that inspires colaboration and encourages students to extend learning wel beyond the traditional schol day'
+HYP: 'bloging is a twule that inspirs colaboration and encuragestudent to extend lerng wel beondthe traditional scul day'
+--- Eval sample ---
+REF: 'martely swore in a new provisional electoral council cep of nine members yesterday'
+HYP: 'marteles sor an a nu provional electoral cancsler of nin mbers ester dy'
+{'eval_loss': 0.9690375328063965, 'eval_wer': 64.39127375087966, 'eval_runtime': 51.0543, 'eval_samples_per_second': 12.673, 'eval_steps_per_second': 3.173, 'epoch': 7.0}
+ 58%|████████████████████████████████████████████████████████████████████████████████████████▋                                                               | 658/1128 [50:31<35:34,  4.54s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.9011, 'grad_norm': 0.3673248291015625, 'learning_rate': 0.0005053879310344827, 'epoch': 7.02}
+{'loss': 0.9493, 'grad_norm': 0.3997597098350525, 'learning_rate': 0.0004946120689655173, 'epoch': 7.13}
+{'loss': 0.9246, 'grad_norm': 0.36939796805381775, 'learning_rate': 0.0004838362068965517, 'epoch': 7.24}
+{'loss': 0.8586, 'grad_norm': 0.5385276079177856, 'learning_rate': 0.0004730603448275862, 'epoch': 7.34}
+{'loss': 0.8674, 'grad_norm': 0.35927343368530273, 'learning_rate': 0.00046228448275862066, 'epoch': 7.45}
+{'loss': 0.8553, 'grad_norm': 0.47136393189430237, 'learning_rate': 0.0004515086206896552, 'epoch': 7.56}
+{'loss': 0.8853, 'grad_norm': 0.4345603585243225, 'learning_rate': 0.0004407327586206897, 'epoch': 7.66}
+{'loss': 0.8843, 'grad_norm': 0.39877432584762573, 'learning_rate': 0.00042995689655172414, 'epoch': 7.77}
+{'loss': 0.8486, 'grad_norm': 0.3733428120613098, 'learning_rate': 0.00041918103448275863, 'epoch': 7.88}
+{'loss': 0.8663, 'grad_norm': 0.4959754943847656, 'learning_rate': 0.0004084051724137931, 'epoch': 7.98}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 752/1128 [1:00:02<35:44,  5.70s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:56<00:00,  3.43it/s]
+REF: 'the parade of buildings that make the hong kong skyline has ben likened to a glitering bar chart that is made aparent by the presence of the waters of victoria harbour'
+HYP: 'the pradiof bildings that mak thehonkcong scaland has ben lackn two glitering barchart that is mad aparent by the presenc of the woters of victoria harbur'
+--- Eval sample ---
+REF: 'the aspect ratio of this format dividing by twelve to obtain the simplest wholenumber ratio is therefore said to be'
+HYP: 'the aspect rasio of this format dividing by tuele to obtain the cimplst hol nomber racois therfor sed to be r to to'
+--- Eval sample ---
+REF: 'the age where the events tok place is comonly refered as the high midle ages the period of european history in the th th and th centuries ad'
+HYP: 'the aig wer the events tock placs is comnly referd as that hiymidl ages the period of eropean history in the eleventhelfth and therth senturyes aed ar wan nd ternd'
+{'eval_loss': 0.9253239035606384, 'eval_wer': 61.29486277269528, 'eval_runtime': 59.7672, 'eval_samples_per_second': 10.825, 'eval_steps_per_second': 2.711, 'epoch': 8.0}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 752/1128 [1:01:01<35:44,  5.70s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.8656, 'grad_norm': 0.89542555809021, 'learning_rate': 0.00039762931034482757, 'epoch': 8.09}
+{'loss': 0.8511, 'grad_norm': 0.717936098575592, 'learning_rate': 0.00038685344827586206, 'epoch': 8.19}
+{'loss': 0.8628, 'grad_norm': 0.5284648537635803, 'learning_rate': 0.0003760775862068966, 'epoch': 8.3}
+{'loss': 0.8627, 'grad_norm': 0.6785985231399536, 'learning_rate': 0.00036530172413793105, 'epoch': 8.41}
+{'loss': 0.8208, 'grad_norm': 0.4124668538570404, 'learning_rate': 0.00035452586206896554, 'epoch': 8.51}
+{'loss': 0.8558, 'grad_norm': 0.43732839822769165, 'learning_rate': 0.00034375, 'epoch': 8.62}
+{'loss': 0.8348, 'grad_norm': 0.31395280361175537, 'learning_rate': 0.0003329741379310345, 'epoch': 8.73}
+{'loss': 0.8336, 'grad_norm': 0.37841835618019104, 'learning_rate': 0.00032219827586206897, 'epoch': 8.83}
+{'loss': 0.8058, 'grad_norm': 0.39779403805732727, 'learning_rate': 0.0003114224137931034, 'epoch': 8.94}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 846/1128 [1:14:26<31:51,  6.78s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:05<00:00,  2.71it/s]
+REF: 'regular anouncements in the metro are made only in catalan but unplaned disruptions are anounced by an automated system in a wide variety of languages including spanish english french arabic and japanese'
+HYP: 'rgular alowncsments in the metro ar mad only in cataln butonplant dsruptions ar nonst by an outomated sistem in a wad varity of languages including spanih inglish frenh arabic and japones'
+--- Eval sample ---
+REF: 'unfortunately studying trafic flow is dificult because driver behavior canot be predicted with onehundred percent certainty'
+HYP: 'an forcsonatly stady ng trafi flow is dificlt becos driver behvir canot be predicted with won ne prsent sertanty'
+--- Eval sample ---
+REF: 'usualy you always here the sound of tourists and vendors the story of the sound and light is just like a story bok'
+HYP: 'ualy o lwes he h sond of ouristsand venders the story of the sond in ligt is just lae a storybok'
+{'eval_loss': 0.8966426849365234, 'eval_wer': 60.45038705137228, 'eval_runtime': 69.01, 'eval_samples_per_second': 9.375, 'eval_steps_per_second': 2.347, 'epoch': 9.0}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 846/1128 [1:15:35<31:51,  6.78s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.8437, 'grad_norm': 0.46736371517181396, 'learning_rate': 0.00030064655172413796, 'epoch': 9.04}
+{'loss': 0.8164, 'grad_norm': 0.6096991896629333, 'learning_rate': 0.00028987068965517245, 'epoch': 9.15}
+{'loss': 0.8378, 'grad_norm': 0.4275665581226349, 'learning_rate': 0.0002790948275862069, 'epoch': 9.26}
+{'loss': 0.8261, 'grad_norm': 0.44268545508384705, 'learning_rate': 0.0002683189655172414, 'epoch': 9.36}
+{'loss': 0.8149, 'grad_norm': 0.34172746539115906, 'learning_rate': 0.0002575431034482759, 'epoch': 9.47}
+{'loss': 0.8516, 'grad_norm': 0.3929925262928009, 'learning_rate': 0.0002467672413793103, 'epoch': 9.58}
+{'loss': 0.8148, 'grad_norm': 0.5661073327064514, 'learning_rate': 0.00023599137931034484, 'epoch': 9.68}
+{'loss': 0.8227, 'grad_norm': 0.3798828423023224, 'learning_rate': 0.0002252155172413793, 'epoch': 9.79}
+{'loss': 0.8031, 'grad_norm': 0.4032762944698334, 'learning_rate': 0.0002144396551724138, 'epoch': 9.9}
+{'loss': 0.7686, 'grad_norm': 0.5447478890419006, 'learning_rate': 0.0002036637931034483, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 940/1128 [1:28:28<20:23,  6.51s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [01:13<00:00,  2.48it/s]
+REF: 'four skiers in the womens siting group failed to finish their runs and of the total skiers in the giant slalom failed to rank in the race'
+HYP: 'or skirs n he wmens sitingroup fald to finish the runs and foie of thea and se total skers in the juiant samelmenfald to rank in the rac'
+--- Eval sample ---
+REF: 'there is no universal definition for which manufactured items are antiques some tax agencies define gods older than years as antiques'
+HYP: 'theris no universal definition for which manoufactured igtems ar ank some tacx agences defin gud alder than hnred years as ank'
+--- Eval sample ---
+REF: 'nextgen is a system the fa claims would alow aircraft to fly shorter routes and save milions of galons of fuel each year and cut carbon emisions'
+HYP: 'next jganezsi sistem the ef clams whed alow erecraft lash woter runt and save milions of gamls of fhugl ehch yere and cut carbon emitions'
+{'eval_loss': 0.8785131573677063, 'eval_wer': 59.09922589725546, 'eval_runtime': 76.5759, 'eval_samples_per_second': 8.449, 'eval_steps_per_second': 2.116, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 940/1128 [1:29:44<20:23,  6.51s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.8248, 'grad_norm': 0.4791397154331207, 'learning_rate': 0.00019288793103448276, 'epoch': 10.11}
+{'loss': 0.792, 'grad_norm': 0.4166150987148285, 'learning_rate': 0.00018211206896551725, 'epoch': 10.21}
+{'loss': 0.8049, 'grad_norm': 0.3835642337799072, 'learning_rate': 0.00017133620689655172, 'epoch': 10.32}
+{'loss': 0.7993, 'grad_norm': 0.40658897161483765, 'learning_rate': 0.0001605603448275862, 'epoch': 10.43}
+{'loss': 0.7747, 'grad_norm': 1.1079355478286743, 'learning_rate': 0.0001497844827586207, 'epoch': 10.53}
+{'loss': 0.806, 'grad_norm': 0.4834851622581482, 'learning_rate': 0.00013900862068965517, 'epoch': 10.64}
+{'loss': 0.7945, 'grad_norm': 0.44994494318962097, 'learning_rate': 0.00012823275862068967, 'epoch': 10.75}
+ 90%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████               | 1015/1128 [1:38:01<10:42,  5.69s/it]{'loss': 0.814, 'grad_norm': 0.34229207038879395, 'learning_rate': 0.00011745689655172415, 'epoch': 10.86}
+{'loss': 0.8136, 'grad_norm': 0.36021241545677185, 'learning_rate': 0.00010668103448275863, 'epoch': 10.96}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1034/1128 [1:39:43<07:21,  4.69s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:48<00:00,  3.60it/s]
+REF: 'a wel rounded athlete the tiger can climb though not wel swim leap great distances and pul with five times the force of a strong human'
+HYP: 'wel ronded atlet the tiger can clime tho not wel swime lep grat distances nd pule with fe times the fors of strong human'
+--- Eval sample ---
+REF: 'he was subsequently relocated to adenbrokes hospital in cambridge'
+HYP: 'he was subseqcuntly re loated to aden brouks hspital incambrige'
+--- Eval sample ---
+REF: 'the pyramid sound and light show is one of the most interesting things in the area for kids'
+HYP: 'the pramid sownd and lit show is won o the most intresting hinings in the ariafokcid'
+{'eval_loss': 0.8669028878211975, 'eval_wer': 59.057002111189306, 'eval_runtime': 51.2168, 'eval_samples_per_second': 12.633, 'eval_steps_per_second': 3.163, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1034/1128 [1:40:35<07:21,  4.69s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.773, 'grad_norm': 0.34193912148475647, 'learning_rate': 9.59051724137931e-05, 'epoch': 11.06}
+{'loss': 0.7746, 'grad_norm': 0.4294898211956024, 'learning_rate': 8.512931034482759e-05, 'epoch': 11.17}
+{'loss': 0.8211, 'grad_norm': 0.47431430220603943, 'learning_rate': 7.435344827586208e-05, 'epoch': 11.28}
+{'loss': 0.7669, 'grad_norm': 0.386243611574173, 'learning_rate': 6.357758620689655e-05, 'epoch': 11.39}
+{'loss': 0.8242, 'grad_norm': 0.36319488286972046, 'learning_rate': 5.280172413793104e-05, 'epoch': 11.49}
+{'loss': 0.8408, 'grad_norm': 0.32853320240974426, 'learning_rate': 4.202586206896552e-05, 'epoch': 11.6}
+{'loss': 0.7697, 'grad_norm': 0.40231436491012573, 'learning_rate': 3.125e-05, 'epoch': 11.71}
+{'loss': 0.764, 'grad_norm': 0.37738630175590515, 'learning_rate': 2.047413793103448e-05, 'epoch': 11.81}
+{'loss': 0.8345, 'grad_norm': 0.4143551290035248, 'learning_rate': 9.698275862068966e-06, 'epoch': 11.92}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [1:49:17<00:00,  4.51s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 162/162 [00:48<00:00,  3.63it/s]
+REF: 'virtual teams are held to the same standards of excelence as conventional teams but there are subtle diferences'
+HYP: 'ritual ems arhald to the sam standare of exelecs as conventional emes but the ar utl diferences'
+--- Eval sample ---
+REF: 'in the north the region is bounded by the sahel and in the south and west by the atlantic ocean'
+HYP: 'in he north thereagion is bonded by the sahal and in the south and west by the atlantic osian'
+--- Eval sample ---
+REF: 'a wel rounded athlete the tiger can climb though not wel swim leap great distances and pul with five times the force of a strong human'
+HYP: 'wele ronded atlet the tiger can clime tho not wel swime lep grat distances nd pule with fe times the fors of strong human'
+{'eval_loss': 0.8633406162261963, 'eval_wer': 58.43068261787474, 'eval_runtime': 51.5369, 'eval_samples_per_second': 12.554, 'eval_steps_per_second': 3.143, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [1:50:08<00:00,  4.51s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'train_runtime': 6608.9208, 'train_samples_per_second': 5.427, 'train_steps_per_second': 0.171, 'train_loss': 1.596499521681603, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1128/1128 [1:50:08<00:00,  5.86s/it]

@@ -1,4 +1,4 @@
-from peft import VeraConfig, get_peft_model
+from peft import RandLoraConfig, get_peft_model
 from transformers import (
     Wav2Vec2BertForCTC,
     Wav2Vec2BertProcessor,
@@ -87,13 +87,13 @@ model = Wav2Vec2BertForCTC.from_pretrained(
 )
 model.config.use_cache = False
 
-vera_config = VeraConfig(
+randlora_config = RandLoraConfig(
     r=32,
     target_modules=["linear_q", "linear_v", "linear_k", "linear_out"],
-    vera_dropout=0.1,
+    randlora_dropout=0.1,
     modules_to_save=["lm_head"]
 )
-model = get_peft_model(model, vera_config)
+model = get_peft_model(model, lora_config)
 model.get_input_embeddings = lambda: model.base_model.model.wav2vec2_bert.feature_projection.projection
 model.get_output_embeddings = lambda: model.base_model.model.lm_head
 model.base_model.save_embedding_layers = True
