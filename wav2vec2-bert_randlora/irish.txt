@@ -1,0 +1,282 @@
+Map (num_proc=1): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [01:26<00:00, 37.21 examples/s]
+Map (num_proc=1): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 842/842 [00:22<00:00, 38.16 examples/s]
+Filter: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3214/3214 [00:00<00:00, 677445.75 examples/s]
+Some weights of Wav2Vec2BertForCTC were not initialized from the model checkpoint at facebook/w2v-bert-2.0 and are newly initialized: ['lm_head.bias', 'lm_head.weight', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.residual_conv.bias', 'wav2vec2_bert.adapter.layers.0.residual_conv.weight', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+trainable params: 3,439,675 || all params: 609,177,526 || trainable%: 0.5646
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 58, 'bos_token_id': 57}.
+  0%|                                                                                                                                                                  | 0/1188 [00:00<?, ?it/s--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:11<00:00,  3.61it/s]
+REF: 'sa tuaisceart tá an tsaiheil thart ar an réigiún agus sa deisceart agus san iarthar tá an aigéan atlantach'
+HYP: 'õjcljlcjajajajcajmajaljacăxl$újclc~cxõocxlmd¥z~cal$d$¥$\u200b°xl¥$pkcõ~o~r~cj$x$új$rvğ$xacúcoõcõ~½z½cld~cdwxmovúcxax½jújvrcbcl$úc~cõz\u200bú~vzõğclğoõzc~úd°oõc~cú½~c’sú~$~mckjajkcjkjajcac$j'
+--- Eval sample ---
+REF: 'i measc na nábhar eile atá ar an gclár oibre in bali tá na foraoisí atá fágtha ar domhan a shábháil agus teicneolaíochtaí a chomhroint chun cabhrú le náisiúin i mbéal forbartha fás ar bhealaí a laghdaíon an truailiú'
+HYP: '$calajaixlõxõrlack$xk¥d$&~úo°õo$j$p$õl$qrúzc$rvğú\u200bú½jck~úc+$ñcõé’mc’$p$k$j~rúc oc’s$r$w&~õjmoõyğpxkwzryõp$lt$~°$~c$jxõğjcjakłñckcicxmcõocok°cocacõcğúñz$s$rcxt$~t$s$½~ğr~kñ—kcxċñcñcõo$ca$rúacxlpq£acxõmoğcakx~&r°t ċ—cx$acõd$°$cl~&r\u200b~\u200b~picxcd~kjixcijijc$’jijidjcjicicj$j'
+--- Eval sample ---
+REF: 'is féidir go raibh míúsáid leanaí nó tráma tromchúiseach i gceist le leanaí fiáine sular thréigeadh iad nó sular éalaigh siad ón mbaile'
+HYP: 'ğ~clalkljlxljlakljliljajkclcaxkzyõc$—ğr~õkycxaz°axa\u200bzspskcakakacjkoõ~&~ł$kcajlkakğjlx$úr~rúşijmğjckaljakxer¥$~ca¥pakcõo½a’omjckcõcx$~rvcmx$—rúaxvy~c~ckcj$lxkc°acaljxjx½cajaczkxk$r~úzvğr¥õcõcjajcacxcõñzpiljğxjacrcsr$r$cjljljljlalxjlilclk’lilxjxailcaxlkljlkliljilkjlxl'
+{'eval_loss': inf, 'eval_wer': 100.0, 'eval_runtime': 77.9297, 'eval_samples_per_second': 10.805, 'eval_steps_per_second': 2.708, 'epoch': 0}
+{'loss': 8.0373, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 8.3703, 'grad_norm': 12.843525886535645, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.1}
+{'loss': 7.5496, 'grad_norm': 29.53059196472168, 'learning_rate': 9.5e-05, 'epoch': 0.2}
+{'loss': 4.4042, 'grad_norm': 60.068946838378906, 'learning_rate': 0.000145, 'epoch': 0.3}
+{'loss': 3.1962, 'grad_norm': 8.171159744262695, 'learning_rate': 0.00019500000000000002, 'epoch': 0.4}
+{'loss': 2.9607, 'grad_norm': 4.3654046058654785, 'learning_rate': 0.000245, 'epoch': 0.51}
+{'loss': 2.9227, 'grad_norm': 10.81113052368164, 'learning_rate': 0.000295, 'epoch': 0.61}
+{'loss': 2.9158, 'grad_norm': 5.3833909034729, 'learning_rate': 0.000345, 'epoch': 0.71}
+{'loss': 2.7836, 'grad_norm': 11.843846321105957, 'learning_rate': 0.000395, 'epoch': 0.81}
+{'loss': 2.2099, 'grad_norm': 6.7659478187561035, 'learning_rate': 0.00044500000000000003, 'epoch': 0.91}
+  8%|████████████▌                                                                                                                                          | 99/1188 [13:29<1:58:41,  6.54s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:03<00:00,  5.19it/s]
+REF: 'seo an áit a ghabh coilínigh na breataine mar a náit féin agus mar sin má tá fianaise uait ar laethanta na críche nuair ba choilíneacht í seo áit mhaith le tosú'
+HYP: 'snat aghcolana breatane mora nat bfhéin agus mor sin mata finise bhuit ar leithantanacríthainor a culinact sat baoilets'
+--- Eval sample ---
+REF: 'i measc na ngrúpaí a úsáidean an tseirbhís seo go minic tá loingeas lena náirítear báid phléisiúir chomh maith le turais a bhfuil riachtanais ciansonraí agus cianghutha acu'
+HYP: 'imeaisnagrpí ha usid nsarbí seogo minachtálans lingis lina ar aritar bhd fleasr cóbmath le trs ad bhí roichtans ceamnsor agus ceangochac'
+--- Eval sample ---
+REF: 'idir aosach firean amháin agus trí cin ghaolmhara a bhíon in ealta leon mar aon le suas le tríocha bainean agus coileáin'
+HYP: 'aidor éis fearanabhan agus tréíchan géilora abhin an ailta luit líanmar éin lesas latrithabhin aguscolan'
+{'eval_loss': inf, 'eval_wer': 89.39044322661283, 'eval_runtime': 68.3191, 'eval_samples_per_second': 12.325, 'eval_steps_per_second': 3.088, 'epoch': 1.0}
+  8%|████████████▌                                                                                                                                          | 99/1188 [14:38<1:58:41,  6.54s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 1.6799, 'grad_norm': 5.149929046630859, 'learning_rate': 0.000495, 'epoch': 1.01}
+{'loss': 1.4677, 'grad_norm': 4.159887790679932, 'learning_rate': 0.000545, 'epoch': 1.11}
+{'loss': 1.3749, 'grad_norm': 4.614419937133789, 'learning_rate': 0.0005949999999999999, 'epoch': 1.21}
+{'loss': 1.2805, 'grad_norm': 5.508426666259766, 'learning_rate': 0.0006450000000000001, 'epoch': 1.31}
+{'loss': 1.2236, 'grad_norm': 5.224246978759766, 'learning_rate': 0.000695, 'epoch': 1.41}
+{'loss': 1.1913, 'grad_norm': 5.528578281402588, 'learning_rate': 0.000745, 'epoch': 1.52}
+{'loss': 1.1915, 'grad_norm': 5.818201065063477, 'learning_rate': 0.000795, 'epoch': 1.62}
+{'loss': 1.2035, 'grad_norm': 7.011178493499756, 'learning_rate': 0.0008449999999999999, 'epoch': 1.72}
+{'loss': 1.2039, 'grad_norm': 7.597648620605469, 'learning_rate': 0.0008950000000000001, 'epoch': 1.82}
+{'loss': 1.1596, 'grad_norm': 6.697742938995361, 'learning_rate': 0.000945, 'epoch': 1.92}
+ 17%|█████████████████████████                                                                                                                             | 198/1188 [26:26<1:53:46,  6.90s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:03<00:00,  4.43it/s]
+REF: 'faoi rineadh athchóiriú ar thríocha faoin gcéad de machu pichu and leanadh leis an athchóiriú go dtí an lá atá iniu again'
+HYP: 'faoiní déag tearfa sé brina a chorú ar tríicha fin géad dé meaitú pítú agus leana leis achorú godí an leatán ag nina'
+--- Eval sample ---
+REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágan gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
+HYP: 'tá núchlíos éigobháisaí ag adamharitha a ágan gurnóas le brisí óna chea a bhfeighan comfandatea nó gan éaon choibhait'
+--- Eval sample ---
+REF: 'bhí cáil air mar chroílár an tsómais ó ad amach go dtí thart ar ad'
+HYP: 'bhí cáil armar chriamhair an tiomáis óchachéd éadí a mach go dí thairt míchd édí'
+{'eval_loss': inf, 'eval_wer': 79.64138063647727, 'eval_runtime': 68.4768, 'eval_samples_per_second': 12.296, 'eval_steps_per_second': 3.081, 'epoch': 2.0}
+ 17%|█████████████████████████                                                                                                                             | 198/1188 [27:34<1:53:46,  6.90s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 1.1836, 'grad_norm': 6.323826313018799, 'learning_rate': 0.000995, 'epoch': 2.02}
+{'loss': 1.1642, 'grad_norm': 8.363729476928711, 'learning_rate': 0.0009908906882591093, 'epoch': 2.12}
+{'loss': 1.1342, 'grad_norm': 8.692848205566406, 'learning_rate': 0.0009807692307692308, 'epoch': 2.22}
+{'loss': 1.1358, 'grad_norm': 9.637401580810547, 'learning_rate': 0.0009706477732793523, 'epoch': 2.32}
+{'loss': 1.1149, 'grad_norm': 8.011198043823242, 'learning_rate': 0.0009605263157894737, 'epoch': 2.42}
+{'loss': 1.14, 'grad_norm': 8.014110565185547, 'learning_rate': 0.0009504048582995951, 'epoch': 2.53}
+{'loss': 1.1741, 'grad_norm': 8.216375350952148, 'learning_rate': 0.0009402834008097167, 'epoch': 2.63}
+{'loss': 1.1362, 'grad_norm': 8.760404586791992, 'learning_rate': 0.000930161943319838, 'epoch': 2.73}
+{'loss': 1.133, 'grad_norm': 9.655112266540527, 'learning_rate': 0.0009200404858299596, 'epoch': 2.83}
+{'loss': 1.1275, 'grad_norm': 9.020649909973145, 'learning_rate': 0.000909919028340081, 'epoch': 2.93}
+ 25%|█████████████████████████████████████▌                                                                                                                | 297/1188 [39:12<1:36:21,  6.49s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:03<00:00,  4.52it/s]
+REF: 'níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt dfhocail dhranacha bhéicthe'
+HYP: 'níol buar antigair cása le buarair lagar ana andeon teis an is casa le thoirt dacail drabana bheichciche'
+--- Eval sample ---
+REF: 'an tseachtain seo caite dfhógair meti gur chuir aple iad ar an eolas faoi eachtra róthéimh bhreise ar a ghlaoigh an comhlacht neamhthromchúiseach'
+HYP: 'an teartan seo chaite dogar meithtaí gur chur apail déadar olas fií trocha ceathair achtrí rotha bhreise ar a glaía comlacht nea hromchuúisce'
+--- Eval sample ---
+REF: 'rine gobharnóir california arnold schwarzeneger bile a shíniú le bheith ina dhlí lena gcuirtear toirmeasc ar fhíschluichí foréigneacha a dhíol nó a ligean ar cíos do dhaoine atá faoi aois'
+HYP: 'ari n e gobhanar cailafoirne airnái faichtneigar bela a chíine le bhína dlíana gurtar tur measc ar fícha fur éigana a dhial ná leign ar cís stá duin tafaoi is'
+{'eval_loss': inf, 'eval_wer': 80.17979040476877, 'eval_runtime': 68.5771, 'eval_samples_per_second': 12.278, 'eval_steps_per_second': 3.077, 'epoch': 3.0}
+ 25%|█████████████████████████████████████▌                                                                                                                | 297/1188 [40:20<1:36:21,  6.49s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 1.1078, 'grad_norm': 7.497840881347656, 'learning_rate': 0.0008997975708502024, 'epoch': 3.03}
+{'loss': 1.0696, 'grad_norm': 10.415068626403809, 'learning_rate': 0.0008896761133603239, 'epoch': 3.13}
+{'loss': 1.087, 'grad_norm': 10.411314964294434, 'learning_rate': 0.0008795546558704454, 'epoch': 3.23}
+{'loss': 1.0282, 'grad_norm': 9.009528160095215, 'learning_rate': 0.0008694331983805668, 'epoch': 3.33}
+{'loss': 1.0466, 'grad_norm': 8.182913780212402, 'learning_rate': 0.0008593117408906883, 'epoch': 3.43}
+{'loss': 1.0608, 'grad_norm': 10.916882514953613, 'learning_rate': 0.0008491902834008098, 'epoch': 3.54}
+{'loss': 1.0281, 'grad_norm': 7.848554611206055, 'learning_rate': 0.0008390688259109311, 'epoch': 3.64}
+{'loss': 1.038, 'grad_norm': 8.518876075744629, 'learning_rate': 0.0008289473684210527, 'epoch': 3.74}
+{'loss': 1.0506, 'grad_norm': 11.392739295959473, 'learning_rate': 0.000818825910931174, 'epoch': 3.84}
+{'loss': 1.0183, 'grad_norm': 8.714692115783691, 'learning_rate': 0.0008087044534412956, 'epoch': 3.94}
+ 33%|██████████████████████████████████████████████████                                                                                                    | 396/1188 [52:07<1:31:11,  6.91s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:04<00:00,  4.45it/s]
+REF: 'is tacaíocht deolaithe ina gcuid taighde an comhghaolú idir galareolaíocht inchine agus iompraíocht'
+HYP: 'is tá chíoch eolacha ina chuid thaice an chomhálú éadir galaraíochta insine agus iomporacht'
+--- Eval sample ---
+REF: 'déanan plandaí a gcuid bia ón ngrian trí fhótaisintéis cuirean siad scáth ar fáil chomh maith'
+HYP: 'dean an plandí gcuid bi n gcríon trí fotasantasacturean siad scáth aráil thomait'
+--- Eval sample ---
+REF: 'le lin an troda ar son an neamhspleáchais a deagraigh gluaiseacht mau bhailigh slua go síochánta sa bhaile ach maraíodh an taoiseach mór tupua tamasese lealofi i mar thoradh air sin'
+HYP: 'le len an táda ar sun neamh spleithachas a dearca gluiseart mal bhailaú slua go siíonta sa bháile a chmaríú an tíosach mór tupatamíos lei lofaí uil mar tháriú airsin'
+{'eval_loss': inf, 'eval_wer': 75.98788578021343, 'eval_runtime': 68.8068, 'eval_samples_per_second': 12.237, 'eval_steps_per_second': 3.067, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████                                                                                                    | 396/1188 [53:16<1:31:11,  6.91s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 1.0039, 'grad_norm': 12.683902740478516, 'learning_rate': 0.0007985829959514171, 'epoch': 4.04}
+{'loss': 0.9988, 'grad_norm': 7.776134014129639, 'learning_rate': 0.0007884615384615384, 'epoch': 4.14}
+{'loss': 0.9675, 'grad_norm': 8.94503402709961, 'learning_rate': 0.00077834008097166, 'epoch': 4.24}
+{'loss': 0.9657, 'grad_norm': 8.388289451599121, 'learning_rate': 0.0007682186234817814, 'epoch': 4.34}
+{'loss': 0.962, 'grad_norm': 7.662344455718994, 'learning_rate': 0.0007580971659919028, 'epoch': 4.44}
+{'loss': 0.9563, 'grad_norm': 6.883842468261719, 'learning_rate': 0.0007479757085020243, 'epoch': 4.55}
+{'loss': 0.923, 'grad_norm': 8.404644966125488, 'learning_rate': 0.0007378542510121458, 'epoch': 4.65}
+{'loss': 0.9616, 'grad_norm': 7.556272506713867, 'learning_rate': 0.0007277327935222671, 'epoch': 4.75}
+{'loss': 0.9675, 'grad_norm': 8.033706665039062, 'learning_rate': 0.0007176113360323887, 'epoch': 4.85}
+{'loss': 0.9708, 'grad_norm': 7.895609378814697, 'learning_rate': 0.0007074898785425102, 'epoch': 4.95}
+ 42%|█████████████████████████████████████████████████████████████▋                                                                                      | 495/1188 [1:07:21<1:19:57,  6.92s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:07<00:00,  4.11it/s]
+REF: 'níos déanaí ghlac na grianghrafadóirí áit seanmhná de bhrí gur theastaigh uaithi an leithreas a úsáid leagadh mendoza le piléar'
+HYP: 'níos déanaigh chloch na grún graf dúarht áit seana de bhrí gur taistí uacha an lithas a úsaid lí nan dosa lepa lear'
+--- Eval sample ---
+REF: 'mura dtéan tú i dtír ach amháin ag úsáid turais ar bord loinge ní bheadh víosa ar leith ag teastáil uait ó'
+HYP: 'mana daon ta dír a chamhán agus úsaid turas ar bród longa ní bhaihbíosa ar leith ag taisteal úirt ó a'
+--- Eval sample ---
+REF: 'tabhair aire nach ligfidh tú don éadach éirí róthe rud dfhéadfadh a bheith ina chúis le crapadh nó i gcásana níos measa loisceadh'
+HYP: 'tór airah nach ligfaí tú don ada éidaí rutha rud iadfaí a bhith ana chúis le chrapa nó gasana níos measa loscéi'
+{'eval_loss': inf, 'eval_wer': 73.43043938082877, 'eval_runtime': 72.3456, 'eval_samples_per_second': 11.639, 'eval_steps_per_second': 2.917, 'epoch': 5.0}
+ 42%|█████████████████████████████████████████████████████████████▋                                                                                      | 495/1188 [1:08:33<1:19:57,  6.92s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.9271, 'grad_norm': 8.08780574798584, 'learning_rate': 0.0006973684210526315, 'epoch': 5.05}
+{'loss': 0.9058, 'grad_norm': 9.226396560668945, 'learning_rate': 0.0006872469635627531, 'epoch': 5.15}
+{'loss': 0.8544, 'grad_norm': 9.030539512634277, 'learning_rate': 0.0006771255060728745, 'epoch': 5.25}
+{'loss': 0.8885, 'grad_norm': 11.603719711303711, 'learning_rate': 0.000667004048582996, 'epoch': 5.35}
+{'loss': 0.8757, 'grad_norm': 6.66320276260376, 'learning_rate': 0.0006568825910931174, 'epoch': 5.45}
+{'loss': 0.9068, 'grad_norm': 8.18323040008545, 'learning_rate': 0.0006467611336032389, 'epoch': 5.56}
+{'loss': 0.886, 'grad_norm': 9.808948516845703, 'learning_rate': 0.0006366396761133603, 'epoch': 5.66}
+{'loss': 0.8687, 'grad_norm': 7.791845321655273, 'learning_rate': 0.0006265182186234818, 'epoch': 5.76}
+{'loss': 0.9276, 'grad_norm': 8.338972091674805, 'learning_rate': 0.0006163967611336033, 'epoch': 5.86}
+{'loss': 0.8792, 'grad_norm': 8.336103439331055, 'learning_rate': 0.0006062753036437247, 'epoch': 5.96}
+ 50%|██████████████████████████████████████████████████████████████████████████                                                                          | 594/1188 [1:22:01<1:22:47,  8.36s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:21<00:00,  4.38it/s]
+REF: 'tugan an fhionachtain léargas dúin ar éabhlóid na gcleití sna héin'
+HYP: 'tóganan fíocfinachtáin leargas din ar a bhlóid na gceistís na hain'
+--- Eval sample ---
+REF: 'is minic a bhíon bigil na cásca ag eaglais níos traidisiúnta oíche shathairn le lin deireadh seachtaine na cásca leis an slua ag tosú ceiliúradh go minic ar bhuile an mheán oíche chun aiséirí íosa críost a cheiliúradh'
+HYP: 'is minic a bhíon bigal na cásca a eaglas na trabheisiúntar uíthe hathan le lin deraú sena na casc leis an slua ag tosú ceilara go minic ar bhuile an bhan oíche cthun ásirí is sa chrís a cheilirú'
+--- Eval sample ---
+REF: 'le lin na tréimhse sin i stair na heorpa tosaíodh ar scrúdú a dhéanamh ar an eaglais chaitliceach tar éis dí éirí ansaibhir agus cumhachtach'
+HYP: 'le lena tréibh se sin i ster na sheorpa tásiú úscrúdú a dhéana ar an ioglais catlacha tár éis diaridh an sairbhair agus cúbhachta'
+{'eval_loss': inf, 'eval_wer': 71.12296894529372, 'eval_runtime': 86.0419, 'eval_samples_per_second': 9.786, 'eval_steps_per_second': 2.452, 'epoch': 6.0}
+ 50%|██████████████████████████████████████████████████████████████████████████                                                                          | 594/1188 [1:23:27<1:22:47,  8.36s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.843, 'grad_norm': 9.556483268737793, 'learning_rate': 0.0005961538461538462, 'epoch': 6.06}
+{'loss': 0.7798, 'grad_norm': 6.867433071136475, 'learning_rate': 0.0005860323886639675, 'epoch': 6.16}
+{'loss': 0.799, 'grad_norm': 6.933174133300781, 'learning_rate': 0.0005759109311740891, 'epoch': 6.26}
+{'loss': 0.7907, 'grad_norm': 16.794246673583984, 'learning_rate': 0.0005657894736842105, 'epoch': 6.36}
+{'loss': 0.8295, 'grad_norm': 8.650627136230469, 'learning_rate': 0.0005556680161943321, 'epoch': 6.46}
+{'loss': 0.8175, 'grad_norm': 7.1560492515563965, 'learning_rate': 0.0005455465587044534, 'epoch': 6.57}
+{'loss': 0.8044, 'grad_norm': 8.196789741516113, 'learning_rate': 0.0005354251012145749, 'epoch': 6.67}
+{'loss': 0.8194, 'grad_norm': 6.968301296234131, 'learning_rate': 0.0005253036437246965, 'epoch': 6.77}
+{'loss': 0.7948, 'grad_norm': 7.4827561378479, 'learning_rate': 0.0005151821862348178, 'epoch': 6.87}
+{'loss': 0.8236, 'grad_norm': 7.940053939819336, 'learning_rate': 0.0005050607287449393, 'epoch': 6.97}
+ 58%|██████████████████████████████████████████████████████████████████████████████████████▎                                                             | 693/1188 [1:36:12<1:00:32,  7.34s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:08<00:00,  5.14it/s]
+REF: 'tá an toileánra km ó thuaidh den leithinis is é oileán an rí seoirse ar a bhfuil an socrúchán vila las estrelas an toileán is mó'
+HYP: 'tá n tolarnach cim chuidh den leithnais is sé ouilean ríh sar se ar a bhfuil an sochrachan l strálas an tuiláin is mó'
+--- Eval sample ---
+REF: 'tabhair aire nach ligfidh tú don éadach éirí róthe rud dfhéadfadh a bheith ina chúis le crapadh nó i gcásana níos measa loisceadh'
+HYP: 'tái éh ná léigfait déan éadí éadí rutha rud héad faih a bheith an cuis le chreapadh ná gásana níos measa láscu'
+--- Eval sample ---
+REF: 'ó thuaidh agus gar go leor dó tá baile rómánsúil suimiúil sintra a tharaing aird ó eachtranaigh tar éis don tiarna byron a dhealramh a mholadh go spéir'
+HYP: 'ó thuadh agus gar go leor dá table ruman súil samuil sontra a thabhrain arad ó acht rine tar éis don tírana biran a dharai a bhala g spéir'
+{'eval_loss': inf, 'eval_wer': 68.60398038650129, 'eval_runtime': 73.1919, 'eval_samples_per_second': 11.504, 'eval_steps_per_second': 2.883, 'epoch': 7.0}
+ 58%|██████████████████████████████████████████████████████████████████████████████████████▎                                                             | 693/1188 [1:37:25<1:00:32,  7.34s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.7542, 'grad_norm': 7.189317226409912, 'learning_rate': 0.0004949392712550607, 'epoch': 7.07}
+{'loss': 0.715, 'grad_norm': 6.146836757659912, 'learning_rate': 0.0004848178137651822, 'epoch': 7.17}
+{'loss': 0.7365, 'grad_norm': 7.089704990386963, 'learning_rate': 0.0004746963562753037, 'epoch': 7.27}
+{'loss': 0.7027, 'grad_norm': 7.873301029205322, 'learning_rate': 0.00046457489878542514, 'epoch': 7.37}
+{'loss': 0.7349, 'grad_norm': 5.804872035980225, 'learning_rate': 0.00045445344129554655, 'epoch': 7.47}
+{'loss': 0.7442, 'grad_norm': 6.425580024719238, 'learning_rate': 0.000444331983805668, 'epoch': 7.58}
+{'loss': 0.7553, 'grad_norm': 6.917555332183838, 'learning_rate': 0.0004342105263157895, 'epoch': 7.68}
+{'loss': 0.7089, 'grad_norm': 6.946650505065918, 'learning_rate': 0.0004240890688259109, 'epoch': 7.78}
+{'loss': 0.7225, 'grad_norm': 7.238972187042236, 'learning_rate': 0.00041396761133603236, 'epoch': 7.88}
+{'loss': 0.7251, 'grad_norm': 7.728082180023193, 'learning_rate': 0.0004038461538461539, 'epoch': 7.98}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 792/1188 [1:50:21<51:51,  7.86s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 211/211 [01:12<00:00,  4.90it/s]
+REF: 'i gcaitheamh na hoíche rineadh idir agus cóip a dtugtar dunlap broadsides orthu anois'
+HYP: 'i gcaithníomh n oíche rine dar gu cóip a dtugar donlac brud sid sorthu ian uis'
+--- Eval sample ---
+REF: 'i dtreo dheireadh na meánaoise dfhás a stíl féin i measc mhuintir iarthar na heorpa agus bhí sé seo ar chean de na forbairtí ba mhó ag an am ba é a dtaithí ar na crosáidí a thug ar dhaoine cnaipí a úsáid le héadaigh a cheangal'
+HYP: 'i dtró giarea nameánaoise dáistaíl féin na mas loint ar dheithar na sheorpa agus bhí seol ar chinde na forbairtí ba móbhaí ionag anóm bai ditaid na crasáidí a thug ar daoine chrapiíe úsáide le héibhí a cheangail'
+--- Eval sample ---
+REF: 'tá sé níos tanaí faoin maria agus níos tibhe faoi na hardchríocha'
+HYP: 'tá sé níos tanaí faoin maria agus níos tiuai fain na hard shítrea'
+{'eval_loss': inf, 'eval_wer': 65.7052206518604, 'eval_runtime': 76.8678, 'eval_samples_per_second': 10.954, 'eval_steps_per_second': 2.745, 'epoch': 8.0}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 792/1188 [1:51:38<51:51,  7.86s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.6599, 'grad_norm': 6.064626216888428, 'learning_rate': 0.00039372469635627535, 'epoch': 8.08}
+{'loss': 0.6489, 'grad_norm': 6.225986957550049, 'learning_rate': 0.00038360323886639676, 'epoch': 8.18}
+{'loss': 0.6548, 'grad_norm': 7.187065124511719, 'learning_rate': 0.00037348178137651823, 'epoch': 8.28}
+{'loss': 0.6571, 'grad_norm': 6.7003173828125, 'learning_rate': 0.0003633603238866397, 'epoch': 8.38}
+{'loss': 0.6449, 'grad_norm': 6.099353313446045, 'learning_rate': 0.0003532388663967611, 'epoch': 8.48}
+{'loss': 0.6596, 'grad_norm': 6.943719387054443, 'learning_rate': 0.00034311740890688257, 'epoch': 8.59}
+{'loss': 0.6659, 'grad_norm': 6.2098212242126465, 'learning_rate': 0.00033299595141700404, 'epoch': 8.69}
+{'loss': 0.6353, 'grad_norm': 7.955638885498047, 'learning_rate': 0.00032287449392712556, 'epoch': 8.79}
+{'loss': 0.6547, 'grad_norm': 5.673833847045898, 'learning_rate': 0.00031275303643724697, 'epoch': 8.89}
+{'loss': 0.635, 'grad_norm': 7.303093910217285, 'learning_rate': 0.00030263157894736844, 'epoch': 8.99}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 891/1188 [2:09:13<44:47,  9.05s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:05<00:00,  4.54it/s]
+REF: 'thosaigh cúltúir agus treibheana na gcianaoiseana ar a gcoimeád le go mbeadh baine fionadh feoil agus craicne ar fáil go héasca dóibh'
+HYP: 'thosaigh cultúr agus traidheana an git an oseana ar a gcomh méid le go meadh baine finea feoil agus craithne a ráil ar go héasca dóbh'
+--- Eval sample ---
+REF: 'an mheánaois ard an tainm coitianta ar an tréimhse sin de stair na heorpa sna ú ú agus ú haoiseana ad nuair a tharla na himeachtaí i dtrácht'
+HYP: 'an math níos ard an tainim coiteanta ar an tréisa sin de stár na theorpa sna hi ndéaga do dhéag ags hoiseana d me nuair a tharla an himeachtaíg a dríocht'
+--- Eval sample ---
+REF: 'tá núicléas éagobhsaí ag adaimh áirithe a fhágan gur nós leo briseadh óna chéile ar bheagán cuimilte nó gan aon chuimilt'
+HYP: 'tá núicléas é ghabhsaí ag ada mheirithe a fagan gcurnós lo briosiúl na cheile ar bhfégaún chumailte nó gan aon chumailte'
+{'eval_loss': inf, 'eval_wer': 63.484280357657916, 'eval_runtime': 70.8433, 'eval_samples_per_second': 11.885, 'eval_steps_per_second': 2.978, 'epoch': 9.0}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 891/1188 [2:10:24<44:47,  9.05s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.6013, 'grad_norm': 5.783524513244629, 'learning_rate': 0.0002925101214574899, 'epoch': 9.09}
+{'loss': 0.5691, 'grad_norm': 6.479239463806152, 'learning_rate': 0.0002823886639676113, 'epoch': 9.19}
+{'loss': 0.5759, 'grad_norm': 5.054632663726807, 'learning_rate': 0.0002722672064777328, 'epoch': 9.29}
+{'loss': 0.5483, 'grad_norm': 6.181244373321533, 'learning_rate': 0.00026214574898785425, 'epoch': 9.39}
+{'loss': 0.568, 'grad_norm': 6.008765697479248, 'learning_rate': 0.0002520242914979757, 'epoch': 9.49}
+{'loss': 0.5642, 'grad_norm': 6.871543884277344, 'learning_rate': 0.00024190283400809718, 'epoch': 9.6}
+{'loss': 0.58, 'grad_norm': 7.885058879852295, 'learning_rate': 0.00023178137651821862, 'epoch': 9.7}
+{'loss': 0.5504, 'grad_norm': 6.128175735473633, 'learning_rate': 0.00022165991902834008, 'epoch': 9.8}
+{'loss': 0.5522, 'grad_norm': 5.914729595184326, 'learning_rate': 0.00021153846153846155, 'epoch': 9.9}
+{'loss': 0.5513, 'grad_norm': 6.172720909118652, 'learning_rate': 0.00020141700404858302, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 990/1188 [2:22:27<22:32,  6.83s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:04<00:00,  4.53it/s]
+REF: 'is féidir le húsáid chuí na mblagana cur ar chumas mac léin a scileana anailíseacha agus criticiúla a fheabhsú trí fhreagairt ghníomhach a thabhairt dábhair idirlín is féidir le mic léin a seasamh féin a léiriú i gcomhthéacs scríbhiní daoine eile chomh maith lena ndearcthaí féin ar ábhair áirithe a leagan amach oravec'
+HYP: 'is féidir le húsáid chuaigh na mbleagana cur a chomas maclaon a scaleana aníseacha agus critciúla a abhsúdh trih frogairt gníomrach a thabhairt dóir idirlín nis féidir le mic lean a seasdh féin a léirúd a gomh theachas scríobhanaí daoine eile chomhmaith lena narcai féin ar fábhair áirithe a leagana mach ór bhac'
+--- Eval sample ---
+REF: 'tiús cm atá sa screamh ar an taobh is gaire dúin agus tiús km atá ar an taobh thal'
+HYP: 'tuais le seort us seantimeadar atá an scraobh ar an tíomh gaiea dúin agus tuais le ciloimadar atá an tíomchail'
+--- Eval sample ---
+REF: 'le lin an troda ar son an neamhspleáchais a deagraigh gluaiseacht mau bhailigh slua go síochánta sa bhaile ach maraíodh an taoiseach mór tupua tamasese lealofi i mar thoradh air sin'
+HYP: 'le lin ar an trudá ar sion na nas lachas a dfagr gluaiseacht ma bhalaghs lua go síochánta sa bhaile ach mar róigh an tíseach mór túpa tamáise líofaí il mar thorigh air sin'
+{'eval_loss': inf, 'eval_wer': 60.55667724257283, 'eval_runtime': 69.6391, 'eval_samples_per_second': 12.091, 'eval_steps_per_second': 3.03, 'epoch': 10.0}
+ 83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 990/1188 [2:23:37<22:32,  6.83s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.5013, 'grad_norm': 5.480781078338623, 'learning_rate': 0.00019129554655870445, 'epoch': 10.1}
+{'loss': 0.4763, 'grad_norm': 5.124985694885254, 'learning_rate': 0.0001811740890688259, 'epoch': 10.2}
+{'loss': 0.4742, 'grad_norm': 5.541237831115723, 'learning_rate': 0.00017105263157894739, 'epoch': 10.3}
+{'loss': 0.4911, 'grad_norm': 6.303571701049805, 'learning_rate': 0.00016093117408906883, 'epoch': 10.4}
+{'loss': 0.5083, 'grad_norm': 5.04365348815918, 'learning_rate': 0.0001508097165991903, 'epoch': 10.51}
+{'loss': 0.4705, 'grad_norm': 5.597545146942139, 'learning_rate': 0.00014068825910931173, 'epoch': 10.61}
+{'loss': 0.4611, 'grad_norm': 6.82133150100708, 'learning_rate': 0.00013056680161943322, 'epoch': 10.71}
+{'loss': 0.4789, 'grad_norm': 5.120995998382568, 'learning_rate': 0.00012044534412955466, 'epoch': 10.81}
+{'loss': 0.4625, 'grad_norm': 5.28817081451416, 'learning_rate': 0.00011032388663967611, 'epoch': 10.91}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1089/1188 [2:35:20<12:33,  7.62s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:04<00:00,  4.34it/s]
+REF: 'ar an lúnasa rine na comhghuailithe ionradh ar dheisceart na fraince ionradh ar tugadh oibríocht dragúin air'
+HYP: 'ar an ú lúnasa rin na comhchúlaite ionraigh ar a diascart na fraince ionradh ar tugadh i bpreacht dreagún ar'
+--- Eval sample ---
+REF: 'níl búir an tíogair cosúil le búir lánghlórach an leoin tá sé níos cosúla le habairt dfhocail dhranacha bhéicthe'
+HYP: 'níl buir an tigear cosúil le bur lagarn a neon tá saníos cosúil le thabhairt docail dreabhanach bheicithe'
+--- Eval sample ---
+REF: 'an tseachtain seo caite dfhógair meti gur chuir aple iad ar an eolas faoi eachtra róthéimh bhreise ar a ghlaoigh an comhlacht neamhthromchúiseach'
+HYP: 'an teartaint o chaite dfhógar mhátí gur chur apail dhéidir olas bhí tr r achtraí rathamh bhreise ar ghlaí an comhlacht neahthromchúisce'
+{'eval_loss': inf, 'eval_wer': 59.008749158734744, 'eval_runtime': 69.1557, 'eval_samples_per_second': 12.175, 'eval_steps_per_second': 3.051, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1089/1188 [2:36:29<12:33,  7.62s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.4562, 'grad_norm': 4.701895713806152, 'learning_rate': 0.00010020242914979758, 'epoch': 11.01}
+{'loss': 0.4051, 'grad_norm': 4.812267303466797, 'learning_rate': 9.008097165991903e-05, 'epoch': 11.11}
+{'loss': 0.387, 'grad_norm': 5.075840473175049, 'learning_rate': 7.995951417004049e-05, 'epoch': 11.21}
+{'loss': 0.3995, 'grad_norm': 4.1126790046691895, 'learning_rate': 6.983805668016195e-05, 'epoch': 11.31}
+{'loss': 0.4166, 'grad_norm': 6.149459362030029, 'learning_rate': 5.9716599190283404e-05, 'epoch': 11.41}
+{'loss': 0.3893, 'grad_norm': 5.243351936340332, 'learning_rate': 4.9595141700404864e-05, 'epoch': 11.52}
+{'loss': 0.4023, 'grad_norm': 5.007516384124756, 'learning_rate': 3.9473684210526316e-05, 'epoch': 11.62}
+{'loss': 0.4211, 'grad_norm': 4.616638660430908, 'learning_rate': 2.9352226720647772e-05, 'epoch': 11.72}
+{'loss': 0.3887, 'grad_norm': 4.797061920166016, 'learning_rate': 1.923076923076923e-05, 'epoch': 11.82}
+{'loss': 0.3738, 'grad_norm': 5.41556453704834, 'learning_rate': 9.109311740890687e-06, 'epoch': 11.92}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [2:48:11<00:00,  6.45s/it--- Eval sample ---███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎| 210/211 [01:04<00:00,  4.55it/s]
+REF: 'ní gá a rá má tá teanga rómánsach ar eolas agat beidh sé níos fusa ort an phortaingéilis a fhoghlaim'
+HYP: 'ní gárá má tá teanga ar rómánsa ar eolas agat bheidh sé níos fosa ort an foirt an gcéaol is a hoghlaim'
+--- Eval sample ---
+REF: 'obair theoiriciúil ba mhó a rineadh ach scríobhadh an clár chun breathnóireachtaí a rineadh ar réaltchóras sagitarius a ionsamhlú'
+HYP: 'obair thoil tháiriciúil ba móh a ruiniú ach screofeadh an chléir chu brath nóireachtaí a rineah ar réalchóras sa gatoirios ac onsabhladh'
+--- Eval sample ---
+REF: 'cé nach fios go cinte cé a scríobh é tá a fhios again go ndearnadh an doiciméad páir mhór atá ¾ orlach faoi ½ orlach a roladh suas lena stóráil go luath ina shaol'
+HYP: 'cé nách fisc go cinte cé a scríobh é tása gan go ndeáarhnaígh an dó cimeid peir mór atá orla faoi leátorla a bruladh suas lena stóiráil go lua ina suíomh'
+{'eval_loss': inf, 'eval_wer': 57.85501394096721, 'eval_runtime': 69.4178, 'eval_samples_per_second': 12.129, 'eval_steps_per_second': 3.04, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [2:49:20<00:00,  6.45s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'train_runtime': 10165.8662, 'train_samples_per_second': 3.735, 'train_steps_per_second': 0.117, 'train_loss': 1.0697940264888082, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1188/1188 [2:49:25<00:00,  8.56s/it]

@@ -1,0 +1,290 @@
+Map (num_proc=1): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3346/3346 [01:18<00:00, 42.45 examples/s]
+Map (num_proc=1): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 728/728 [00:16<00:00, 43.86 examples/s]
+Filter: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3346/3346 [00:00<00:00, 819751.24 examples/s]
+Some weights of Wav2Vec2BertForCTC were not initialized from the model checkpoint at facebook/w2v-bert-2.0 and are newly initialized: ['lm_head.bias', 'lm_head.weight', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.intermediate_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.bias', 'wav2vec2_bert.adapter.layers.0.ffn.output_dense.weight', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.ffn_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.residual_conv.bias', 'wav2vec2_bert.adapter.layers.0.residual_conv.weight', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.residual_layer_norm.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_k.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_out.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_q.weight', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.bias', 'wav2vec2_bert.adapter.layers.0.self_attn.linear_v.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_conv.weight', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.bias', 'wav2vec2_bert.adapter.layers.0.self_attn_layer_norm.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+trainable params: 3,432,500 || all params: 609,163,176 || trainable%: 0.5635
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 51, 'bos_token_id': 50}.
+  0%|                                                                                                                                                                  | 0/1260 [00:00<?, ?it/s--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:59<00:00,  4.00it/s]
+REF: 'kanthi khusus dinyatakake menawa ana sing bisa nemokake menawa wong sing ngapusi kanthi napsirake mikroekspresi kanthi bener'
+HYP: '’şõá$õe’ez~’~oüğdedğí~xe~xjü~ijçü~eş’x—üjüi’ğ—+eí~a’a£aíemzü$’xí—íóíx’jüó~£z~üğü~õ’eüó£á£~ies’x$~õísózí~üaáo—+á$£~j’ğ—ijóõs+e~jx—íevez~üodíeíx—jü°’~i—i’c—xğ—e—u~óğ~üijsjş~°j’x’x—i’—íj+íedj~üj~ü~v£~õ’õ£~$~õ'
+--- Eval sample ---
+REF: 'angin ribut udan es udan kang kelewat deres lan kebakaran alas iku bentukbentuk lan asil saka hawa kang ala semono uga badai bledheg tornado puting beliung lan topan'
+HYP: '$ü$szózsóeíó+í~+~üá~+p~ü’—x’e~dó~w’l’~i—pjhğx’xj’w’l’~í’i~íe’jiíe’ç~wa’~w$~’j’~üd~jkş’zgz~zó~e~£’~j’joüí~ü’x’~exl~deíx~’~íl~£w$~ü~ü’jx’—íemsü’j’~üj~y£wçy’£~+£’í’w£—qó~o~kaáaé°£mnz’w~£õş~£we~+rq~zkó~+óqz~i’j+ğ°x—ux—x’ğ—’xj~—ğ—xc—ğk~+°ü$~i~ü’sjszed~evezõáletó’í’zde°~—e~íe~oí°~alwj~üí~zjz~kózrózózózkz~õ'
+--- Eval sample ---
+REF: 'rumah sakit wis patuh marang protokol kango kontrol infeksi kalebu misah pasien saka liyane kango nyegah kemungkinan nginfeksi liyane'
+HYP: '$kó~ke~óz~d~eóe~ü~küi—’xw’~wíğjxw~ü~wşwl’z£~üd~k~£’~£l£a£’~íl£l’lá£íl~w~j—í+xjzx’x—x—íezğézk~’~se£eí~’xkü~wz~üj’—’üj~ü~k£w~w’iíexskiíex~wdx~—x~i~j~j+íe’x—ğmiíóí~e—zó’ş~—’~j’x—í’—’ie’w’~í~$skó~ó~r~êz~ó~áó~’'
+{'eval_loss': 8.155375480651855, 'eval_wer': 100.0, 'eval_runtime': 64.5923, 'eval_samples_per_second': 11.271, 'eval_steps_per_second': 2.818, 'epoch': 0}
+{'loss': 8.0728, 'grad_norm': nan, 'learning_rate': 0.0, 'epoch': 0.01}
+{'loss': 7.9348, 'grad_norm': 17.459856033325195, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.1}
+{'loss': 6.9744, 'grad_norm': 39.515533447265625, 'learning_rate': 9.5e-05, 'epoch': 0.19}
+{'loss': 3.8302, 'grad_norm': 32.400386810302734, 'learning_rate': 0.000145, 'epoch': 0.29}
+{'loss': 3.013, 'grad_norm': 3.2283596992492676, 'learning_rate': 0.00019500000000000002, 'epoch': 0.38}
+{'loss': 2.8465, 'grad_norm': 3.132995128631592, 'learning_rate': 0.000245, 'epoch': 0.48}
+{'loss': 2.4732, 'grad_norm': 6.325319290161133, 'learning_rate': 0.000295, 'epoch': 0.57}
+{'loss': 1.5192, 'grad_norm': 7.955469131469727, 'learning_rate': 0.000345, 'epoch': 0.67}
+{'loss': 0.7001, 'grad_norm': 6.761188507080078, 'learning_rate': 0.000395, 'epoch': 0.77}
+{'loss': 0.5192, 'grad_norm': 11.475811004638672, 'learning_rate': 0.00044500000000000003, 'epoch': 0.86}
+{'loss': 0.4912, 'grad_norm': 8.03763198852539, 'learning_rate': 0.000495, 'epoch': 0.96}
+  8%|████████████▌                                                                                                                                         | 105/1260 [11:25<1:42:40,  5.33s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:49<00:00,  4.76it/s]
+REF: 'lapuran tv nuduhake kebul putih asale saka pabrik'
+HYP: 'laporan tivi nuduhake kebul putih asale saka pabrik'
+--- Eval sample ---
+REF: 'salah sawijine metode sing paling umum digunakake kango ngambarake pentinge sosialisasi yaiku manfatke kasuskasus sing kurang nguntungke bocahbocah sing ora diangep mesake sengaja disalahgunake ora diajak rembugan dening wong diwasa nalika isih cilik'
+HYP: 'salah sawijining metode sing paling umum digunakake kango ngambarake pentinge sosialisasi yaiku manfakatke kasus kasus sing kurang guntungke bocah bocah sing ora diangepb mesake sengadja disalah gunake ora di ajak rembukan dening wong dewasa nalika isih cilik'
+--- Eval sample ---
+REF: 'panaliten internet kango kursus lingkungan memungsuhan isa uga bakal nyawisake alamat perusahan lokal'
+HYP: 'panaliten nternet kango kus lingngan momusuwan isa uga bakal nyawisake alamat bprujahan loka'
+{'eval_loss': 0.5370320677757263, 'eval_wer': 43.37450870297586, 'eval_runtime': 53.5275, 'eval_samples_per_second': 13.6, 'eval_steps_per_second': 3.4, 'epoch': 1.0}
+  8%|████████████▌                                                                                                                                         | 105/1260 [12:19<1:42:40,  5.33s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.4636, 'grad_norm': 7.095666885375977, 'learning_rate': 0.000545, 'epoch': 1.05}
+{'loss': 0.3578, 'grad_norm': 5.657793998718262, 'learning_rate': 0.0005949999999999999, 'epoch': 1.14}
+{'loss': 0.3653, 'grad_norm': 7.1356282234191895, 'learning_rate': 0.0006450000000000001, 'epoch': 1.24}
+{'loss': 0.3852, 'grad_norm': 13.619227409362793, 'learning_rate': 0.000695, 'epoch': 1.33}
+{'loss': 0.3763, 'grad_norm': 4.404738426208496, 'learning_rate': 0.000745, 'epoch': 1.43}
+{'loss': 0.346, 'grad_norm': 10.007777214050293, 'learning_rate': 0.000795, 'epoch': 1.53}
+{'loss': 0.3726, 'grad_norm': 13.358550071716309, 'learning_rate': 0.0008449999999999999, 'epoch': 1.62}
+{'loss': 0.3993, 'grad_norm': 9.009440422058105, 'learning_rate': 0.0008950000000000001, 'epoch': 1.72}
+{'loss': 0.3745, 'grad_norm': 7.698178291320801, 'learning_rate': 0.000945, 'epoch': 1.81}
+{'loss': 0.3885, 'grad_norm': 10.553930282592773, 'learning_rate': 0.000995, 'epoch': 1.91}
+{'loss': 0.4093, 'grad_norm': 16.82066535949707, 'learning_rate': 0.0009915094339622641, 'epoch': 2.0}
+ 17%|█████████████████████████                                                                                                                             | 210/1260 [22:15<1:16:51,  4.39s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  2.22it/s]
+REF: 'kanthi kundalini yoga tenaga kundalini tenaga pancrahan wungu liwat pawakan yoga panglantih napas mantra lan bayangan'
+HYP: 'kanthi kundhalini yuga tenaga kundhalini tenaga pancrahan wunguwat lawan juga pengaltih napas mantra lan beyengan'
+--- Eval sample ---
+REF: 'eropa iku benua sing relatif cilik nanging kanthi akeh negara mardika sajroning kahanan normal lelungan ngliwati akeh negara bakal ateges kudu lunga liwat aplikasi visa lan kontrol paspor bolabali'
+HYP: 'eropa iku benuwa sing relatif cilik nanging kanthi akeh negara mardika sakjroning kanang normal lelungan ngliwatik akeh negara bakal ateges kudhu lunga liwat aplikasi viza lan kontrol paspor bula bali'
+--- Eval sample ---
+REF: 'amarga polusi ringan ing mangsa jayane dheweke padha iku udu jenis perkara kaya saiki iki dhewehe padha biasane ana ing kutha utawa kampus luwih gampang digayuh tinimbang bangunanbangunan ing jaman modern iku'
+HYP: 'amarga polusiringan ing mangsa jayane dheweke padha iku ud jenes perkara kaya saiki ikidhewe padha biasane ana ing kutha utawa kampus luwih gampang dikayuh tinimbang bangunan bangunan ing jaman modharen iku'
+{'eval_loss': 0.4296628534793854, 'eval_wer': 37.79477821448624, 'eval_runtime': 55.3773, 'eval_samples_per_second': 13.146, 'eval_steps_per_second': 3.287, 'epoch': 2.0}
+ 17%|█████████████████████████                                                                                                                             | 210/1260 [23:10<1:16:51,  4.39s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.4075, 'grad_norm': 14.41264820098877, 'learning_rate': 0.000982075471698113, 'epoch': 2.1}
+{'loss': 0.3836, 'grad_norm': 7.379913330078125, 'learning_rate': 0.0009726415094339622, 'epoch': 2.19}
+{'loss': 0.4039, 'grad_norm': 9.440810203552246, 'learning_rate': 0.0009632075471698113, 'epoch': 2.29}
+{'loss': 0.407, 'grad_norm': 7.393773555755615, 'learning_rate': 0.0009537735849056604, 'epoch': 2.38}
+{'loss': 0.3763, 'grad_norm': 8.225982666015625, 'learning_rate': 0.0009443396226415094, 'epoch': 2.48}
+{'loss': 0.3858, 'grad_norm': 7.124904155731201, 'learning_rate': 0.0009349056603773585, 'epoch': 2.57}
+{'loss': 0.3747, 'grad_norm': 7.347539901733398, 'learning_rate': 0.0009254716981132075, 'epoch': 2.67}
+{'loss': 0.3358, 'grad_norm': 14.150017738342285, 'learning_rate': 0.0009160377358490566, 'epoch': 2.77}
+{'loss': 0.381, 'grad_norm': 13.377921104431152, 'learning_rate': 0.0009066037735849056, 'epoch': 2.86}
+{'loss': 0.3872, 'grad_norm': 9.24863338470459, 'learning_rate': 0.0008971698113207547, 'epoch': 2.96}
+ 25%|█████████████████████████████████████▌                                                                                                                | 315/1260 [32:57<1:15:45,  4.81s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:50<00:00,  4.84it/s]
+REF: 'migunakake kapal kango mindhahake barang iku cara paling efektif kango mindhahake jumlah wong lan barang sing akeh nyebrang segara'
+HYP: 'migunakake kapal kango mindhahake barang iku cara paling efektif kango mindhahake umlah wong lan barang sing akeh nyebrang segara'
+--- Eval sample ---
+REF: 'singa iku kucing kang paling sosial urip ing klompok gedhe kang diarani pride'
+HYP: 'singa iku kuching kang palng sasial urip king kompok gedhe kang diarani ra'
+--- Eval sample ---
+REF: 'dheweke wiwitane dirawat ana ing rumah sakit james paget ning great yarmouth'
+HYP: 'dheweke wiwitane dirawat ana ing rumah saget cem spaget ning grit armot'
+{'eval_loss': 0.44077762961387634, 'eval_wer': 38.566816395283546, 'eval_runtime': 55.6091, 'eval_samples_per_second': 13.091, 'eval_steps_per_second': 3.273, 'epoch': 3.0}
+ 25%|█████████████████████████████████████▌                                                                                                                | 315/1260 [33:53<1:15:45,  4.81s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.3571, 'grad_norm': 9.35767936706543, 'learning_rate': 0.0008877358490566037, 'epoch': 3.05}
+{'loss': 0.3533, 'grad_norm': 7.542585849761963, 'learning_rate': 0.0008783018867924528, 'epoch': 3.14}
+{'loss': 0.3459, 'grad_norm': 5.771026611328125, 'learning_rate': 0.0008688679245283018, 'epoch': 3.24}
+{'loss': 0.3285, 'grad_norm': 6.307504653930664, 'learning_rate': 0.0008594339622641509, 'epoch': 3.33}
+{'loss': 0.3276, 'grad_norm': 8.122472763061523, 'learning_rate': 0.00085, 'epoch': 3.43}
+{'loss': 0.3618, 'grad_norm': 9.643083572387695, 'learning_rate': 0.000840566037735849, 'epoch': 3.53}
+{'loss': 0.3476, 'grad_norm': 10.832724571228027, 'learning_rate': 0.0008311320754716981, 'epoch': 3.62}
+{'loss': 0.3414, 'grad_norm': 8.166059494018555, 'learning_rate': 0.0008216981132075472, 'epoch': 3.72}
+{'loss': 0.3363, 'grad_norm': 8.330917358398438, 'learning_rate': 0.0008122641509433963, 'epoch': 3.81}
+{'loss': 0.3547, 'grad_norm': 8.579663276672363, 'learning_rate': 0.0008028301886792453, 'epoch': 3.91}
+{'loss': 0.3571, 'grad_norm': 19.10880470275879, 'learning_rate': 0.0007933962264150944, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████                                                                                                    | 420/1260 [43:44<1:00:39,  4.33s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  1.37it/s]
+REF: 'scafolding dudu cara sinau nanging pitulung sing menehi dhukungan kango tiyang sing duweni pangalaman anyar sinau kayata ngunakake program komputer anyar utawa miwiti proyek anyar'
+HYP: 'skavolding dudu o sinau nanging sing menai dukungan kango tiang sing diuwini pengalaman anyar sinau kayata ngunakake program komputer anyar utawa miwiti proyek anyar'
+--- Eval sample ---
+REF: 'luwih akeh greja tradisional sing asring nindakake bengi paskah ing setu wengi nalika akhir mingu paskah kanthi penganut asring nindakake pahargyan ing tengah wengi kango ngagungake wungune kristus'
+HYP: 'luwihakeh kreja tradisional sing asring ngindhakake bengi paskah ing setu wingi nalika ahir mingu paskah kanthi pengalut asringnindakake pengakean sing ing tengah wengi kango ngagungake gugune kristus luwih akeh kreja tradisional sing asring ngindakake bengi paskah ing setuwingi nalika ake mingupaskah kanthi pengalut asring ngindakake pengapahargian ing tengah wengi kango ngakunake wunguningkristus'
+--- Eval sample ---
+REF: 'bom fisi murup saka prinsip menawa dibutuhake energi kango ngabungake nukleus sing akeh proton lan neutrone'
+HYP: 'gom fisi murup saka prinsip nawamu dibutuhake energi kango ngebungake nuklius sing akeh proton lan net neltronig'
+{'eval_loss': 0.4669420123100281, 'eval_wer': 36.966591802358224, 'eval_runtime': 55.4634, 'eval_samples_per_second': 13.126, 'eval_steps_per_second': 3.281, 'epoch': 4.0}
+ 33%|██████████████████████████████████████████████████                                                                                                    | 420/1260 [44:40<1:00:39,  4.33s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.3304, 'grad_norm': 11.29352855682373, 'learning_rate': 0.0007839622641509434, 'epoch': 4.1}
+{'loss': 0.2835, 'grad_norm': 8.976691246032715, 'learning_rate': 0.0007745283018867925, 'epoch': 4.19}
+{'loss': 0.3037, 'grad_norm': 10.36611557006836, 'learning_rate': 0.0007650943396226416, 'epoch': 4.29}
+{'loss': 0.3153, 'grad_norm': 14.46901798248291, 'learning_rate': 0.0007556603773584906, 'epoch': 4.38}
+{'loss': 0.3203, 'grad_norm': 13.888821601867676, 'learning_rate': 0.0007462264150943397, 'epoch': 4.48}
+{'loss': 0.3172, 'grad_norm': 10.098689079284668, 'learning_rate': 0.0007367924528301887, 'epoch': 4.57}
+{'loss': 0.2919, 'grad_norm': 8.41203498840332, 'learning_rate': 0.0007273584905660378, 'epoch': 4.67}
+{'loss': 0.2657, 'grad_norm': 8.597835540771484, 'learning_rate': 0.0007179245283018868, 'epoch': 4.77}
+{'loss': 0.2965, 'grad_norm': 9.690887451171875, 'learning_rate': 0.0007084905660377359, 'epoch': 4.86}
+{'loss': 0.3053, 'grad_norm': 9.267860412597656, 'learning_rate': 0.0006990566037735849, 'epoch': 4.96}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 525/1260 [54:32<56:02,  4.58s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  3.88it/s]
+REF: 'lakha singh uga nyawisake chapan bhog bhajan sindhen raju khandelwal ngancani dheweke'
+HYP: 'lka sing uga gnyawisake capan perbacan sing den ngraju kandhe luwa ngancane dheweke'
+--- Eval sample ---
+REF: 'fotografer iku banjur njupuk papan siji wanita tua nalika dheweke wanita butuh jedhing mendoza ditembak mati'
+HYP: 'fotografer iku banjur njupuk papang i wanita tuwa nalika dheweke wanita butuh cedhing mendosa ditembak mati'
+--- Eval sample ---
+REF: 'ana bom sing njebluk ning njaba kantor jendral gubernur'
+HYP: 'nrep bom sing njeblok ning njaba kanta cendral gubernur'
+{'eval_loss': 0.3574828803539276, 'eval_wer': 31.63250982594048, 'eval_runtime': 55.6653, 'eval_samples_per_second': 13.078, 'eval_steps_per_second': 3.27, 'epoch': 5.0}
+ 42%|███████████████████████████████████████████████████████████████▎                                                                                        | 525/1260 [55:27<56:02,  4.58s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.3123, 'grad_norm': 9.955403327941895, 'learning_rate': 0.000689622641509434, 'epoch': 5.05}
+{'loss': 0.2762, 'grad_norm': 9.411507606506348, 'learning_rate': 0.000680188679245283, 'epoch': 5.14}
+{'loss': 0.273, 'grad_norm': 10.833022117614746, 'learning_rate': 0.0006707547169811321, 'epoch': 5.24}
+{'loss': 0.2749, 'grad_norm': 6.655664443969727, 'learning_rate': 0.0006613207547169811, 'epoch': 5.33}
+{'loss': 0.2689, 'grad_norm': 7.44235897064209, 'learning_rate': 0.0006518867924528302, 'epoch': 5.43}
+{'loss': 0.2574, 'grad_norm': 9.471091270446777, 'learning_rate': 0.0006424528301886793, 'epoch': 5.53}
+{'loss': 0.2826, 'grad_norm': 7.234114646911621, 'learning_rate': 0.0006330188679245283, 'epoch': 5.62}
+{'loss': 0.2607, 'grad_norm': 12.28170108795166, 'learning_rate': 0.0006235849056603774, 'epoch': 5.72}
+{'loss': 0.2596, 'grad_norm': 6.20705509185791, 'learning_rate': 0.0006141509433962264, 'epoch': 5.81}
+{'loss': 0.2513, 'grad_norm': 13.778199195861816, 'learning_rate': 0.0006047169811320755, 'epoch': 5.91}
+{'loss': 0.2767, 'grad_norm': 42.348915100097656, 'learning_rate': 0.0005952830188679245, 'epoch': 6.0}
+ 50%|███████████████████████████████████████████████████████████████████████████                                                                           | 630/1260 [1:05:22<42:51,  4.08s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  5.14it/s]
+REF: 'cacahe wong sing wis teka akeh banget saenga saben wong ora bakal oleh dalan menyang kuburan ing lapangan st peter'
+HYP: 'atcae wong sing wis teko akeh banget saenga saben wong ora bakal oleh dalan menyang kuburan ing lapengan sint piter'
+--- Eval sample ---
+REF: 'akeh panganan pangang jerman uga nampilake kacang almond hazelnut lan kacangkacangan wit liyane kue kawentar kerep dipasangke utamane kanthi apik karo secangkir kopi kenthel'
+HYP: 'akeh panganan pangan jerman uga nampilake kacang almon helselnt lan kacangkacangan wit liyane kuwi kawentar kerep dipasangke utamane kandi apik karo secanger kopi kendhel'
+--- Eval sample ---
+REF: 'iki ora bakal dadi pungkasan iki minangka bab panutup lan mbukak sing anyar'
+HYP: 'iku ora bakal dadi pungkasan iku minangka opanutup lan mbukak sing anyar'
+{'eval_loss': 0.3292372226715088, 'eval_wer': 28.382930937675464, 'eval_runtime': 55.6338, 'eval_samples_per_second': 13.086, 'eval_steps_per_second': 3.271, 'epoch': 6.0}
+ 50%|███████████████████████████████████████████████████████████████████████████                                                                           | 630/1260 [1:06:18<42:51,  4.08s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.2288, 'grad_norm': 8.020697593688965, 'learning_rate': 0.0005858490566037736, 'epoch': 6.1}
+{'loss': 0.248, 'grad_norm': 8.268051147460938, 'learning_rate': 0.0005764150943396227, 'epoch': 6.19}
+{'loss': 0.2686, 'grad_norm': 10.624809265136719, 'learning_rate': 0.0005669811320754718, 'epoch': 6.29}
+{'loss': 0.2543, 'grad_norm': 7.13070011138916, 'learning_rate': 0.0005575471698113209, 'epoch': 6.38}
+{'loss': 0.2212, 'grad_norm': 5.086418151855469, 'learning_rate': 0.0005481132075471699, 'epoch': 6.48}
+{'loss': 0.2278, 'grad_norm': 9.229973793029785, 'learning_rate': 0.000538679245283019, 'epoch': 6.57}
+{'loss': 0.2459, 'grad_norm': 8.141383171081543, 'learning_rate': 0.000529245283018868, 'epoch': 6.67}
+{'loss': 0.2344, 'grad_norm': 5.626702785491943, 'learning_rate': 0.0005198113207547171, 'epoch': 6.77}
+{'loss': 0.2506, 'grad_norm': 7.021445274353027, 'learning_rate': 0.0005103773584905661, 'epoch': 6.86}
+{'loss': 0.2289, 'grad_norm': 5.935751438140869, 'learning_rate': 0.0005009433962264152, 'epoch': 6.96}
+ 58%|███████████████████████████████████████████████████████████████████████████████████████▌                                                              | 735/1260 [1:16:05<34:13,  3.91s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  5.12it/s]
+REF: 'iki dipimpin dening perancis vichy dheweke yaiku wong perancis sing ngawe bedhamen karo jerman ing taun lan kerja kango penjajah tinimbang nglawan dheweke'
+HYP: 'iki dipimpin dening prancis viji dheweke yaiku wong perancis sing gawe bedamen karo jerman ing tanu lan ketuja kango benjelajah tinimbang penjajah tinimbang lawan dheweke'
+--- Eval sample ---
+REF: 'nominasi liyane kalebu gambar paling apik sutradara sinematografi desain kostum edit film musik asli desain produksi edit swara campuran swara lan naskah asli'
+HYP: 'nominasi liyane kalebu gambar paling apik sitradara sinematografi disen kostum edit film musik asli disen produksi edit swara campuran swara lan naskah asli'
+--- Eval sample ---
+REF: 'nextgen minangka sistem sing dituntut fa bakal ngidini montor mabur kanthi jalur sing luwih cendhek lan ngirit yutanan galon bahan bakar saben taun lan ngethok pancurating karbon'
+HYP: 'neks gen minangka sistem sing dituntut efa bakal ngidhini montor mabur kanthi jalur sing luwih cedhek lan ngirip nyutanan galan ban bakar saben taun lan kethok pancurating karbon'
+{'eval_loss': 0.32085463404655457, 'eval_wer': 27.154688377316116, 'eval_runtime': 55.236, 'eval_samples_per_second': 13.18, 'eval_steps_per_second': 3.295, 'epoch': 7.0}
+ 58%|███████████████████████████████████████████████████████████████████████████████████████▌                                                              | 735/1260 [1:17:00<34:13,  3.91s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.2204, 'grad_norm': 6.141892910003662, 'learning_rate': 0.0004915094339622641, 'epoch': 7.05}
+{'loss': 0.2091, 'grad_norm': 6.813547134399414, 'learning_rate': 0.00048207547169811324, 'epoch': 7.14}
+{'loss': 0.1969, 'grad_norm': 7.96277379989624, 'learning_rate': 0.0004726415094339623, 'epoch': 7.24}
+{'loss': 0.2036, 'grad_norm': 5.9490203857421875, 'learning_rate': 0.00046320754716981134, 'epoch': 7.33}
+{'loss': 0.2128, 'grad_norm': 7.350509166717529, 'learning_rate': 0.0004537735849056604, 'epoch': 7.43}
+{'loss': 0.2055, 'grad_norm': 6.31152868270874, 'learning_rate': 0.00044433962264150945, 'epoch': 7.53}
+{'loss': 0.2055, 'grad_norm': 5.546157360076904, 'learning_rate': 0.0004349056603773585, 'epoch': 7.62}
+{'loss': 0.2058, 'grad_norm': 4.976192474365234, 'learning_rate': 0.00042547169811320756, 'epoch': 7.72}
+{'loss': 0.2259, 'grad_norm': 6.432522296905518, 'learning_rate': 0.0004160377358490566, 'epoch': 7.81}
+{'loss': 0.2036, 'grad_norm': 9.645625114440918, 'learning_rate': 0.00040660377358490567, 'epoch': 7.91}
+{'loss': 0.2065, 'grad_norm': 12.387203216552734, 'learning_rate': 0.0003971698113207547, 'epoch': 8.0}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 840/1260 [1:26:50<29:01,  4.15s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  5.11it/s]
+REF: 'dhaerahdhaerah sing gedhe ing sisih lor kang arang pedununge lan sawetara ana alas gedhe sing meh ora diengoni'
+HYP: 'daerahdaerah sing gedhe ing sisih lor kang arang pedununge lan sawetara ana alas gedhe sing meh ora diengoni'
+--- Eval sample ---
+REF: 'asile seniman ngrokok lintingan ganja ing pangung lan teater kasebut ngajak para pamirsa kango melu'
+HYP: 'asile seniman ngrokok linthingan genja ing pangung lan teiater kasebut ngajak para pamirsa kango melu'
+--- Eval sample ---
+REF: 'para ilmuan ngajab kango mangerteni kepiye planetplanet kabentuk utamane kepiye bumi dibentuk amarga jaman biyen komet tabrakan karo bumi'
+HYP: 'para ilmuwan ngajap kango mangerteni kepiye planetplanet kabentuk utamane kepiye bumi dibentuk amarga jaman biyen kome tabdhakan karo bumi'
+{'eval_loss': 0.2867644131183624, 'eval_wer': 25.59657495788883, 'eval_runtime': 55.424, 'eval_samples_per_second': 13.135, 'eval_steps_per_second': 3.284, 'epoch': 8.0}
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 840/1260 [1:27:45<29:01,  4.15s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.183, 'grad_norm': 3.842106342315674, 'learning_rate': 0.00038773584905660383, 'epoch': 8.1}
+{'loss': 0.1882, 'grad_norm': 5.982913970947266, 'learning_rate': 0.0003783018867924529, 'epoch': 8.19}
+{'loss': 0.1769, 'grad_norm': 3.9927191734313965, 'learning_rate': 0.0003688679245283019, 'epoch': 8.29}
+{'loss': 0.1516, 'grad_norm': 5.106823444366455, 'learning_rate': 0.00035943396226415094, 'epoch': 8.38}
+{'loss': 0.1674, 'grad_norm': 5.4045729637146, 'learning_rate': 0.00035, 'epoch': 8.48}
+{'loss': 0.1861, 'grad_norm': 6.109494686126709, 'learning_rate': 0.00034056603773584905, 'epoch': 8.57}
+{'loss': 0.1822, 'grad_norm': 7.520181179046631, 'learning_rate': 0.0003311320754716981, 'epoch': 8.67}
+{'loss': 0.1686, 'grad_norm': 4.899971961975098, 'learning_rate': 0.00032169811320754716, 'epoch': 8.77}
+{'loss': 0.1755, 'grad_norm': 4.354959487915039, 'learning_rate': 0.0003122641509433962, 'epoch': 8.86}
+{'loss': 0.1736, 'grad_norm': 3.731879234313965, 'learning_rate': 0.00030283018867924527, 'epoch': 8.96}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 945/1260 [1:37:36<24:10,  4.60s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:51<00:00,  5.16it/s]
+REF: 'cuomo miwiti jabatane dadi gubernur luwih cepet taun iki lan nandhatangani tuntutan nikahan sak jenis'
+HYP: 'cuamo miwiti jabatane dadi gubernur luwih cepet taun iki lan nandha tangani tuntutan nikahan sajenis'
+--- Eval sample ---
+REF: 'sing teges angone nolak wong lanang lan aja wedi njejer jejeg ing pangonmu beda budaya utawa ora ora bisa gawe becik'
+HYP: 'sing teges angone nolak wong lanang lan aja wedi njajer jejeg ing pangonmu beda budaya utawa ora ora bisa gawe becik'
+--- Eval sample ---
+REF: 'arus lalulintas yaiku pelajaran bab pergerakan para pengemudi individu lan kendharan antara loro titik lan interaksi sing dheweke padha gawe siji marang liyane'
+HYP: 'arus lalu lintas yaiku plajaran bapergeragan para pengemudi individu lan kendharakan antara tithik lan interaksi sing dheweke padha gawe siji marang liyane'
+{'eval_loss': 0.2740026116371155, 'eval_wer': 24.213924761370016, 'eval_runtime': 55.5364, 'eval_samples_per_second': 13.109, 'eval_steps_per_second': 3.277, 'epoch': 9.0}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                     | 945/1260 [1:38:32<24:10,  4.60s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1628, 'grad_norm': 4.3636088371276855, 'learning_rate': 0.0002933962264150943, 'epoch': 9.05}
+{'loss': 0.142, 'grad_norm': 3.948024272918701, 'learning_rate': 0.0002839622641509434, 'epoch': 9.14}
+{'loss': 0.1395, 'grad_norm': 5.617969989776611, 'learning_rate': 0.00027452830188679243, 'epoch': 9.24}
+{'loss': 0.139, 'grad_norm': 4.692934513092041, 'learning_rate': 0.0002650943396226415, 'epoch': 9.33}
+{'loss': 0.1507, 'grad_norm': 3.25478196144104, 'learning_rate': 0.0002556603773584906, 'epoch': 9.43}
+{'loss': 0.1406, 'grad_norm': 4.933221340179443, 'learning_rate': 0.00024622641509433965, 'epoch': 9.53}
+{'loss': 0.1416, 'grad_norm': 4.696707725524902, 'learning_rate': 0.00023679245283018868, 'epoch': 9.62}
+{'loss': 0.1337, 'grad_norm': 2.8954668045043945, 'learning_rate': 0.00022735849056603776, 'epoch': 9.72}
+{'loss': 0.1329, 'grad_norm': 3.381922721862793, 'learning_rate': 0.0002179245283018868, 'epoch': 9.81}
+{'loss': 0.135, 'grad_norm': 3.4400036334991455, 'learning_rate': 0.00020849056603773587, 'epoch': 9.91}
+{'loss': 0.1418, 'grad_norm': 9.328568458557129, 'learning_rate': 0.00019905660377358492, 'epoch': 10.0}
+ 83%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                        | 1050/1260 [1:48:19<14:49,  4.23s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:52<00:00,  4.89it/s]
+REF: 'jus kubis malih werna gumantung ana ing sepira asem utawa basane alkalin senyawa kimiane'
+HYP: 'jeskubis malig werna ngmbantung ana ing sepiro asem utobasane alkolin snyawa kimiane'
+--- Eval sample ---
+REF: 'tabrakan kasebut kadadeyan ana ing daerah gunung lan dipercaya disebabke dening geni sing gedhe banget'
+HYP: 'tabran kasebut kdadean ana ing daerah gunung lan percaya disebabke dening geni sing gedhe banget'
+--- Eval sample ---
+REF: 'ngero macan ora kaya ngerone singa sing duwe swara pepak nanging kaya ukara sing ngegirisi lan tembungtembung njerit'
+HYP: 'ngera macan ora kaya ngerone singa sing duwe swara pepak nanging kaya ukara sing ngagi wisi lan tembungtembung njerit'
+{'eval_loss': 0.25699561834335327, 'eval_wer': 21.287198203256597, 'eval_runtime': 55.9782, 'eval_samples_per_second': 13.005, 'eval_steps_per_second': 3.251, 'epoch': 10.0}
+ 83%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                        | 1050/1260 [1:49:15<14:49,  4.23s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.1035, 'grad_norm': 2.901700019836426, 'learning_rate': 0.00018962264150943397, 'epoch': 10.1}
+{'loss': 0.1066, 'grad_norm': 6.496667861938477, 'learning_rate': 0.000180188679245283, 'epoch': 10.19}
+{'loss': 0.1117, 'grad_norm': 3.392972469329834, 'learning_rate': 0.00017075471698113206, 'epoch': 10.29}
+{'loss': 0.1058, 'grad_norm': 4.300121307373047, 'learning_rate': 0.00016132075471698114, 'epoch': 10.38}
+{'loss': 0.1146, 'grad_norm': 3.935288906097412, 'learning_rate': 0.0001518867924528302, 'epoch': 10.48}
+{'loss': 0.1062, 'grad_norm': 3.2335357666015625, 'learning_rate': 0.00014245283018867925, 'epoch': 10.57}
+{'loss': 0.1017, 'grad_norm': 4.860058784484863, 'learning_rate': 0.0001330188679245283, 'epoch': 10.67}
+{'loss': 0.1148, 'grad_norm': 7.6233673095703125, 'learning_rate': 0.00012358490566037736, 'epoch': 10.77}
+{'loss': 0.0959, 'grad_norm': 2.9597084522247314, 'learning_rate': 0.00011415094339622642, 'epoch': 10.86}
+{'loss': 0.1012, 'grad_norm': 3.1123456954956055, 'learning_rate': 0.00010471698113207548, 'epoch': 10.96}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1155/1260 [1:59:03<07:45,  4.43s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:52<00:00,  5.26it/s]
+REF: 'dheweke lanang wales dhasare ngapusi marang kita saka wiwitan sepisan kanthi tumindak kayakaya iki kango alasan hukum kaping pindho kanthi ethokethok dheweke lanang ngrungoake kita nganti tekan penghapusan senine'
+HYP: 'dheweke dhasare ngapusi marang kita saka wiwitan sepisan kanthi tumindak kayakaya iki kango alasan hukum kaping pindo kanthi etoketok dheweke ngrungokake kita nganti tekan pangabusan swanine'
+--- Eval sample ---
+REF: 'ora ana teges sing umum kango barang pabrik endi sing kuno sawetara agen pajek nentokake barang sing luwih tuwa saka taun minangka barang kuno'
+HYP: 'ora ana teges sing umum kango barang pabrik endi sing kuna sawetara agen pajek ngentukake barang sing luwih tuwa saka taun minangka barang kuna'
+--- Eval sample ---
+REF: 'asil penliten sing paling anyar saka teleskop yaiku kalongaran sing gedhe banget ana ning daerah sing adoh saka kutha kanthi kahanan hawa sing nyenengke'
+HYP: 'asil penliten sing paling anyar saka teleskop yaiku kelongaran sing gedhe banget ana ning dhaerah sing adoh saka kutha kanthi kahanan hawa sing nyenengke'
+{'eval_loss': 0.2465943545103073, 'eval_wer': 20.627456485120717, 'eval_runtime': 55.8251, 'eval_samples_per_second': 13.041, 'eval_steps_per_second': 3.26, 'epoch': 11.0}
+ 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 1155/1260 [1:59:59<07:45,  4.43s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'loss': 0.0916, 'grad_norm': 1.568235158920288, 'learning_rate': 9.528301886792453e-05, 'epoch': 11.05}
+{'loss': 0.0831, 'grad_norm': 2.771883964538574, 'learning_rate': 8.584905660377359e-05, 'epoch': 11.14}
+{'loss': 0.0801, 'grad_norm': 1.8914445638656616, 'learning_rate': 7.641509433962264e-05, 'epoch': 11.24}
+{'loss': 0.0702, 'grad_norm': 4.8821024894714355, 'learning_rate': 6.69811320754717e-05, 'epoch': 11.33}
+{'loss': 0.0812, 'grad_norm': 2.084920644760132, 'learning_rate': 5.7547169811320756e-05, 'epoch': 11.43}
+{'loss': 0.0765, 'grad_norm': 4.397824764251709, 'learning_rate': 4.811320754716982e-05, 'epoch': 11.53}
+{'loss': 0.0766, 'grad_norm': 1.8910657167434692, 'learning_rate': 3.8679245283018865e-05, 'epoch': 11.62}
+{'loss': 0.0848, 'grad_norm': 2.792733907699585, 'learning_rate': 2.9245283018867926e-05, 'epoch': 11.72}
+{'loss': 0.0882, 'grad_norm': 3.0083656311035156, 'learning_rate': 1.981132075471698e-05, 'epoch': 11.81}
+{'loss': 0.0777, 'grad_norm': 2.2109830379486084, 'learning_rate': 1.0377358490566038e-05, 'epoch': 11.91}
+{'loss': 0.0667, 'grad_norm': 2.054804563522339, 'learning_rate': 9.433962264150943e-07, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1260/1260 [2:09:52<00:00,  4.49s/it--- Eval sample ---████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 182/182 [00:49<00:00,  5.13it/s]
+REF: 'biyasane sampeyan mesthi ing kene swarane para turis lan wongwong adol dongeng swara lan cahya kasebut kaya buku crita'
+HYP: 'biyasane sampeyan mesthi ing kene swarane para turis lan wongwong adol dunging swara lan cahya kasebut kaya buku crita'
+--- Eval sample ---
+REF: 'goncangan mlebu meneh teka luwih cepet tinimbang goncangan budaya ana luwih sethithik saka fase bulan madu pungkasan luwih suwe lan bisa luwih parah'
+HYP: 'gonjangan mlebu maneh teka luwih cepet tinimbang goncangan budaya ana luwih sethithik saka fase bulan madhu pungkasan luwih suwe lan bisa luwih parah'
+--- Eval sample ---
+REF: 'perkara liya ing agenda ing bali kalebu nylametne alas kang isih ana ing donya lan mbagi teknologi kango mbantu negara berkembang tuwuh kanthi cara kang polusine sathithik'
+HYP: 'perkara liya ing agenda ing bali kalebu nylametne alas kang isih ana ing donya lan mbage teknologi kango mbantu negara berkembang tuwuh kanthi cara kang polusine sathithik'
+{'eval_loss': 0.24842041730880737, 'eval_wer': 19.13952835485682, 'eval_runtime': 54.8671, 'eval_samples_per_second': 13.268, 'eval_steps_per_second': 3.317, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1260/1260 [2:10:46<00:00,  4.49s/it/home/serafin/repositories/bachelor-thesis/.venv/lib/python3.14/site-packages/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{'train_runtime': 7850.3703, 'train_samples_per_second': 5.102, 'train_steps_per_second': 0.161, 'train_loss': 0.46180121841884797, 'epoch': 12.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1260/1260 [2:10:50<00:00,  6.23s/it]

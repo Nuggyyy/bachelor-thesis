@@ -93,7 +93,7 @@ randlora_config = RandLoraConfig(
     randlora_dropout=0.1,
     modules_to_save=["lm_head"]
 )
-model = get_peft_model(model, lora_config)
+model = get_peft_model(model, randlora_config)
 model.get_input_embeddings = lambda: model.base_model.model.wav2vec2_bert.feature_projection.projection
 model.get_output_embeddings = lambda: model.base_model.model.lm_head
 model.base_model.save_embedding_layers = True
