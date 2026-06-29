@@ -1,0 +1,3 @@
+bos_token_id,eos_token_id,epoch,train_loss,train_runtime,train_samples_per_second,train_steps_per_second,_line
+56,57,,,,,,4
+,,12.0,0.7199656619881907,6034.2255,5.944,0.187,272

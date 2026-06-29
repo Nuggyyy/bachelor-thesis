@@ -6,7 +6,7 @@ set -euo pipefail
 # Edit the arrays below to match your repository structure.
 
 # Base model names (without the _{peft} suffix). Example: qwen3-asr
-models=("qwen3-asr" "whisper")
+models=("qwen3-asr" "whisper" "wav2vec2-bert")
 
 # PEFT methods (directories are expected to be named <model>_<peft>)
 pefts=("lora" "vera" "randlora")
